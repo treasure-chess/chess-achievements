@@ -299,17 +299,25 @@ const achievements = [
 ];
 
 let score = 0;
+let achievementsHit = [];
 
 function setResult(pgn, color) {
   let result = "";
   for (let i = pgn.length - 1; i > 0; i--) {
     if (pgn.charAt(i) === " ") {
       result = pgn.substring(i + 1, pgn.length);
+      break;
     }
   }
   let numMoves = 0;
-  // determine number of moves in the game
-  // numMoves = ...
+  for (let i = pgn.length - 1; i > 0; i--) {
+    if (pgn.charAt(i) === '.' && pgn.charAt(i-1) === '.') {
+      continue;
+    } else if (pgn.charAt(i) === '.' ){
+
+    }
+  }
+
 
   // determine opponent's rating
   let whiteElo = 0;
@@ -338,22 +346,28 @@ function setResult(pgn, color) {
   if (result === "1-0" && color === "White") {
     if (blackElo > whiteElo) {
       // Defeat a higher rated player achievement
+      achievementsHit.push(achievements[30].name);
       score += achievements[30].points;
     }
     if (blackElo <= 750) {
       // Win a game achievement
+      achievementsHit.push(achievements[0].name);
       score += achievements[0].points;
     } else if (blackElo >= 751 && blackElo <= 1500) {
       // Win a game rated 750+ achievement
+      achievementsHit.push(achievements[2].name);
       score += achievements[2].points;
     } else if (blackElo >= 1501 && blackElo <= 2000) {
       // Win a game rated 1500+ achievement
+      achievementsHit.push(achievements[4].name);
       score += achievements[4].points;
     } else if (blackElo >= 2001 && blackElo <= 2200) {
       // Win a game rated 2000+ achievement
+      achievementsHit.push(achievements[7].name);
       score += achievements[7].points;
     } else {
       // Win a game rated 2200+ achievement
+      achievementsHit.push(achievements[9].name);
       score += achievements[9].points;
     }
     // determine if defeat titled opponent achievements
@@ -362,9 +376,11 @@ function setResult(pgn, color) {
       while (pgn.charAt(mateIdx) !== " ") {
         if (pgn.charAt(mateIdx) === "B") {
           // Mate with Bishop achievement
+          achievementsHit.push(achievements[13].name);
           score += achievements[13].points;
         } else if (pgn.charAt(mateIdx) === "N") {
           // Mate with Knight achievement
+          achievementsHit.push(achievements[14].name);
           score += achievements[14].points;
         }
         // check for pawn mate
@@ -376,32 +392,40 @@ function setResult(pgn, color) {
   } else if (result === "1/2-1/2") {
     if ((color === 'White' && blackElo > whiteElo) || (color === 'Black' && whiteElo > blackElo)) {
       // Draw against higher rated player achievement
+      achievementsHit.push(achievements[22].name);
       score += achievements[22].points;
     }
     if (pgn.includes("Game drawn by repetition")) {
       // Draw by repetition achievement
+      achievementsHit.push(achievements[29].name);
       score += achievements[29].points;
     }
     // determine if draw when opponent has a queen, without one achievement
   } else if (result === "0-1" && color === "Black") {
     if (whiteElo > blackElo) {
       // Defeat a higher rated player achievement
+      achievementsHit.push(achievements[30].name);
       score += achievements[30].points;
     }
     if (whiteElo <= 750) {
       // Win a game achievement
+      achievementsHit.push(achievements[0].name);
       score += achievements[0].points;
     } else if (whiteElo >= 751 && whiteElo <= 1500) {
       // Win a game rated 750+ achievement
+      achievementsHit.push(achievements[2].name);
       score += achievements[2].points;
     } else if (whiteElo >= 1501 && whiteElo <= 2000) {
       // Win a game rated 1500+ achievement
+      achievementsHit.push(achievements[4].name);
       score += achievements[4].points;
     } else if (whiteElo >= 2001 && whiteElo <= 2200) {
       // Win a game rated 2000+ achievement
+      achievementsHit.push(achievements[7].name);
       score += achievements[7].points;
     } else {
       // Win a game rated 2200+ achievement
+      achievementsHit.push(achievements[9].name);
       score += achievements[9].points;
     }
     // determine if defeat titled opponent achievements
@@ -410,9 +434,11 @@ function setResult(pgn, color) {
       while (pgn.charAt(mateIdx) !== " ") {
         if (pgn.charAt(mateIdx) === "B") {
           // Mate with Bishop achievement
+          achievementsHit.push(achievements[13].name);
           score += achievements[13].points;
         } else if (pgn.charAt(mateIdx) === "N") {
           // Mate with Knight achievement
+          achievementsHit.push(achievements[14].name);
           score += achievements[14].points;
         }
         // check for pawn mate
@@ -425,35 +451,45 @@ function setResult(pgn, color) {
     if (color === "White") {
       if (blackElo <= 750) {
         // Play a game achievement
+        achievementsHit.push(achievements[1].name);
         score += achievements[1].points;
       } else if (blackElo >= 751 && blackElo <= 1500) {
         // Play a game rated 750+ achievement
+        achievementsHit.push(achievements[3].name);
         score += achievements[3].points;
       } else if (blackElo >= 1501 && blackElo <= 2000) {
         // Play a game rated 1500+ achievement
+        achievementsHit.push(achievements[5].name);
         score += achievements[5].points;
       } else if (blackElo >= 2001 && blackElo <= 2200) {
         // Play a game rated 2000+ achievement
+        achievementsHit.push(achievements[6].name);
         score += achievements[6].points;
       } else {
         // Play a game rated 2200+ achievement
+        achievementsHit.push(achievements[8].name);
         score += achievements[8].points;
       }
     } else {
       if (whiteElo <= 750) {
         // Play a game achievement
+        achievementsHit.push(achievements[1].name);
         score += achievements[1].points;
       } else if (whiteElo >= 751 && whiteElo <= 1500) {
         // Play a game rated 750+ achievement
+        achievementsHit.push(achievements[3].name);
         score += achievements[3].points;
       } else if (whiteElo >= 1501 && whiteElo <= 2000) {
         // Play a game rated 1500+ achievement
+        achievementsHit.push(achievements[5].name);
         score += achievements[5].points;
       } else if (whiteElo >= 2001 && whiteElo <= 2200) {
         // Play a game rated 2000+ achievement
+        achievementsHit.push(achievements[6].name);
         score += achievements[6].points;
       } else {
         // Play a game rated 2200+ achievement
+        achievementsHit.push(achievements[8].name);
         score += achievements[8].points;
       }
     }
@@ -477,25 +513,33 @@ function specialMoves(pgn, color) {
     const exp = /[0-9]+\.\sO-O-O/i;
     if (exp.test(pgn) === true) {
       // Queenside castle achievement
+      achievementsHit.push(achievements[23].name);
       score += achievements[23].points;
     }
     if (pgn.includes("8=N")) {
       // Underpromote to knight achievement
+      achievementsHit.push(achievements[24].name);
       score += achievements[24].points;
-    } else if (pgn.includes("8=B")) {
+    }
+    if (pgn.includes("8=B")) {
       // Underpromote to bishop achievement
+      achievementsHit.push(achievements[25].name);
       score += achievements[25].points;
     }
   } else {
     if (pgn.includes("... O-O-O")) {
       // Queenside casle achievement
+      achievementsHit.push(achievements[23].name);
       score += achievements[23].points;
     }
     if (pgn.includes("1=N")) {
       // Underpromote to knight achievement
+      achievementsHit.push(achievements[24].name);
       score += achievements[24].points;
-    } else if (pgn.includes("1=B")) {
+    }
+    if (pgn.includes("1=B")) {
       // Underpromote to bishop achievement
+      achievementsHit.push(achievements[25].name);
       score += achievements[25].points;
     }
   }
@@ -506,6 +550,7 @@ function displayScore(pgn, color) {
   gameMoves(pgn, color);
   specialMoves(pgn, color);
 
+  console.log(achievementsHit);
   return score;
 }
 
