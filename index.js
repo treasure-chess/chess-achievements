@@ -311,13 +311,28 @@ function setResult(pgn, color) {
   }
   let numMoves = 0;
   for (let i = pgn.length - 1; i > 0; i--) {
-    if (pgn.charAt(i) === '.' && pgn.charAt(i-1) === '.') {
-      continue;
-    } else if (pgn.charAt(i) === '.' ){
-
+    if (pgn.charAt(i) === '.' && /[0-9]/.test(pgn.charAt(i-1))) {
+      let j = i;
+      while (pgn.charAt(j) !== ' ') {
+        j--;
+      }
+      numMoves = parseInt(pgn.substring(j,i));
     }
   }
 
+  if (numMoves > 250) {
+    // Complete a game with more than 250 moves
+    achievementsHit.push(achievements[18].name);
+    score += achievements[18].points;
+  } else if (numMoves > 150) {
+    // Complete a game with more than 150 moves
+    achievementsHit.push(achievements[17].name);
+    score += achievements[17].points;
+  } else if (numMoves > 100) {
+    // Complete a game with more than 100 moves
+    achievementsHit.push(achievements[16].name);
+    score += achievements[16].score;
+  }
 
   // determine opponent's rating
   let whiteElo = 0;
