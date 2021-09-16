@@ -1,4 +1,7 @@
+function achievementsCalculator(pgn, color) {
 
+  return displayResult(pgn, color);
+}
 
 //write other functions here
 
