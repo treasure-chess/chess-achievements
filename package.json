@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/TreasureChess/chess-achievements/issues"
   },
-  "homepage": "https://github.com/TreasureChess/chess-achievements#readme"
+  "homepage": "https://github.com/TreasureChess/chess-achievements#readme",
+  "dependencies": {
+    "chess.js": "^0.12.0"
+  }
 }
