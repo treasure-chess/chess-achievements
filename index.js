@@ -1,4 +1,4 @@
-function achievements() {
+function achievementsCalculator() {
     const examplePgn1 = '1.e4 {[%clk 0:02:59]} e5 {[%clk 0:02:59]} 2.Nf3 {[%clk 0:02:58]} Nc6 {[%clk 0:02:59]} 3.Bb5 {[%clk 0:02:58]} Nf6 {[%clk 0:02:59]} 4.d3 {[%clk 0:02:57]} Bc5 {[%clk 0:02:57]} 5.c3 {[%clk 0:02:57]} O-O {[%clk 0:02:56]} 6.O-O {[%clk 0:02:56]} Re8 {[%clk 0:02:56]} 7.h3 {[%clk 0:02:54]} a6 {[%clk 0:02:55]} 8.Ba4 {[%clk 0:02:53]} d5 {[%clk 0:02:54]} 9.Nbd2 {[%clk 0:02:51]} h6 {[%clk 0:02:53]} 10.Re1 {[%clk 0:02:50]} b5 {[%clk 0:02:51]} 11.Bb3 {[%clk 0:02:48]} d4 {[%clk 0:02:51]} 12.Nf1 {[%clk 0:02:43]} Be6 {[%clk 0:02:49]} 13.Ng3 {[%clk 0:02:38]} Bxb3 {[%clk 0:02:43]} 14.axb3 {[%clk 0:02:38]} Qd7 {[%clk 0:02:40]} 15.b4 {[%clk 0:02:24]} Bf8 {[%clk 0:02:37]} 16.Qe2 {[%clk 0:02:22]} dxc3 {[%clk 0:02:22]} 17.bxc3 {[%clk 0:02:20]} a5 {[%clk 0:02:20]} 18.bxa5 {[%clk 0:02:16]} Nxa5 {[%clk 0:02:20]} 19.Be3 {[%clk 0:02:11]} c5 {[%clk 0:02:17]} 20.Red1 {[%clk 0:02:06]} Qc6 {[%clk 0:02:08]} 21.Qc2 {[%clk 0:01:45]} b4 {[%clk 0:02:02]} 22.Nxe5 {[%clk 0:01:30]} b3 {[%clk 0:01:53]} 23.Qxb3 {[%clk 0:01:03]} Nxb3 {[%clk 0:01:49]}  0-1'
 
     const examplePgn2 = `[Event "Live Chess"]
@@ -14,7 +14,7 @@ function achievements() {
     [TimeControl "60"]
     [EndTime "12:38:55 PDT"]
     [Termination "ChadBiryani won on time"]
-    
+
     1. e4 {[%timestamp 1]} 1... d6 {[%timestamp 1]} 2. d4 {[%timestamp 7]} 2... g6
     {[%timestamp 1]} 3. Nc3 {[%timestamp 8]} 3... Bg7 {[%timestamp 3]} 4. h4
     {[%timestamp 4]} 4... a6 {[%timestamp 2]} 5. h5 {[%timestamp 5]} 5... b5
@@ -61,7 +61,7 @@ function achievements() {
     [TimeControl "60"]
     [EndTime "15:53:14 PDT"]
     [Termination "Game drawn by repetition"]
-    
+
     1. d4 {[%timestamp 1]} 1... c6 {[%timestamp 1]} 2. Bf4 {[%timestamp 18]} 2... d5
     {[%timestamp 1]} 3. e3 {[%timestamp 3]} 3... Nf6 {[%timestamp 7]} 4. Nf3
     {[%timestamp 1]} 4... Bg4 {[%timestamp 8]} 5. Bd3 {[%timestamp 1]} 5... e6
@@ -113,7 +113,7 @@ function achievements() {
     [TimeControl "180+1"]
     [EndTime "11:41:27 PDT"]
     [Termination "sergeikim won by checkmate"]
-    
+
     1. b3 {[%timestamp 1]} 1... Nf6 {[%timestamp 20]} 2. Bb2 {[%timestamp 23]} 2...
     g6 {[%timestamp 9]} 3. g4 {[%timestamp 23]} 3... Bg7 {[%timestamp 14]} 4. h4
     {[%timestamp 14]} 4... O-O {[%timestamp 130]} 5. e3 {[%timestamp 47]} 5... d6
@@ -141,7 +141,7 @@ function achievements() {
     // console.log(examplePgn3);
     // console.log(examplePgn4);
 
-    displayScore(examplePgn2, 'White');
+    return displayResult(examplePgn2, 'White');
 }
 
 //write other functions here
@@ -298,6 +298,7 @@ const achievements = [
 ]
 
 let score = 0;
+let achieved = [];
 
 function setResult(pgn, color) {
     let result =  '';
@@ -324,19 +325,19 @@ function setResult(pgn, color) {
     if (result === '1-0' && color === 'White') {
         if (blackElo <= 750) {
             // Win a game achievement
-            score += achievements[0].points;
+            achieved.push(achievements[0])
         } else if (blackElo >= 751 && blackElo <= 1500) {
             // Win a game rated 750+ achievement
-            score += achievements[2].points;
+            achieved.push(achievements[2])
         } else if (blackElo >= 1501 && blackElo <= 2000) {
             // Win a game rated 1500+ achievement
-            score += achievements[4].points;
+            achieved.push(achievements[4])
         } else if (blackElo >= 2001 && blackElo <= 2200) {
             // Win a game rated 2000+ achievement
-            score += achievements[7].points;
+            achieved.push(achievements[7])
         } else {
             // Win a game rated 2200+ achievement
-            score += achievements[9].points;
+            achieved.push(achievements[9])
         }
         // determine if win a game against higher rated opponent achievement
         // determine if defeat titled opponent achievements
@@ -345,10 +346,10 @@ function setResult(pgn, color) {
             while (pgn.charAt(mateIdx) !== " ") {
                 if (pgn.charAt(mateIdx) === "B") {
                     // Mate with Bishop achievement
-                    score += achievements[13].points;
+                    achieved.push(achievements[13])
                 } else if (pgn.charAt(mateIdx) === "N") {
                     // Mate with Knight achievement
-                    score += achievements[14].points;
+                    achieved.push(achievements[14])
                 }
                 // check for pawn mate
                 mateIdx--;
@@ -359,26 +360,26 @@ function setResult(pgn, color) {
     } else if (result === '1/2-1/2') {
         if (pgn.includes("Game drawn by repetition")) {
             // Draw by repetition achievement
-            score += achievements[29].points;
+            achieved.push(achievements[29])
         }
         // determine if draw against higher rated player achievement
         // determine if draw when opponent has a queen, without one achievement
     } else if (result === '0-1' && color === 'Black') {
         if (whiteElo <= 750) {
             // Win a game achievement
-            score += achievements[0].points;
+            achieved.push(achievements[0])
         } else if (whiteElo >= 751 && whiteElo <= 1500) {
             // Win a game rated 750+ achievement
-            score += achievements[2].points;
+            achieved.push(achievements[2])
         } else if (whiteElo >= 1501 && whiteElo <= 2000) {
             // Win a game rated 1500+ achievement
-            score += achievements[4].points;
+            achieved.push(achievements[4])
         } else if (whiteElo >= 2001 && whiteElo <= 2200) {
             // Win a game rated 2000+ achievement
-            score += achievements[7].points;
+            achieved.push(achievements[7])
         } else {
             // Win a game rated 2200+ achievement
-            score += achievements[9].points;
+            achieved.push(achievements[9])
         }
         // determine if win a game against higher rated opponent achievement
         // determine if defeat titled opponent achievements
@@ -387,10 +388,10 @@ function setResult(pgn, color) {
             while (pgn.charAt(mateIdx) !== " ") {
                 if (pgn.charAt(mateIdx) === "B") {
                     // Mate with Bishop achievement
-                    score += achievements[13].points;
+                    achieved.push(achievements[13])
                 } else if (pgn.charAt(mateIdx) === "N") {
                     // Mate with Knight achievement
-                    score += achievements[14].points;
+                    achieved.push(achievements[14])
                 }
                 // check for pawn mate
                 mateIdx--;
@@ -402,37 +403,37 @@ function setResult(pgn, color) {
         if (color === "White") {
             if (blackElo <= 750) {
                 // Play a game achievement
-                score += achievements[1].points;
+                achieved.push(achievements[1])
             } else if (blackElo >= 751 && blackElo <= 1500) {
                 // Play a game rated 750+ achievement
-                score += achievements[3].points;
+                achieved.push(achievements[3])
             } else if (blackElo >= 1501 && blackElo <= 2000) {
                 // Play a game rated 1500+ achievement
-                score += achievements[5].points;
+                achieved.push(achievements[5])
             } else if (blackElo >= 2001 && blackElo <= 2200) {
                 // Play a game rated 2000+ achievement
-                score += achievements[6].points;
+                achieved.push(achievements[6])
             } else {
                 // Play a game rated 2200+ achievement
-                score += achievements[8].points;
+                achieved.push(achievements[8])
             }
         }
         else {
             if (whiteElo <= 750) {
                 // Play a game achievement
-                score += achievements[1].points;
+                achieved.push(achievements[1])
             } else if (whiteElo >= 751 && whiteElo <= 1500) {
                 // Play a game rated 750+ achievement
-                score += achievements[3].points;
+                achieved.push(achievements[3])
             } else if (whiteElo >= 1501 && whiteElo <= 2000) {
                 // Play a game rated 1500+ achievement
-                score += achievements[5].points;
+                achieved.push(achievements[5])
             } else if (whiteElo >= 2001 && whiteElo <= 2200) {
                 // Play a game rated 2000+ achievement
-                score += achievements[6].points;
+                achieved.push(achievements[6])
             } else {
                 // Play a game rated 2200+ achievement
-                score += achievements[8].points;
+                achieved.push(achievements[8])
             }
         }
     }
@@ -457,38 +458,47 @@ function specialMoves(pgn, color) {
         const exp = /[0-9]+\.\sO-O-O/i;
         if (exp.test(pgn) === true) {
             // Queenside castle achievement
-            score += achievements[23].points;
+            achieved.push(achievements[23])
         }
         if (pgn.includes("8=N")) {
             // Underpromote to knight achievement
-            score += achievements[24].points;
+            achieved.push(achievements[24])
         } else if (pgn.includes("8=B")) {
             // Underpromote to bishop achievement
-            score += achievements[25].points;
+            achieved.push(achievements[25])
         }
     } else {
         if (pgn.includes("... O-O-O")) {
             // Queenside casle achievement
-            score += achievements[23].points;
+            achieved.push(achievements[23])
         }
         if (pgn.includes("1=N")) {
             // Underpromote to knight achievement
-            score += achievements[24].points;
+            achieved.push(achievements[24])
         } else if (pgn.includes("1=B")) {
             // Underpromote to bishop achievement
-            score += achievements[25].points;
+            achieved.push(achievements[25])
         }
     }
 }
 
-function displayScore(pgn, color) {
+function displayResult(pgn, color) {
     setResult(pgn, color);
     gameMoves(pgn, color);
     specialMoves(pgn, color);
 
-    return score;
+
+    var numA = (achieved.length < 3) ? achieved.length : 3;
+    var score = 0;
+    for (var i = 0; i < numA; i++) {
+       score += achieved[i].points;
+    }
+
+    console.log("score = " + score)
+    console.log({"score":score, "achievements": achieved});
+    return {"score":score, "achievements": achieved};
 }
 
 //===== =====//
 //and then export functions here to be used as a library elsewhere.
-module.exports.achievements = achievements
+module.exports = achievementsCalculator
