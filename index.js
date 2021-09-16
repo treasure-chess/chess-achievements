@@ -679,8 +679,15 @@ function displayScore(pgn, color) {
   gameMoves(pgn, color);
   specialMoves(pgn, color);
 
-  console.log(achieved);
-  return score;
+  var numA = (achieved.length < 3) ? achieved.length : 3;
+  var score = 0;
+  for (var i = 0; i < numA; i++) {
+     score += achieved[i].points;
+  }
+
+  //console.log("score = " + score)
+  //console.log({"score":score, "achievements": achieved});
+  return {"score":score, "achievements": achieved};
 }
 
 //===== =====//
