@@ -149,150 +149,214 @@ function achievements() {
 
 const achievements = [
   {
+    // index 0
+    // done
     name: "Win a game",
     points: 1,
   },
   {
+    // index 1
+    // done
     name: "Finish a game",
     points: 1,
   },
   {
+    // index 2
+    // done
     name: "Win a game rated 750+",
     points: 2,
   },
   {
+    // index 3
+    // done
     name: "Play a game rated 750+",
     points: 1,
   },
   {
+    // index 4
+    // done
     name: "Win a game rated 1500+",
     points: 2,
   },
   {
+    // index 5
+    // done
     name: "Play a game rated 1500+",
     points: 1,
   },
   {
+    // index 6
+    // done
     name: "Play a game rated 2000+",
     points: 2,
   },
   {
+    // index 7
+    // done
     name: "Win a game rated 2000+",
     points: 2,
   },
   {
+    // index 8
+    // done
     name: "Play a game rated 2250+",
     points: 3,
   },
   {
+    // index 9
+    // done
     name: "Win a game rated 2250+",
     points: 4,
   },
   {
+    // index 10
     name: "Defeat an IM",
     points: 4,
   },
   {
+    // index 11
     name: "Defeat a NM",
     points: 4,
   },
   {
+    // index 12
     name: "Defeat a GM",
     points: 5,
   },
   {
+    // index 13
+    // done
     name: "Mate with a bishop",
     points: 2,
   },
   {
+    // index 14
+    // done
     name: "Mate with a knight",
     points: 3,
   },
   {
+    // index 15
+    // done
     name: "Mate with a pawn",
     points: 5,
   },
   {
+    // index 16
+    // done
     name: "Complete a game with more than 100 moves",
     points: 1,
   },
   {
+    // index 17
+    // done
     name: "Complete a game with more than 150 moves",
     points: 2,
   },
   {
+    // index 18
+    // done
     name: "Complete a game with more than 250 moves",
     points: 3,
   },
   {
+    // index 19
+    // done
     name: "Win with checkmate in less than 10 moves",
     points: 2,
   },
   {
+    // index 20
+    // done
     name: "Win with checkmate in <5 moves",
     points: 3,
   },
   {
+    // index 21
+    // done
     name: "Win with checkmate in 2 moves",
     points: 5,
   },
   {
+    // index 22
+    // done
     name: "Draw with a higher rated player",
     points: 2,
   },
   {
+    // index 23
+    // done
     name: "Queen side castle",
     points: 1,
   },
   {
+    // index 24
+    // done
     name: "Under-promote to a knight",
     points: 1,
   },
   {
+    // index 25
+    // done
     name: "Under-promote to a bishop",
     points: 1,
   },
   {
+    // index 26
     name: "En Passent",
     points: 2,
   },
   {
+    // index 27
     name: "Checkmate with an En Passent",
     points: 5,
   },
   {
+    // index 28
     name: "Draw when opponent has a queen, without one",
     points: 2,
   },
   {
+    // index 29
+    // done
     name: "Draw by repetition",
     points: 1,
   },
   {
+    // index 30
+    // done
     name: "Defeat a higher ranked player",
     points: 1,
   },
   {
+    // index 31
     name: "Put opponent in check",
     points: 1,
   },
   {
+    // index 32
     name: "Capture <4 pawns",
     points: 1,
   },
   {
+    // index 33
     name: "Capture all pawns",
     points: 2,
   },
   {
+    // index 34
     name: "Capture all knights and bishops without losing any.",
     points: 4,
   },
   {
+    // check if this should be greater than 20 times
+    // done
+    // index 35
     name: "Move king <20 times",
     points: 1,
   },
   {
+    // index 36
     name: "Capture all pawns without losing any",
     points: 4,
   },
@@ -332,6 +396,36 @@ function setResult(pgn, color) {
     // Complete a game with more than 100 moves
     achievementsHit.push(achievements[16].name);
     score += achievements[16].score;
+  }
+
+  if (color === 'White' && pgn.includes("won by checkmate") && result === '1-0') {
+    if (numMoves === 2) {
+      // Checkmate in 2 moves achievement
+      achievementsHit.push(achievements[21].name);
+      score += achievements[21].score;
+    } else if (numMoves < 5) {
+      // Checkmate in less than 5 moves achievement
+      achievementsHit.push(achievements[20].name);
+      score += achievements[20].score;
+    } else if (numMoves < 10) {
+      // Checkmate in less than 10 moves achievement
+      achievementsHit.push(achievements[19].name);
+      score += achievements[19].score;
+    }
+  } else if (color === 'Black' && pgn.includes("won by checkmate") && result === '0-1') {
+    if (numMoves === 2) {
+      // Checkmate in 2 moves achievement
+      achievementsHit.push(achievements[21].name);
+      score += achievements[21].score;
+    } else if (numMoves < 5) {
+      // Checkmate in less than 5 moves achievement
+      achievementsHit.push(achievements[20].name);
+      score += achievements[20].score;
+    } else if (numMoves < 10) {
+      // Checkmate in less than 10 moves achievement
+      achievementsHit.push(achievements[19].name);
+      score += achievements[19].score;
+    }
   }
 
   // determine opponent's rating
@@ -385,7 +479,7 @@ function setResult(pgn, color) {
       achievementsHit.push(achievements[9].name);
       score += achievements[9].points;
     }
-    // determine if defeat titled opponent achievements
+    
     if (pgn.includes("won by checkmate")) {
       let mateIdx = pgn.indexOf("#");
       while (pgn.charAt(mateIdx) !== " ") {
@@ -398,9 +492,25 @@ function setResult(pgn, color) {
           achievementsHit.push(achievements[14].name);
           score += achievements[14].points;
         }
-        // check for pawn mate
         mateIdx--;
       }
+      const endIdx = pgn.indexOf('#')
+      let pawnMateIdx = pgn.indexOf('#');
+      let spaceCount = 0;
+      while (spaceCount < 2) {
+        if (pgn.charAt(pawnMateIdx) === ' ') {
+          spaceCount++;
+        }
+        pawnMateIdx--;
+      }
+      const exp = /[0-9]+\.\s[a-h]/;
+      const pawnMateSubStr = pgn.substring(pawnMateIdx + 1, endIdx);
+      if (exp.test(pawnMateSubStr)) {
+        // Mate with pawn
+        achievementsHit.push(achievements[15].name);
+        score += achievements[15].points;
+      }
+
       // check for en passant mate
       // check for checkmate in (<10, <5, 2)
     }
@@ -443,7 +553,7 @@ function setResult(pgn, color) {
       achievementsHit.push(achievements[9].name);
       score += achievements[9].points;
     }
-    // determine if defeat titled opponent achievements
+
     if (pgn.includes("won by checkmate")) {
       let mateIdx = pgn.indexOf("#");
       while (pgn.charAt(mateIdx) !== " ") {
@@ -456,8 +566,23 @@ function setResult(pgn, color) {
           achievementsHit.push(achievements[14].name);
           score += achievements[14].points;
         }
-        // check for pawn mate
         mateIdx--;
+      }
+      const endIdx = pgn.indexOf('#')
+      let pawnMateIdx = pgn.indexOf('#');
+      let spaceCount = 0;
+      while (spaceCount < 2) {
+        if (pgn.charAt(pawnMateIdx) === ' ') {
+          spaceCount++;
+        }
+        pawnMateIdx--;
+      }
+      const exp = /\.\.\.\s[a-h]/;
+      const pawnMateSubStr = pgn.substring(pawnMateIdx + 1, endIdx);
+      if (exp.test(pawnMateSubStr)) {
+        // Mate with pawn
+        achievementsHit.push(achievements[15].name);
+        score += achievements[15].points;
       }
       // check for en passant mate
       // check for checkmate in (<10, <5, 2)
@@ -512,14 +637,48 @@ function setResult(pgn, color) {
 }
 
 function gameMoves(pgn, color) {
+  let numMoves = 0;
+  for (let i = pgn.length - 1; i > 0; i--) {
+    if (pgn.charAt(i) === '.' && /[0-9]/.test(pgn.charAt(i-1))) {
+      let j = i;
+      while (pgn.charAt(j) !== ' ') {
+        j--;
+      }
+      numMoves = parseInt(pgn.substring(j,i));
+    }
+  }
+
   // determine check achievement
   if (color === "White") {
+    let kingMoves = 0;
+    const exp = /[0-9]+\.\sO-O/i;
+    if (exp.test(pgn)) {
+      kingMoves++;
+    }
+    const exp = /[0-9]+\.\sK/i;
+    kingMoves += (pgn.match(exp) || []).length
+    if (kingMoves > 20) {
+      // Move king >20 times achievement
+      score += achievements[35].points;
+    }
   } else {
+    let kingMoves = 0;
+    if (pgn.includes("... O-O")) {
+      kingMoves++;
+    }
+    const exp = /[0-9]+\.\.\.\sK/i;
+    kingMoves += (pgn.match(exp) || []).length
+    if (kingMoves > 20) {
+      // Move king >20 times achievement
+      score += achievements[35].points;
+    }
   }
   // capture <4 pawns
   // capture all pawns
   // capture all knights and bishops without losing any
   // move king <20 times
+  
+
   // capture all pawns without losing any
 }
 
