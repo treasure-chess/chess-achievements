@@ -509,11 +509,37 @@ function gameMoves(pgn, color) {
     achieved.push(achievements[35]);
   }
 
-  // capture <4 pawns
-  // capture all pawns
-  // capture all knights and bishops without losing any
-  // move king <20 times
+  const gameAscii = game.ascii();
+  let whitePawnCount = 0;
+  let blackPawnCount = 0;
 
+  for (let i=0; i<gameAscii.length; i++) {
+    if (gameAscii.charAt(i) === 'P') {
+      whitePawnCount++;
+    } else if (gameAscii.charAt(i) === 'p') {
+      blackPawnCount++;
+    }
+  }
+
+  if (color === 'White') {
+    if (blackPawnCount === 0) {
+      // Capture all pawns achievement
+      achieved.push(achievements[33]);
+    } else if (blackPawnCount >= 5) {
+      // Capture <4 pawns achievement
+      achieved.push(achievements[32]);
+    }
+  } else {
+    if (whitePawnCount === 0) {
+      // Capture all pawns achievement
+      achieved.push(achievements[33]);
+    } else if (whitePawnCount >= 5) {
+      // Capture <4 pawns achievement
+      achieved.push(achievements[32]);
+    }
+  }
+
+  // capture all knights and bishops without losing any
 
   // capture all pawns without losing any
 }
@@ -550,12 +576,11 @@ function specialMoves(pgn, color) {
 }
 
 function displayResult(pgn, color) {
-    // const chessGame = new Chess();
 
-    // chessGame.load_pgn(pgn);
+    const game = new Chess();
+    game.load_pgn(pgn);
 
-    // console.log("logging moves verbose:");
-    // console.log(chessGame.history({verbose:true}));
+    console.log(game.ascii());
 
     setResult(pgn, color);
     gameMoves(pgn, color);
