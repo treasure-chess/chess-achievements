@@ -189,6 +189,7 @@ const achievements = [
   },
   {
     // index 31
+    // done
     name: "Put opponent in check",
     points: 1,
   },
@@ -473,46 +474,41 @@ function gameMoves(pgn, color) {
   game.load_pgn(pgn);
   const moves = game.history({verbose: true});
 
+  let checkFlag = false;
+  let kingMoves = 0;
+
   for (let i=0; i<moves.length; i++) {
     if (color === 'White') {
-      if (moves[i].color === 'w' && moves[i].san.includes('+')) {
-        // Put opponent in check achievement
-        achieved.push(achievements[31]);
-        break;
+      if (moves[i].color === 'w') {
+        if (moves[i].san.includes('+')) {
+          checkFlag = true;
+        }
+        if (moves[i].piece === 'k') {
+          kingMoves++;
+        }
       }
     } else {
-      if (moves[i].color === 'b' && moves[i].san.includes('+')) {
-        // Put opponent in check achievement
-        achieved.push(achievements[31]);
-        break;
+      if (moves[i].color === 'b') {
+        if (moves[i].san.includes('+')) {
+          checkFlag = true;
+        }
+        if (moves[i].piece === 'k') {
+          kingMoves++;
+        }
       }
     }
   }
 
-  if (color === "White") {
-    let kingMoves = 0;
-    var exp = /[0-9]+\.\sO-O/i;
-    if (exp.test(pgn)) {
-      kingMoves++;
-    }
-    exp = /[0-9]+\.\sK/i;
-    kingMoves += (pgn.match(exp) || []).length
-    if (kingMoves > 20) {
-      // Move king >20 times achievement
-      achieved.push(achievements[35]);
-    }
-  } else {
-    let kingMoves = 0;
-    if (pgn.includes("... O-O")) {
-      kingMoves++;
-    }
-    exp = /[0-9]+\.\.\.\sK/i;
-    kingMoves += (pgn.match(exp) || []).length
-    if (kingMoves > 20) {
-      // Move king >20 times achievement
-      achieved.push(achievements[35]);
-    }
+  if (checkFlag) {
+    // Put opponent in check achievement
+    achieved.push(achievements[31]);
   }
+
+  if (kingMoves > 20) {
+    // Move king > 20 times achievement
+    achieved.push(achievements[35]);
+  }
+
   // capture <4 pawns
   // capture all pawns
   // capture all knights and bishops without losing any
