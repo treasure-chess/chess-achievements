@@ -1,5 +1,4 @@
 function achievementsCalculator(pgn, color) {
-
   return displayResult(pgn, color);
 }
 
@@ -341,6 +340,7 @@ function setResult(pgn, color) {
       while (spaceCount < 2) {
         if (pgn.charAt(pawnMateIdx) === ' ') {
           spaceCount++;
+
         }
         pawnMateIdx--;
       }
@@ -532,22 +532,23 @@ function specialMoves(pgn, color) {
   }
 }
 
-function displayScore(pgn, color) {
-  setResult(pgn, color);
-  gameMoves(pgn, color);
-  specialMoves(pgn, color);
+function displayResult(pgn, color) {
+    setResult(pgn, color);
+    gameMoves(pgn, color);
+    specialMoves(pgn, color);
 
-  var numA = (achieved.length < 3) ? achieved.length : 3;
-  var score = 0;
-  for (var i = 0; i < numA; i++) {
-     score += achieved[i].points;
-  }
 
-  //console.log("score = " + score)
-  //console.log({"score":score, "achievements": achieved});
-  return {"score":score, "achievements": achieved};
+    var numA = (achieved.length < 3) ? achieved.length : 3;
+    var score = 0;
+    for (var i = 0; i < numA; i++) {
+       score += achieved[i].points;
+    }
+
+    //console.log("score = " + score)
+    //console.log({"score":score, "achievements": achieved});
+    return {"score":score, "achievements": achieved};
 }
 
 //===== =====//
 //and then export functions here to be used as a library elsewhere.
-module.exports.achievements = achievements;
+module.exports = achievementsCalculator
