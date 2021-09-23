@@ -151,10 +151,10 @@ hxg6 {[%timestamp 1]} 30... Qa1# {[%timestamp 26]} 0-1`;
 console.log("Result: \n")
 console.log(result);
 
- result = achievementLibrary(examplePgn3, 'White');
-console.log("Result: \n")
-console.log(result);
-
- result = achievementLibrary(examplePgn4, 'Black');
-console.log("Result: \n")
-console.log(result);
+//  result = achievementLibrary(examplePgn3, 'White');
+// console.log("Result: \n")
+// console.log(result);
+//
+//  result = achievementLibrary(examplePgn4, 'Black');
+// console.log("Result: \n")
+// console.log(result);

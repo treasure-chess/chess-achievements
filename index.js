@@ -1,3 +1,5 @@
+const { Chess } = require("chess.js");
+
 function achievementsCalculator(pgn, color) {
   return displayResult(pgn, color);
 }
@@ -533,6 +535,13 @@ function specialMoves(pgn, color) {
 }
 
 function displayResult(pgn, color) {
+    const chessGame = new Chess();
+
+    chessGame.load_pgn(pgn);
+
+    console.log("logging moves verbose:");
+    console.log(chessGame.history({verbose:true}));
+
     setResult(pgn, color);
     gameMoves(pgn, color);
     specialMoves(pgn, color);
