@@ -162,16 +162,19 @@ const achievements = [
   },
   {
     // index 26
-    name: "En Passent",
+    // done
+    name: "En Passant",
     points: 2,
   },
   {
     // index 27
-    name: "Checkmate with an En Passent",
+    // done
+    name: "Checkmate with an En Passant",
     points: 5,
   },
   {
     // index 28
+    // done
     name: "Draw when opponent has a queen, without one",
     points: 2,
   },
@@ -207,6 +210,7 @@ const achievements = [
   },
   {
     // index 34
+    // done
     name: "Capture all knights and bishops without losing any.",
     points: 4,
   },
@@ -225,7 +229,6 @@ const achievements = [
   },
 ];
 
-let score = 0;
 let achieved = [];
 
 function setResult(pgn, color) {
@@ -478,6 +481,8 @@ function gameMoves(pgn, color) {
   const moves = game.history({verbose: true});
 
   let checkFlag = false;
+  let enPassantFlag = false;
+  let enPassantMateFlag = false;
   let kingMoves = 0;
 
   for (let i=0; i<moves.length; i++) {
@@ -485,6 +490,12 @@ function gameMoves(pgn, color) {
       if (moves[i].color === 'w') {
         if (moves[i].san.includes('+')) {
           checkFlag = true;
+        }
+        if (moves[i].flags === 'e') {
+          enPassantFlag = true;
+          if (moves[i].san.includes('#')) {
+            enPassantMateFlag = true;
+          }
         }
         if (moves[i].piece === 'k') {
           kingMoves++;
@@ -494,6 +505,12 @@ function gameMoves(pgn, color) {
       if (moves[i].color === 'b') {
         if (moves[i].san.includes('+')) {
           checkFlag = true;
+        }
+        if (moves[i].flags === 'e') {
+          enPassantFlag = true;
+          if (moves[i].san.includes('#')) {
+            enPassantMateFlag = true;
+          }
         }
         if (moves[i].piece === 'k') {
           kingMoves++;
@@ -507,6 +524,16 @@ function gameMoves(pgn, color) {
     achieved.push(achievements[31]);
   }
 
+  if (enPassantFlag) {
+    // En passant achievement
+    achieved.push(achievements[26]);
+  }
+
+  if (enPassantMateFlag) {
+    // Checkmate with en passant achievement
+    achieved.push(achievements[27]);
+  }
+
   if (kingMoves > 20) {
     // Move king > 20 times achievement
     achieved.push(achievements[35]);
@@ -514,13 +541,31 @@ function gameMoves(pgn, color) {
 
   const gameAscii = game.ascii();
   let whitePawnCount = 0;
+  let whiteBishopCount = 0;
+  let whiteKnightCount = 0;
+  let whiteQueenCount = 0;
   let blackPawnCount = 0;
+  let blackBishopCount = 0;
+  let blackKnightCount = 0;
+  let blackQueenCount = 0;
 
   for (let i=0; i<gameAscii.length; i++) {
     if (gameAscii.charAt(i) === 'P') {
       whitePawnCount++;
+    } else if (gameAscii.charAt(i) === 'B') {
+      whiteBishopCount++;
+    } else if (gameAscii.charAt(i) === 'N') {
+      whiteKnightCount++;
+    } else if (gameAscii.charAt(i) === 'Q') {
+      whiteQueenCount++;
     } else if (gameAscii.charAt(i) === 'p') {
       blackPawnCount++;
+    } else if (gameAscii.charAt(i) === 'b') {
+      blackBishopCount++;
+    } else if (gameAscii.charAt(i) === 'n') {
+      blackKnightCount++;
+    } else if (gameAscii.charAt(i) === 'q') {
+      blackQueenCount++;
     }
   }
 
@@ -535,6 +580,14 @@ function gameMoves(pgn, color) {
       // Capture <4 pawns achievement
       achieved.push(achievements[32]);
     }
+    if (whiteKnightCount === 2 && whiteBishopCount === 2 && blackKnightCount === 0 && blackBishopCount === 0) {
+      // Capture all knights and bishops without losing any achievement
+      achieved.push(achievements[34]);
+    }
+    if (pgn.includes('1/2-1/2') && whiteQueenCount === 0 && blackQueenCount > 0) {
+      // Draw when opponent has a queen without one
+      achieved.push(achievements[28]);
+    }
   } else {
     if (whitePawnCount === 0 && blackPawnCount === 8) {
       // Capture all pawns without losing any achievement
@@ -546,11 +599,15 @@ function gameMoves(pgn, color) {
       // Capture <4 pawns achievement
       achieved.push(achievements[32]);
     }
+    if (whiteKnightCount === 0 && whiteBishopCount === 0 && blackKnightCount === 2 && blackBishopCount === 2) {
+      // Capture all knights and bishops without losing any achievement
+      achieved.push(achievements[34]);
+    }
+    if (pgn.includes('1/2-1/2') && whiteQueenCount > 0 && blackQueenCount === 0) {
+      // Draw when opponent has a queen without one
+      achieved.push(achievements[28]);
+    }
   }
-
-  // capture all knights and bishops without losing any
-
-  // capture all pawns without losing any
 }
 
 function specialMoves(pgn, color) {
@@ -589,7 +646,7 @@ function displayResult(pgn, color) {
     const game = new Chess();
     game.load_pgn(pgn);
 
-    console.log(game.ascii());
+    // console.log(game.ascii());
 
     setResult(pgn, color);
     gameMoves(pgn, color);
