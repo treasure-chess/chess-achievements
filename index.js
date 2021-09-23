@@ -5,7 +5,6 @@ function achievementsCalculator(pgn, color) {
 }
 
 //write other functions here
-
 const achievements = [
   {
     // index 0
