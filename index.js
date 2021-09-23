@@ -22,49 +22,49 @@ const achievements = [
   {
     // index 2
     // done
-    name: "Win a game rated 750+",
+    name: "Win a game against opponent rated 750+",
     points: 2,
   },
   {
     // index 3
     // done
-    name: "Play a game rated 750+",
+    name: "Play a game against opponent rated 750+",
     points: 1,
   },
   {
     // index 4
     // done
-    name: "Win a game rated 1500+",
+    name: "Win a game against opponent rated 1500+",
     points: 2,
   },
   {
     // index 5
     // done
-    name: "Play a game rated 1500+",
+    name: "Play a game against opponent rated 1500+",
     points: 1,
   },
   {
     // index 6
     // done
-    name: "Play a game rated 2000+",
+    name: "Play a game against opponent rated 2000+",
     points: 2,
   },
   {
     // index 7
     // done
-    name: "Win a game rated 2000+",
+    name: "Win a game against opponent rated 2000+",
     points: 2,
   },
   {
     // index 8
     // done
-    name: "Play a game rated 2250+",
+    name: "Play a game against opponent rated 2250+",
     points: 3,
   },
   {
     // index 9
     // done
-    name: "Win a game rated 2250+",
+    name: "Win a game against opponent rated 2250+",
     points: 4,
   },
   {
@@ -218,7 +218,7 @@ const achievements = [
     // check if this should be greater than 20 times
     // done
     // index 35
-    name: "Move king <20 times",
+    name: "Move king >20 times",
     points: 1,
   },
   {
@@ -643,8 +643,8 @@ function specialMoves(pgn, color) {
 
 function displayResult(pgn, color) {
 
-    const game = new Chess();
-    game.load_pgn(pgn);
+    // const game = new Chess();
+    // game.load_pgn(pgn);
 
     // console.log(game.ascii());
 

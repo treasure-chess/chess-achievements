@@ -138,27 +138,54 @@ Qf2 {[%timestamp 75]} 23... Be5 {[%timestamp 17]} 24. Rh3 {[%timestamp 150]}
 {[%timestamp 13]} 29. Qb8+ {[%timestamp 141]} 29... Rxb8 {[%timestamp 38]} 30.
 hxg6 {[%timestamp 1]} 30... Qa1# {[%timestamp 26]} 0-1`;
 
-// console.log(examplePgn1);
-// console.log(examplePgn2);
-// console.log(examplePgn3);
-// console.log(examplePgn4);
+const examplePgn5 = `[Event "Live Chess"]
+[Site "Chess.com"]
+[Date "2021.08.31"]
+[Round "?"]
+[White "Eternauta2400"]
+[Black "ChadBiryani"]
+[Result "1/2-1/2"]
+[ECO "B01"]
+[WhiteElo "2537"]
+[BlackElo "2357"]
+[TimeControl "180+1"]
+[EndTime "10:40:55 PDT"]
+[Termination "Game drawn by repetition"]
 
-//var result = achievementLibrary(examplePgn1, 'White');
-//console.log("Result: \n")
-//console.log(result);
+1. e4 d5 2. exd5 Qxd5 3. Nf3 Bg4 4. Be2 Nf6 5. h3 Bh5 6. Nc3 Qd8 7. d3 e6 8. Bf4
+c6 9. Qd2 Bd6 10. O-O-O O-O 11. g4 Bg6 12. Ne5 a5 13. h4 Bxe5 14. Bxe5 h6 15. h5
+Bh7 16. g5 Nfd7 17. Bd6 Qxg5 18. Bxf8 Nxf8 19. f4 Qe7 20. Rdg1 Kh8 21. Qe3 Nbd7
+22. Bg4 Nf6 23. Bf3 N8d7 24. Rg2 Rg8 25. Rhg1 b5 26. Ne4 Nd5 27. Qd4 f6 28. Nc3
+c5 29. Nxd5 exd5 30. Qxd5 c4 31. Be4 cxd3 32. Bxd3 Nb6 33. Qf3 Bxd3 34. Qxd3 Nc4
+35. Re2 Qc5 36. Rge1 Qxh5 37. b3 Na3 38. Kb2 b4 39. c4 bxc3+ 40. Qxc3 Nb5 41.
+Qxa5 Qc5 42. Rc2 Qd5 43. Rd2 Qc5 44. Rc1 Qe3 45. Rdc2 Nd4 46. Rc8 Qe2+ 47. Ka3
+Rxc8 48. Rxc8+ Kh7 49. Rc4 Nc2+ 50. Ka4 Ne3 51. Rc5 Qxa2+ 52. Kb5 Qxb3+ 53. Kc6
+Qe6+ 54. Kb7 Qd7+ 55. Rc7 Qd5+ 56. Qxd5 Nxd5 57. Rc4 f5 58. Kc6 Ne3 59. Ra4 Kg6
+60. Kc5 h5 61. Kd4 Ng4 62. Kd3 h4 63. Ke2 Kh5 64. Kf3 h3 65. Ra8 h2 66. Rh8+ Kg6
+67. Kg3 Kf6 68. Kg2 Ke6 69. Re8+ Kd5 70. Re7 g6 71. Kh1 Kd4 72. Re6 Kd5 73. Re8
+Kd4 74. Kg2 Kd5 75. Re1 Kd4 76. Re6 Kd5 77. Rxg6 Ke4 78. Rg8 Kxf4 79. Rh8 Ke3
+80. Kg3 Nf2 81. Rxh2 Ne4+ 82. Kg2 f4 83. Rh3+ Kd4 84. Rh5 Ke3 85. Rf5 Nd2 86.
+Re5+ Ne4 87. Kf1 f3 88. Re8 Kf4 89. Rf8+ Ke3 90. Re8 Kf4 91. Kg1 Ke3 92. Kf1
+1/2-1/2`
 
-// const result1 = achievementLibrary(examplePgn2, 'White');
-// console.log("Result: \n")
-// console.log(result1);
+const examplePgn6 = `[Event "Live Chess"]
+[Site "Chess.com"]
+[Date "2020.04.08"]
+[Round "?"]
+[White "BubonicPawn"]
+[Black "ledorio"]
+[Result "1-0"]
+[ECO "A02"]
+[WhiteElo "1776"]
+[BlackElo "1721"]
+[TimeControl "180"]
+[EndTime "17:23:33 PDT"]
+[Termination "BubonicPawn won by checkmate"]
 
-const result2 = achievementLibrary(examplePgn2, 'White');
+1. f4 e5 2. fxe5 Qh4+ 3. g3 Qe4 4. Nf3 g5 5. Bg2 g4 6. Nh4 Qxe5 7. d4 Qe6 8. Bf4
+Ne7 9. Nc3 Ng6 10. Bxc7 Nxh4 11. Bd5 Nf3+ 12. Kf2 Qf6 13. exf3 d6 14. Ne4 Qf5
+15. Re1 Qxf3+ 16. Qxf3 gxf3 17. Nf6# 1-0`
+
+const result = achievementLibrary(examplePgn6, 'White');
 console.log("Result: \n");
-console.log(result2);
-
-//  result = achievementLibrary(examplePgn3, 'White');
-// console.log("Result: \n")
-// console.log(result);
-//
-//  result = achievementLibrary(examplePgn4, 'Black');
-// console.log("Result: \n")
-// console.log(result);
+console.log(result);
