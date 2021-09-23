@@ -4,68 +4,56 @@ function achievementsCalculator(pgn, color) {
   return displayResult(pgn, color);
 }
 
-//write other functions here
-
 const achievements = [
   {
     // index 0
-    // done
     name: "Win a game",
-    points: 1,
+    points: 2,
   },
   {
     // index 1
-    // done
-    name: "Finish a game",
+    name: "Play a game",
     points: 1,
   },
   {
     // index 2
-    // done
     name: "Win a game against opponent rated 750+",
-    points: 2,
+    points: 3,
   },
   {
     // index 3
-    // done
     name: "Play a game against opponent rated 750+",
-    points: 1,
+    points: 2,
   },
   {
     // index 4
-    // done
     name: "Win a game against opponent rated 1500+",
-    points: 2,
+    points: 4,
   },
   {
     // index 5
-    // done
     name: "Play a game against opponent rated 1500+",
-    points: 1,
+    points: 2,
   },
   {
     // index 6
-    // done
     name: "Play a game against opponent rated 2000+",
-    points: 2,
+    points: 3,
   },
   {
     // index 7
-    // done
     name: "Win a game against opponent rated 2000+",
-    points: 2,
+    points: 5,
   },
   {
     // index 8
-    // done
     name: "Play a game against opponent rated 2250+",
     points: 3,
   },
   {
     // index 9
-    // done
     name: "Win a game against opponent rated 2250+",
-    points: 4,
+    points: 6,
   },
   {
     // index 10
@@ -75,7 +63,7 @@ const achievements = [
   {
     // index 11
     name: "Defeat a NM",
-    points: 4,
+    points: 3,
   },
   {
     // index 12
@@ -84,148 +72,123 @@ const achievements = [
   },
   {
     // index 13
-    // done
     name: "Mate with a bishop",
-    points: 2,
+    points: 4,
   },
   {
     // index 14
-    // done
     name: "Mate with a knight",
-    points: 3,
+    points: 4,
   },
   {
     // index 15
-    // done
     name: "Mate with a pawn",
-    points: 5,
+    points: 4,
   },
   {
     // index 16
-    // done
     name: "Complete a game with more than 100 moves",
-    points: 1,
-  },
-  {
-    // index 17
-    // done
-    name: "Complete a game with more than 150 moves",
     points: 2,
   },
   {
-    // index 18
-    // done
-    name: "Complete a game with more than 250 moves",
+    // index 17
+    name: "Complete a game with more than 150 moves",
     points: 3,
   },
   {
+    // index 18
+    name: "Complete a game with more than 250 moves",
+    points: 6,
+  },
+  {
     // index 19
-    // done
     name: "Win with checkmate in less than 10 moves",
     points: 2,
   },
   {
     // index 20
-    // done
     name: "Win with checkmate in <5 moves",
     points: 3,
   },
   {
     // index 21
-    // done
     name: "Win with checkmate in 2 moves",
     points: 5,
   },
   {
     // index 22
-    // done
     name: "Draw with a higher rated player",
     points: 2,
   },
   {
     // index 23
-    // done
     name: "Queen side castle",
     points: 1,
   },
   {
     // index 24
-    // done
     name: "Under-promote to a knight",
-    points: 1,
+    points: 3,
   },
   {
     // index 25
-    // done
     name: "Under-promote to a bishop",
-    points: 1,
+    points: 5,
   },
   {
     // index 26
-    // done
     name: "En Passant",
     points: 2,
   },
   {
     // index 27
-    // done
     name: "Checkmate with an En Passant",
-    points: 5,
+    points: 10,
   },
   {
     // index 28
-    // done
     name: "Draw when opponent has a queen, without one",
-    points: 2,
+    points: 4,
   },
   {
     // index 29
-    // done
     name: "Draw by repetition",
     points: 1,
   },
   {
     // index 30
-    // done
-    name: "Defeat a higher ranked player",
-    points: 1,
+    name: "Defeat a higher rated player",
+    points: 3,
   },
   {
     // index 31
-    // done
     name: "Put opponent in check",
     points: 1,
   },
   {
     // index 32
-    // done
     name: "Capture <4 pawns",
     points: 1,
   },
   {
     // index 33
-    // done
     name: "Capture all pawns",
     points: 2,
   },
   {
     // index 34
-    // done
     name: "Capture all knights and bishops without losing any.",
-    points: 4,
+    points: 5,
   },
   {
-    // check if this should be greater than 20 times
-    // done
     // index 35
     name: "Move king >20 times",
     points: 1,
   },
   {
     // index 36
-    // done
     name: "Capture all pawns without losing any",
-    points: 4,
+    points: 5,
   },
 ];
 
@@ -359,9 +322,6 @@ function setResult(pgn, color) {
         // Mate with pawn
         achieved.push(achievements[15]);
       }
-
-      // check for en passant mate
-      // check for checkmate in (<10, <5, 2)
     }
   } else if (result === "1/2-1/2") {
     if ((color === 'White' && blackElo > whiteElo) || (color === 'Black' && whiteElo > blackElo)) {
@@ -372,7 +332,6 @@ function setResult(pgn, color) {
       // Draw by repetition achievement
       achieved.push(achievements[29]);
     }
-    // determine if draw when opponent has a queen, without one achievement
   } else if (result === "0-1" && color === "Black") {
     if (whiteElo > blackElo) {
       // Defeat a higher rated player achievement
@@ -422,8 +381,6 @@ function setResult(pgn, color) {
         // Mate with pawn
         achieved.push(achievements[15]);
       }
-      // check for en passant mate
-      // check for checkmate in (<10, <5, 2)
     }
   } else {
     if (color === "White") {
@@ -642,16 +599,9 @@ function specialMoves(pgn, color) {
 }
 
 function displayResult(pgn, color) {
-
-    // const game = new Chess();
-    // game.load_pgn(pgn);
-
-    // console.log(game.ascii());
-
     setResult(pgn, color);
     gameMoves(pgn, color);
     specialMoves(pgn, color);
-
 
     var numA = (achieved.length < 3) ? achieved.length : 3;
     var score = 0;
@@ -659,8 +609,6 @@ function displayResult(pgn, color) {
        score += achieved[i].points;
     }
 
-    //console.log("score = " + score)
-    //console.log({"score":score, "achievements": achieved});
     return {"score":score, "achievements": achieved};
 }
 
