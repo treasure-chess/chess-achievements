@@ -469,7 +469,26 @@ function gameMoves(pgn, color) {
     }
   }
 
-  // determine check achievement
+  const game = new Chess();
+  game.load_pgn(pgn);
+  const moves = game.history({verbose: true});
+
+  for (let i=0; i<moves.length; i++) {
+    if (color === 'White') {
+      if (moves[i].color === 'w' && moves[i].san.includes('+')) {
+        // Put opponent in check achievement
+        achieved.push(achievements[31]);
+        break;
+      }
+    } else {
+      if (moves[i].color === 'b' && moves[i].san.includes('+')) {
+        // Put opponent in check achievement
+        achieved.push(achievements[31]);
+        break;
+      }
+    }
+  }
+
   if (color === "White") {
     let kingMoves = 0;
     var exp = /[0-9]+\.\sO-O/i;
@@ -480,7 +499,7 @@ function gameMoves(pgn, color) {
     kingMoves += (pgn.match(exp) || []).length
     if (kingMoves > 20) {
       // Move king >20 times achievement
-      score += achievements[35].points;
+      achieved.push(achievements[35]);
     }
   } else {
     let kingMoves = 0;
@@ -491,7 +510,7 @@ function gameMoves(pgn, color) {
     kingMoves += (pgn.match(exp) || []).length
     if (kingMoves > 20) {
       // Move king >20 times achievement
-      score += achievements[35].points;
+      achieved.push(achievements[35]);
     }
   }
   // capture <4 pawns
@@ -535,12 +554,12 @@ function specialMoves(pgn, color) {
 }
 
 function displayResult(pgn, color) {
-    const chessGame = new Chess();
+    // const chessGame = new Chess();
 
-    chessGame.load_pgn(pgn);
+    // chessGame.load_pgn(pgn);
 
-    console.log("logging moves verbose:");
-    console.log(chessGame.history({verbose:true}));
+    // console.log("logging moves verbose:");
+    // console.log(chessGame.history({verbose:true}));
 
     setResult(pgn, color);
     gameMoves(pgn, color);
