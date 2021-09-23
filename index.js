@@ -321,7 +321,7 @@ function setResult(pgn, color) {
       // Win a game rated 2200+ achievement
       achieved.push(achievements[9]);
     }
-    
+
     if (pgn.includes("won by checkmate")) {
       let mateIdx = pgn.indexOf("#");
       while (pgn.charAt(mateIdx) !== " ") {
@@ -344,7 +344,7 @@ function setResult(pgn, color) {
         }
         pawnMateIdx--;
       }
-      const exp = /[0-9]+\.\s[a-h]/;
+      exp = /[0-9]+\.\s[a-h]/;
       const pawnMateSubStr = pgn.substring(pawnMateIdx + 1, endIdx);
       if (exp.test(pawnMateSubStr)) {
         // Mate with pawn
@@ -407,7 +407,7 @@ function setResult(pgn, color) {
         }
         pawnMateIdx--;
       }
-      const exp = /\.\.\.\s[a-h]/;
+      exp = /\.\.\.\s[a-h]/;
       const pawnMateSubStr = pgn.substring(pawnMateIdx + 1, endIdx);
       if (exp.test(pawnMateSubStr)) {
         // Mate with pawn
@@ -470,11 +470,11 @@ function gameMoves(pgn, color) {
   // determine check achievement
   if (color === "White") {
     let kingMoves = 0;
-    const exp = /[0-9]+\.\sO-O/i;
+    var exp = /[0-9]+\.\sO-O/i;
     if (exp.test(pgn)) {
       kingMoves++;
     }
-    const exp = /[0-9]+\.\sK/i;
+    exp = /[0-9]+\.\sK/i;
     kingMoves += (pgn.match(exp) || []).length
     if (kingMoves > 20) {
       // Move king >20 times achievement
@@ -485,7 +485,7 @@ function gameMoves(pgn, color) {
     if (pgn.includes("... O-O")) {
       kingMoves++;
     }
-    const exp = /[0-9]+\.\.\.\sK/i;
+    exp = /[0-9]+\.\.\.\sK/i;
     kingMoves += (pgn.match(exp) || []).length
     if (kingMoves > 20) {
       // Move king >20 times achievement
@@ -496,14 +496,14 @@ function gameMoves(pgn, color) {
   // capture all pawns
   // capture all knights and bishops without losing any
   // move king <20 times
-  
+
 
   // capture all pawns without losing any
 }
 
 function specialMoves(pgn, color) {
   if (color === "White") {
-    const exp = /[0-9]+\.\sO-O-O/i;
+    exp = /[0-9]+\.\sO-O-O/i;
     if (exp.test(pgn) === true) {
       // Queenside castle achievement
       achieved.push(achievements[23]);
