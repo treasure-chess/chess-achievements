@@ -1,9 +1,13 @@
 # chess-achievements
-Calculate achievements for games of chess
+Calculate achievements for games of chess.
 
+## install this package
+```
+npm i @treasure-chess/chess-achievements
+```
 
-## setup
-Run `npm i` to install dependencies (there arent any)
+## Dev setup
+Run `npm i` to install dependencies
 
 Run `npm test` to run the test script
 
