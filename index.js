@@ -195,11 +195,13 @@ const achievements = [
   },
   {
     // index 32
+    // done
     name: "Capture <4 pawns",
     points: 1,
   },
   {
     // index 33
+    // done
     name: "Capture all pawns",
     points: 2,
   },
@@ -217,6 +219,7 @@ const achievements = [
   },
   {
     // index 36
+    // done
     name: "Capture all pawns without losing any",
     points: 4,
   },
@@ -522,7 +525,10 @@ function gameMoves(pgn, color) {
   }
 
   if (color === 'White') {
-    if (blackPawnCount === 0) {
+    if (blackPawnCount === 0 && whitePawnCount === 8) {
+      // Capture all pawns without losing any achievement
+      achieved.push(achievements[36]);
+    } else if (blackPawnCount === 0) {
       // Capture all pawns achievement
       achieved.push(achievements[33]);
     } else if (blackPawnCount >= 5) {
@@ -530,7 +536,10 @@ function gameMoves(pgn, color) {
       achieved.push(achievements[32]);
     }
   } else {
-    if (whitePawnCount === 0) {
+    if (whitePawnCount === 0 && blackPawnCount === 8) {
+      // Capture all pawns without losing any achievement
+      achieved.push(achievements[36]);
+    } else if (whitePawnCount === 0) {
       // Capture all pawns achievement
       achieved.push(achievements[33]);
     } else if (whitePawnCount >= 5) {
