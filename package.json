@@ -1,6 +1,6 @@
 {
   "name": "@treasure-chess/chess-achievements",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Calculate chess achievements ",
   "main": "index.js",
   "scripts": {
@@ -14,7 +14,7 @@
     "chess",
     "achievement"
   ],
-  "author": "Joseph Schiarizzi",
+  "author": "Treasure Chess Community <maintainers@niftychess.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/TreasureChess/chess-achievements/issues"
