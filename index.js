@@ -202,15 +202,15 @@ function setResult(pgn, color) {
       break;
     }
   }
+  const game = new Chess();
+  game.load_pgn(pgn);
+  const moves = game.history({verbose: true});
+
   let numMoves = 0;
-  for (let i = pgn.length - 1; i > 0; i--) {
-    if (pgn.charAt(i) === '.' && /[0-9]/.test(pgn.charAt(i-1))) {
-      let j = i;
-      while (pgn.charAt(j) !== ' ') {
-        j--;
-      }
-      numMoves = parseInt(pgn.substring(j,i));
-    }
+  if (moves[moves.length - 1].color === 'w') {
+    numMoves = (moves.length / 2) + 0.5;
+  } else {
+    numMoves = moves.length / 2;
   }
 
   if (numMoves > 250) {
@@ -457,20 +457,16 @@ function setResult(pgn, color) {
 }
 
 function gameMoves(pgn, color) {
-  let numMoves = 0;
-  for (let i = pgn.length - 1; i > 0; i--) {
-    if (pgn.charAt(i) === '.' && /[0-9]/.test(pgn.charAt(i-1))) {
-      let j = i;
-      while (pgn.charAt(j) !== ' ') {
-        j--;
-      }
-      numMoves = parseInt(pgn.substring(j,i));
-    }
-  }
-
   const game = new Chess();
   game.load_pgn(pgn);
   const moves = game.history({verbose: true});
+
+  let numMoves = 0;
+  if (moves[moves.length - 1].color === 'w') {
+    numMoves = (moves.length / 2) + 0.5;
+  } else {
+    numMoves = moves.length / 2;
+  }
 
   let checkFlag = false;
   let enPassantFlag = false;
@@ -638,7 +634,7 @@ function displayResult(pgn, color) {
     gameMoves(pgn, color);
     specialMoves(pgn, color);
 
-    var numA = (achieved.length < 3) ? achieved.length : 3;
+    var numA = achieved.length;
     var score = 0;
     for (var i = 0; i < numA; i++) {
        score += achieved[i].points;

@@ -265,6 +265,204 @@ Qb6 16. Nd4 Bxd4 17. exd4 Nf5 18. Qc1 Re8 19. c4 dxc4 20. Qc3 e5 21. dxe5 Qc5
 22. e6 Rxe6+ 23. Kd1 Nd4 24. Re1 Rxe1+ 25. Kxe1 Qe5+ 26. Kd1 Qe2+ 27. Kc1 Qe1#
 0-1`
 
-const result = achievementLibrary(examplePgn10, 'Black');
+const examplePgn11 = `[Event "Live Chess"]
+[Site "Chess.com"]
+[Date "2018.10.08"]
+[Round "?"]
+[White "riapia2"]
+[Black "ChadBiryani"]
+[Result "0-1"]
+[ECO "C44"]
+[WhiteElo "642"]
+[BlackElo "2158"]
+[TimeControl "300"]
+[EndTime "20:03:57 PDT"]
+[Termination "ChadBiryani won on time"]
+
+1. e4 e5 2. Nf3 Nc6 3. Be2 Nf6 4. d3 Bc5 5. Nc3 d6 6. Nd5 Nxd5 7. exd5 Ne7 8.
+Be3 Bxe3 9. fxe3 Nxd5 10. d4 exd4 11. exd4 O-O 12. O-O Re8 13. Re1 Bd7 14. Bc4
+Nb6 15. Qe2 Qf6 16. Qd1 Qd8 17. Re2 Nxc4 18. Qe1 Rxe2 19. Qxe2 Qf6 20. Re1 h6
+21. Qxc4 Bg4 22. Ne5 a6 23. Nd7 Bxd7 24. Qxc7 Bc6 25. Rf1 Qe7 26. Qxe7 Rf8 27.
+Rxf7 Rxf7 28. Qe8+ Rf8 29. Qg6 Be4 30. Qxg7+ Kxg7 31. g3 Bxc2 32. g4 Rf1+ 33.
+Kxf1 Kg6 0-1`
+
+const examplePgn12 = `[Event "Live Chess"]
+[Site "Chess.com"]
+[Date "2021.07.27"]
+[Round "?"]
+[White "mortngabriel"]
+[Black "ChadBiryani"]
+[Result "0-1"]
+[ECO "A00"]
+[WhiteElo "2179"]
+[BlackElo "2600"]
+[TimeControl "60"]
+[EndTime "16:24:31 PDT"]
+[Termination "ChadBiryani won by checkmate"]
+
+1. f3 e6 2. g4 Qh4# 0-1`
+
+const examplePgn13 = `[Event "Live Chess"]
+[Site "Chess.com"]
+[Date "2021.07.27"]
+[Round "-"]
+[White "mortngabriel"]
+[Black "ChadBiryani"]
+[Result "0-1"]
+[CurrentPosition "rnb1kb1r/pppn1pp1/6p1/3pp3/1P5q/5P2/P1PPP2P/RNBQKBNR w KQkq -"]
+[Timezone "UTC"]
+[ECO "A00"]
+[ECOUrl "https://www.chess.com/openings/Barnes-Opening-1...d5"]
+[UTCDate "2021.07.27"]
+[UTCTime "23:24:11"]
+[WhiteElo "2181"]
+[BlackElo "2598"]
+[TimeControl "60"]
+[Termination "ChadBiryani won by checkmate"]
+[StartTime "23:24:11"]
+[EndDate "2021.07.27"]
+[EndTime "23:24:21"]
+[Link "https://www.chess.com/game/live/21167382239"]
+
+1. f3 d5 2. g4 $2 $17 {MISTAKE (-3.00)} ({(-0.44) The best move was} 2. f4 Bg4 3.
+Nf3 e6 4. e3 Nf6 5. Be2 Bd6 6. O-O O-O 7. Nc3 c5 8. h3 Bh5 9. d3 Nc6 10. e4 d4
+11. Nb5 Be7 12. e5 Nd5 13. c4 dxc3 14. Nxc3 Bg6) 2... Nf6 $2 $12 {MISTAKE (-1.05)}
+({(-3.00) The best move was} 2... e5 3. Nh3 Nc6 4. e3 Be6 5. Bg2 Qh4+ 6. Nf2 h5
+7. h3 O-O-O 8. d3 d4 9. e4 Nge7 10. O-O Ng6 11. Nd2 Nb4 12. Nc4) 3. g5 $17
+{INACCURACY (-2.01)} ({(-1.05) The best move was} 3. d4 c5 4. e3 Nc6 5. Ne2 e6
+6. Nbc3 Be7 7. Bg2 h6 8. O-O Bd7 9. h3 cxd4 10. exd4 O-O 11. f4 Rc8 12. Kh1 Na5
+13. b3) 3... Nfd7 $12 {INACCURACY (-0.87)} ({(-2.01) The best move was} 3... Nh5
+4. e3 h6 5. g6 fxg6 6. Bd3 Kf7 7. Qe2 e5 8. b3 Nc6 9. Nc3 Be7 10. Qg2 Bf5 11.
+Bxf5 gxf5 12. Bb2) 4. g6 $2 $17 {MISTAKE (-4.43)} ({(-0.87) The best move was} 4. d4
+Nc6 5. Nc3 e5 6. dxe5 d4 7. Nb5 Bc5 8. c3 dxc3 9. f4 cxb2 10. Bxb2 O-O 11. Nf3
+Be3 12. Bc1 Bb6 13. Bg2 Nc5 14. Qxd8 Rxd8) 4... hxg6 5. b3 e5 6. b4 $4 {BLUNDER
+(♚ Mate in 1)} ({(-5.09) The best move was} 6. e3 Nc5 7. Qe2 Nc6 8. Bb2 Bf5 9.
+d3 Qh4+ 10. Qf2 Qxf2+ 11. Kxf2 O-O-O 12. a3 Be7 13. e4 Be6 14. Nd2 Nd4 15. Rc1
+Bh4+ 16. Kg2 dxe4 17. Bxd4 exd4 18. fxe4) 6... Qh4# 0-1`
+
+const examplePgn14 = `[Event "Live Chess"]
+[Site "Chess.com"]
+[Date "2021.07.27"]
+[Round "?"]
+[White "ChadBiryani"]
+[Black "mortngabriel"]
+[Result "1-0"]
+[ECO "B00"]
+[WhiteElo "2599"]
+[BlackElo "2180"]
+[TimeControl "60"]
+[EndTime "16:24:27 PDT"]
+[Termination "ChadBiryani won by checkmate"]
+
+1. e4 f6 2. d4 g5 3. Qh5# 1-0`
+
+const examplePgn15 = `[Event "Belgrade"]
+[Site "Belgrade YUG"]
+[Date "1989.02.17"]
+[Round "?"]
+[White "Ivan Nikolic"]
+[Black "Goran Arsovic"]
+[Result "1/2-1/2"]
+[ECO "E95"]
+[PlyCount "538"]
+[EventDate "1989.??.??"]
+
+1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. Nf3 O-O 6. Be2 Nbd7 7. O-O e5 8. Re1
+Re8 9. Bf1 h6 10. d5 Nh7 11. Rb1 f5 12. Nd2 f4 13. b4 g5 14. Nb3 Bf8 15. Be2
+Ndf6 16. c5 g4 17. cxd6 cxd6 18. a3 Ng5 19. Bf1 Re7 20. Qd3 Rg7 21. Kh1 Qe8 22.
+Nd2 g3 23. fxg3 fxg3 24. Qxg3 Nh3 25. Qf3 Qg6 26. Nc4 Bd7 27. Bd3 Ng5 28. Bxg5
+Qxg5 29. Ne3 Re8 30. Ne2 Be7 31. Rbd1 Rf8 32. Nf5 Ng4 33. Neg3 h5 34. Kg1 h4 35.
+Qxg4 Qxg4 36. Nh6+ Kh7 37. Nxg4 hxg3 38. Ne3 gxh2+ 39. Kxh2 Rh8 40. Rh1 Kg6+ 41.
+Kg1 Rc8 42. Be2 Rc3 43. Rd3 Rc1+ 44. Nf1 Bd8 45. Rh8 Bb6+ 46. Kh2 Rh7+ 47. Rxh7
+Kxh7 48. Nd2 Bg1+ 49. Kh1 Bd4+ 50. Nf1 Bg4 51. Bxg4 Rxf1+ 52. Kh2 Bg1+ 53. Kh3
+Re1 54. Bf5+ Kh6 55. Kg4 Re3 56. Rd1 Bh2 57. Rh1 Rg3+ 58. Kh4 Rxg2 59. Kh3 Rg3+
+60. Kxh2 Rxa3 61. Rg1 Ra6 62. Rg6+ Kh5 63. Kg3 Rb6 64. Rg7 Rxb4 65. Bc8 a5 66.
+Bxb7 a4 67. Bc6 a3 68. Ra7 Rb3+ 69. Kf2 Kg5 70. Ke2 Kf4 71. Ra4 Rh3 72. Kd2 a2
+73. Bb5 Rh1 74. Rxa2 Rh2+ 75. Be2 Kxe4 76. Ra5 Kd4 77. Ke1 Rh1+ 78. Kf2 Rc1 79.
+Bg4 Rc2+ 80. Ke1 e4 81. Be6 Ke5 82. Bg8 Rc8 83. Bf7 Rc7 84. Be6 Rc2 85. Ra8 Rb2
+86. Ra6 Rg2 87. Kd1 Rb2 88. Ra5 Rg2 89. Bd7 Rh2 90. Bc6 Kf4 91. Ra8 e3 92. Re8
+Kf3 93. Rf8+ Ke4 94. Rf6 Kd3 95. Bb5+ Kd4 96. Rf5 Rh1+ 97. Ke2 Rh2+ 98. Kd1 Rh1+
+99. Kc2 Rh2+ 100. Kc1 Rh1+ 101. Kc2 Rh2+ 102. Kd1 Rh1+ 103. Ke2 Rh2+ 104. Kf1
+Rb2 105. Be2 Ke4 106. Rh5 Rb1+ 107. Kg2 Rb2 108. Rh4+ Kxd5 109. Kf3 Kc5 110.
+Kxe3 Rb3+ 111. Bd3 d5 112. Rh8 Ra3 113. Re8 Kd6 114. Kd4 Ra4+ 115. Kc3 Ra3+ 116.
+Kd4 Ra4+ 117. Ke3 Ra3 118. Rh8 Ke5 119. Rh5+ Kd6 120. Rg5 Rb3 121. Kd2 Rb8 122.
+Bf1 Re8 123. Kd3 Re5 124. Rg8 Rh5 125. Bg2 Kc5 126. Rf8 Rh6 127. Bf3 Rd6 128.
+Re8 Rc6 129. Ra8 Rb6 130. Rd8 Rd6 131. Rf8 Ra6 132. Rf5 Rd6 133. Kc3 Rd8 134.
+Rg5 Rd6 135. Rh5 Rd8 136. Rf5 Rd6 137. Rf8 Ra6 138. Re8 Rc6 139. Ra8 Rb6 140.
+Ra5+ Rb5 141. Ra1 Rb8 142. Rd1 Rd8 143. Rd2 Rd7 144. Bg2 Rd8 145. Kd3 Ra8 146.
+Ke3 Re8+ 147. Kd3 Ra8 148. Kc3 Rd8 149. Bf3 Rd7 150. Kd3 Ra7 151. Bg2 Ra8 152.
+Rc2+ Kd6 153. Rc3 Ra2 154. Bf3 Ra8 155. Rb3 Ra5 156. Ke3 Ke5 157. Rd3 Rb5 158.
+Kd2 Rc5 159. Bg2 Ra5 160. Bf3 Rc5 161. Bd1 Rc8 162. Bb3 Rc5 163. Rh3 Kf4 164.
+Kd3 Ke5 165. Rh5+ Kf4 166. Kd4 Rb5 167. Bxd5 Rb4+ 168. Bc4 Ra4 169. Rh7 Kg5 170.
+Rf7 Kg6 171. Rf1 Kg5 172. Kc5 Ra5+ 173. Kc6 Ra4 174. Bd5 Rf4 175. Re1 Rf6+ 176.
+Kc5 Rf5 177. Kd4 Kf6 178. Re6+ Kg5 179. Be4 Rf6 180. Re8 Kf4 181. Rh8 Rd6+ 182.
+Bd5 Rf6 183. Rh1 Kf5 184. Be4+ Ke6 185. Ra1 Kd6 186. Ra5 Re6 187. Bf5 Re1 188.
+Ra6+ Ke7 189. Be4 Rc1 190. Ke5 Rc5+ 191. Bd5 Rc7 192. Rg6 Rd7 193. Rh6 Kd8 194.
+Be6 Rd2 195. Rh7 Ke8 196. Kf6 Kd8 197. Ke5 Rd1 198. Bd5 Ke8 199. Kd6 Kf8 200.
+Rf7+ Ke8 201. Rg7 Rf1 202. Rg8+ Rf8 203. Rg7 Rf6+ 204. Be6 Rf2 205. Bd5 Rf6+
+206. Ke5 Rf1 207. Kd6 Rf6+ 208. Be6 Rf2 209. Ra7 Kf8 210. Rc7 Rd2+ 211. Ke5 Ke8
+212. Kf6 Rf2+ 213. Bf5 Rd2 214. Rc1 Rd6+ 215. Be6 Rd2 216. Rh1 Kd8 217. Rh7 Rd1
+218. Rg7 Rd2 219. Rg8+ Kc7 220. Rc8+ Kb6 221. Ke5 Kb7 222. Rc3 Kb6 223. Bd5 Rh2
+224. Kd6 Rh6+ 225. Be6 Rh5 226. Ra3 Ra5 227. Rg3 Rh5 228. Rg2 Ka5 229. Rg3 Kb6
+230. Rg4 Rb5 231. Bd5 Rc5 232. Rg8 Rc2 233. Rb8+ Ka5 234. Bb3 Rc3 235. Kd5 Rc7
+236. Kd4 Rd7+ 237. Bd5 Re7 238. Rb2 Re8 239. Rb7 Ka6 240. Rb1 Ka5 241. Bc4 Rd8+
+242. Kc3 Rh8 243. Rb5+ Ka4 244. Rb6 Rh3+ 245. Bd3 Rh5 246. Re6 Rg5 247. Rh6 Rc5+
+248. Bc4 Rg5 249. Ra6+ Ra5 250. Rh6 Rg5 251. Rh4 Ka5 252. Rh2 Rg3+ 253. Kd4 Rg5
+254. Bd5 Ka4 255. Kc5 Rg3 256. Ra2+ Ra3 257. Rb2 Rg3 258. Rh2 Rc3+ 259. Bc4 Rg3
+260. Rb2 Rg5+ 261. Bd5 Rg3 262. Rh2 Rc3+ 263. Bc4 Rg3 264. Rh8 Ka3 265. Ra8+ Kb2
+266. Ra2+ Kb1 267. Rf2 Kc1 268. Kd4 Kd1 269. Bd3 Rg7 1/2-1/2`
+
+const examplePgn16 = `[Event "Czech tht Chess Extraliga"]
+[Site "?"]
+[Date "2016.04.15"]
+[Round "?"]
+[White "Danin, Alexandre"]
+[Black "Azarov, Sergei"]
+[Result "1-0"]
+[ECO "C45"]
+[PlyCount "477"]
+[EventDate "2016.??.??"]
+
+1. e4 e5 2. Nf3 Nc6 3. d4 exd4 4. Nxd4 Bc5 5. Nxc6 Qf6 6. Qd2 dxc6 7. Nc3 Bd4 8.
+Bd3 Ne7 9. O-O Ng6 10. Ne2 Bb6 11. Nf4 Ne5 12. Be2 Ng4 13. Nd3 Be6 14. h3 Ne5
+15. Nxe5 Qxe5 16. Qf4 Qc5 17. c3 O-O-O 18. Be3 Qd6 19. Rfd1 Qxf4 20. Bxf4 Rxd1+
+21. Bxd1 Rd8 22. Bg4 Re8 23. Re1 a5 24. Kf1 Bc5 25. Be3 Bf8 26. f3 b5 27. Kf2 a4
+28. Rd1 Bd6 29. Bd4 g6 30. Bxe6+ fxe6 31. e5 Be7 32. Be3 c5 33. f4 c4 34. a3 h5
+35. g3 c5 36. Kf3 Rh8 37. Ke4 Kc7 38. Rg1 Kd7 39. Rg2 Rh7 40. Rd2+ Kc6 41. Rg2
+Kd7 42. Bf2 Rh8 43. g4 hxg4 44. hxg4 Rh3 45. f5 gxf5+ 46. gxf5 exf5+ 47. Kxf5 b4
+48. Bg3 Rh5+ 49. Ke4 Ke6 50. Bf4 Rh3 51. Rg6+ Kf7 52. Ra6 bxc3 53. bxc3 Rxc3 54.
+Kf5 Rf3 55. e6+ Kg7 56. Ra7 Kf8 57. Ke4 Rd3 58. Be5 Bh4 59. Rh7 Bd8 60. Kf5 Rf3+
+61. Kg6 Re3 62. e7+ Ke8 63. exd8=Q+ Kxd8 64. Kf6 c3 65. Ke6 Kc8 66. Rc7+ Kb8 67.
+Rxc5+ Kb7 68. Kd5 c2 69. Bb2 Re2 70. Rc4 Rh2 71. Kc5 Rh6 72. Kd5 Rh5+ 73. Be5
+Rh3 74. Bd6 Rd3+ 75. Ke6 Rd2 76. Bf4 Rf2 77. Bc1 Rg2 78. Ke5 Rh2 79. Rc3 Kb6 80.
+Kd4 Kb5 81. Rc8 Rg2 82. Kc3 Rg6 83. Kb2 Rg2 84. Rb8+ Ka6 85. Rd8 Kb5 86. Rd4 Rh2
+87. Bd2 Kc5 88. Rd8 Rh3 89. Bb4+ Kb5 90. Rd5+ Kb6 91. Rd2 Kb5 92. Kxc2 Rh5 93.
+Rf2 Rg5 94. Bd2 Rc5+ 95. Kb2 Rd5 96. Rg2 Rc5 97. Rg4 Rc4 98. Rg8 Re4 99. Ra8 Rg4
+100. Ra5+ Kb6 101. Bb4 Rg2+ 102. Kc3 Rg3+ 103. Kb2 Rg2+ 104. Kc1 Rg1+ 105. Kd2
+Rg2+ 106. Ke1 Kc6 107. Rxa4 Kb5 108. Ra8 Ra2 109. Rc8 Rg2 110. Kd1 Ka4 111. Ra8+
+Kb3 112. Be7 Rg7 113. Ra7 Rg2 114. Rb7+ Ka4 115. Rb4+ Ka5 116. Bd8+ Ka6 117. Bf6
+Rf2 118. Bc3 Rg2 119. Bd2 Rh2 120. Kc2 Rg2 121. a4 Rh2 122. Rd4 Rg2 123. Kb3 Rg6
+124. Bb4 Rh6 125. Kc4 Rg6 126. Re4 Rh6 127. Bc5 Kb7 128. Kb5 Rg6 129. Re7+ Kb8
+130. Bb6 Rg8 131. Ba7+ Ka8 132. Bc5 Rg6 133. Rd7 Rh6 134. Rg7 Re6 135. a5 Re8
+136. Ka6 Rd8 137. Rf7 Kb8 138. Ba7+ Ka8 139. Bb6 Rc8 140. Be3 Rc6+ 141. Kb5 Rc8
+142. Ra7+ Kb8 143. Rg7 Ka8 144. Bc5 Rb8+ 145. Kc4 Rc8 146. Rd7 Re8 147. Bb6 Rc8+
+148. Kd5 Rg8 149. Kd6 Rg6+ 150. Kc5 Rg5+ 151. Kc6 Rg6+ 152. Kb5 Rg8 153. Rd1 Re8
+154. Rh1 Rg8 155. Rh2 Re8 156. Rh3 Rg8 157. Rh5 Re8 158. Rh2 Rg8 159. Bc5 Rb8+
+160. Kc4 Rg8 161. Bd6 Rc8+ 162. Kd5 Rg8 163. Kc6 Rc8+ 164. Bc7 Rg8 165. a6 Ka7
+166. Rh3 Rf8 167. Rh7 Ka8 168. Rh1 Ka7 169. Rb1 Rg8 170. Rf1 Re8 171. Bb6+ Ka8
+172. Kb5 Rg8 173. Bc5 Rb8+ 174. Kc4 Rg8 175. Rf4 Rh8 176. Rg4 Re8 177. Rg3 Rh8
+178. Rg2 Re8 179. Rg6 Rh8 180. Rf6 Re8 181. Rf5 Rg8 182. Rf4 Rh8 183. Rf3 Rg8
+184. Rf2 Rh8 185. Rf1 Rg8 186. Re1 Rh8 187. Re2 Rg8 188. Re3 Rh8 189. Re4 Rg8
+190. Re5 Rh8 191. Re6 Rg8 192. Re1 Rh8 193. Rd1 Rg8 194. Rd2 Rh8 195. Rd3 Rg8
+196. Rd4 Rh8 197. Rd1 Rg8 198. a7 Rh8 199. Rg1 Re8 200. Kb5 Rh8 201. Rg2 Re8
+202. Bd6 Rc8 203. Kb6 Rh8 204. Kc6 Rc8+ 205. Bc7 Rh8 206. Rf2 Rg8 207. Rh2 Rf8
+208. Rh5 Rg8 209. Rh1 Rf8 210. Rb1 Rf2 211. Bd6 Rc2+ 212. Kd7 Kxa7 213. Bc7 Rg2
+214. Kc8 Rg8+ 215. Bd8 Rg6 216. Rb5 Rh6 217. Bc7 Rc6 218. Ra5+ Ra6 219. Rc5 Rg6
+220. Rc1 Ka6 221. Rb1 Rh6 222. Kd7 Rh3 223. Rb6+ Ka7 224. Rb1 Ka6 225. Kc8 Rh5
+226. Rb8 Rc5 227. Rb2 Rh5 228. Rb8 Rf5 229. Rb6+ Ka7 230. Rc6 Rf8+ 231. Bd8 Rg8
+232. Rc7+ Ka8 233. Rc1 Rg7 234. Bc7 Rg8+ 235. Kd7 Rg7+ 236. Kc6 Rg6+ 237. Bd6
+Rg7 238. Rh1 Rh7 239. Re1 1-0`
+
+const result = achievementLibrary(examplePgn16, 'White');
 console.log("Result: \n");
 console.log(result);
