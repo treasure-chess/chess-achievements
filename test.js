@@ -186,6 +186,85 @@ const examplePgn6 = `[Event "Live Chess"]
 Ne7 9. Nc3 Ng6 10. Bxc7 Nxh4 11. Bd5 Nf3+ 12. Kf2 Qf6 13. exf3 d6 14. Ne4 Qf5
 15. Re1 Qxf3+ 16. Qxf3 gxf3 17. Nf6# 1-0`
 
-const result = achievementLibrary(examplePgn6, 'White');
+const examplePgn7 = `[Event "Live Chess"]
+[Site "Chess.com"]
+[Date "2021.07.28"]
+[Round "?"]
+[White "schimmelreite3"]
+[Black "ChadBiryani"]
+[Result "0-1"]
+[ECO "A02"]
+[WhiteElo "800"]
+[BlackElo "2390"]
+[TimeControl "900+10"]
+[EndTime "16:45:04 PDT"]
+[Termination "ChadBiryani won by checkmate"]
+
+1. g4 d5 2. f4 e6 3. Bh3 c5 4. c3 Nc6 5. Na3 Be7 6. f5 Nf6 7. Nf3 exf5 8. gxf5
+b6 9. Kf2 Bb7 10. d4 O-O 11. Ne5 Rc8 12. Qa4 Ne4+ 13. Kf3 Nxe5+ 14. dxe5 d4 15.
+cxd4 cxd4 16. Qxa7 Qd5 17. Be3 Bh4 18. Kf4 Nf2 19. Qxb7 Qxb7 20. Bxd4 h6 21.
+Rhf1 Rfe8 22. Rxf2 Bxf2 23. Rf1 Bh4 24. f6 g5+ 25. Kf5 Rcd8 26. Nc4 b5 27. Nd6
+Rxd6 28. exd6 Qe4# 0-1`
+
+const examplePgn8 = `[Event "Live Chess"]
+[Site "Chess.com"]
+[Date "2018.10.08"]
+[Round "?"]
+[White "ChadBiryani"]
+[Black "riapia2"]
+[Result "1/2-1/2"]
+[ECO "C40"]
+[WhiteElo "2158"]
+[BlackElo "642"]
+[TimeControl "300"]
+[EndTime "19:56:11 PDT"]
+[Termination "Game drawn by agreement"]
+
+1. e4 e5 2. Nf3 Bd6 3. Nc3 Nf6 4. Bc4 Nc6 5. d4 exd4 6. Nxd4 O-O 7. Nxc6 bxc6 8.
+O-O Bb7 9. Bg5 Nxe4 10. Bxd8 Raxd8 11. Nxe4 Rfe8 12. Nxd6 Re4 1/2-1/2`
+
+const examplePgn9 = `[Event "Monthly Blitz Arena"]
+[Site "https://lichess.org/LY5WQjXL"]
+[Date "2021.01.27"]
+[White "Franck_PIETERS"]
+[Black "EricRosen"]
+[Result "0-1"]
+[UTCDate "2021.01.27"]
+[UTCTime "18:47:14"]
+[WhiteElo "1811"]
+[BlackElo "2477"]
+[WhiteRatingDiff "+0"]
+[BlackRatingDiff "+0"]
+[BlackTitle "IM"]
+[Variant "Standard"]
+[TimeControl "300+0"]
+[ECO "A04"]
+[Opening "Zukertort Opening: The Walrus"]
+[Termination "Normal"]
+[Annotator "lichess.org"]
+
+1. Nf3 e5? { (0.17 → 1.51) Mistake. Nf6 was best. } (1... Nf6 2. c4 c6 3. Nc3 d5 4. e3 e6 5. Be2 Nbd7 6. Qc2) 2. Nxe5 Nc6?! { (1.35 → 2.08) Inaccuracy. Nf6 was best. } (2... Nf6 3. c4 d5 4. cxd5 Qxd5 5. Nf3 c5 6. Nc3 Qd8 7. e4) 3. Nxc6 dxc6 { A04 Zukertort Opening: The Walrus } 4. e3 Nf6 5. b3 Bd6 6. Bb2 h5 7. d4?! { (1.90 → 1.04) Inaccuracy. Na3 was best. } (7. Na3 Ng4 8. Nc4 Nxh2 9. Bxg7 Rh7 10. Be5 Bxe5 11. Nxe5 Bg4 12. Qc1 Qg5 13. Qb2 Nxf1) 7... Qe7 8. Nd2 Bf5 9. Nc4 Bf4? { (1.80 → 3.08) Mistake. Qe4 was best. } (9... Qe4 10. Nxd6+) 10. Be2?! { (3.08 → 2.23) Inaccuracy. Bd3 was best. } (10. Bd3) 10... Bh6 11. Qd2 O-O-O?! { (2.21 → 3.39) Inaccuracy. Qe6 was best. } (11... Qe6 12. Ne5) 12. O-O? { (3.39 → 1.87) Mistake. Qa5 was best. } (12. Qa5 Be6) 12... Kb8 13. a4 Ne4 14. Qa5 Bc8?! { (1.81 → 2.98) Inaccuracy. g6 was best. } (14... g6 15. Ba3 Qe8 16. Bd3 Rd5 17. Qe1 Ng5 18. Bb2 h4 19. h3 Bg7 20. Qe2 c5 21. dxc5) 15. Ba3? { (2.98 → 1.43) Mistake. Qe5 was best. } (15. Qe5) 15... Qh4?! { (1.43 → 2.56) Inaccuracy. Qe6 was best. } (15... Qe6) 16. Ne5 f6?? { (2.43 → 5.05) Blunder. Qf6 was best. } (16... Qf6) 17. Bc5?? { (5.05 → 2.48) Blunder. Ng6 was best. } (17. Ng6 Qg5 18. Qxg5 Bxg5 19. Nxh8 Rxh8 20. f4 Bh6 21. Bxh5 Bf5 22. Bb4 Nd6 23. c4 Bd3) 17... Nxc5 18. Nxc6+?? { (2.64 → -1.15) Blunder. Ng6 was best. } (18. Ng6 Nxb3 19. cxb3 Qe4 20. Nxh8 Rxh8 21. Qc3 g5 22. b4 h4 23. b5 g4 24. Qd3 Qd5) 18... bxc6 19. Qxc5 Bb7 20. a5? { (-0.95 → -2.36) Mistake. Bf3 was best. } (20. Bf3 f5) 20... a6 21. Ra4?! { (-2.12 → -2.85) Inaccuracy. b4 was best. } (21. b4) 21... Rd5? { (-2.85 → -1.39) Mistake. Qg5 was best. } (21... Qg5 22. Qxg5 Bxg5 23. Rb4 Ka7 24. f4 Bh6 25. Rc4 h4 26. Bf3 g5 27. g3 Bf8 28. Bxc6) 22. Qc3 Qg5 23. Rb4?? { (0.00 → -1.74) Blunder. Bxa6 was best. } (23. Bxa6 Bxa6 24. Qxc6 Bb5 25. Rb4 Kc8 26. Qe6+ Kd8 27. c4 Rd6 28. Qxd6+ cxd6 29. Rxb5 f5) 23... Rb5 24. Bxb5?? { (-1.77 → -5.51) Blunder. Bf3 was best. } (24. Bf3 Rxb4 25. Qxb4 Qb5 26. Qe7 Qxa5 27. c4 f5 28. c5 Qb5 29. h3 Bc8 30. Rd1 h4) 24... cxb5 25. f3 Qxe3+ 26. Qxe3 Bxe3+ 27. Kh1?! { (-5.70 → -9.23) Inaccuracy. Rf2 was best. } (27. Rf2) 27... h4?! { (-9.23 → -5.83) Inaccuracy. Bd2 was best. } (27... Bd2) 28. Re1?! { (-5.83 → -9.48) Inaccuracy. Rd1 was best. } (28. Rd1 Bc8) 28... Bd2 29. Re7 Bxb4 30. Rxg7 Re8 31. Kg1 Bc3 32. f4 Bxd4+ 33. Kf1 Bc6 34. Rh7 b4 35. Rxh4?! { (-15.71 → Mate in 2) Checkmate is now unavoidable. Rh5 was best. } (35. Rh5 Bb5+) 35... Bb5+ 36. c4 bxc3# { Black wins by checkmate. } 0-1`
+
+const examplePgn10 = `[Event "Live Chess"]
+[Site "Chess.com"]
+[Date "2021.09.26"]
+[Round "?"]
+[White "Castling_is4_Wussies"]
+[Black "alex_rowland"]
+[Result "0-1"]
+[ECO "A00"]
+[WhiteElo "1267"]
+[BlackElo "1308"]
+[TimeControl "60"]
+[EndTime "12:26:55 PDT"]
+[Termination "alex_rowland won by checkmate"]
+
+1. e3 g6 2. a4 Bg7 3. c3 Nc6 4. Bc4 d6 5. Ba2 e6 6. Na3 d5 7. b3 a6 8. Bb2 Nge7
+9. Qc1 O-O 10. Bb1 Ne5 11. Ne2 Nd3+ 12. Bxd3 c5 13. Bb1 c4 14. h4 cxb3 15. Qd1
+Qb6 16. Nd4 Bxd4 17. exd4 Nf5 18. Qc1 Re8 19. c4 dxc4 20. Qc3 e5 21. dxe5 Qc5
+22. e6 Rxe6+ 23. Kd1 Nd4 24. Re1 Rxe1+ 25. Kxe1 Qe5+ 26. Kd1 Qe2+ 27. Kc1 Qe1#
+0-1`
+
+const result = achievementLibrary(examplePgn10, 'Black');
 console.log("Result: \n");
 console.log(result);

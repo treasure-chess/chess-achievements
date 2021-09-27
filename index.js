@@ -332,6 +332,41 @@ function setResult(pgn, color) {
       // Draw by repetition achievement
       achieved.push(achievements[29]);
     }
+    if (color === 'White') {
+      if (blackElo <= 750) {
+        // Play a game achievement
+        achieved.push(achievements[1]);
+      } else if (blackElo >= 751 && blackElo <= 1500) {
+        // Play a game rated 750+ achievement
+        achieved.push(achievements[3]);
+      } else if (blackElo >= 1501 && blackElo <= 2000) {
+        // Play a game rated 1500+ achievement
+        achieved.push(achievements[5]);
+      } else if (blackElo >= 2001 && blackElo <= 2200) {
+        // Play a game rated 2000+ achievement
+        achieved.push(achievements[6]);
+      } else {
+        // Play a game rated 2200+ achievement
+        achieved.push(achievements[8]);
+      }
+    } else {
+      if (whiteElo <= 750) {
+        // Play a game achievement
+        achieved.push(achievements[1]);
+      } else if (whiteElo >= 751 && whiteElo <= 1500) {
+        // Play a game rated 750+ achievement
+        achieved.push(achievements[3]);
+      } else if (whiteElo >= 1501 && whiteElo <= 2000) {
+        // Play a game rated 1500+ achievement
+        achieved.push(achievements[5]);
+      } else if (whiteElo >= 2001 && whiteElo <= 2200) {
+        // Play a game rated 2000+ achievement
+        achieved.push(achievements[6]);
+      } else {
+        // Play a game rated 2200+ achievement
+        achieved.push(achievements[8]);
+      }
+    }
   } else if (result === "0-1" && color === "Black") {
     if (whiteElo > blackElo) {
       // Defeat a higher rated player achievement
