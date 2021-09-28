@@ -739,6 +739,23 @@ b7+ {[%clk 0:00:02.8]} 98... Ka7 {[%clk 0:00:44.6]} 99. Kb5 {[%clk 0:00:03]}
 0:00:34.2]} 113. Qb6+ {[%clk 0:00:05.6]} 113... Ka4 {[%clk 0:00:34.1]} 114. Qb4#
 {[%clk 0:00:06.4]`
 
-const result = achievementLibrary(examplePgn10, 'Black');
+const examplePgn24 = `[Event "Live Chess"]
+[Site "Chess.com"]
+[Date "2021.09.28"]
+[Round "?"]
+[White "ChadBiryani"]
+[Black "mcrayudu"]
+[Result "0-1"]
+[ECO "A00"]
+[WhiteElo "2415"]
+[BlackElo "1148"]
+[TimeControl "180+2"]
+[EndTime "15:36:53 PDT"]
+[Termination "mcrayudu won by checkmate"]
+
+1. g4 b6 2. Bg2 Bb7 3. Nf3 Bxf3 4. a3 Bxg2 5. Nc3 Bxh1 6. Ne4 Bxe4 7. d4 e6 8.
+Bg5 Qxg5 9. Kf1 Bg6 10. Kg2 h5 11. Kf3 h4 12. Rb1 d5 13. b3 Be4# 0-1`
+
+const result = achievementLibrary(examplePgn24, 'Black');
 console.log("Result: \n");
 console.log(result);

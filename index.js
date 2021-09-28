@@ -541,7 +541,7 @@ function gameMoves(pgn, color) {
   let blackKnightCount = 0;
   let blackQueenCount = 0;
 
-  for (let i=0; i<gameAscii.length; i++) {
+  for (let i=0; i<gameAscii.length - 28; i++) {
     if (gameAscii.charAt(i) === 'P') {
       whitePawnCount++;
     } else if (gameAscii.charAt(i) === 'B') {
@@ -572,7 +572,7 @@ function gameMoves(pgn, color) {
       // Capture <4 pawns achievement
       achieved.push(achievements[32]);
     }
-    if (whiteKnightCount === 2 && whiteBishopCount === 2 && blackKnightCount === 0 && blackBishopCount === 0) {
+    if (whiteKnightCount >= 2 && whiteBishopCount >= 2 && blackKnightCount === 0 && blackBishopCount === 0) {
       // Capture all knights and bishops without losing any achievement
       achieved.push(achievements[34]);
     }
