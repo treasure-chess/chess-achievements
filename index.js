@@ -196,12 +196,12 @@ let achieved = [];
 
 function setResult(pgn, color) {
   let result = "";
-  for (let i = pgn.length - 1; i > 0; i--) {
-    if (pgn.charAt(i) === " ") {
-      result = pgn.substring(i + 1, pgn.length);
-      break;
-    }
+  let resultIdx = pgn.indexOf("Result ") + 8;
+  while (pgn.charAt(resultIdx) !== '"') {
+    result += pgn.charAt(resultIdx);
+    resultIdx++;
   }
+
   const game = new Chess();
   game.load_pgn(pgn);
   const moves = game.history({verbose: true});
@@ -248,7 +248,7 @@ function setResult(pgn, color) {
     }
   }
 
-  // determine opponent's rating
+  // determine ratings
   let whiteElo = 0;
   let blackElo = 0;
 
@@ -324,15 +324,15 @@ function setResult(pgn, color) {
       }
     }
   } else if (result === "1/2-1/2") {
-    if ((color === 'White' && blackElo > whiteElo) || (color === 'Black' && whiteElo > blackElo)) {
-      // Draw against higher rated player achievement
-      achieved.push(achievements[22]);
-    }
     if (pgn.includes("Game drawn by repetition")) {
       // Draw by repetition achievement
       achieved.push(achievements[29]);
     }
     if (color === 'White') {
+      if (blackElo > whiteElo) {
+        // Draw against higher rated player achievement
+        achieved.push(achievements[22]);
+      }
       if (blackElo <= 750) {
         // Play a game achievement
         achieved.push(achievements[1]);
@@ -350,6 +350,10 @@ function setResult(pgn, color) {
         achieved.push(achievements[8]);
       }
     } else {
+      if (whiteElo > blackElo) {
+        // Draw against higher rated player achievement
+        achieved.push(achievements[22]);
+      }
       if (whiteElo <= 750) {
         // Play a game achievement
         achieved.push(achievements[1]);
