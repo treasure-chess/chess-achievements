@@ -605,7 +605,7 @@ function specialMoves(pgn, color) {
       // Queenside castle achievement
       achieved.push(achievements[23]);
     }
-    if (pgn.includes("8=N")) {
+    if (pgn.includes("8=$146") || pgn.includes("8=N")) {
       // Underpromote to knight achievement
       achieved.push(achievements[24]);
     }
@@ -618,7 +618,7 @@ function specialMoves(pgn, color) {
       // Queenside casle achievement
       achieved.push(achievements[23]);
     }
-    if (pgn.includes("1=N")) {
+    if (pgn.includes("1=$146") || pgn.includes("1=N")) {
       // Underpromote to knight achievement
       achieved.push(achievements[24]);
     }
