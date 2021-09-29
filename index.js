@@ -1,4 +1,5 @@
 const { Chess } = require("chess.js");
+const ecoCodes = require('./eco-codes.json');
 
 function achievementsCalculator(pgn, color) {
   return displayResult(pgn, color);
@@ -193,6 +194,7 @@ const achievements = [
 ];
 
 let achieved = [];
+let eco = '';
 
 function setResult(pgn, color) {
   let result = "";
@@ -200,6 +202,12 @@ function setResult(pgn, color) {
   while (pgn.charAt(resultIdx) !== '"') {
     result += pgn.charAt(resultIdx);
     resultIdx++;
+  }
+
+  let ecoIdx = pgn.indexOf("[ECO ") + 6;
+  while (pgn.charAt(ecoIdx) !== '"') {
+    eco += pgn.charAt(ecoIdx);
+    ecoIdx++;
   }
 
   const game = new Chess();
@@ -644,7 +652,14 @@ function displayResult(pgn, color) {
        score += achieved[i].points;
     }
 
-    return {"score":score, "achievements": achieved};
+    let openingName = '';
+    for (let i = 0; i<ecoCodes.length; i++) {
+      if (ecoCodes[i]['ECO'] === eco) {
+        openingName = ecoCodes[i]['Opening'];
+      }
+    }
+
+    return {"opening": openingName, "score":score, "achievements": achieved};
 }
 
 //===== =====//
