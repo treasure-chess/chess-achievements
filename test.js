@@ -756,6 +756,6 @@ const examplePgn24 = `[Event "Live Chess"]
 1. g4 b6 2. Bg2 Bb7 3. Nf3 Bxf3 4. a3 Bxg2 5. Nc3 Bxh1 6. Ne4 Bxe4 7. d4 e6 8.
 Bg5 Qxg5 9. Kf1 Bg6 10. Kg2 h5 11. Kf3 h4 12. Rb1 d5 13. b3 Be4# 0-1`
 
-const result = achievementLibrary(examplePgn24, 'Black');
+const result = achievementLibrary(examplePgn23, 'White');
 console.log("Result: \n");
 console.log(result);
