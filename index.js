@@ -196,21 +196,21 @@ let achieved = [];
 
 function setResult(pgn, color) {
   let result = "";
-  for (let i = pgn.length - 1; i > 0; i--) {
-    if (pgn.charAt(i) === " ") {
-      result = pgn.substring(i + 1, pgn.length);
-      break;
-    }
+  let resultIdx = pgn.indexOf("Result ") + 8;
+  while (pgn.charAt(resultIdx) !== '"') {
+    result += pgn.charAt(resultIdx);
+    resultIdx++;
   }
+
+  const game = new Chess();
+  game.load_pgn(pgn);
+  const moves = game.history({verbose: true});
+
   let numMoves = 0;
-  for (let i = pgn.length - 1; i > 0; i--) {
-    if (pgn.charAt(i) === '.' && /[0-9]/.test(pgn.charAt(i-1))) {
-      let j = i;
-      while (pgn.charAt(j) !== ' ') {
-        j--;
-      }
-      numMoves = parseInt(pgn.substring(j,i));
-    }
+  if (moves[moves.length - 1].color === 'w') {
+    numMoves = (moves.length / 2) + 0.5;
+  } else {
+    numMoves = moves.length / 2;
   }
 
   if (numMoves > 250) {
@@ -248,7 +248,7 @@ function setResult(pgn, color) {
     }
   }
 
-  // determine opponent's rating
+  // determine ratings
   let whiteElo = 0;
   let blackElo = 0;
 
@@ -324,13 +324,52 @@ function setResult(pgn, color) {
       }
     }
   } else if (result === "1/2-1/2") {
-    if ((color === 'White' && blackElo > whiteElo) || (color === 'Black' && whiteElo > blackElo)) {
-      // Draw against higher rated player achievement
-      achieved.push(achievements[22]);
-    }
     if (pgn.includes("Game drawn by repetition")) {
       // Draw by repetition achievement
       achieved.push(achievements[29]);
+    }
+    if (color === 'White') {
+      if (blackElo > whiteElo) {
+        // Draw against higher rated player achievement
+        achieved.push(achievements[22]);
+      }
+      if (blackElo <= 750) {
+        // Play a game achievement
+        achieved.push(achievements[1]);
+      } else if (blackElo >= 751 && blackElo <= 1500) {
+        // Play a game rated 750+ achievement
+        achieved.push(achievements[3]);
+      } else if (blackElo >= 1501 && blackElo <= 2000) {
+        // Play a game rated 1500+ achievement
+        achieved.push(achievements[5]);
+      } else if (blackElo >= 2001 && blackElo <= 2200) {
+        // Play a game rated 2000+ achievement
+        achieved.push(achievements[6]);
+      } else {
+        // Play a game rated 2200+ achievement
+        achieved.push(achievements[8]);
+      }
+    } else {
+      if (whiteElo > blackElo) {
+        // Draw against higher rated player achievement
+        achieved.push(achievements[22]);
+      }
+      if (whiteElo <= 750) {
+        // Play a game achievement
+        achieved.push(achievements[1]);
+      } else if (whiteElo >= 751 && whiteElo <= 1500) {
+        // Play a game rated 750+ achievement
+        achieved.push(achievements[3]);
+      } else if (whiteElo >= 1501 && whiteElo <= 2000) {
+        // Play a game rated 1500+ achievement
+        achieved.push(achievements[5]);
+      } else if (whiteElo >= 2001 && whiteElo <= 2200) {
+        // Play a game rated 2000+ achievement
+        achieved.push(achievements[6]);
+      } else {
+        // Play a game rated 2200+ achievement
+        achieved.push(achievements[8]);
+      }
     }
   } else if (result === "0-1" && color === "Black") {
     if (whiteElo > blackElo) {
@@ -422,20 +461,16 @@ function setResult(pgn, color) {
 }
 
 function gameMoves(pgn, color) {
-  let numMoves = 0;
-  for (let i = pgn.length - 1; i > 0; i--) {
-    if (pgn.charAt(i) === '.' && /[0-9]/.test(pgn.charAt(i-1))) {
-      let j = i;
-      while (pgn.charAt(j) !== ' ') {
-        j--;
-      }
-      numMoves = parseInt(pgn.substring(j,i));
-    }
-  }
-
   const game = new Chess();
   game.load_pgn(pgn);
   const moves = game.history({verbose: true});
+
+  let numMoves = 0;
+  if (moves[moves.length - 1].color === 'w') {
+    numMoves = (moves.length / 2) + 0.5;
+  } else {
+    numMoves = moves.length / 2;
+  }
 
   let checkFlag = false;
   let enPassantFlag = false;
@@ -506,7 +541,7 @@ function gameMoves(pgn, color) {
   let blackKnightCount = 0;
   let blackQueenCount = 0;
 
-  for (let i=0; i<gameAscii.length; i++) {
+  for (let i=0; i<gameAscii.length - 28; i++) {
     if (gameAscii.charAt(i) === 'P') {
       whitePawnCount++;
     } else if (gameAscii.charAt(i) === 'B') {
@@ -537,7 +572,7 @@ function gameMoves(pgn, color) {
       // Capture <4 pawns achievement
       achieved.push(achievements[32]);
     }
-    if (whiteKnightCount === 2 && whiteBishopCount === 2 && blackKnightCount === 0 && blackBishopCount === 0) {
+    if (whiteKnightCount >= 2 && whiteBishopCount >= 2 && blackKnightCount === 0 && blackBishopCount === 0) {
       // Capture all knights and bishops without losing any achievement
       achieved.push(achievements[34]);
     }
@@ -574,7 +609,7 @@ function specialMoves(pgn, color) {
       // Queenside castle achievement
       achieved.push(achievements[23]);
     }
-    if (pgn.includes("8=N")) {
+    if (pgn.includes("8=$146") || pgn.includes("8=N")) {
       // Underpromote to knight achievement
       achieved.push(achievements[24]);
     }
@@ -587,7 +622,7 @@ function specialMoves(pgn, color) {
       // Queenside casle achievement
       achieved.push(achievements[23]);
     }
-    if (pgn.includes("1=N")) {
+    if (pgn.includes("1=$146") || pgn.includes("1=N")) {
       // Underpromote to knight achievement
       achieved.push(achievements[24]);
     }
@@ -603,7 +638,7 @@ function displayResult(pgn, color) {
     gameMoves(pgn, color);
     specialMoves(pgn, color);
 
-    var numA = (achieved.length < 3) ? achieved.length : 3;
+    var numA = achieved.length;
     var score = 0;
     for (var i = 0; i < numA; i++) {
        score += achieved[i].points;
