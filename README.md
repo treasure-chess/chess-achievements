@@ -20,12 +20,27 @@ npm i @treasure-chess/chess-achievements
 
 ## Usage
 
-`pgn` is the pocket game notation for the game, and `playerColor` is either "white" or "black". Note: only the "Standard" game rule variant is supported.
+> Note: only the "Standard" game rule variant is supported.
+
+#### Arguments:
+
+- `pgn` - pocket game notation for the game.
+- `playerColor` - Either "white" or "black".
 
 ```js
 import achievementsCalculator from "@treasure-chess/chess-achievements";
-const achievements = achievementsCalculator(pgn, playerColor);
+
+const { opening, achievements, score } = achievementsCalculator(
+  pgn,
+  playerColor
+);
 ```
+
+#### Returns:
+
+- `opening` - See `/eco-codes.json` for the full list.
+- `achievements` - Top 3 achievements earned by `playerColor`.
+- `score` - Sum of points for the top 3 achievements earned by `playerColor`.
 
 ## Achievements and Tested Sample PGNs
 
