@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/TreasureChess/chess-achievements.git"
+    "url": "git+https://github.com/Treasure-Chess/chess-achievements.git"
   },
   "keywords": [
     "chess",
@@ -17,9 +17,9 @@
   "author": "Treasure Chess Community <maintainers@niftychess.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/TreasureChess/chess-achievements/issues"
+    "url": "https://github.com/Treasure-Chess/chess-achievements/issues"
   },
-  "homepage": "https://github.com/TreasureChess/chess-achievements#readme",
+  "homepage": "https://github.com/Treasure-Chess/chess-achievements#readme",
   "dependencies": {
     "chess.js": "^0.12.0"
   },
