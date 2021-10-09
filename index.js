@@ -1,5 +1,5 @@
 const { Chess } = require("chess.js");
-const ecoCodes = require('./eco-codes.json');
+const ecoCodes = require("./eco-codes.json");
 
 function achievementsCalculator(pgn, color) {
   return displayResult(pgn, color);
@@ -18,43 +18,43 @@ const achievements = [
   },
   {
     // index 2
-    name: "Win a game against opponent rated 750+",
+    name: "Win against an opponent rated 750+",
     points: 3,
   },
   {
     // index 3
-    name: "Play a game against opponent rated 750+",
+    name: "Play against an opponent rated 750+",
     points: 2,
   },
   {
     // index 4
-    name: "Win a game against opponent rated 1500+",
+    name: "Win against an opponent rated 1500+",
     points: 4,
   },
   {
     // index 5
-    name: "Play a game against opponent rated 1500+",
+    name: "Play against an opponent rated 1500+",
     points: 2,
   },
   {
     // index 6
-    name: "Play a game against opponent rated 2000+",
+    name: "Play against an opponent rated 2000+",
     points: 3,
   },
   {
     // index 7
-    name: "Win a game against opponent rated 2000+",
+    name: "Win against an opponent rated 2000+",
     points: 5,
   },
   {
     // index 8
-    name: "Play a game against opponent rated 2250+",
+    name: "Play against an opponent rated 2250+",
     points: 3,
   },
   {
     // index 9
-    name: "Win a game against opponent rated 2250+",
-    points: 6,
+    name: "Win against an opponent rated 2250+",
+    points: 5,
   },
   {
     // index 10
@@ -88,22 +88,22 @@ const achievements = [
   },
   {
     // index 16
-    name: "Complete a game with more than 100 moves",
+    name: "Complete a game with >100 moves",
     points: 2,
   },
   {
     // index 17
-    name: "Complete a game with more than 150 moves",
+    name: "Complete a game with >150 moves",
     points: 3,
   },
   {
     // index 18
-    name: "Complete a game with more than 250 moves",
-    points: 6,
+    name: "Complete a game with >250 moves",
+    points: 5,
   },
   {
     // index 19
-    name: "Win with checkmate in less than 10 moves",
+    name: "Win with checkmate in <10 moves",
     points: 2,
   },
   {
@@ -144,11 +144,11 @@ const achievements = [
   {
     // index 27
     name: "Checkmate with an En Passant",
-    points: 10,
+    points: 5,
   },
   {
     // index 28
-    name: "Draw when opponent has a queen, without one",
+    name: "Draw when only opponent has a queen",
     points: 4,
   },
   {
@@ -168,7 +168,7 @@ const achievements = [
   },
   {
     // index 32
-    name: "Capture <4 pawns",
+    name: "Capture >4 pawns",
     points: 1,
   },
   {
@@ -178,7 +178,7 @@ const achievements = [
   },
   {
     // index 34
-    name: "Capture all knights and bishops without losing any.",
+    name: "Capture all knights and bishops without losing any",
     points: 5,
   },
   {
@@ -194,7 +194,7 @@ const achievements = [
 ];
 
 let achieved = [];
-let eco = '';
+let eco = "";
 
 function setResult(pgn, color) {
   let result = "";
@@ -212,11 +212,11 @@ function setResult(pgn, color) {
 
   const game = new Chess();
   game.load_pgn(pgn);
-  const moves = game.history({verbose: true});
+  const moves = game.history({ verbose: true });
 
   let numMoves = 0;
-  if (moves[moves.length - 1].color === 'w') {
-    numMoves = (moves.length / 2) + 0.5;
+  if (moves[moves.length - 1].color === "w") {
+    numMoves = moves.length / 2 + 0.5;
   } else {
     numMoves = moves.length / 2;
   }
@@ -232,7 +232,11 @@ function setResult(pgn, color) {
     achieved.push(achievements[16]);
   }
 
-  if (color === 'White' && pgn.includes("won by checkmate") && result === '1-0') {
+  if (
+    color === "White" &&
+    pgn.includes("won by checkmate") &&
+    result === "1-0"
+  ) {
     if (numMoves === 2) {
       // Checkmate in 2 moves achievement
       achieved.push(achievements[21]);
@@ -243,7 +247,11 @@ function setResult(pgn, color) {
       // Checkmate in less than 10 moves achievement
       achieved.push(achievements[19]);
     }
-  } else if (color === 'Black' && pgn.includes("won by checkmate") && result === '0-1') {
+  } else if (
+    color === "Black" &&
+    pgn.includes("won by checkmate") &&
+    result === "0-1"
+  ) {
     if (numMoves === 2) {
       // Checkmate in 2 moves achievement
       achieved.push(achievements[21]);
@@ -314,13 +322,12 @@ function setResult(pgn, color) {
         }
         mateIdx--;
       }
-      const endIdx = pgn.indexOf('#')
-      let pawnMateIdx = pgn.indexOf('#');
+      const endIdx = pgn.indexOf("#");
+      let pawnMateIdx = pgn.indexOf("#");
       let spaceCount = 0;
       while (spaceCount < 2) {
-        if (pgn.charAt(pawnMateIdx) === ' ') {
+        if (pgn.charAt(pawnMateIdx) === " ") {
           spaceCount++;
-
         }
         pawnMateIdx--;
       }
@@ -336,7 +343,7 @@ function setResult(pgn, color) {
       // Draw by repetition achievement
       achieved.push(achievements[29]);
     }
-    if (color === 'White') {
+    if (color === "White") {
       if (blackElo > whiteElo) {
         // Draw against higher rated player achievement
         achieved.push(achievements[22]);
@@ -413,11 +420,11 @@ function setResult(pgn, color) {
         }
         mateIdx--;
       }
-      const endIdx = pgn.indexOf('#')
-      let pawnMateIdx = pgn.indexOf('#');
+      const endIdx = pgn.indexOf("#");
+      let pawnMateIdx = pgn.indexOf("#");
       let spaceCount = 0;
       while (spaceCount < 2) {
-        if (pgn.charAt(pawnMateIdx) === ' ') {
+        if (pgn.charAt(pawnMateIdx) === " ") {
           spaceCount++;
         }
         pawnMateIdx--;
@@ -471,11 +478,11 @@ function setResult(pgn, color) {
 function gameMoves(pgn, color) {
   const game = new Chess();
   game.load_pgn(pgn);
-  const moves = game.history({verbose: true});
+  const moves = game.history({ verbose: true });
 
   let numMoves = 0;
-  if (moves[moves.length - 1].color === 'w') {
-    numMoves = (moves.length / 2) + 0.5;
+  if (moves[moves.length - 1].color === "w") {
+    numMoves = moves.length / 2 + 0.5;
   } else {
     numMoves = moves.length / 2;
   }
@@ -485,34 +492,34 @@ function gameMoves(pgn, color) {
   let enPassantMateFlag = false;
   let kingMoves = 0;
 
-  for (let i=0; i<moves.length; i++) {
-    if (color === 'White') {
-      if (moves[i].color === 'w') {
-        if (moves[i].san.includes('+')) {
+  for (let i = 0; i < moves.length; i++) {
+    if (color === "White") {
+      if (moves[i].color === "w") {
+        if (moves[i].san.includes("+")) {
           checkFlag = true;
         }
-        if (moves[i].flags === 'e') {
+        if (moves[i].flags === "e") {
           enPassantFlag = true;
-          if (moves[i].san.includes('#')) {
+          if (moves[i].san.includes("#")) {
             enPassantMateFlag = true;
           }
         }
-        if (moves[i].piece === 'k') {
+        if (moves[i].piece === "k") {
           kingMoves++;
         }
       }
     } else {
-      if (moves[i].color === 'b') {
-        if (moves[i].san.includes('+')) {
+      if (moves[i].color === "b") {
+        if (moves[i].san.includes("+")) {
           checkFlag = true;
         }
-        if (moves[i].flags === 'e') {
+        if (moves[i].flags === "e") {
           enPassantFlag = true;
-          if (moves[i].san.includes('#')) {
+          if (moves[i].san.includes("#")) {
             enPassantMateFlag = true;
           }
         }
-        if (moves[i].piece === 'k') {
+        if (moves[i].piece === "k") {
           kingMoves++;
         }
       }
@@ -549,27 +556,27 @@ function gameMoves(pgn, color) {
   let blackKnightCount = 0;
   let blackQueenCount = 0;
 
-  for (let i=0; i<gameAscii.length - 28; i++) {
-    if (gameAscii.charAt(i) === 'P') {
+  for (let i = 0; i < gameAscii.length - 28; i++) {
+    if (gameAscii.charAt(i) === "P") {
       whitePawnCount++;
-    } else if (gameAscii.charAt(i) === 'B') {
+    } else if (gameAscii.charAt(i) === "B") {
       whiteBishopCount++;
-    } else if (gameAscii.charAt(i) === 'N') {
+    } else if (gameAscii.charAt(i) === "N") {
       whiteKnightCount++;
-    } else if (gameAscii.charAt(i) === 'Q') {
+    } else if (gameAscii.charAt(i) === "Q") {
       whiteQueenCount++;
-    } else if (gameAscii.charAt(i) === 'p') {
+    } else if (gameAscii.charAt(i) === "p") {
       blackPawnCount++;
-    } else if (gameAscii.charAt(i) === 'b') {
+    } else if (gameAscii.charAt(i) === "b") {
       blackBishopCount++;
-    } else if (gameAscii.charAt(i) === 'n') {
+    } else if (gameAscii.charAt(i) === "n") {
       blackKnightCount++;
-    } else if (gameAscii.charAt(i) === 'q') {
+    } else if (gameAscii.charAt(i) === "q") {
       blackQueenCount++;
     }
   }
 
-  if (color === 'White') {
+  if (color === "White") {
     if (blackPawnCount === 0 && whitePawnCount === 8) {
       // Capture all pawns without losing any achievement
       achieved.push(achievements[36]);
@@ -580,11 +587,20 @@ function gameMoves(pgn, color) {
       // Capture <4 pawns achievement
       achieved.push(achievements[32]);
     }
-    if (whiteKnightCount >= 2 && whiteBishopCount >= 2 && blackKnightCount === 0 && blackBishopCount === 0) {
+    if (
+      whiteKnightCount >= 2 &&
+      whiteBishopCount >= 2 &&
+      blackKnightCount === 0 &&
+      blackBishopCount === 0
+    ) {
       // Capture all knights and bishops without losing any achievement
       achieved.push(achievements[34]);
     }
-    if (pgn.includes('1/2-1/2') && whiteQueenCount === 0 && blackQueenCount > 0) {
+    if (
+      pgn.includes("1/2-1/2") &&
+      whiteQueenCount === 0 &&
+      blackQueenCount > 0
+    ) {
       // Draw when opponent has a queen without one
       achieved.push(achievements[28]);
     }
@@ -599,11 +615,20 @@ function gameMoves(pgn, color) {
       // Capture <4 pawns achievement
       achieved.push(achievements[32]);
     }
-    if (whiteKnightCount === 0 && whiteBishopCount === 0 && blackKnightCount === 2 && blackBishopCount === 2) {
+    if (
+      whiteKnightCount === 0 &&
+      whiteBishopCount === 0 &&
+      blackKnightCount === 2 &&
+      blackBishopCount === 2
+    ) {
       // Capture all knights and bishops without losing any achievement
       achieved.push(achievements[34]);
     }
-    if (pgn.includes('1/2-1/2') && whiteQueenCount > 0 && blackQueenCount === 0) {
+    if (
+      pgn.includes("1/2-1/2") &&
+      whiteQueenCount > 0 &&
+      blackQueenCount === 0
+    ) {
       // Draw when opponent has a queen without one
       achieved.push(achievements[28]);
     }
@@ -642,26 +667,26 @@ function specialMoves(pgn, color) {
 }
 
 function displayResult(pgn, color) {
-    setResult(pgn, color);
-    gameMoves(pgn, color);
-    specialMoves(pgn, color);
+  setResult(pgn, color);
+  gameMoves(pgn, color);
+  specialMoves(pgn, color);
 
-    var numA = achieved.length;
-    var score = 0;
-    for (var i = 0; i < numA; i++) {
-       score += achieved[i].points;
+  var numA = achieved.length;
+  var score = 0;
+  for (var i = 0; i < numA; i++) {
+    score += achieved[i].points;
+  }
+
+  let openingName = "";
+  for (let i = 0; i < ecoCodes.length; i++) {
+    if (ecoCodes[i]["ECO"] === eco) {
+      openingName = ecoCodes[i]["Opening"];
     }
+  }
 
-    let openingName = '';
-    for (let i = 0; i<ecoCodes.length; i++) {
-      if (ecoCodes[i]['ECO'] === eco) {
-        openingName = ecoCodes[i]['Opening'];
-      }
-    }
-
-    return {"opening": openingName, "score":score, "achievements": achieved};
+  return { opening: openingName, score: score, achievements: achieved };
 }
 
 //===== =====//
 //and then export functions here to be used as a library elsewhere.
-module.exports = achievementsCalculator
+module.exports = achievementsCalculator;
