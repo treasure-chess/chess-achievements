@@ -7,187 +7,187 @@ function achievementsCalculator(pgn, color) {
 
 const achievements = [
   {
-    // index 0
+    number: 0,  // index 0
     name: "Win a game",
     points: 2,
   },
   {
-    // index 1
+    number: 1,  // index 1
     name: "Play a game",
     points: 1,
   },
   {
-    // index 2
+    number: 2,  // index 2
     name: "Win against an opponent rated 750+",
     points: 3,
   },
   {
-    // index 3
+    number: 3,  // index 3
     name: "Play against an opponent rated 750+",
     points: 2,
   },
   {
-    // index 4
+    number: 4,  // index 4
     name: "Win against an opponent rated 1500+",
     points: 4,
   },
   {
-    // index 5
+    number: 5,  // index 5
     name: "Play against an opponent rated 1500+",
     points: 2,
   },
   {
-    // index 6
+    number: 6,  // index 6
     name: "Play against an opponent rated 2000+",
     points: 3,
   },
   {
-    // index 7
+    number: 7,  // index 7
     name: "Win against an opponent rated 2000+",
     points: 5,
   },
   {
-    // index 8
+    number: 8,  // index 8
     name: "Play against an opponent rated 2250+",
     points: 3,
   },
   {
-    // index 9
+    number: 9,  // index 9
     name: "Win against an opponent rated 2250+",
     points: 5,
   },
   {
-    // index 10
+    number: 10,  // index 10
     name: "Defeat an IM",
     points: 4,
   },
   {
-    // index 11
+    number: 11,  // index 11
     name: "Defeat a NM",
     points: 3,
   },
   {
-    // index 12
+    number: 12,  // index 12
     name: "Defeat a GM",
     points: 5,
   },
   {
-    // index 13
+    number: 13,  // index 13
     name: "Mate with a bishop",
     points: 4,
   },
   {
-    // index 14
+    number: 14,  // index 14
     name: "Mate with a knight",
     points: 4,
   },
   {
-    // index 15
+    number: 15,  // index 15
     name: "Mate with a pawn",
     points: 4,
   },
   {
-    // index 16
+    number: 16,  // index 16
     name: "Complete a game with >100 moves",
     points: 2,
   },
   {
-    // index 17
+    number: 17,  // index 17
     name: "Complete a game with >150 moves",
     points: 3,
   },
   {
-    // index 18
+    number: 18,  // index 18
     name: "Complete a game with >250 moves",
     points: 5,
   },
   {
-    // index 19
+    number: 19,  // index 19
     name: "Win with checkmate in <10 moves",
     points: 2,
   },
   {
-    // index 20
+    number: 20,  // index 20
     name: "Win with checkmate in <5 moves",
     points: 3,
   },
   {
-    // index 21
+    number: 21,  // index 21
     name: "Win with checkmate in 2 moves",
     points: 5,
   },
   {
-    // index 22
+    number: 22,  // index 22
     name: "Draw with a higher rated player",
     points: 2,
   },
   {
-    // index 23
+    number: 23,  // index 23
     name: "Queen side castle",
     points: 1,
   },
   {
-    // index 24
+    number: 24,  // index 24
     name: "Under-promote to a knight",
     points: 3,
   },
   {
-    // index 25
+    number: 25,  // index 25
     name: "Under-promote to a bishop",
     points: 5,
   },
   {
-    // index 26
+    number: 26,  // index 26
     name: "En Passant",
     points: 2,
   },
   {
-    // index 27
+    number: 27,  // index 27
     name: "Checkmate with an En Passant",
     points: 5,
   },
   {
-    // index 28
+    number: 28,  // index 28
     name: "Draw when only opponent has a queen",
     points: 4,
   },
   {
-    // index 29
+    number: 29,  // index 29
     name: "Draw by repetition",
     points: 1,
   },
   {
-    // index 30
+    number: 30,  // index 30
     name: "Defeat a higher rated player",
     points: 3,
   },
   {
-    // index 31
+    number: 31,  // index 31
     name: "Put opponent in check",
     points: 1,
   },
   {
-    // index 32
+    number: 32,  // index 32
     name: "Capture >4 pawns",
     points: 1,
   },
   {
-    // index 33
+    number: 33,  // index 33
     name: "Capture all pawns",
     points: 2,
   },
   {
-    // index 34
+    number: 34,  // index 34
     name: "Capture all knights and bishops without losing any",
     points: 5,
   },
   {
-    // index 35
+    number: 35,  // index 35
     name: "Move king >20 times",
     points: 1,
   },
   {
-    // index 36
+    number: 36,  // index 36
     name: "Capture all pawns without losing any",
     points: 5,
   },
