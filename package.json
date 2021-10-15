@@ -1,6 +1,6 @@
 {
   "name": "@treasure-chess/chess-achievements",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Calculate chess achievements ",
   "main": "index.js",
   "scripts": {
