@@ -1,19 +1,46 @@
-# chess-achievements
-Calculate achievements for games of chess.
+<h1 align="center">Welcome to @treasure-chess/chess-achievements 👋</h1>
+<p>
+  <a href="https://www.npmjs.com/package/@treasure-chess/chess-achievements" target="_blank">
+    <img alt="Version" src="https://img.shields.io/npm/v/@treasure-chess/chess-achievements.svg">
+  </a>
+  <a href="https://twitter.com/niftychess" target="_blank">
+    <img alt="Twitter: niftychess" src="https://img.shields.io/twitter/follow/niftychess.svg?style=social" />
+  </a>
+</p>
 
-## install this package
-```
+> Calculate achievements for a chess game.
+
+## Install
+
+```sh
+yarn add @treasure-chess/chess-achievements
+
 npm i @treasure-chess/chess-achievements
 ```
 
-## Dev setup
-Run `npm i` to install dependencies
+## Usage
 
-Run `npm test` to run the test script
+> Note: only the "Standard" game rule variant is supported.
 
-## Contributions
-Put code and more functions in index.js to check for cool things happening.
-Add achievements in order to the list in `index.js`.
+#### Arguments:
+
+- `pgn` - pocket game notation for the game.
+- `playerColor` - Either "white" or "black".
+
+```js
+import achievementsCalculator from "@treasure-chess/chess-achievements";
+
+const { opening, achievements, score } = achievementsCalculator(
+  pgn,
+  playerColor
+);
+```
+
+#### Returns:
+
+- `opening` - See `/eco-codes.json` for the full list.
+- `achievements` - Top 3 achievements earned by `playerColor`.
+- `score` - Sum of points for the top 3 achievements earned by `playerColor`.
 
 ## Achievements and Tested Sample PGNs
 | Achievement | Description  | Example PGN | Color |
@@ -52,3 +79,34 @@ Add achievements in order to the list in `index.js`.
 | A Minor Problem | Capture all knights and bishops without losing any | 24 | Black
 | Mr. Marathon Man | Move king >20 times | 5 | White
 | Pawn Hoarder | Capture all pawns without losing any | 21 | Black
+
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome! Please adhere the rToken project community [code of conduct](https://github.com/rtoken-project/rtoken-monorepo/blob/master/code-of-conduct.md).
+
+Add achievements, in order, to the list in `index.js`. Run tests with the command:
+
+```sh
+npm run test
+```
+
+## Show your support
+
+Give a ⭐️ if this project helped you!
+
+## Contributors ✨
+
+👤 **Treasure Chess Community <maintainers@niftychess.com>**
+
+- Website: https://niftychess.com
+  - Twitter: [@https:\/\/twitter.com\/niftychess](https://twitter.com/https://twitter.com/niftychess)
+  - GitHub: [@Treasure-Chess](https://github.com/Treasure-Chess)
+
+## 📝 License
+
+Copyright © 2021 [Treasure Chess <maintainers@niftychess.com>](https://github.com/Treasure-Chess).<br />
+This project is [MIT](https://github.com/Treasure-Chess/chess-achievements/blob/master/LICENSE) licensed.
+
+---
+
+_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
