@@ -1,23 +1,23 @@
-const { Chess } = require("chess.js");
-const ecoCodes = require("./eco-codes.json");
-const achievements = require("./achievementsList.json");
+const { Chess } = require('chess.js');
+const ecoCodes = require('./eco-codes.json');
+const achievements = require('./achievementsList.json');
 
 function achievementsCalculator(pgn, color) {
   return displayResult(pgn, color);
 }
 
 let achieved = [];
-let eco = "";
+let eco = '';
 
 function setResult(pgn, color) {
-  let result = "";
-  let resultIdx = pgn.indexOf("Result ") + 8;
+  let result = '';
+  let resultIdx = pgn.indexOf('Result ') + 8;
   while (pgn.charAt(resultIdx) !== '"') {
     result += pgn.charAt(resultIdx);
     resultIdx++;
   }
 
-  let ecoIdx = pgn.indexOf("[ECO ") + 6;
+  let ecoIdx = pgn.indexOf('[ECO ') + 6;
   while (pgn.charAt(ecoIdx) !== '"') {
     eco += pgn.charAt(ecoIdx);
     ecoIdx++;
@@ -28,7 +28,7 @@ function setResult(pgn, color) {
   const moves = game.history({ verbose: true });
 
   let numMoves = 0;
-  if (moves[moves.length - 1].color === "w") {
+  if (moves[moves.length - 1].color === 'w') {
     numMoves = moves.length / 2 + 0.5;
   } else {
     numMoves = moves.length / 2;
@@ -46,9 +46,9 @@ function setResult(pgn, color) {
   }
 
   if (
-    color === "White" &&
-    pgn.includes("won by checkmate") &&
-    result === "1-0"
+    color === 'White' &&
+    pgn.includes('won by checkmate') &&
+    result === '1-0'
   ) {
     if (numMoves === 2) {
       // Checkmate in 2 moves achievement
@@ -61,9 +61,9 @@ function setResult(pgn, color) {
       achieved.push(achievements[19]);
     }
   } else if (
-    color === "Black" &&
-    pgn.includes("won by checkmate") &&
-    result === "0-1"
+    color === 'Black' &&
+    pgn.includes('won by checkmate') &&
+    result === '0-1'
   ) {
     if (numMoves === 2) {
       // Checkmate in 2 moves achievement
@@ -81,8 +81,8 @@ function setResult(pgn, color) {
   let whiteElo = 0;
   let blackElo = 0;
 
-  let strBlackElo = "";
-  let eloIdx = pgn.indexOf("BlackElo ") + 10;
+  let strBlackElo = '';
+  let eloIdx = pgn.indexOf('BlackElo ') + 10;
 
   while (pgn.charAt(eloIdx) !== '"') {
     strBlackElo += pgn.charAt(eloIdx);
@@ -91,8 +91,8 @@ function setResult(pgn, color) {
 
   blackElo = parseInt(strBlackElo);
 
-  let strWhiteElo = "";
-  eloIdx = pgn.indexOf("WhiteElo ") + 10;
+  let strWhiteElo = '';
+  eloIdx = pgn.indexOf('WhiteElo ') + 10;
 
   while (pgn.charAt(eloIdx) !== '"') {
     strWhiteElo += pgn.charAt(eloIdx);
@@ -101,7 +101,7 @@ function setResult(pgn, color) {
 
   whiteElo = parseInt(strWhiteElo);
 
-  if (result === "1-0" && color === "White") {
+  if (result === '1-0' && color === 'White') {
     if (blackElo > whiteElo) {
       // Defeat a higher rated player achievement
       achieved.push(achievements[30]);
@@ -123,40 +123,40 @@ function setResult(pgn, color) {
       achieved.push(achievements[9]);
     }
 
-    if (pgn.includes("won by checkmate")) {
-      let mateIdx = pgn.indexOf("#");
-      while (pgn.charAt(mateIdx) !== " ") {
-        if (pgn.charAt(mateIdx) === "B") {
+    if (pgn.includes('won by checkmate')) {
+      let mateIdx = pgn.indexOf('#');
+      while (pgn.charAt(mateIdx) !== ' ') {
+        if (pgn.charAt(mateIdx) === 'B') {
           // Mate with Bishop achievement
           achieved.push(achievements[13]);
-        } else if (pgn.charAt(mateIdx) === "N") {
+        } else if (pgn.charAt(mateIdx) === 'N') {
           // Mate with Knight achievement
           achieved.push(achievements[14]);
         }
         mateIdx--;
       }
-      const endIdx = pgn.indexOf("#");
-      let pawnMateIdx = pgn.indexOf("#");
+      const endIdx = pgn.indexOf('#');
+      let pawnMateIdx = pgn.indexOf('#');
       let spaceCount = 0;
       while (spaceCount < 2) {
-        if (pgn.charAt(pawnMateIdx) === " ") {
+        if (pgn.charAt(pawnMateIdx) === ' ') {
           spaceCount++;
         }
         pawnMateIdx--;
       }
-      exp = /[0-9]+\.\s[a-h]/;
+      const exp = /[0-9]+\.\s[a-h]/;
       const pawnMateSubStr = pgn.substring(pawnMateIdx + 1, endIdx);
       if (exp.test(pawnMateSubStr)) {
         // Mate with pawn
         achieved.push(achievements[15]);
       }
     }
-  } else if (result === "1/2-1/2") {
-    if (pgn.includes("Game drawn by repetition")) {
+  } else if (result === '1/2-1/2') {
+    if (pgn.includes('Game drawn by repetition')) {
       // Draw by repetition achievement
       achieved.push(achievements[29]);
     }
-    if (color === "White") {
+    if (color === 'White') {
       if (blackElo > whiteElo) {
         // Draw against higher rated player achievement
         achieved.push(achievements[22]);
@@ -199,7 +199,7 @@ function setResult(pgn, color) {
         achieved.push(achievements[8]);
       }
     }
-  } else if (result === "0-1" && color === "Black") {
+  } else if (result === '0-1' && color === 'Black') {
     if (whiteElo > blackElo) {
       // Defeat a higher rated player achievement
       achieved.push(achievements[30]);
@@ -221,28 +221,28 @@ function setResult(pgn, color) {
       achieved.push(achievements[9]);
     }
 
-    if (pgn.includes("won by checkmate")) {
-      let mateIdx = pgn.indexOf("#");
-      while (pgn.charAt(mateIdx) !== " ") {
-        if (pgn.charAt(mateIdx) === "B") {
+    if (pgn.includes('won by checkmate')) {
+      let mateIdx = pgn.indexOf('#');
+      while (pgn.charAt(mateIdx) !== ' ') {
+        if (pgn.charAt(mateIdx) === 'B') {
           // Mate with Bishop achievement
           achieved.push(achievements[13]);
-        } else if (pgn.charAt(mateIdx) === "N") {
+        } else if (pgn.charAt(mateIdx) === 'N') {
           // Mate with Knight achievement
           achieved.push(achievements[14]);
         }
         mateIdx--;
       }
-      const endIdx = pgn.indexOf("#");
-      let pawnMateIdx = pgn.indexOf("#");
+      const endIdx = pgn.indexOf('#');
+      let pawnMateIdx = pgn.indexOf('#');
       let spaceCount = 0;
       while (spaceCount < 2) {
-        if (pgn.charAt(pawnMateIdx) === " ") {
+        if (pgn.charAt(pawnMateIdx) === ' ') {
           spaceCount++;
         }
         pawnMateIdx--;
       }
-      exp = /\.\.\.\s[a-h]/;
+      const exp = /\.\.\.\s[a-h]/;
       const pawnMateSubStr = pgn.substring(pawnMateIdx + 1, endIdx);
       if (exp.test(pawnMateSubStr)) {
         // Mate with pawn
@@ -250,7 +250,7 @@ function setResult(pgn, color) {
       }
     }
   } else {
-    if (color === "White") {
+    if (color === 'White') {
       if (blackElo <= 750) {
         // Play a game achievement
         achieved.push(achievements[1]);
@@ -293,46 +293,39 @@ function gameMoves(pgn, color) {
   game.load_pgn(pgn);
   const moves = game.history({ verbose: true });
 
-  let numMoves = 0;
-  if (moves[moves.length - 1].color === "w") {
-    numMoves = moves.length / 2 + 0.5;
-  } else {
-    numMoves = moves.length / 2;
-  }
-
   let checkFlag = false;
   let enPassantFlag = false;
   let enPassantMateFlag = false;
   let kingMoves = 0;
 
   for (let i = 0; i < moves.length; i++) {
-    if (color === "White") {
-      if (moves[i].color === "w") {
-        if (moves[i].san.includes("+")) {
+    if (color === 'White') {
+      if (moves[i].color === 'w') {
+        if (moves[i].san.includes('+')) {
           checkFlag = true;
         }
-        if (moves[i].flags === "e") {
+        if (moves[i].flags === 'e') {
           enPassantFlag = true;
-          if (moves[i].san.includes("#")) {
+          if (moves[i].san.includes('#')) {
             enPassantMateFlag = true;
           }
         }
-        if (moves[i].piece === "k") {
+        if (moves[i].piece === 'k') {
           kingMoves++;
         }
       }
     } else {
-      if (moves[i].color === "b") {
-        if (moves[i].san.includes("+")) {
+      if (moves[i].color === 'b') {
+        if (moves[i].san.includes('+')) {
           checkFlag = true;
         }
-        if (moves[i].flags === "e") {
+        if (moves[i].flags === 'e') {
           enPassantFlag = true;
-          if (moves[i].san.includes("#")) {
+          if (moves[i].san.includes('#')) {
             enPassantMateFlag = true;
           }
         }
-        if (moves[i].piece === "k") {
+        if (moves[i].piece === 'k') {
           kingMoves++;
         }
       }
@@ -370,26 +363,26 @@ function gameMoves(pgn, color) {
   let blackQueenCount = 0;
 
   for (let i = 0; i < gameAscii.length - 28; i++) {
-    if (gameAscii.charAt(i) === "P") {
+    if (gameAscii.charAt(i) === 'P') {
       whitePawnCount++;
-    } else if (gameAscii.charAt(i) === "B") {
+    } else if (gameAscii.charAt(i) === 'B') {
       whiteBishopCount++;
-    } else if (gameAscii.charAt(i) === "N") {
+    } else if (gameAscii.charAt(i) === 'N') {
       whiteKnightCount++;
-    } else if (gameAscii.charAt(i) === "Q") {
+    } else if (gameAscii.charAt(i) === 'Q') {
       whiteQueenCount++;
-    } else if (gameAscii.charAt(i) === "p") {
+    } else if (gameAscii.charAt(i) === 'p') {
       blackPawnCount++;
-    } else if (gameAscii.charAt(i) === "b") {
+    } else if (gameAscii.charAt(i) === 'b') {
       blackBishopCount++;
-    } else if (gameAscii.charAt(i) === "n") {
+    } else if (gameAscii.charAt(i) === 'n') {
       blackKnightCount++;
-    } else if (gameAscii.charAt(i) === "q") {
+    } else if (gameAscii.charAt(i) === 'q') {
       blackQueenCount++;
     }
   }
 
-  if (color === "White") {
+  if (color === 'White') {
     if (blackPawnCount === 0 && whitePawnCount === 8) {
       // Capture all pawns without losing any achievement
       achieved.push(achievements[36]);
@@ -410,7 +403,7 @@ function gameMoves(pgn, color) {
       achieved.push(achievements[34]);
     }
     if (
-      pgn.includes("1/2-1/2") &&
+      pgn.includes('1/2-1/2') &&
       whiteQueenCount === 0 &&
       blackQueenCount > 0
     ) {
@@ -438,7 +431,7 @@ function gameMoves(pgn, color) {
       achieved.push(achievements[34]);
     }
     if (
-      pgn.includes("1/2-1/2") &&
+      pgn.includes('1/2-1/2') &&
       whiteQueenCount > 0 &&
       blackQueenCount === 0
     ) {
@@ -449,30 +442,30 @@ function gameMoves(pgn, color) {
 }
 
 function specialMoves(pgn, color) {
-  if (color === "White") {
-    exp = /[0-9]+\.\sO-O-O/i;
+  if (color === 'White') {
+    const exp = /[0-9]+\.\sO-O-O/i;
     if (exp.test(pgn) === true) {
       // Queenside castle achievement
       achieved.push(achievements[23]);
     }
-    if (pgn.includes("8=$146") || pgn.includes("8=N")) {
+    if (pgn.includes('8=$146') || pgn.includes('8=N')) {
       // Underpromote to knight achievement
       achieved.push(achievements[24]);
     }
-    if (pgn.includes("8=B")) {
+    if (pgn.includes('8=B')) {
       // Underpromote to bishop achievement
       achieved.push(achievements[25]);
     }
   } else {
-    if (pgn.includes("... O-O-O")) {
+    if (pgn.includes('... O-O-O')) {
       // Queenside casle achievement
       achieved.push(achievements[23]);
     }
-    if (pgn.includes("1=$146") || pgn.includes("1=N")) {
+    if (pgn.includes('1=$146') || pgn.includes('1=N')) {
       // Underpromote to knight achievement
       achieved.push(achievements[24]);
     }
-    if (pgn.includes("1=B")) {
+    if (pgn.includes('1=B')) {
       // Underpromote to bishop achievement
       achieved.push(achievements[25]);
     }
@@ -490,10 +483,10 @@ function displayResult(pgn, color) {
     score += achieved[i].points;
   }
 
-  let openingName = "";
+  let openingName = '';
   for (let i = 0; i < ecoCodes.length; i++) {
-    if (ecoCodes[i]["ECO"] === eco) {
-      openingName = ecoCodes[i]["Opening"];
+    if (ecoCodes[i]['ECO'] === eco) {
+      openingName = ecoCodes[i]['Opening'];
     }
   }
 
