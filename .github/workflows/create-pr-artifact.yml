@@ -22,7 +22,7 @@ jobs:
       - name: Cache "node_modules"
         uses: actions/cache@v2
         with:
-          path: "**/node_modules"
+          path: '**/node_modules'
           key: node_modules_${{ hashFiles('**/yarn.lock') }}
       - name: Show context
         run: |
@@ -65,7 +65,7 @@ jobs:
           dirName="bin/${prNumber}"
           mkdir -p $dirName
           tgz=$(npm pack)
-          cp $tgz "../$dirName/"
+          cp $tgz "$dirName/"
           cd $dirName
           sha="${{ github.event.pull_request.head.sha }}"
           for f in * ; do
