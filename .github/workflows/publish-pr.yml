@@ -73,7 +73,7 @@ jobs:
         with:
           issue-number: ${{ steps.pr.outputs.pr_number }}
           body: |
-            ### 📦 @treasure-chess/chess-achievements Package Installation
+            ### 📦 chess-achievements Package Installation
 
             Install this PR (you need to setup Github packages):
               
