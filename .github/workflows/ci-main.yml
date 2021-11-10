@@ -2,10 +2,10 @@ name: CI Master
 
 on:
   push:
-    branches: ["master"]
+    branches: ['main']
     paths:
-      - "packages/**"
-      - ".github/workflows/cd.master.*"
+      - 'packages/**'
+      - '.github/workflows/cd.master.*'
 
 jobs:
   create-release-draft:
