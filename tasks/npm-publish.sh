@@ -2,10 +2,9 @@
 
 D="$(dirname "$0")"
 
-PACKAGE_DIR="$1"
-TAG="$2"
+TAG="$1"
 shift 2
 
-echo "Publishing ${PACKAGE_DIR} @${TAG} to NPMJS registry"
+echo "Publishing package @${TAG} to NPMJS registry"
 $D/npmrc-use-npmjs.sh > .npmrc
-npm publish --tag ${TAG} ${PACKAGE_DIR} "$@"
+npm publish --tag ${TAG} ./ "$@"

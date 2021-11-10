@@ -37,6 +37,6 @@ jobs:
       - name: Publish
         run: |
           tasks/npmrc-use-npmjs.sh > .npmrc
-          tasks/npm-publish.sh
+          tasks/npm-publish.sh dev
         env:
           NPMJS_TOKEN: ${{ secrets.NPMJS_TOKEN }}
