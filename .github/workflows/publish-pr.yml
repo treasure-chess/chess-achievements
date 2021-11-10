@@ -2,7 +2,7 @@ name: Publish PR Packages
 
 on:
   workflow_run:
-    workflows: ["Create PR Artifact"]
+    workflows: ['Create PR Artifact']
     types:
       - completed
 
@@ -51,13 +51,13 @@ jobs:
       - name: Publish to github
         run: |
           pr_number="${{ steps.pr.outputs.pr_number }}"
-          tasks/npmrc-use-github.sh > pr-packages/$pr_number/.npmrc # using GITHUB_TOKEN
+          tasks/npmrc-use-github.sh > pr-packages/$pr_number/.npmrc # using PAT
           cd pr-packages/$pr_number
           for f in `ls` ; do
             npm --userconfig .npmrc publish $f --tag "PR$pr_number"
           done
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PAT: ${{ secrets.PAT }}
 
       - name: Find Comment
         uses: peter-evans/find-comment@v1
@@ -65,7 +65,7 @@ jobs:
         id: fc
         with:
           issue-number: ${{ steps.pr.outputs.pr_number }}
-          comment-author: "github-actions[bot]"
+          comment-author: 'github-actions[bot]'
 
       - name: Create comment
         if: ${{ steps.pr.outputs.n_packages > 0 && steps.fc.outputs.comment-id == 0 }}
@@ -73,7 +73,7 @@ jobs:
         with:
           issue-number: ${{ steps.pr.outputs.pr_number }}
           body: |
-            ### 📦 @treasure-chess/chess-achievements Package Installation
+            ### 📦 chess-achievements Package Installation
 
             Install this PR (you need to setup Github packages):
               
