@@ -2,11 +2,12 @@ name: CI Canary
 
 on:
   push:
-    branches: ["dev"]
+    branches: ['dev']
     paths:
-      - "packages/**"
+      - 'src/*'
+      - 'package.json'
       # - '**.md' commented-out because README updates should go to the packages
-      - ".github/workflows/ci-canary.yml"
+      - '.github/workflows/ci-canary.yml'
 
 jobs:
   publish:
@@ -23,7 +24,7 @@ jobs:
       - name: Cache "node_modules"
         uses: actions/cache@v2
         with:
-          path: "**/node_modules"
+          path: '**/node_modules'
           key: node_modules_${{ hashFiles('**/yarn.lock') }}
       - name: Install dependencies
         run: yarn install --frozen-lockfile
