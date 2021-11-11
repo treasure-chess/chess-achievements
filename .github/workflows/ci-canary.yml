@@ -28,7 +28,9 @@ jobs:
           key: node_modules_${{ hashFiles('**/yarn.lock') }}
       - name: Install dependencies
         run: yarn install --frozen-lockfile
-      # No build step necessary, but this is where it would go
+      - name: Test
+        run: yarn test
+        # No build step necessary, but this is where it would go
       - name: Setup canary package versions locally
         run: |
           shortRev=$(git rev-parse --short ${{ github.sha }})

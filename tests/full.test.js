@@ -1,7 +1,8 @@
-const achievementLibrary = require("./index.js");
+const achievementLibrary = require('../src/index.js');
 //import index.js which is the main library
 
-const examplePgn1 = '1.e4 {[%clk 0:02:59]} e5 {[%clk 0:02:59]} 2.Nf3 {[%clk 0:02:58]} Nc6 {[%clk 0:02:59]} 3.Bb5 {[%clk 0:02:58]} Nf6 {[%clk 0:02:59]} 4.d3 {[%clk 0:02:57]} Bc5 {[%clk 0:02:57]} 5.c3 {[%clk 0:02:57]} O-O {[%clk 0:02:56]} 6.O-O {[%clk 0:02:56]} Re8 {[%clk 0:02:56]} 7.h3 {[%clk 0:02:54]} a6 {[%clk 0:02:55]} 8.Ba4 {[%clk 0:02:53]} d5 {[%clk 0:02:54]} 9.Nbd2 {[%clk 0:02:51]} h6 {[%clk 0:02:53]} 10.Re1 {[%clk 0:02:50]} b5 {[%clk 0:02:51]} 11.Bb3 {[%clk 0:02:48]} d4 {[%clk 0:02:51]} 12.Nf1 {[%clk 0:02:43]} Be6 {[%clk 0:02:49]} 13.Ng3 {[%clk 0:02:38]} Bxb3 {[%clk 0:02:43]} 14.axb3 {[%clk 0:02:38]} Qd7 {[%clk 0:02:40]} 15.b4 {[%clk 0:02:24]} Bf8 {[%clk 0:02:37]} 16.Qe2 {[%clk 0:02:22]} dxc3 {[%clk 0:02:22]} 17.bxc3 {[%clk 0:02:20]} a5 {[%clk 0:02:20]} 18.bxa5 {[%clk 0:02:16]} Nxa5 {[%clk 0:02:20]} 19.Be3 {[%clk 0:02:11]} c5 {[%clk 0:02:17]} 20.Red1 {[%clk 0:02:06]} Qc6 {[%clk 0:02:08]} 21.Qc2 {[%clk 0:01:45]} b4 {[%clk 0:02:02]} 22.Nxe5 {[%clk 0:01:30]} b3 {[%clk 0:01:53]} 23.Qxb3 {[%clk 0:01:03]} Nxb3 {[%clk 0:01:49]}  0-1'
+const examplePgn1 =
+  '1.e4 {[%clk 0:02:59]} e5 {[%clk 0:02:59]} 2.Nf3 {[%clk 0:02:58]} Nc6 {[%clk 0:02:59]} 3.Bb5 {[%clk 0:02:58]} Nf6 {[%clk 0:02:59]} 4.d3 {[%clk 0:02:57]} Bc5 {[%clk 0:02:57]} 5.c3 {[%clk 0:02:57]} O-O {[%clk 0:02:56]} 6.O-O {[%clk 0:02:56]} Re8 {[%clk 0:02:56]} 7.h3 {[%clk 0:02:54]} a6 {[%clk 0:02:55]} 8.Ba4 {[%clk 0:02:53]} d5 {[%clk 0:02:54]} 9.Nbd2 {[%clk 0:02:51]} h6 {[%clk 0:02:53]} 10.Re1 {[%clk 0:02:50]} b5 {[%clk 0:02:51]} 11.Bb3 {[%clk 0:02:48]} d4 {[%clk 0:02:51]} 12.Nf1 {[%clk 0:02:43]} Be6 {[%clk 0:02:49]} 13.Ng3 {[%clk 0:02:38]} Bxb3 {[%clk 0:02:43]} 14.axb3 {[%clk 0:02:38]} Qd7 {[%clk 0:02:40]} 15.b4 {[%clk 0:02:24]} Bf8 {[%clk 0:02:37]} 16.Qe2 {[%clk 0:02:22]} dxc3 {[%clk 0:02:22]} 17.bxc3 {[%clk 0:02:20]} a5 {[%clk 0:02:20]} 18.bxa5 {[%clk 0:02:16]} Nxa5 {[%clk 0:02:20]} 19.Be3 {[%clk 0:02:11]} c5 {[%clk 0:02:17]} 20.Red1 {[%clk 0:02:06]} Qc6 {[%clk 0:02:08]} 21.Qc2 {[%clk 0:01:45]} b4 {[%clk 0:02:02]} 22.Nxe5 {[%clk 0:01:30]} b3 {[%clk 0:01:53]} 23.Qxb3 {[%clk 0:01:03]} Nxb3 {[%clk 0:01:49]}  0-1';
 
 const examplePgn2 = `[Event "Live Chess"]
 [Site "Chess.com"]
@@ -100,7 +101,7 @@ b4 {[%timestamp 8]} 44... f6 {[%timestamp 11]} 45. f4 {[%timestamp 8]} 45... Ke6
 {[%timestamp 11]} 50... gxh5 {[%timestamp 9]} 51. Ke3 {[%timestamp 7]} 51... Ke6
 {[%timestamp 7]} 52. Kd4 {[%timestamp 18]} 52... Kd6 {[%timestamp 8]} 53. Ke3
 {[%timestamp 1]} 53... Kc7 {[%timestamp 7]} 54. Kd4 {[%timestamp 5]} 54... Kd6
-{[%timestamp 1]} 1/2-1/2`
+{[%timestamp 1]} 1/2-1/2`;
 
 const examplePgn4 = `[Event "Live Chess"]
 [Site "Chess.com"]
@@ -166,7 +167,7 @@ Qe6+ 54. Kb7 Qd7+ 55. Rc7 Qd5+ 56. Qxd5 Nxd5 57. Rc4 f5 58. Kc6 Ne3 59. Ra4 Kg6
 Kd4 74. Kg2 Kd5 75. Re1 Kd4 76. Re6 Kd5 77. Rxg6 Ke4 78. Rg8 Kxf4 79. Rh8 Ke3
 80. Kg3 Nf2 81. Rxh2 Ne4+ 82. Kg2 f4 83. Rh3+ Kd4 84. Rh5 Ke3 85. Rf5 Nd2 86.
 Re5+ Ne4 87. Kf1 f3 88. Re8 Kf4 89. Rf8+ Ke3 90. Re8 Kf4 91. Kg1 Ke3 92. Kf1
-1/2-1/2`
+1/2-1/2`;
 
 const examplePgn6 = `[Event "Live Chess"]
 [Site "Chess.com"]
@@ -184,7 +185,7 @@ const examplePgn6 = `[Event "Live Chess"]
 
 1. f4 e5 2. fxe5 Qh4+ 3. g3 Qe4 4. Nf3 g5 5. Bg2 g4 6. Nh4 Qxe5 7. d4 Qe6 8. Bf4
 Ne7 9. Nc3 Ng6 10. Bxc7 Nxh4 11. Bd5 Nf3+ 12. Kf2 Qf6 13. exf3 d6 14. Ne4 Qf5
-15. Re1 Qxf3+ 16. Qxf3 gxf3 17. Nf6# 1-0`
+15. Re1 Qxf3+ 16. Qxf3 gxf3 17. Nf6# 1-0`;
 
 const examplePgn7 = `[Event "Live Chess"]
 [Site "Chess.com"]
@@ -204,7 +205,7 @@ const examplePgn7 = `[Event "Live Chess"]
 b6 9. Kf2 Bb7 10. d4 O-O 11. Ne5 Rc8 12. Qa4 Ne4+ 13. Kf3 Nxe5+ 14. dxe5 d4 15.
 cxd4 cxd4 16. Qxa7 Qd5 17. Be3 Bh4 18. Kf4 Nf2 19. Qxb7 Qxb7 20. Bxd4 h6 21.
 Rhf1 Rfe8 22. Rxf2 Bxf2 23. Rf1 Bh4 24. f6 g5+ 25. Kf5 Rcd8 26. Nc4 b5 27. Nd6
-Rxd6 28. exd6 Qe4# 0-1`
+Rxd6 28. exd6 Qe4# 0-1`;
 
 const examplePgn8 = `[Event "Live Chess"]
 [Site "Chess.com"]
@@ -221,7 +222,7 @@ const examplePgn8 = `[Event "Live Chess"]
 [Termination "Game drawn by agreement"]
 
 1. e4 e5 2. Nf3 Bd6 3. Nc3 Nf6 4. Bc4 Nc6 5. d4 exd4 6. Nxd4 O-O 7. Nxc6 bxc6 8.
-O-O Bb7 9. Bg5 Nxe4 10. Bxd8 Raxd8 11. Nxe4 Rfe8 12. Nxd6 Re4 1/2-1/2`
+O-O Bb7 9. Bg5 Nxe4 10. Bxd8 Raxd8 11. Nxe4 Rfe8 12. Nxd6 Re4 1/2-1/2`;
 
 const examplePgn9 = `[Event "Monthly Blitz Arena"]
 [Site "https://lichess.org/LY5WQjXL"]
@@ -243,7 +244,7 @@ const examplePgn9 = `[Event "Monthly Blitz Arena"]
 [Termination "Normal"]
 [Annotator "lichess.org"]
 
-1. Nf3 e5? { (0.17 → 1.51) Mistake. Nf6 was best. } (1... Nf6 2. c4 c6 3. Nc3 d5 4. e3 e6 5. Be2 Nbd7 6. Qc2) 2. Nxe5 Nc6?! { (1.35 → 2.08) Inaccuracy. Nf6 was best. } (2... Nf6 3. c4 d5 4. cxd5 Qxd5 5. Nf3 c5 6. Nc3 Qd8 7. e4) 3. Nxc6 dxc6 { A04 Zukertort Opening: The Walrus } 4. e3 Nf6 5. b3 Bd6 6. Bb2 h5 7. d4?! { (1.90 → 1.04) Inaccuracy. Na3 was best. } (7. Na3 Ng4 8. Nc4 Nxh2 9. Bxg7 Rh7 10. Be5 Bxe5 11. Nxe5 Bg4 12. Qc1 Qg5 13. Qb2 Nxf1) 7... Qe7 8. Nd2 Bf5 9. Nc4 Bf4? { (1.80 → 3.08) Mistake. Qe4 was best. } (9... Qe4 10. Nxd6+) 10. Be2?! { (3.08 → 2.23) Inaccuracy. Bd3 was best. } (10. Bd3) 10... Bh6 11. Qd2 O-O-O?! { (2.21 → 3.39) Inaccuracy. Qe6 was best. } (11... Qe6 12. Ne5) 12. O-O? { (3.39 → 1.87) Mistake. Qa5 was best. } (12. Qa5 Be6) 12... Kb8 13. a4 Ne4 14. Qa5 Bc8?! { (1.81 → 2.98) Inaccuracy. g6 was best. } (14... g6 15. Ba3 Qe8 16. Bd3 Rd5 17. Qe1 Ng5 18. Bb2 h4 19. h3 Bg7 20. Qe2 c5 21. dxc5) 15. Ba3? { (2.98 → 1.43) Mistake. Qe5 was best. } (15. Qe5) 15... Qh4?! { (1.43 → 2.56) Inaccuracy. Qe6 was best. } (15... Qe6) 16. Ne5 f6?? { (2.43 → 5.05) Blunder. Qf6 was best. } (16... Qf6) 17. Bc5?? { (5.05 → 2.48) Blunder. Ng6 was best. } (17. Ng6 Qg5 18. Qxg5 Bxg5 19. Nxh8 Rxh8 20. f4 Bh6 21. Bxh5 Bf5 22. Bb4 Nd6 23. c4 Bd3) 17... Nxc5 18. Nxc6+?? { (2.64 → -1.15) Blunder. Ng6 was best. } (18. Ng6 Nxb3 19. cxb3 Qe4 20. Nxh8 Rxh8 21. Qc3 g5 22. b4 h4 23. b5 g4 24. Qd3 Qd5) 18... bxc6 19. Qxc5 Bb7 20. a5? { (-0.95 → -2.36) Mistake. Bf3 was best. } (20. Bf3 f5) 20... a6 21. Ra4?! { (-2.12 → -2.85) Inaccuracy. b4 was best. } (21. b4) 21... Rd5? { (-2.85 → -1.39) Mistake. Qg5 was best. } (21... Qg5 22. Qxg5 Bxg5 23. Rb4 Ka7 24. f4 Bh6 25. Rc4 h4 26. Bf3 g5 27. g3 Bf8 28. Bxc6) 22. Qc3 Qg5 23. Rb4?? { (0.00 → -1.74) Blunder. Bxa6 was best. } (23. Bxa6 Bxa6 24. Qxc6 Bb5 25. Rb4 Kc8 26. Qe6+ Kd8 27. c4 Rd6 28. Qxd6+ cxd6 29. Rxb5 f5) 23... Rb5 24. Bxb5?? { (-1.77 → -5.51) Blunder. Bf3 was best. } (24. Bf3 Rxb4 25. Qxb4 Qb5 26. Qe7 Qxa5 27. c4 f5 28. c5 Qb5 29. h3 Bc8 30. Rd1 h4) 24... cxb5 25. f3 Qxe3+ 26. Qxe3 Bxe3+ 27. Kh1?! { (-5.70 → -9.23) Inaccuracy. Rf2 was best. } (27. Rf2) 27... h4?! { (-9.23 → -5.83) Inaccuracy. Bd2 was best. } (27... Bd2) 28. Re1?! { (-5.83 → -9.48) Inaccuracy. Rd1 was best. } (28. Rd1 Bc8) 28... Bd2 29. Re7 Bxb4 30. Rxg7 Re8 31. Kg1 Bc3 32. f4 Bxd4+ 33. Kf1 Bc6 34. Rh7 b4 35. Rxh4?! { (-15.71 → Mate in 2) Checkmate is now unavoidable. Rh5 was best. } (35. Rh5 Bb5+) 35... Bb5+ 36. c4 bxc3# { Black wins by checkmate. } 0-1`
+1. Nf3 e5? { (0.17 → 1.51) Mistake. Nf6 was best. } (1... Nf6 2. c4 c6 3. Nc3 d5 4. e3 e6 5. Be2 Nbd7 6. Qc2) 2. Nxe5 Nc6?! { (1.35 → 2.08) Inaccuracy. Nf6 was best. } (2... Nf6 3. c4 d5 4. cxd5 Qxd5 5. Nf3 c5 6. Nc3 Qd8 7. e4) 3. Nxc6 dxc6 { A04 Zukertort Opening: The Walrus } 4. e3 Nf6 5. b3 Bd6 6. Bb2 h5 7. d4?! { (1.90 → 1.04) Inaccuracy. Na3 was best. } (7. Na3 Ng4 8. Nc4 Nxh2 9. Bxg7 Rh7 10. Be5 Bxe5 11. Nxe5 Bg4 12. Qc1 Qg5 13. Qb2 Nxf1) 7... Qe7 8. Nd2 Bf5 9. Nc4 Bf4? { (1.80 → 3.08) Mistake. Qe4 was best. } (9... Qe4 10. Nxd6+) 10. Be2?! { (3.08 → 2.23) Inaccuracy. Bd3 was best. } (10. Bd3) 10... Bh6 11. Qd2 O-O-O?! { (2.21 → 3.39) Inaccuracy. Qe6 was best. } (11... Qe6 12. Ne5) 12. O-O? { (3.39 → 1.87) Mistake. Qa5 was best. } (12. Qa5 Be6) 12... Kb8 13. a4 Ne4 14. Qa5 Bc8?! { (1.81 → 2.98) Inaccuracy. g6 was best. } (14... g6 15. Ba3 Qe8 16. Bd3 Rd5 17. Qe1 Ng5 18. Bb2 h4 19. h3 Bg7 20. Qe2 c5 21. dxc5) 15. Ba3? { (2.98 → 1.43) Mistake. Qe5 was best. } (15. Qe5) 15... Qh4?! { (1.43 → 2.56) Inaccuracy. Qe6 was best. } (15... Qe6) 16. Ne5 f6?? { (2.43 → 5.05) Blunder. Qf6 was best. } (16... Qf6) 17. Bc5?? { (5.05 → 2.48) Blunder. Ng6 was best. } (17. Ng6 Qg5 18. Qxg5 Bxg5 19. Nxh8 Rxh8 20. f4 Bh6 21. Bxh5 Bf5 22. Bb4 Nd6 23. c4 Bd3) 17... Nxc5 18. Nxc6+?? { (2.64 → -1.15) Blunder. Ng6 was best. } (18. Ng6 Nxb3 19. cxb3 Qe4 20. Nxh8 Rxh8 21. Qc3 g5 22. b4 h4 23. b5 g4 24. Qd3 Qd5) 18... bxc6 19. Qxc5 Bb7 20. a5? { (-0.95 → -2.36) Mistake. Bf3 was best. } (20. Bf3 f5) 20... a6 21. Ra4?! { (-2.12 → -2.85) Inaccuracy. b4 was best. } (21. b4) 21... Rd5? { (-2.85 → -1.39) Mistake. Qg5 was best. } (21... Qg5 22. Qxg5 Bxg5 23. Rb4 Ka7 24. f4 Bh6 25. Rc4 h4 26. Bf3 g5 27. g3 Bf8 28. Bxc6) 22. Qc3 Qg5 23. Rb4?? { (0.00 → -1.74) Blunder. Bxa6 was best. } (23. Bxa6 Bxa6 24. Qxc6 Bb5 25. Rb4 Kc8 26. Qe6+ Kd8 27. c4 Rd6 28. Qxd6+ cxd6 29. Rxb5 f5) 23... Rb5 24. Bxb5?? { (-1.77 → -5.51) Blunder. Bf3 was best. } (24. Bf3 Rxb4 25. Qxb4 Qb5 26. Qe7 Qxa5 27. c4 f5 28. c5 Qb5 29. h3 Bc8 30. Rd1 h4) 24... cxb5 25. f3 Qxe3+ 26. Qxe3 Bxe3+ 27. Kh1?! { (-5.70 → -9.23) Inaccuracy. Rf2 was best. } (27. Rf2) 27... h4?! { (-9.23 → -5.83) Inaccuracy. Bd2 was best. } (27... Bd2) 28. Re1?! { (-5.83 → -9.48) Inaccuracy. Rd1 was best. } (28. Rd1 Bc8) 28... Bd2 29. Re7 Bxb4 30. Rxg7 Re8 31. Kg1 Bc3 32. f4 Bxd4+ 33. Kf1 Bc6 34. Rh7 b4 35. Rxh4?! { (-15.71 → Mate in 2) Checkmate is now unavoidable. Rh5 was best. } (35. Rh5 Bb5+) 35... Bb5+ 36. c4 bxc3# { Black wins by checkmate. } 0-1`;
 
 const examplePgn10 = `[Event "Live Chess"]
 [Site "Chess.com"]
@@ -263,7 +264,7 @@ const examplePgn10 = `[Event "Live Chess"]
 9. Qc1 O-O 10. Bb1 Ne5 11. Ne2 Nd3+ 12. Bxd3 c5 13. Bb1 c4 14. h4 cxb3 15. Qd1
 Qb6 16. Nd4 Bxd4 17. exd4 Nf5 18. Qc1 Re8 19. c4 dxc4 20. Qc3 e5 21. dxe5 Qc5
 22. e6 Rxe6+ 23. Kd1 Nd4 24. Re1 Rxe1+ 25. Kxe1 Qe5+ 26. Kd1 Qe2+ 27. Kc1 Qe1#
-0-1`
+0-1`;
 
 const examplePgn11 = `[Event "Live Chess"]
 [Site "Chess.com"]
@@ -284,7 +285,7 @@ Be3 Bxe3 9. fxe3 Nxd5 10. d4 exd4 11. exd4 O-O 12. O-O Re8 13. Re1 Bd7 14. Bc4
 Nb6 15. Qe2 Qf6 16. Qd1 Qd8 17. Re2 Nxc4 18. Qe1 Rxe2 19. Qxe2 Qf6 20. Re1 h6
 21. Qxc4 Bg4 22. Ne5 a6 23. Nd7 Bxd7 24. Qxc7 Bc6 25. Rf1 Qe7 26. Qxe7 Rf8 27.
 Rxf7 Rxf7 28. Qe8+ Rf8 29. Qg6 Be4 30. Qxg7+ Kxg7 31. g3 Bxc2 32. g4 Rf1+ 33.
-Kxf1 Kg6 0-1`
+Kxf1 Kg6 0-1`;
 
 const examplePgn12 = `[Event "Live Chess"]
 [Site "Chess.com"]
@@ -300,7 +301,7 @@ const examplePgn12 = `[Event "Live Chess"]
 [EndTime "16:24:31 PDT"]
 [Termination "ChadBiryani won by checkmate"]
 
-1. f3 e6 2. g4 Qh4# 0-1`
+1. f3 e6 2. g4 Qh4# 0-1`;
 
 const examplePgn13 = `[Event "Live Chess"]
 [Site "Chess.com"]
@@ -338,7 +339,7 @@ Nc6 5. Nc3 e5 6. dxe5 d4 7. Nb5 Bc5 8. c3 dxc3 9. f4 cxb2 10. Bxb2 O-O 11. Nf3
 Be3 12. Bc1 Bb6 13. Bg2 Nc5 14. Qxd8 Rxd8) 4... hxg6 5. b3 e5 6. b4 $4 {BLUNDER
 (♚ Mate in 1)} ({(-5.09) The best move was} 6. e3 Nc5 7. Qe2 Nc6 8. Bb2 Bf5 9.
 d3 Qh4+ 10. Qf2 Qxf2+ 11. Kxf2 O-O-O 12. a3 Be7 13. e4 Be6 14. Nd2 Nd4 15. Rc1
-Bh4+ 16. Kg2 dxe4 17. Bxd4 exd4 18. fxe4) 6... Qh4# 0-1`
+Bh4+ 16. Kg2 dxe4 17. Bxd4 exd4 18. fxe4) 6... Qh4# 0-1`;
 
 const examplePgn14 = `[Event "Live Chess"]
 [Site "Chess.com"]
@@ -354,7 +355,7 @@ const examplePgn14 = `[Event "Live Chess"]
 [EndTime "16:24:27 PDT"]
 [Termination "ChadBiryani won by checkmate"]
 
-1. e4 f6 2. d4 g5 3. Qh5# 1-0`
+1. e4 f6 2. d4 g5 3. Qh5# 1-0`;
 
 const examplePgn15 = `[Event "Belgrade"]
 [Site "Belgrade YUG"]
@@ -410,7 +411,7 @@ Rf7+ Ke8 201. Rg7 Rf1 202. Rg8+ Rf8 203. Rg7 Rf6+ 204. Be6 Rf2 205. Bd5 Rf6+
 248. Bc4 Rg5 249. Ra6+ Ra5 250. Rh6 Rg5 251. Rh4 Ka5 252. Rh2 Rg3+ 253. Kd4 Rg5
 254. Bd5 Ka4 255. Kc5 Rg3 256. Ra2+ Ra3 257. Rb2 Rg3 258. Rh2 Rc3+ 259. Bc4 Rg3
 260. Rb2 Rg5+ 261. Bd5 Rg3 262. Rh2 Rc3+ 263. Bc4 Rg3 264. Rh8 Ka3 265. Ra8+ Kb2
-266. Ra2+ Kb1 267. Rf2 Kc1 268. Kd4 Kd1 269. Bd3 Rg7 1/2-1/2`
+266. Ra2+ Kb1 267. Rf2 Kc1 268. Kd4 Kd1 269. Bd3 Rg7 1/2-1/2`;
 
 const examplePgn16 = `[Event "Czech tht Chess Extraliga"]
 [Site "?"]
@@ -461,7 +462,7 @@ Rf2 118. Bc3 Rg2 119. Bd2 Rh2 120. Kc2 Rg2 121. a4 Rh2 122. Rd4 Rg2 123. Kb3 Rg6
 220. Rc1 Ka6 221. Rb1 Rh6 222. Kd7 Rh3 223. Rb6+ Ka7 224. Rb1 Ka6 225. Kc8 Rh5
 226. Rb8 Rc5 227. Rb2 Rh5 228. Rb8 Rf5 229. Rb6+ Ka7 230. Rc6 Rf8+ 231. Bd8 Rg8
 232. Rc7+ Ka8 233. Rc1 Rg7 234. Bc7 Rg8+ 235. Kd7 Rg7+ 236. Kc6 Rg6+ 237. Bd6
-Rg7 238. Rh1 Rh7 239. Re1 1-0`
+Rg7 238. Rh1 Rh7 239. Re1 1-0`;
 
 const examplePgn17 = `[Event "Live Chess"]
 [Site "Chess.com"]
@@ -490,7 +491,7 @@ Kf4 Kc4 61. Ke4 Rc3 62. Ke5 Kb3 63. Kd4 Rc2 64. Kd3 Rb2 65. Rc1 a2 66. Rc3+ Kb4
 67. Rc4+ Ka3 68. Rc8 Rb3+ 69. Kc2 Rb2+ 70. Kc3 Rb3+ 71. Kc2 a1=$146+ 72. Kd2 Kb2
 73. Rd8 Rb7 74. Rd3 Nb3+ 75. Ke3 Re7+ 76. Kf4 Nc5 77. Rf3 Ne6+ 78. Kg3 Nd4 79.
 Rf2+ Kc3 80. Rg2 Ne2+ 81. Kh4 Kd3 82. Rg4 Rh7+ 83. Kg5 Ke3 84. Kf6 Rh5 85. Rg6
-Ra5 86. Rg7 Nf4 87. Kf7 Ke4 88. Kg8 Ra8+ 0-1`
+Ra5 86. Rg7 Nf4 87. Kf7 Ke4 88. Kg8 Ra8+ 0-1`;
 
 const examplePgn18 = `[Event "Live Chess"]
 [Site "Chess.com"]
@@ -535,7 +536,7 @@ b5 {[%clk 0:01:40.5]} 36... Rd7 {[%clk 0:00:15.5]} 37. Qc6+ {[%clk 0:01:39.8]}
 {[%clk 0:01:38.4]} 40... Kf5 {[%clk 0:00:04.8]} 41. b6 {[%clk 0:01:38.9]} 41...
 g5 {[%clk 0:00:04.5]} 42. b7 {[%clk 0:01:38.9]} 42... h6 {[%clk 0:00:05]} 43.
 b8=B {[%clk 0:01:37.4]} 43... gxf4 {[%clk 0:00:04]} 44. Qe4+ {[%clk 0:01:36.7]}
-44... Kg4 {[%clk 0:00:02.4]} 45. Qxf4+ {[%clk 0:01:36.8]} 1-0`
+44... Kg4 {[%clk 0:00:02.4]} 45. Qxf4+ {[%clk 0:01:36.8]} 1-0`;
 
 const examplePgn19 = `[Event "Live Chess"]
 [Site "Chess.com"]
@@ -558,7 +559,7 @@ Qc3 f6 16. a3 Nd5 17. Qc2 Kh8 18. Nc5 Bxc5 19. Qxc5 Nb6 20. Qc2 Bd5 21. Rh2 a5
 O-O-O a4 29. Qc3 Bb3 30. Re1 Nh4 31. Be2 Nf3 32. Bxf3 Rxf3 33. Qxe5 Qxd3 34. Bd4
 Rf7 35. Rd2 Qxh3 36. Rh2 Qxg4 37. Reh1 Qf4+ 38. Qxf4 Kg8 39. Rxh7 Kf8 40. Qe5
 Re7 41. Rh8+ Bg8 42. Rf1+ Ke8 43. Rxg8+ Kd7 44. Qf5+ Kc7 45. Rxg7 Rxg7 46. Bxg7
-Kb6 47. Bd4+ Ka6 48. Qc5 b5 49. Qb6# 1-0`
+Kb6 47. Bd4+ Ka6 48. Qc5 b5 49. Qb6# 1-0`;
 
 const examplePgn20 = `[Event "Live Chess"]
 [Site "Chess.com"]
@@ -583,7 +584,7 @@ Qxa7+ {[%clk 0:03:05.5]} 11... Kd8 {[%clk 0:02:51.6]} 12. d4 {[%clk 0:03:03.3]}
 12... h6 {[%clk 0:02:46.1]} 13. Bxh6 {[%clk 0:03:01.7]} 13... c5 {[%clk
 0:02:47.1]} 14. dxc5 {[%clk 0:03:00.5]} 14... Bd6 {[%clk 0:02:45.6]} 15. cxd6
 {[%clk 0:03:00.9]} 15... Rh7 {[%clk 0:02:46]} 16. Bxg7 {[%clk 0:03:01.5]} 16...
-Rh5 {[%clk 0:02:44.2]} 17. fxg8=Q# {[%clk 0:02:48.7]} 1-0`
+Rh5 {[%clk 0:02:44.2]} 17. fxg8=Q# {[%clk 0:02:48.7]} 1-0`;
 
 const examplePgn21 = `[Event "Live Chess"]
 [Site "Chess.com"]
@@ -610,7 +611,7 @@ Bxd2+ {[%clk 0:03:01.1]} 6. Qxd2 {[%clk 0:02:30.9]} 6... Nf6 {[%clk 0:02:58.4]}
 cxd5 {[%clk 0:02:53.7]} 16. Nf3 {[%clk 0:02:19.1]} 16... Qa5 {[%clk 0:02:52.5]}
 17. Ne1 {[%clk 0:02:11.8]} 17... cxd2 {[%clk 0:02:52.6]} 18. Bh3 {[%clk
 0:02:04.7]} 18... Qc3 {[%clk 0:02:53]} 19. Bg2 {[%clk 0:02:06.2]} 19... Qd3
-{[%clk 0:02:50.4]} 20. Bh3 {[%clk 0:02:07.8]} 20... Nf2# {[%clk 0:02:50.8]} 0-1`
+{[%clk 0:02:50.4]} 20. Bh3 {[%clk 0:02:07.8]} 20... Nf2# {[%clk 0:02:50.8]} 0-1`;
 
 const examplePgn22 = `[Event "Live Chess"]
 [Site "Chess.com"]
@@ -631,7 +632,7 @@ Bd6 9. Bd3 O-O 10. Qc2 Be6 11. O-O Nd7 12. Rac1 Qg6 13. Kh1 Qh5 14. Be2 Rf6 15.
 g3 Rh6 16. Kg1 Qh3 17. Rfd1 Nf6 18. Bf1 Qg4 19. Bg2 Ne4 20. Qe2 Ng5 21. Nxg5
 Qxg5 22. f4 Qe7 23. Re1 Re8 24. Qc2 Bc8 25. a3 Re6 26. Nd1 Bc7 27. b4 Bb6 28.
 Rf1 a5 29. b5 Rxe3 30. Nxe3 Qxe3+ 31. Kh1 cxb5 32. Bxd5+ Kh8 33. Rce1 Qxd4 34.
-Rxe8# 1-0`
+Rxe8# 1-0`;
 
 const examplePgn23 = `[Event "Live Chess"]
 [Site "Chess.com"]
@@ -737,7 +738,7 @@ b7+ {[%clk 0:00:02.8]} 98... Ka7 {[%clk 0:00:44.6]} 99. Kb5 {[%clk 0:00:03]}
 {[%clk 0:00:05]} 110... Ka6 {[%clk 0:00:34]} 111. c8=Q+ {[%clk 0:00:05.9]}
 111... Kb5 {[%clk 0:00:34.1]} 112. Qc6+ {[%clk 0:00:05.9]} 112... Ka5 {[%clk
 0:00:34.2]} 113. Qb6+ {[%clk 0:00:05.6]} 113... Ka4 {[%clk 0:00:34.1]} 114. Qb4#
-{[%clk 0:00:06.4]`
+{[%clk 0:00:06.4]`;
 
 const examplePgn24 = `[Event "Live Chess"]
 [Site "Chess.com"]
@@ -754,8 +755,8 @@ const examplePgn24 = `[Event "Live Chess"]
 [Termination "mcrayudu won by checkmate"]
 
 1. g4 b6 2. Bg2 Bb7 3. Nf3 Bxf3 4. a3 Bxg2 5. Nc3 Bxh1 6. Ne4 Bxe4 7. d4 e6 8.
-Bg5 Qxg5 9. Kf1 Bg6 10. Kg2 h5 11. Kf3 h4 12. Rb1 d5 13. b3 Be4# 0-1`
+Bg5 Qxg5 9. Kf1 Bg6 10. Kg2 h5 11. Kf3 h4 12. Rb1 d5 13. b3 Be4# 0-1`;
 
-const result = achievementLibrary(examplePgn11, 'Black');
-console.log("Result: \n");
+const result = achievementLibrary(examplePgn24, 'Black');
+console.log('Result: \n');
 console.log(result);

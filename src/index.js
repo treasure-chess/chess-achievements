@@ -477,11 +477,11 @@ function displayResult(pgn, color) {
   gameMoves(pgn, color);
   specialMoves(pgn, color);
 
-  var numA = achieved.length;
+  achieved = achieved.sort((a, b) => b.points - a.points);
+  const finalAchievements = achieved.slice(0, 3);
+
   var score = 0;
-  for (var i = 0; i < numA; i++) {
-    score += achieved[i].points;
-  }
+  finalAchievements.map(chiev => (score += chiev.points));
 
   let openingName = '';
   for (let i = 0; i < ecoCodes.length; i++) {
@@ -490,7 +490,12 @@ function displayResult(pgn, color) {
     }
   }
 
-  return { opening: openingName, score: score, achievements: achieved };
+  return {
+    opening: openingName,
+    score: score,
+    achievements: finalAchievements,
+    allAchievements: achieved
+  };
 }
 
 //===== =====//

@@ -7,7 +7,7 @@
     "src/achievementsList.json"
   ],
   "scripts": {
-    "test": "node test.js",
+    "test": "node tests/full.test.js",
     "lint": "eslint ./src"
   },
   "dependencies": {
