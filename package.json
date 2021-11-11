@@ -29,8 +29,10 @@
     "url": "git+https://github.com/Treasure-Chess/chess-achievements.git"
   },
   "keywords": [
+    "treasure",
     "chess",
-    "achievement"
+    "achievement",
+    "chess.com"
   ],
   "author": "Treasure Chess Community <maintainers@niftychess.com>",
   "license": "MIT",
