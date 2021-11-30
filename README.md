@@ -150,7 +150,7 @@ Give a ⭐️ if this project helped you!
 
 ## 📝 License
 
-Copyright © 2021 [Treasure Chess <maintainers@niftychess.com>](https://github.com/Treasure-Chess).<br />
+Copyright © 2021 Nifty Chess, Inc.<br />
 This project is [MIT](https://github.com/Treasure-Chess/chess-achievements/blob/master/LICENSE) licensed.
 
 ---
