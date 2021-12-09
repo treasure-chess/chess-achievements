@@ -4,7 +4,7 @@
   "description": "Calculate chess achievements based on moves ",
   "main": "src/index.js",
   "files": [
-    "src/achievementsList.json"
+    "src/achievementsList.js"
   ],
   "scripts": {
     "test": "node tests/full.test.js",
