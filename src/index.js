@@ -1,6 +1,6 @@
 const { Chess } = require('chess.js');
-const ecoCodes = require('./eco-codes.js');
-const achievements = require('./achievementsList.js');
+const ecoCodes = require('./eco-codes');
+const achievements = require('./achievementsList');
 
 function achievementsCalculator(pgn, color) {
   return displayResult(pgn, color);
