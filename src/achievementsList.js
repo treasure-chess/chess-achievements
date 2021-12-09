@@ -1,4 +1,4 @@
-[
+const list = [
   {
     "number": 0,
     "name": "Winner",
@@ -222,3 +222,5 @@
     "points": 5
   }
 ]
+
+module.exports.default = list

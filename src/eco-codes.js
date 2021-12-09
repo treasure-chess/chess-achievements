@@ -1,4 +1,4 @@
-[
+const codes = [
  {
    "ECO": "A00",
    "Opening": "Uncommon Opening"
@@ -2000,3 +2000,5 @@
    "Opening": "King's Indian, Orthodox, Taimanov"
  }
 ]
+
+module.exports.default = codes
