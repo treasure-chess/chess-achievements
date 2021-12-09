@@ -78,7 +78,7 @@ jobs:
             Install this PR (you need to setup Github packages):
               
             ```bash
-            yarn add @treasure-chess/chess-acheivements@PR${{ steps.pr.outputs.pr_number }}
+            yarn add @treasure-chess/chess-achievements@PR${{ steps.pr.outputs.pr_number }}
             ```
 
             <details><summary>:octocat: Click to learn how to use Github packages</summary>
