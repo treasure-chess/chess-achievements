@@ -1,20 +1,21 @@
 const achievementLibrary = require('../src/index.js');
 const examplePgns = require('./examplePgns');
 
+// NOTE: Some pgns do not have an opening common name
+
 console.log('====================================');
 console.log('Testing...');
+let result;
 examplePgns.map((pgn, index) => {
   try {
-    const result = achievementLibrary(pgn, 'Black');
+    result = achievementLibrary(pgn, 'Black');
     if (index === 3) {
       console.log('Example result:');
       console.log(result);
     }
-    // TODO: score for many pgns is all the same "15"??
-    // console.log(result.score);
-    if (result.opening === '') throw new Error('No opening calculated');
+    console.log(`Game #${index + 1} opening: ${result.opening}`);
   } catch (e) {
-    console.log(`Issue while testing pgn #${index}`);
+    console.log(`Issue while testing pgn #${index + 1}`);
     console.log(e);
   }
 });
