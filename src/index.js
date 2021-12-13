@@ -468,10 +468,13 @@ function specialMoves(pgn, color) {
   }
 }
 
-function achievementsCalculator(pgn, color) {
+function achievementsCalculator(pgn, rawColor) {
   if (!pgn) throw new Error('No pgn provided');
-  if (!color) throw new Error('No color provided');
+  if (!rawColor) throw new Error('No color provided');
 
+  const color = rawColor.toUpperCase(); // Allow passing lowercase
+
+  // Note: required to reset these variables
   eco = '';
   achieved = [];
 
