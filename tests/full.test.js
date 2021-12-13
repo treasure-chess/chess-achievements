@@ -6,10 +6,15 @@ console.log('Testing...');
 examplePgns.map((pgn, index) => {
   try {
     const result = achievementLibrary(pgn, 'Black');
-    // console.log('Result: \n');
-    // console.log(result);
+    if (index === 3) {
+      console.log('Example result:');
+      console.log(result);
+    }
+    // TODO: score for many pgns is all the same "15"??
+    // console.log(result.score);
+    if (result.opening === '') throw new Error('No opening calculated');
   } catch (e) {
-    console.log(`Error testing pgn #${index}`);
+    console.log(`Issue while testing pgn #${index}`);
     console.log(e);
   }
 });
