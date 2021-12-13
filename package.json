@@ -1,6 +1,6 @@
 {
   "name": "@treasure-chess/chess-achievements",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Calculate chess achievements based on moves ",
   "main": "src/index.js",
   "scripts": {
