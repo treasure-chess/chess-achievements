@@ -223,4 +223,4 @@ const list = [
   }
 ];
 
-module.exports.default = list;
+module.exports = list;

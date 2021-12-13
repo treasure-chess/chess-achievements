@@ -2,10 +2,6 @@ const { Chess } = require('chess.js');
 const ecoCodes = require('./ecoCodes');
 const achievements = require('./achievementsList');
 
-function achievementsCalculator(pgn, color) {
-  return displayResult(pgn, color);
-}
-
 let achieved = [];
 let eco = '';
 
@@ -472,16 +468,20 @@ function specialMoves(pgn, color) {
   }
 }
 
-function displayResult(pgn, color) {
+function achievementsCalculator(pgn, color) {
+  if (!pgn) throw new Error('No pgn provided');
+  if (!color) throw new Error('No color provided');
+
   setResult(pgn, color);
   gameMoves(pgn, color);
   specialMoves(pgn, color);
 
   achieved = achieved.sort((a, b) => b.points - a.points);
   const finalAchievements = achieved.slice(0, 3);
-
   var score = 0;
-  finalAchievements.map(chiev => (score += chiev.points));
+  finalAchievements.map(chiev => {
+    score += chiev.points;
+  });
 
   let openingName = '';
   for (let i = 0; i < ecoCodes.length; i++) {
