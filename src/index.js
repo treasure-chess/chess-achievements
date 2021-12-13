@@ -468,9 +468,15 @@ function specialMoves(pgn, color) {
   }
 }
 
-function achievementsCalculator(pgn, color) {
+function achievementsCalculator(pgn, rawColor) {
   if (!pgn) throw new Error('No pgn provided');
-  if (!color) throw new Error('No color provided');
+  if (!rawColor) throw new Error('No color provided');
+
+  const color = rawColor.toUpperCase(); // Allow passing lowercase
+
+  // Note: required to reset these variables
+  eco = '';
+  achieved = [];
 
   setResult(pgn, color);
   gameMoves(pgn, color);
@@ -483,16 +489,14 @@ function achievementsCalculator(pgn, color) {
     score += chiev.points;
   });
 
-  let openingName = '';
-  for (let i = 0; i < ecoCodes.length; i++) {
-    if (ecoCodes[i]['ECO'] === eco) {
-      openingName = ecoCodes[i]['Opening'];
-    }
-  }
+  let opening = '';
+  ecoCodes.map(codeObject => {
+    if (codeObject.ECO == eco) opening = codeObject.Opening;
+  });
 
   return {
-    opening: openingName,
-    score: score,
+    opening,
+    score,
     achievements: finalAchievements,
     allAchievements: achieved
   };
