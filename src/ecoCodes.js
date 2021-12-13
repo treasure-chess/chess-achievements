@@ -2002,4 +2002,4 @@ const codes = [
   }
 ];
 
-module.exports.default = codes;
+module.exports = codes;
