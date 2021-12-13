@@ -3,11 +3,8 @@
   "version": "0.1.0",
   "description": "Calculate chess achievements based on moves ",
   "main": "src/index.js",
-  "files": [
-    "src/achievementsList.json"
-  ],
   "scripts": {
-    "test": "node test.js",
+    "test": "node tests/full.test.js",
     "lint": "eslint ./src"
   },
   "dependencies": {
@@ -29,8 +26,11 @@
     "url": "git+https://github.com/Treasure-Chess/chess-achievements.git"
   },
   "keywords": [
+    "treasure",
     "chess",
-    "achievement"
+    "achievement",
+    "chess.com",
+    "smart contract"
   ],
   "author": "Treasure Chess Community <maintainers@niftychess.com>",
   "license": "MIT",
