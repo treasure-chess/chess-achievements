@@ -46,9 +46,9 @@ jobs:
         if: env.PUBLISH_PR_ARTIFACT == 1
         run: yarn install --frozen-lockfile
 
-      # - name: Build
-      #   if: env.PUBLISH_PR_ARTIFACT == 1
-      #   run: yarn build
+      - name: Test
+        if: env.PUBLISH_PR_ARTIFACT == 1
+        run: yarn test
 
       - name: Setup PR package versions locally
         if: env.PUBLISH_PR_ARTIFACT == 1
