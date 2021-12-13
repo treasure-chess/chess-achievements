@@ -7,9 +7,6 @@
     "test": "node tests/full.test.js",
     "lint": "eslint ./src"
   },
-  "files": [
-    "src/achievementsList.js"
-  ],
   "dependencies": {
     "chess.js": "^0.12.0"
   },
