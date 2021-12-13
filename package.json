@@ -3,9 +3,6 @@
   "version": "0.0.9",
   "description": "Calculate chess achievements based on moves ",
   "main": "src/index.js",
-  "files": [
-    "src/achievementsList.js"
-  ],
   "scripts": {
     "test": "node tests/full.test.js",
     "lint": "eslint ./src"
