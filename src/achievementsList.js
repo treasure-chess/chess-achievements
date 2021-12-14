@@ -1,11 +1,5 @@
 const list = [
   {
-    number: 0,
-    name: 'Winner',
-    description: 'Win a game',
-    points: 2
-  },
-  {
     number: 1,
     name: 'Player',
     description: 'Play a game',
@@ -220,6 +214,12 @@ const list = [
     name: 'Pawn Hoarder',
     description: 'Capture all pawns without losing any',
     points: 5
+  },
+  {
+    number: 37,
+    name: 'Winner',
+    description: 'Win a game',
+    points: 2
   }
 ];
 
