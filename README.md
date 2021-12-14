@@ -49,7 +49,7 @@ const {
 
 | number | name               | description                                         | points |
 | ------ | ------------------ | --------------------------------------------------- | ------ |
-| 0      | Winner             | Win a game                                          | 2      |
+| 0      | n/a                | (empty achievement)                                 | 0      |
 | 1      | Player             | Play a game                                         | 1      |
 | 2      | 750+ Winner        | Win a game against opponent rated 750+              | 2      |
 | 3      | Played 750+        | Play a game against opponent rated 750+             | 1      |
@@ -86,6 +86,7 @@ const {
 | 34     | A Minor Problem    | Capture all knights and bishops without losing any. | 5      |
 | 35     | Mr. Marathon Man   | Move king >20 times                                 | 1      |
 | 36     | Pawn Hoarder       | Capture all pawns without losing any                | 5      |
+| 37     | Winner             | Win a game                                          | 2      |
 
 ### This one is for testing, and verifying the achievements
 
