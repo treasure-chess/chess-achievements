@@ -1124,6 +1124,13 @@
   resolved "https://registry.npmjs.org/@tootallnate/once/-/once-1.1.2.tgz#ccb91445360179a04e7fe6aff78c00ffc1eeaf82"
   integrity sha512-RbzJvlNzmRq5c3O09UipeuXno4tA1FE6ikOjxZK0tuxVv3412l64l5t1W5pj4+rJq9vpkm/kwiR07aZXnsKPxw==
 
+"@treasure-chess/chess-achievements@^0.1.2":
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/@treasure-chess/chess-achievements/-/chess-achievements-0.1.2.tgz#2828b49fecbde914cbaa5565818877c123ecb323"
+  integrity sha512-twkCsX/IV91STbJNHB+rofflJF25ibDKk4DKXavuprYd3EiSu6q9yg335BX+EXf/7sQwlahiktn1b/UD3IYKKw==
+  dependencies:
+    chess.js "^0.12.0"
+
 "@types/eslint-visitor-keys@^1.0.0":
   version "1.0.0"
   resolved "https://registry.npmjs.org/@types/eslint-visitor-keys/-/eslint-visitor-keys-1.0.0.tgz#1ee30d79544ca84d68d4b3cdb0af4f205663dd2d"
