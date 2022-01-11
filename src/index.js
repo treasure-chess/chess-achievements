@@ -490,12 +490,17 @@ function achievementsCalculator(pgn, rawColor) {
   });
 
   let opening = '';
+  let openingName = '';
   ecoCodes.map(codeObject => {
-    if (codeObject.ECO == eco) opening = codeObject.Opening;
+    if (codeObject.ECO == eco) {
+      opening = codeObject.Opening;
+      openingName = codeObject.Name;
+    }
   });
 
   return {
     opening,
+    openingName,
     score,
     achievements: finalAchievements,
     allAchievements: achieved
