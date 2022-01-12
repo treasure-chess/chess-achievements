@@ -511,3 +511,4 @@ function achievementsCalculator(pgn, rawColor) {
 //and then export functions here to be used as a library elsewhere.
 module.exports = achievementsCalculator;
 module.exports.achievements = achievements;
+module.exports.ecoCodes = ecoCodes;
