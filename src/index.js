@@ -491,6 +491,7 @@ function achievementsCalculator(pgn, rawColor) {
 
   let opening = '';
   let openingName = '';
+  let openingValue = '';
   ecoCodes.map(codeObject => {
     if (codeObject.eco == eco) {
       opening = codeObject.opening;
