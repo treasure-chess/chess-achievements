@@ -12,27 +12,27 @@ const codes = [
   {
     ECO: 'A02',
     Opening: "Bird's Opening",
-    Name: 'Bird'
+    Name: "Bird's Opening"
   },
   {
     ECO: 'A03',
     Opening: "Bird's Opening",
-    Name: 'Bird'
+    Name: "Bird's Opening"
   },
   {
     ECO: 'A04',
     Opening: 'Reti Opening',
-    Name: 'Reti'
+    Name: 'Reti Opening'
   },
   {
     ECO: 'A05',
     Opening: 'Reti Opening',
-    Name: 'Reti'
+    Name: 'Reti Opening'
   },
   {
     ECO: 'A06',
     Opening: 'Reti Opening',
-    Name: 'Reti'
+    Name: 'Reti Opening'
   },
   {
     ECO: 'A07',
@@ -1002,7 +1002,7 @@ const codes = [
   {
     ECO: 'C00',
     Opening: 'French Defense',
-    Name: 'French'
+    Name: 'French Defense'
   },
   {
     ECO: 'C01',
@@ -1227,7 +1227,7 @@ const codes = [
   {
     ECO: 'C45',
     Opening: 'Scotch Game',
-    Name: 'Scotch'
+    Name: 'Scotch Game'
   },
   {
     ECO: 'C46',
