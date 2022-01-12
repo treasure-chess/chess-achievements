@@ -492,9 +492,9 @@ function achievementsCalculator(pgn, rawColor) {
   let opening = '';
   let openingName = '';
   ecoCodes.map(codeObject => {
-    if (codeObject.ECO == eco) {
-      opening = codeObject.Opening;
-      openingName = codeObject.Name;
+    if (codeObject.eco == eco) {
+      opening = codeObject.opening;
+      openingName = codeObject.name;
     }
   });
 
