@@ -495,11 +495,13 @@ function achievementsCalculator(pgn, rawColor) {
     if (codeObject.eco == eco) {
       opening = codeObject.opening;
       openingName = codeObject.name;
+      openingValue = codeObject.value;
     }
   });
 
   return {
     opening,
+    openingValue,
     openingName,
     score,
     achievements: finalAchievements,
