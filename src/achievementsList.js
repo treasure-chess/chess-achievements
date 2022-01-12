@@ -8,7 +8,7 @@ const list = [
   },
   {
     number: 2,
-    value: '750Winner',
+    value: 'Winner750',
     name: '750+ Winner',
     description: 'Win a game against opponent rated 750+',
     points: 2
@@ -22,7 +22,7 @@ const list = [
   },
   {
     number: 4,
-    value: '1500Winner',
+    value: 'Winner1500',
     name: '1500+ Winner',
     description: 'Win a game against opponent rated 1500+',
     points: 3
