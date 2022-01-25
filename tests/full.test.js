@@ -9,7 +9,7 @@ let result;
 examplePgns.map((pgn, index) => {
   try {
     result = achievementLibrary(pgn, 'Black');
-    if (index === 3) {
+    if (index === 1) {
       console.log('Example result:');
       console.log(result);
     }
