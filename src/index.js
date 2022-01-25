@@ -42,7 +42,7 @@ function setResult(pgn, color) {
   }
 
   if (
-    color === 'White' &&
+    color.toLowerCase() === 'White'.toLowerCase() &&
     pgn.includes('won by checkmate') &&
     result === '1-0'
   ) {
@@ -57,7 +57,7 @@ function setResult(pgn, color) {
       achieved.push(achievements[18]);
     }
   } else if (
-    color === 'Black' &&
+    color.toLowerCase() === 'Black'.toLowerCase() &&
     pgn.includes('won by checkmate') &&
     result === '0-1'
   ) {
@@ -97,7 +97,7 @@ function setResult(pgn, color) {
 
   whiteElo = parseInt(strWhiteElo);
 
-  if (result === '1-0' && color === 'White') {
+  if (result === '1-0' && color.toLowerCase() === 'White'.toLowerCase()) {
     if (blackElo > whiteElo) {
       // Defeat a higher rated player achievement
       achieved.push(achievements[29]);
@@ -152,7 +152,7 @@ function setResult(pgn, color) {
       // Draw by repetition achievement
       achieved.push(achievements[28]);
     }
-    if (color === 'White') {
+    if (color.toLowerCase() === 'White'.toLowerCase()) {
       if (blackElo > whiteElo) {
         // Draw against higher rated player achievement
         achieved.push(achievements[21]);
@@ -195,7 +195,7 @@ function setResult(pgn, color) {
         achieved.push(achievements[7]);
       }
     }
-  } else if (result === '0-1' && color === 'Black') {
+  } else if (result === '0-1' && color.toLowerCase() === 'Black'.toLowerCase()) {
     if (whiteElo > blackElo) {
       // Defeat a higher rated player achievement
       achieved.push(achievements[29]);
@@ -246,7 +246,7 @@ function setResult(pgn, color) {
       }
     }
   } else {
-    if (color === 'White') {
+    if (color.toLowerCase() === 'White'.toLowerCase()) {
       if (blackElo <= 749) {
         // Play a game achievement
         achieved.push(achievements[0]);
