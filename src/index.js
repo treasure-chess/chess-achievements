@@ -195,7 +195,10 @@ function setResult(pgn, color) {
         achieved.push(achievements[7]);
       }
     }
-  } else if (result === '0-1' && color.toLowerCase() === 'Black'.toLowerCase()) {
+  } else if (
+    result === '0-1' &&
+    color.toLowerCase() === 'Black'.toLowerCase()
+  ) {
     if (whiteElo > blackElo) {
       // Defeat a higher rated player achievement
       achieved.push(achievements[29]);
