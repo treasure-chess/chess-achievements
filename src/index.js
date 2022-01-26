@@ -24,6 +24,8 @@ function setResult(pgn, color) {
   const moves = game.history({ verbose: true });
 
   let numMoves = 0;
+  //console.log("here's a thing: " + moves[moves.length - 1].color);
+  //NOTE: using just w or b for player color here. weird. change later?
   if (moves[moves.length - 1].color === 'w') {
     numMoves = moves.length / 2 + 0.5;
   } else {
@@ -42,7 +44,7 @@ function setResult(pgn, color) {
   }
 
   if (
-    color.toLowerCase() === 'White'.toLowerCase() &&
+    color.toLowerCase() === 'white' &&
     pgn.includes('won by checkmate') &&
     result === '1-0'
   ) {
@@ -57,7 +59,7 @@ function setResult(pgn, color) {
       achieved.push(achievements[18]);
     }
   } else if (
-    color.toLowerCase() === 'Black'.toLowerCase() &&
+    color.toLowerCase() === 'black' &&
     pgn.includes('won by checkmate') &&
     result === '0-1'
   ) {
@@ -97,7 +99,7 @@ function setResult(pgn, color) {
 
   whiteElo = parseInt(strWhiteElo);
 
-  if (result === '1-0' && color.toLowerCase() === 'White'.toLowerCase()) {
+  if (result === '1-0' && color.toLowerCase() === 'white') {
     if (blackElo > whiteElo) {
       // Defeat a higher rated player achievement
       achieved.push(achievements[29]);
@@ -152,7 +154,7 @@ function setResult(pgn, color) {
       // Draw by repetition achievement
       achieved.push(achievements[28]);
     }
-    if (color.toLowerCase() === 'White'.toLowerCase()) {
+    if (color.toLowerCase() === 'white' ){
       if (blackElo > whiteElo) {
         // Draw against higher rated player achievement
         achieved.push(achievements[21]);
@@ -197,7 +199,7 @@ function setResult(pgn, color) {
     }
   } else if (
     result === '0-1' &&
-    color.toLowerCase() === 'Black'.toLowerCase()
+    color.toLowerCase() === 'black'
   ) {
     if (whiteElo > blackElo) {
       // Defeat a higher rated player achievement
@@ -249,7 +251,7 @@ function setResult(pgn, color) {
       }
     }
   } else {
-    if (color.toLowerCase() === 'White'.toLowerCase()) {
+    if (color.toLowerCase() === 'white' ){
       if (blackElo <= 749) {
         // Play a game achievement
         achieved.push(achievements[0]);
@@ -298,7 +300,7 @@ function gameMoves(pgn, color) {
   let kingMoves = 0;
 
   for (let i = 0; i < moves.length; i++) {
-    if (color === 'White') {
+    if (color.toLowerCase() === 'white') {
       if (moves[i].color === 'w') {
         if (moves[i].san.includes('+')) {
           checkFlag = true;
@@ -381,7 +383,7 @@ function gameMoves(pgn, color) {
     }
   }
 
-  if (color === 'White') {
+  if (color.toLowerCase() === 'white') {
     if (blackPawnCount === 0 && whitePawnCount === 8) {
       // Capture all pawns without losing any achievement
       achieved.push(achievements[35]);
@@ -441,7 +443,7 @@ function gameMoves(pgn, color) {
 }
 
 function specialMoves(pgn, color) {
-  if (color === 'White') {
+  if (color.toLowerCase() === 'white') {
     const exp = /[0-9]+\.\sO-O-O/i;
     if (exp.test(pgn) === true) {
       // Queenside castle achievement
