@@ -20,17 +20,33 @@ function setResult(pgn, color) {
   }
 
   const game = new Chess();
-  game.load_pgn(pgn);
+  const options = { sloppy: true };
+  game.load_pgn(pgn, options);
+  // console.log(game);
+  // console.log(typeof game);
   const moves = game.history({ verbose: true });
+  const minMoves = game.history();
+  console.log(minMoves);
+  // console.log(minMoves[minMoves.length - 1]);
+  // console.log(moves[moves.length - 1]);
 
   let numMoves = 0;
   //console.log("here's a thing: " + moves[moves.length - 1].color);
   //NOTE: using just w or b for player color here. weird. change later?
-  if (moves[moves.length - 1].color === 'w') {
-    numMoves = moves.length / 2 + 0.5;
+
+  // console.log(moves[moves.length - 1]);
+
+  if (minMoves.length % 2 === 1) {
+    numMoves = minMoves / 2 + 0.5;
   } else {
     numMoves = moves.length / 2;
   }
+
+  // if (moves[moves.length - 1].color === 'w') {
+  //   numMoves = moves.length / 2 + 0.5;
+  // } else {
+  //   numMoves = moves.length / 2;
+  // }
 
   if (numMoves > 250) {
     // Complete a game with more than 250 moves
@@ -197,10 +213,7 @@ function setResult(pgn, color) {
         achieved.push(achievements[7]);
       }
     }
-  } else if (
-    result === '0-1' &&
-    color.toLowerCase() === 'black'
-  ) {
+  } else if (result === '0-1' && color.toLowerCase() === 'black') {
     if (whiteElo > blackElo) {
       // Defeat a higher rated player achievement
       achieved.push(achievements[29]);

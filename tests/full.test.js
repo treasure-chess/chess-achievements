@@ -6,10 +6,19 @@ const examplePgns = require('./examplePgns');
 console.log('====================================');
 console.log('Testing...');
 let result;
-examplePgns.map((pgn, index) => {
+let gamesToCheck = [];
+let successfulGames = [];
+examplePgns.forEach(game => {
+  let gameNo = game.gameNo;
+  // console.log(game);
+  let pgn = game.pgn;
+  let color = game.testColor;
   try {
-    result = achievementLibrary(pgn[2], pgn[1]);
-    let expectedAchievements = pgn[3];
+    result = achievementLibrary(pgn, color);
+    console.log(`Game #${gameNo} Opening: ${result.opening}`);
+    console.log(`Game #${gameNo} Score: ${result.score}`);
+
+    let expectedAchievements = game.expectedAchievements;
     let calculatedAchievements = [];
     let errorFlag = false;
     let missingAchievements = [];
@@ -17,9 +26,6 @@ examplePgns.map((pgn, index) => {
     result['allAchievements'].forEach(achievement => {
       calculatedAchievements.push(achievement['name']);
     });
-
-    console.log(`Game #${index + 1} Opening: ${result.opening}`);
-    console.log(`Game #${index + 1} Score: ${result.score}`);
 
     if (expectedAchievements.length !== calculatedAchievements.length) {
       console.log('ERROR: incorrect number of achievements');
@@ -35,13 +41,21 @@ examplePgns.map((pgn, index) => {
     });
 
     if (errorFlag) {
-      console.log(`ERROR: ISSUE DETECTED WHILE TESTING Pgn #${index + 1}`);
+      console.log(`ERROR: ISSUE DETECTED WHILE TESTING Pgn #${gameNo}`);
+      console.log('Missing Achievements:');
       console.log(missingAchievements);
+    } else {
+      successfulGames.push(gameNo);
     }
   } catch (e) {
-    console.log(`Issue while testing pgn #${index + 1}`);
+    gamesToCheck.push(gameNo);
+    console.log(`Issue while testing pgn #${gameNo}`);
     console.log(e);
   }
 });
 console.log(`Finished testing ${examplePgns.length} pgns`);
+console.log('Successful Games:');
+console.log(successfulGames);
+console.log('Games to Check:');
+console.log(gamesToCheck);
 console.log('====================================');
