@@ -7,10 +7,11 @@ console.log('====================================');
 console.log('Testing...');
 let result;
 let gamesToCheck = [];
+let errorGames = [];
 let successfulGames = [];
+
 examplePgns.forEach(game => {
   let gameNo = game.gameNo;
-  // console.log(game);
   let pgn = game.pgn;
   let color = game.testColor;
   try {
@@ -28,12 +29,14 @@ examplePgns.forEach(game => {
     });
 
     if (expectedAchievements.length !== calculatedAchievements.length) {
+      gamesToCheck.push(gameNo);
       console.log('ERROR: incorrect number of achievements');
       errorFlag = true;
     }
 
     expectedAchievements.forEach(achievement => {
       if (!calculatedAchievements.includes(achievement)) {
+        gamesToCheck.push(gameNo);
         console.log('MISSING ACHIEVEMENT: ' + achievement);
         missingAchievements.push(achievement);
         errorFlag = true;
@@ -44,6 +47,8 @@ examplePgns.forEach(game => {
       console.log(`ERROR: ISSUE DETECTED WHILE TESTING Pgn #${gameNo}`);
       console.log('Missing Achievements:');
       console.log(missingAchievements);
+      console.log('Calculated Achievements:');
+      console.log(calculatedAchievements);
     } else {
       successfulGames.push(gameNo);
     }
@@ -53,9 +58,16 @@ examplePgns.forEach(game => {
     console.log(e);
   }
 });
+
+gamesToCheck.forEach(game => {
+  if (!errorGames.includes(game)) {
+    errorGames.push(game);
+  }
+});
+
 console.log(`Finished testing ${examplePgns.length} pgns`);
 console.log('Successful Games:');
 console.log(successfulGames);
-console.log('Games to Check:');
-console.log(gamesToCheck);
+console.log('GAMES TO CHECK:');
+console.log(errorGames);
 console.log('====================================');

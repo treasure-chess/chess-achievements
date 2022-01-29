@@ -22,22 +22,16 @@ function setResult(pgn, color) {
   const game = new Chess();
   const options = { sloppy: true };
   game.load_pgn(pgn, options);
-  // console.log(game);
-  // console.log(typeof game);
-  const moves = game.history({ verbose: true });
-  const minMoves = game.history();
-  console.log(minMoves);
-  // console.log(minMoves[minMoves.length - 1]);
-  // console.log(moves[moves.length - 1]);
 
+  const moves = game.history({ verbose: true });
   let numMoves = 0;
   //console.log("here's a thing: " + moves[moves.length - 1].color);
   //NOTE: using just w or b for player color here. weird. change later?
 
-  // console.log(moves[moves.length - 1]);
+  // CHECK THIS
 
-  if (minMoves.length % 2 === 1) {
-    numMoves = minMoves / 2 + 0.5;
+  if (moves.length % 2 === 1) {
+    numMoves = moves / 2 + 0.5;
   } else {
     numMoves = moves.length / 2;
   }
