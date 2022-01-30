@@ -871,351 +871,550 @@ const examplePgns = [
       "Checkin' You Out",
       'Mr. Marathon Man'
     ]
-  }
-  // {
-  //   gameNo: 19,
-  //   testColor: 'white',
-  //   pgn: ,
-  //   expectedAchievements: [] 
-  // },
-  // {
-  //   gameNo: 20,
-  //   testColor: 'black',
-  //   pgn: ,
-  //   expectedAchievements: [] 
-  // },
-  // {
-  //   gameNo: 19,
-  //   testColor: 'white',
-  //   pgn: ,
-  //   expectedAchievements: [] 
-  // },
-  // {
-  //   gameNo: 20,
-  //   testColor: 'black',
-  //   pgn: ,
-  //   expectedAchievements: [] 
-  // },
-  // {
-  //   gameNo: 19,
-  //   testColor: 'white',
-  //   pgn: ,
-  //   expectedAchievements: [] 
-  // },
-  // {
-  //   gameNo: 20,
-  //   testColor: 'black',
-  //   pgn: ,
-  //   expectedAchievements: [] 
-  // },
-  // {
-  //   gameNo: 19,
-  //   testColor: 'white',
-  //   pgn: ,
-  //   expectedAchievements: [] 
-  // },
-  // {
-  //   gameNo: 20,
-  //   testColor: 'black',
-  //   pgn: ,
-  //   expectedAchievements: [] 
-  // },
+  },
+  {
+    gameNo: 27,
+    testColor: 'white',
+    pgn: `[Event "Live Chess"]
+    [Site "Chess.com"]
+    [Date "2021.07.27"]
+    [Round "?"]
+    [White "Oleksandr_Bortnyk"]
+    [Black "Hikaru"]
+    [Result "0-1"]
+    [ECO "B01"]
+    [WhiteElo "3003"]
+    [BlackElo "3218"]
+    [TimeControl "180"]
+    [EndTime "13:11:08 PDT"]
+    [Termination "Hikaru won on time"]
 
+    1. e4 d5 2. exd5 Qxd5 3. Nc3 Qa5 4. Nf3 c6 5. Be2 Bf5 6. b4 Qc7 7. b5 e6 8. O-O
+    Nf6 9. Rb1 Bd6 10. h3 O-O 11. a4 Bg6 12. d3 Nbd7 13. Re1 a5 14. Bg5 Bb4 15. Bd2
+    Rfc8 16. Nh4 Bxc3 17. Bxc3 cxb5 18. Bxf6 Nxf6 19. Rxb5 Qxc2 20. Qxc2 Rxc2 21.
+    Nxg6 hxg6 22. Rxb7 Ra2 23. Bf3 Rf8 24. Bc6 Rc8 25. Bb5 Rcc2 26. Rf1 Nd5 27. g3
+    Rab2 28. Ba6 Nb4 29. Bc4 Nc6 30. Rxb2 Rxb2 31. Rc1 Nd4 32. Kg2 Rb4 33. Ra1 g5
+    34. g4 Kf8 35. Kg3 Ke7 36. Ra2 Rb1 37. f4 gxf4+ 38. Kxf4 f6 39. h4 e5+ 40. Kg3
+    Rg1+ 41. Kh3 Kd6 42. Rb2 e4 43. dxe4 Ke5 44. g5 fxg5 45. hxg5 Kxe4 46. Rb7 Rxg5
+    47. Bb5 Nxb5 48. axb5 Kd4 49. Kh4 Rd5 50. b6 g5+ 51. Kg4 Kc5 52. Rb8 Kc6 53. b7
+    Kc7 54. Rg8 Kxb7 55. Rg6 a4 56. Rh6 a3 57. Rh1 Kb6 58. Ra1 Rd3 59. Kxg5 Kc5 60.
+    Kf4 Kc4 61. Ke4 Rc3 62. Ke5 Kb3 63. Kd4 Rc2 64. Kd3 Rb2 65. Rc1 a2 66. Rc3+ Kb4
+    67. Rc4+ Ka3 68. Rc8 Rb3+ 69. Kc2 Rb2+ 70. Kc3 Rb3+ 71. Kc2 a1=$146+ 72. Kd2 Kb2
+    73. Rd8 Rb7 74. Rd3 Nb3+ 75. Ke3 Re7+ 76. Kf4 Nc5 77. Rf3 Ne6+ 78. Kg3 Nd4 79.
+    Rf2+ Kc3 80. Rg2 Ne2+ 81. Kh4 Kd3 82. Rg4 Rh7+ 83. Kg5 Ke3 84. Kf6 Rh5 85. Rg6
+    Ra5 86. Rg7 Nf4 87. Kf7 Ke4 88. Kg8 Ra8+ 0-1`,
+    expectedAchievements: ['Strongest Opponent', "Checkin' You Out"]
+  },
+  {
+    gameNo: 28,
+    testColor: 'black',
+    pgn: `[Event "Live Chess"]
+    [Site "Chess.com"]
+    [Date "2021.07.27"]
+    [Round "?"]
+    [White "Oleksandr_Bortnyk"]
+    [Black "Hikaru"]
+    [Result "0-1"]
+    [ECO "B01"]
+    [WhiteElo "3003"]
+    [BlackElo "3218"]
+    [TimeControl "180"]
+    [EndTime "13:11:08 PDT"]
+    [Termination "Hikaru won on time"]
 
+    1. e4 d5 2. exd5 Qxd5 3. Nc3 Qa5 4. Nf3 c6 5. Be2 Bf5 6. b4 Qc7 7. b5 e6 8. O-O
+    Nf6 9. Rb1 Bd6 10. h3 O-O 11. a4 Bg6 12. d3 Nbd7 13. Re1 a5 14. Bg5 Bb4 15. Bd2
+    Rfc8 16. Nh4 Bxc3 17. Bxc3 cxb5 18. Bxf6 Nxf6 19. Rxb5 Qxc2 20. Qxc2 Rxc2 21.
+    Nxg6 hxg6 22. Rxb7 Ra2 23. Bf3 Rf8 24. Bc6 Rc8 25. Bb5 Rcc2 26. Rf1 Nd5 27. g3
+    Rab2 28. Ba6 Nb4 29. Bc4 Nc6 30. Rxb2 Rxb2 31. Rc1 Nd4 32. Kg2 Rb4 33. Ra1 g5
+    34. g4 Kf8 35. Kg3 Ke7 36. Ra2 Rb1 37. f4 gxf4+ 38. Kxf4 f6 39. h4 e5+ 40. Kg3
+    Rg1+ 41. Kh3 Kd6 42. Rb2 e4 43. dxe4 Ke5 44. g5 fxg5 45. hxg5 Kxe4 46. Rb7 Rxg5
+    47. Bb5 Nxb5 48. axb5 Kd4 49. Kh4 Rd5 50. b6 g5+ 51. Kg4 Kc5 52. Rb8 Kc6 53. b7
+    Kc7 54. Rg8 Kxb7 55. Rg6 a4 56. Rh6 a3 57. Rh1 Kb6 58. Ra1 Rd3 59. Kxg5 Kc5 60.
+    Kf4 Kc4 61. Ke4 Rc3 62. Ke5 Kb3 63. Kd4 Rc2 64. Kd3 Rb2 65. Rc1 a2 66. Rc3+ Kb4
+    67. Rc4+ Ka3 68. Rc8 Rb3+ 69. Kc2 Rb2+ 70. Kc3 Rb3+ 71. Kc2 a1=$146+ 72. Kd2 Kb2
+    73. Rd8 Rb7 74. Rd3 Nb3+ 75. Ke3 Re7+ 76. Kf4 Nc5 77. Rf3 Ne6+ 78. Kg3 Nd4 79.
+    Rf2+ Kc3 80. Rg2 Ne2+ 81. Kh4 Kd3 82. Rg4 Rh7+ 83. Kg5 Ke3 84. Kf6 Rh5 85. Rg6
+    Ra5 86. Rg7 Nf4 87. Kf7 Ke4 88. Kg8 Ra8+ 0-1`,
+    expectedAchievements: [
+      'Mythic Winner',
+      'Horse Farmer',
+      'Pawn Shopper',
+      "Checkin' You Out"
+    ]
+  },
+  {
+    gameNo: 29,
+    testColor: 'white',
+    pgn: `[Event "Live Chess"]
+    [Site "Chess.com"]
+    [Date "2021.09.27"]
+    [Round "?"]
+    [White "ChadBiryani"]
+    [Black "KATHEKIMO"]
+    [Result "1-0"]
+    [TimeControl "120+1"]
+    [WhiteElo "2415"]
+    [BlackElo "200"]
+    [Termination "ChadBiryani won on time"]
 
+    1. e4 {[%clk 0:02:01]} 1... e5 {[%clk 0:01:53.7]} 2. Nf3 {[%clk 0:02:00.7]} 2...
+    Nc6 {[%clk 0:01:53.5]} 3. a4 {[%clk 0:02:01.3]} 3... Nf6 {[%clk 0:01:53.5]} 4.
+    Bc4 {[%clk 0:02:01.4]} 4... Qe7 {[%clk 0:01:52]} 5. d3 {[%clk 0:02:01.8]} 5...
+    Qc5 {[%clk 0:01:50.7]} 6. Be3 {[%clk 0:02:01.5]} 6... Qb4+ {[%clk 0:01:45.8]} 7.
+    Nbd2 {[%clk 0:02:01.4]} 7... d5 {[%clk 0:01:35.1]} 8. exd5 {[%clk 0:02:01.1]}
+    8... Nxd5 {[%clk 0:01:33.3]} 9. Bxd5 {[%clk 0:02:00.5]} 9... Ne7 {[%clk
+    0:01:26.6]} 10. Bb3 {[%clk 0:02:00.4]} 10... Qg4 {[%clk 0:01:21]} 11. Kf1 {[%clk
+    0:01:59.9]} 11... e4 {[%clk 0:01:18.4]} 12. Bxf7+ {[%clk 0:01:59.3]} 12... Kxf7
+    {[%clk 0:01:16.5]} 13. Ne5+ {[%clk 0:01:59.9]} 13... Kf6 {[%clk 0:01:10.8]} 14.
+    Nxg4+ {[%clk 0:01:57.1]} 14... Bxg4 {[%clk 0:01:11.3]} 15. Qxg4 {[%clk
+    0:01:55.8]} 15... Ke5 {[%clk 0:01:10.2]} 16. a5 {[%clk 0:01:50.7]} 16... b6
+    {[%clk 0:01:07.6]} 17. a6 {[%clk 0:01:50.4]} 17... c5 {[%clk 0:01:04.5]} 18. Qd7
+    {[%clk 0:01:50.2]} 18... Nf5 {[%clk 0:00:59.2]} 19. Qb7 {[%clk 0:01:49.8]} 19...
+    Re8 {[%clk 0:00:56.8]} 20. Qxa7 {[%clk 0:01:49]} 20... Re7 {[%clk 0:00:55.1]}
+    21. Qxb6 {[%clk 0:01:47.5]} 21... Nxe3+ {[%clk 0:00:53]} 22. fxe3 {[%clk
+    0:01:47]} 22... exd3 {[%clk 0:00:52]} 23. cxd3 {[%clk 0:01:47.9]} 23... Kf5
+    {[%clk 0:00:51.6]} 24. Ke2 {[%clk 0:01:47.8]} 24... Re5 {[%clk 0:00:49.2]} 25.
+    a7 {[%clk 0:01:47.6]} 25... Re7 {[%clk 0:00:47]} 26. a8=N {[%clk 0:01:46.3]}
+    26... Rd7 {[%clk 0:00:42.8]} 27. Nc4 {[%clk 0:01:44.3]} 27... Rd5 {[%clk
+    0:00:40.2]} 28. Qc6 {[%clk 0:01:40.9]} 28... Rd8 {[%clk 0:00:29.6]} 29. Ra5
+    {[%clk 0:01:40.9]} 29... Bd6 {[%clk 0:00:25.5]} 30. Rxc5+ {[%clk 0:01:40.4]}
+    30... Bxc5 {[%clk 0:00:24.5]} 31. Qxc5+ {[%clk 0:01:41.3]} 31... Ke6 {[%clk
+    0:00:23.2]} 32. Nc7+ {[%clk 0:01:41.8]} 32... Kd7 {[%clk 0:00:19.9]} 33. Nd5
+    {[%clk 0:01:40.4]} 33... Rhe8 {[%clk 0:00:19.1]} 34. b4 {[%clk 0:01:40.2]} 34...
+    Ke6 {[%clk 0:00:17.7]} 35. Nf4+ {[%clk 0:01:40]} 35... Kf6 {[%clk 0:00:17]} 36.
+    b5 {[%clk 0:01:40.5]} 36... Rd7 {[%clk 0:00:15.5]} 37. Qc6+ {[%clk 0:01:39.8]}
+    37... Ke7 {[%clk 0:00:12.7]} 38. Rb1 {[%clk 0:01:40]} 38... Kf7 {[%clk
+    0:00:10.4]} 39. Qxd7+ {[%clk 0:01:38.9]} 39... Kf6 {[%clk 0:00:06.2]} 40. Qxe8
+    {[%clk 0:01:38.4]} 40... Kf5 {[%clk 0:00:04.8]} 41. b6 {[%clk 0:01:38.9]} 41...
+    g5 {[%clk 0:00:04.5]} 42. b7 {[%clk 0:01:38.9]} 42... h6 {[%clk 0:00:05]} 43.
+    b8=B {[%clk 0:01:37.4]} 43... gxf4 {[%clk 0:00:04]} 44. Qe4+ {[%clk 0:01:36.7]}
+    44... Kg4 {[%clk 0:00:02.4]} 45. Qxf4+ {[%clk 0:01:36.8]} 1-0`,
+    expectedAchievements: [
+      'Holy Promotion',
+      'Horse Farmer',
+      'Winner',
+      "Checkin' You Out"
+    ]
+  },
+  {
+    gameNo: 30,
+    testColor: 'black',
+    pgn: `[Event "Live Chess"]
+    [Site "Chess.com"]
+    [Date "2021.09.27"]
+    [Round "?"]
+    [White "ChadBiryani"]
+    [Black "KATHEKIMO"]
+    [Result "1-0"]
+    [TimeControl "120+1"]
+    [WhiteElo "2415"]
+    [BlackElo "200"]
+    [Termination "ChadBiryani won on time"]
+  
+    1. e4 {[%clk 0:02:01]} 1... e5 {[%clk 0:01:53.7]} 2. Nf3 {[%clk 0:02:00.7]} 2...
+    Nc6 {[%clk 0:01:53.5]} 3. a4 {[%clk 0:02:01.3]} 3... Nf6 {[%clk 0:01:53.5]} 4.
+    Bc4 {[%clk 0:02:01.4]} 4... Qe7 {[%clk 0:01:52]} 5. d3 {[%clk 0:02:01.8]} 5...
+    Qc5 {[%clk 0:01:50.7]} 6. Be3 {[%clk 0:02:01.5]} 6... Qb4+ {[%clk 0:01:45.8]} 7.
+    Nbd2 {[%clk 0:02:01.4]} 7... d5 {[%clk 0:01:35.1]} 8. exd5 {[%clk 0:02:01.1]}
+    8... Nxd5 {[%clk 0:01:33.3]} 9. Bxd5 {[%clk 0:02:00.5]} 9... Ne7 {[%clk
+    0:01:26.6]} 10. Bb3 {[%clk 0:02:00.4]} 10... Qg4 {[%clk 0:01:21]} 11. Kf1 {[%clk
+    0:01:59.9]} 11... e4 {[%clk 0:01:18.4]} 12. Bxf7+ {[%clk 0:01:59.3]} 12... Kxf7
+    {[%clk 0:01:16.5]} 13. Ne5+ {[%clk 0:01:59.9]} 13... Kf6 {[%clk 0:01:10.8]} 14.
+    Nxg4+ {[%clk 0:01:57.1]} 14... Bxg4 {[%clk 0:01:11.3]} 15. Qxg4 {[%clk
+    0:01:55.8]} 15... Ke5 {[%clk 0:01:10.2]} 16. a5 {[%clk 0:01:50.7]} 16... b6
+    {[%clk 0:01:07.6]} 17. a6 {[%clk 0:01:50.4]} 17... c5 {[%clk 0:01:04.5]} 18. Qd7
+    {[%clk 0:01:50.2]} 18... Nf5 {[%clk 0:00:59.2]} 19. Qb7 {[%clk 0:01:49.8]} 19...
+    Re8 {[%clk 0:00:56.8]} 20. Qxa7 {[%clk 0:01:49]} 20... Re7 {[%clk 0:00:55.1]}
+    21. Qxb6 {[%clk 0:01:47.5]} 21... Nxe3+ {[%clk 0:00:53]} 22. fxe3 {[%clk
+    0:01:47]} 22... exd3 {[%clk 0:00:52]} 23. cxd3 {[%clk 0:01:47.9]} 23... Kf5
+    {[%clk 0:00:51.6]} 24. Ke2 {[%clk 0:01:47.8]} 24... Re5 {[%clk 0:00:49.2]} 25.
+    a7 {[%clk 0:01:47.6]} 25... Re7 {[%clk 0:00:47]} 26. a8=N {[%clk 0:01:46.3]}
+    26... Rd7 {[%clk 0:00:42.8]} 27. Nc4 {[%clk 0:01:44.3]} 27... Rd5 {[%clk
+    0:00:40.2]} 28. Qc6 {[%clk 0:01:40.9]} 28... Rd8 {[%clk 0:00:29.6]} 29. Ra5
+    {[%clk 0:01:40.9]} 29... Bd6 {[%clk 0:00:25.5]} 30. Rxc5+ {[%clk 0:01:40.4]}
+    30... Bxc5 {[%clk 0:00:24.5]} 31. Qxc5+ {[%clk 0:01:41.3]} 31... Ke6 {[%clk
+    0:00:23.2]} 32. Nc7+ {[%clk 0:01:41.8]} 32... Kd7 {[%clk 0:00:19.9]} 33. Nd5
+    {[%clk 0:01:40.4]} 33... Rhe8 {[%clk 0:00:19.1]} 34. b4 {[%clk 0:01:40.2]} 34...
+    Ke6 {[%clk 0:00:17.7]} 35. Nf4+ {[%clk 0:01:40]} 35... Kf6 {[%clk 0:00:17]} 36.
+    b5 {[%clk 0:01:40.5]} 36... Rd7 {[%clk 0:00:15.5]} 37. Qc6+ {[%clk 0:01:39.8]}
+    37... Ke7 {[%clk 0:00:12.7]} 38. Rb1 {[%clk 0:01:40]} 38... Kf7 {[%clk
+    0:00:10.4]} 39. Qxd7+ {[%clk 0:01:38.9]} 39... Kf6 {[%clk 0:00:06.2]} 40. Qxe8
+    {[%clk 0:01:38.4]} 40... Kf5 {[%clk 0:00:04.8]} 41. b6 {[%clk 0:01:38.9]} 41...
+    g5 {[%clk 0:00:04.5]} 42. b7 {[%clk 0:01:38.9]} 42... h6 {[%clk 0:00:05]} 43.
+    b8=B {[%clk 0:01:37.4]} 43... gxf4 {[%clk 0:00:04]} 44. Qe4+ {[%clk 0:01:36.7]}
+    44... Kg4 {[%clk 0:00:02.4]} 45. Qxf4+ {[%clk 0:01:36.8]} 1-0`,
+    expectedAchievements: ['Strongest Opponent', 'Pawn Shy']
+  },
+  {
+    gameNo: 31,
+    testColor: 'white',
+    pgn: `[Event "Live Chess"]
+    [Site "Chess.com"]
+    [Date "2020.12.03"]
+    [Round "?"]
+    [White "ChadBiryani"]
+    [Black "GMHikaruOnTwitch"]
+    [Result "1-0"]
+    [ECO "A00"]
+    [WhiteElo "2385"]
+    [BlackElo "2942"]
+    [TimeControl "180"]
+    [EndTime "15:56:48 PST"]
+    [Termination "ChadBiryani won by checkmate"]
 
-  // `[Event "Live Chess"]
-  // [Site "Chess.com"]
-  // [Date "2021.07.27"]
-  // [Round "?"]
-  // [White "Oleksandr_Bortnyk"]
-  // [Black "Hikaru"]
-  // [Result "0-1"]
-  // [ECO "B01"]
-  // [WhiteElo "3003"]
-  // [BlackElo "3218"]
-  // [TimeControl "180"]
-  // [EndTime "13:11:08 PDT"]
-  // [Termination "Hikaru won on time"]
+    1. g4 d5 2. Bg2 c6 3. h3 e5 4. c4 dxc4 5. Nc3 Ne7 6. Qa4 Ng6 7. Qxc4 Be6 8. Qa4
+    Nd7 9. d3 Nh4 10. Bf1 Be7 11. Be3 Nb6 12. Qc2 Nd5 13. Bd2 O-O 14. Ne4 Nb4 15.
+    Qc3 f6 16. a3 Nd5 17. Qc2 Kh8 18. Nc5 Bxc5 19. Qxc5 Nb6 20. Qc2 Bd5 21. Rh2 a5
+    22. e4 Bg8 23. f4 exf4 24. Bxf4 Ng6 25. Be3 Nd7 26. Nf3 Nde5 27. Nxe5 fxe5 28.
+    O-O-O a4 29. Qc3 Bb3 30. Re1 Nh4 31. Be2 Nf3 32. Bxf3 Rxf3 33. Qxe5 Qxd3 34. Bd4
+    Rf7 35. Rd2 Qxh3 36. Rh2 Qxg4 37. Reh1 Qf4+ 38. Qxf4 Kg8 39. Rxh7 Kf8 40. Qe5
+    Re7 41. Rh8+ Bg8 42. Rf1+ Ke8 43. Rxg8+ Kd7 44. Qf5+ Kc7 45. Rxg7 Rxg7 46. Bxg7
+    Kb6 47. Bd4+ Ka6 48. Qc5 b5 49. Qb6# 1-0`,
+    expectedAchievements: ['Mythic Winner', 'The Underdog', "Checkin' You Out"]
+  },
+  {
+    gameNo: 32,
+    testColor: 'black',
+    pgn: `[Event "Live Chess"]
+    [Site "Chess.com"]
+    [Date "2020.12.03"]
+    [Round "?"]
+    [White "ChadBiryani"]
+    [Black "GMHikaruOnTwitch"]
+    [Result "1-0"]
+    [ECO "A00"]
+    [WhiteElo "2385"]
+    [BlackElo "2942"]
+    [TimeControl "180"]
+    [EndTime "15:56:48 PST"]
+    [Termination "ChadBiryani won by checkmate"]
 
-  // 1. e4 d5 2. exd5 Qxd5 3. Nc3 Qa5 4. Nf3 c6 5. Be2 Bf5 6. b4 Qc7 7. b5 e6 8. O-O
-  // Nf6 9. Rb1 Bd6 10. h3 O-O 11. a4 Bg6 12. d3 Nbd7 13. Re1 a5 14. Bg5 Bb4 15. Bd2
-  // Rfc8 16. Nh4 Bxc3 17. Bxc3 cxb5 18. Bxf6 Nxf6 19. Rxb5 Qxc2 20. Qxc2 Rxc2 21.
-  // Nxg6 hxg6 22. Rxb7 Ra2 23. Bf3 Rf8 24. Bc6 Rc8 25. Bb5 Rcc2 26. Rf1 Nd5 27. g3
-  // Rab2 28. Ba6 Nb4 29. Bc4 Nc6 30. Rxb2 Rxb2 31. Rc1 Nd4 32. Kg2 Rb4 33. Ra1 g5
-  // 34. g4 Kf8 35. Kg3 Ke7 36. Ra2 Rb1 37. f4 gxf4+ 38. Kxf4 f6 39. h4 e5+ 40. Kg3
-  // Rg1+ 41. Kh3 Kd6 42. Rb2 e4 43. dxe4 Ke5 44. g5 fxg5 45. hxg5 Kxe4 46. Rb7 Rxg5
-  // 47. Bb5 Nxb5 48. axb5 Kd4 49. Kh4 Rd5 50. b6 g5+ 51. Kg4 Kc5 52. Rb8 Kc6 53. b7
-  // Kc7 54. Rg8 Kxb7 55. Rg6 a4 56. Rh6 a3 57. Rh1 Kb6 58. Ra1 Rd3 59. Kxg5 Kc5 60.
-  // Kf4 Kc4 61. Ke4 Rc3 62. Ke5 Kb3 63. Kd4 Rc2 64. Kd3 Rb2 65. Rc1 a2 66. Rc3+ Kb4
-  // 67. Rc4+ Ka3 68. Rc8 Rb3+ 69. Kc2 Rb2+ 70. Kc3 Rb3+ 71. Kc2 a1=$146+ 72. Kd2 Kb2
-  // 73. Rd8 Rb7 74. Rd3 Nb3+ 75. Ke3 Re7+ 76. Kf4 Nc5 77. Rf3 Ne6+ 78. Kg3 Nd4 79.
-  // Rf2+ Kc3 80. Rg2 Ne2+ 81. Kh4 Kd3 82. Rg4 Rh7+ 83. Kg5 Ke3 84. Kf6 Rh5 85. Rg6
-  // Ra5 86. Rg7 Nf4 87. Kf7 Ke4 88. Kg8 Ra8+ 0-1`,
+    1. g4 d5 2. Bg2 c6 3. h3 e5 4. c4 dxc4 5. Nc3 Ne7 6. Qa4 Ng6 7. Qxc4 Be6 8. Qa4
+    Nd7 9. d3 Nh4 10. Bf1 Be7 11. Be3 Nb6 12. Qc2 Nd5 13. Bd2 O-O 14. Ne4 Nb4 15.
+    Qc3 f6 16. a3 Nd5 17. Qc2 Kh8 18. Nc5 Bxc5 19. Qxc5 Nb6 20. Qc2 Bd5 21. Rh2 a5
+    22. e4 Bg8 23. f4 exf4 24. Bxf4 Ng6 25. Be3 Nd7 26. Nf3 Nde5 27. Nxe5 fxe5 28.
+    O-O-O a4 29. Qc3 Bb3 30. Re1 Nh4 31. Be2 Nf3 32. Bxf3 Rxf3 33. Qxe5 Qxd3 34. Bd4
+    Rf7 35. Rd2 Qxh3 36. Rh2 Qxg4 37. Reh1 Qf4+ 38. Qxf4 Kg8 39. Rxh7 Kf8 40. Qe5
+    Re7 41. Rh8+ Bg8 42. Rf1+ Ke8 43. Rxg8+ Kd7 44. Qf5+ Kc7 45. Rxg7 Rxg7 46. Bxg7
+    Kb6 47. Bd4+ Ka6 48. Qc5 b5 49. Qb6# 1-0`,
+    expectedAchievements: ['Strongest Opponent', "Checkin' You Out"]
+  },
+  {
+    gameNo: 33,
+    testColor: 'white',
+    pgn: `[Event "Live Chess"]
+    [Site "Chess.com"]
+    [Date "2021.09.27"]
+    [Round "?"]
+    [White "DarkSh33p"]
+    [Black "ChadBiryani"]
+    [Result "1-0"]
+    [TimeControl "180+2"]
+    [WhiteElo "1715"]
+    [BlackElo "2415"]
+    [Termination "DarkSh33p won by checkmate"]
 
-  // `[Event "Live Chess"]
-  // [Site "Chess.com"]
-  // [Date "2021.09.27"]
-  // [Round "?"]
-  // [White "ChadBiryani"]
-  // [Black "KATHEKIMO"]
-  // [Result "1-0"]
-  // [TimeControl "120+1"]
-  // [WhiteElo "2415"]
-  // [BlackElo "200"]
-  // [Termination "ChadBiryani won on time"]
+    1. e4 {[%clk 0:03:02]} 1... d5 {[%clk 0:03:02]} 2. exd5 {[%clk 0:03:02.7]} 2...
+    e6 {[%clk 0:03:02.7]} 3. dxe6 {[%clk 0:03:03.9]} 3... Na6 {[%clk 0:03:02.7]} 4.
+    exf7+ {[%clk 0:03:04.5]} 4... Ke7 {[%clk 0:03:04.3]} 5. Bxa6 {[%clk 0:03:04.5]}
+    5... Rb8 {[%clk 0:03:04.5]} 6. Bxb7 {[%clk 0:03:04.1]} 6... Qd7 {[%clk
+    0:02:56.4]} 7. Bxc8 {[%clk 0:03:05]} 7... Qc6 {[%clk 0:02:56.8]} 8. Qf3 {[%clk
+    0:03:04.1]} 8... Qd5 {[%clk 0:02:53.2]} 9. Qxd5 {[%clk 0:03:04.6]} 9... Ra8
+    {[%clk 0:02:54.7]} 10. Qxa8 {[%clk 0:03:05.2]} 10... c6 {[%clk 0:02:55.2]} 11.
+    Qxa7+ {[%clk 0:03:05.5]} 11... Kd8 {[%clk 0:02:51.6]} 12. d4 {[%clk 0:03:03.3]}
+    12... h6 {[%clk 0:02:46.1]} 13. Bxh6 {[%clk 0:03:01.7]} 13... c5 {[%clk
+    0:02:47.1]} 14. dxc5 {[%clk 0:03:00.5]} 14... Bd6 {[%clk 0:02:45.6]} 15. cxd6
+    {[%clk 0:03:00.9]} 15... Rh7 {[%clk 0:02:46]} 16. Bxg7 {[%clk 0:03:01.5]} 16...
+    Rh5 {[%clk 0:02:44.2]} 17. fxg8=Q# {[%clk 0:02:48.7]} 1-0`,
+    expectedAchievements: [
+      'Mythic Winner',
+      'A Minor Problem',
+      'Utter Disrespect',
+      'The Underdog',
+      'Pawn Shopper'
+    ]
+  },
+  {
+    gameNo: 34,
+    testColor: 'black',
+    pgn: `[Event "Live Chess"]
+    [Site "Chess.com"]
+    [Date "2021.09.27"]
+    [Round "?"]
+    [White "DarkSh33p"]
+    [Black "ChadBiryani"]
+    [Result "1-0"]
+    [TimeControl "180+2"]
+    [WhiteElo "1715"]
+    [BlackElo "2415"]
+    [Termination "DarkSh33p won by checkmate"]
 
-  // 1. e4 {[%clk 0:02:01]} 1... e5 {[%clk 0:01:53.7]} 2. Nf3 {[%clk 0:02:00.7]} 2...
-  // Nc6 {[%clk 0:01:53.5]} 3. a4 {[%clk 0:02:01.3]} 3... Nf6 {[%clk 0:01:53.5]} 4.
-  // Bc4 {[%clk 0:02:01.4]} 4... Qe7 {[%clk 0:01:52]} 5. d3 {[%clk 0:02:01.8]} 5...
-  // Qc5 {[%clk 0:01:50.7]} 6. Be3 {[%clk 0:02:01.5]} 6... Qb4+ {[%clk 0:01:45.8]} 7.
-  // Nbd2 {[%clk 0:02:01.4]} 7... d5 {[%clk 0:01:35.1]} 8. exd5 {[%clk 0:02:01.1]}
-  // 8... Nxd5 {[%clk 0:01:33.3]} 9. Bxd5 {[%clk 0:02:00.5]} 9... Ne7 {[%clk
-  // 0:01:26.6]} 10. Bb3 {[%clk 0:02:00.4]} 10... Qg4 {[%clk 0:01:21]} 11. Kf1 {[%clk
-  // 0:01:59.9]} 11... e4 {[%clk 0:01:18.4]} 12. Bxf7+ {[%clk 0:01:59.3]} 12... Kxf7
-  // {[%clk 0:01:16.5]} 13. Ne5+ {[%clk 0:01:59.9]} 13... Kf6 {[%clk 0:01:10.8]} 14.
-  // Nxg4+ {[%clk 0:01:57.1]} 14... Bxg4 {[%clk 0:01:11.3]} 15. Qxg4 {[%clk
-  // 0:01:55.8]} 15... Ke5 {[%clk 0:01:10.2]} 16. a5 {[%clk 0:01:50.7]} 16... b6
-  // {[%clk 0:01:07.6]} 17. a6 {[%clk 0:01:50.4]} 17... c5 {[%clk 0:01:04.5]} 18. Qd7
-  // {[%clk 0:01:50.2]} 18... Nf5 {[%clk 0:00:59.2]} 19. Qb7 {[%clk 0:01:49.8]} 19...
-  // Re8 {[%clk 0:00:56.8]} 20. Qxa7 {[%clk 0:01:49]} 20... Re7 {[%clk 0:00:55.1]}
-  // 21. Qxb6 {[%clk 0:01:47.5]} 21... Nxe3+ {[%clk 0:00:53]} 22. fxe3 {[%clk
-  // 0:01:47]} 22... exd3 {[%clk 0:00:52]} 23. cxd3 {[%clk 0:01:47.9]} 23... Kf5
-  // {[%clk 0:00:51.6]} 24. Ke2 {[%clk 0:01:47.8]} 24... Re5 {[%clk 0:00:49.2]} 25.
-  // a7 {[%clk 0:01:47.6]} 25... Re7 {[%clk 0:00:47]} 26. a8=N {[%clk 0:01:46.3]}
-  // 26... Rd7 {[%clk 0:00:42.8]} 27. Nc4 {[%clk 0:01:44.3]} 27... Rd5 {[%clk
-  // 0:00:40.2]} 28. Qc6 {[%clk 0:01:40.9]} 28... Rd8 {[%clk 0:00:29.6]} 29. Ra5
-  // {[%clk 0:01:40.9]} 29... Bd6 {[%clk 0:00:25.5]} 30. Rxc5+ {[%clk 0:01:40.4]}
-  // 30... Bxc5 {[%clk 0:00:24.5]} 31. Qxc5+ {[%clk 0:01:41.3]} 31... Ke6 {[%clk
-  // 0:00:23.2]} 32. Nc7+ {[%clk 0:01:41.8]} 32... Kd7 {[%clk 0:00:19.9]} 33. Nd5
-  // {[%clk 0:01:40.4]} 33... Rhe8 {[%clk 0:00:19.1]} 34. b4 {[%clk 0:01:40.2]} 34...
-  // Ke6 {[%clk 0:00:17.7]} 35. Nf4+ {[%clk 0:01:40]} 35... Kf6 {[%clk 0:00:17]} 36.
-  // b5 {[%clk 0:01:40.5]} 36... Rd7 {[%clk 0:00:15.5]} 37. Qc6+ {[%clk 0:01:39.8]}
-  // 37... Ke7 {[%clk 0:00:12.7]} 38. Rb1 {[%clk 0:01:40]} 38... Kf7 {[%clk
-  // 0:00:10.4]} 39. Qxd7+ {[%clk 0:01:38.9]} 39... Kf6 {[%clk 0:00:06.2]} 40. Qxe8
-  // {[%clk 0:01:38.4]} 40... Kf5 {[%clk 0:00:04.8]} 41. b6 {[%clk 0:01:38.9]} 41...
-  // g5 {[%clk 0:00:04.5]} 42. b7 {[%clk 0:01:38.9]} 42... h6 {[%clk 0:00:05]} 43.
-  // b8=B {[%clk 0:01:37.4]} 43... gxf4 {[%clk 0:00:04]} 44. Qe4+ {[%clk 0:01:36.7]}
-  // 44... Kg4 {[%clk 0:00:02.4]} 45. Qxf4+ {[%clk 0:01:36.8]} 1-0`,
+    1. e4 {[%clk 0:03:02]} 1... d5 {[%clk 0:03:02]} 2. exd5 {[%clk 0:03:02.7]} 2...
+    e6 {[%clk 0:03:02.7]} 3. dxe6 {[%clk 0:03:03.9]} 3... Na6 {[%clk 0:03:02.7]} 4.
+    exf7+ {[%clk 0:03:04.5]} 4... Ke7 {[%clk 0:03:04.3]} 5. Bxa6 {[%clk 0:03:04.5]}
+    5... Rb8 {[%clk 0:03:04.5]} 6. Bxb7 {[%clk 0:03:04.1]} 6... Qd7 {[%clk
+    0:02:56.4]} 7. Bxc8 {[%clk 0:03:05]} 7... Qc6 {[%clk 0:02:56.8]} 8. Qf3 {[%clk
+    0:03:04.1]} 8... Qd5 {[%clk 0:02:53.2]} 9. Qxd5 {[%clk 0:03:04.6]} 9... Ra8
+    {[%clk 0:02:54.7]} 10. Qxa8 {[%clk 0:03:05.2]} 10... c6 {[%clk 0:02:55.2]} 11.
+    Qxa7+ {[%clk 0:03:05.5]} 11... Kd8 {[%clk 0:02:51.6]} 12. d4 {[%clk 0:03:03.3]}
+    12... h6 {[%clk 0:02:46.1]} 13. Bxh6 {[%clk 0:03:01.7]} 13... c5 {[%clk
+    0:02:47.1]} 14. dxc5 {[%clk 0:03:00.5]} 14... Bd6 {[%clk 0:02:45.6]} 15. cxd6
+    {[%clk 0:03:00.9]} 15... Rh7 {[%clk 0:02:46]} 16. Bxg7 {[%clk 0:03:01.5]} 16...
+    Rh5 {[%clk 0:02:44.2]} 17. fxg8=Q# {[%clk 0:02:48.7]} 1-0`,
+    expectedAchievements: ['Played 1500+', 'Pawn Shy']
+  },
+  {
+    gameNo: 35,
+    testColor: 'white',
+    pgn: `[Event "Live Chess"]
+    [Site "Chess.com"]
+    [Date "2021.09.27"]
+    [Round "?"]
+    [White "ChadBiryani"]
+    [Black "DarkSh33p"]
+    [Result "0-1"]
+    [TimeControl "180+2"]
+    [WhiteElo "2415"]
+    [BlackElo "1715"]
+    [Termination "DarkSh33p won by checkmate"]
 
-  // `[Event "Live Chess"]
-  // [Site "Chess.com"]
-  // [Date "2020.12.03"]
-  // [Round "?"]
-  // [White "ChadBiryani"]
-  // [Black "GMHikaruOnTwitch"]
-  // [Result "1-0"]
-  // [ECO "A00"]
-  // [WhiteElo "2385"]
-  // [BlackElo "2942"]
-  // [TimeControl "180"]
-  // [EndTime "15:56:48 PST"]
-  // [Termination "ChadBiryani won by checkmate"]
+    1. h4 {[%clk 0:03:02]} 1... g5 {[%clk 0:03:02]} 2. a3 {[%clk 0:03:02]} 2... gxh4
+    {[%clk 0:03:03.1]} 3. b3 {[%clk 0:02:37.3]} 3... Bh6 {[%clk 0:02:59.7]} 4. d3
+    {[%clk 0:02:37.9]} 4... Bxc1 {[%clk 0:03:00.2]} 5. Nd2 {[%clk 0:02:38.6]} 5...
+    Bxd2+ {[%clk 0:03:01.1]} 6. Qxd2 {[%clk 0:02:30.9]} 6... Nf6 {[%clk 0:02:58.4]}
+    7. e4 {[%clk 0:02:28.7]} 7... Nxe4 {[%clk 0:02:59.3]} 8. a4 {[%clk 0:02:28.3]}
+    8... Nxf2 {[%clk 0:03:00.2]} 9. g4 {[%clk 0:02:28.7]} 9... Nxg4 {[%clk
+    0:02:59.2]} 10. a5 {[%clk 0:02:28.4]} 10... b6 {[%clk 0:02:50.6]} 11. b4 {[%clk
+    0:02:28.2]} 11... bxa5 {[%clk 0:02:50.5]} 12. c3 {[%clk 0:02:29.6]} 12... axb4
+    {[%clk 0:02:51.6]} 13. d4 {[%clk 0:02:30.7]} 13... bxc3 {[%clk 0:02:53]} 14. d5
+    {[%clk 0:02:30.1]} 14... c6 {[%clk 0:02:53.6]} 15. Kd1 {[%clk 0:02:23.5]} 15...
+    cxd5 {[%clk 0:02:53.7]} 16. Nf3 {[%clk 0:02:19.1]} 16... Qa5 {[%clk 0:02:52.5]}
+    17. Ne1 {[%clk 0:02:11.8]} 17... cxd2 {[%clk 0:02:52.6]} 18. Bh3 {[%clk
+    0:02:04.7]} 18... Qc3 {[%clk 0:02:53]} 19. Bg2 {[%clk 0:02:06.2]} 19... Qd3
+    {[%clk 0:02:50.4]} 20. Bh3 {[%clk 0:02:07.8]} 20... Nf2# {[%clk 0:02:50.8]} 0-1`,
+    expectedAchievements: ['Played 1500+', 'Pawn Shy']
+  },
+  {
+    gameNo: 36,
+    testColor: 'black',
+    pgn: `[Event "Live Chess"]
+    [Site "Chess.com"]
+    [Date "2021.09.27"]
+    [Round "?"]
+    [White "ChadBiryani"]
+    [Black "DarkSh33p"]
+    [Result "0-1"]
+    [TimeControl "180+2"]
+    [WhiteElo "2415"]
+    [BlackElo "1715"]
+    [Termination "DarkSh33p won by checkmate"]
+  
+    1. h4 {[%clk 0:03:02]} 1... g5 {[%clk 0:03:02]} 2. a3 {[%clk 0:03:02]} 2... gxh4
+    {[%clk 0:03:03.1]} 3. b3 {[%clk 0:02:37.3]} 3... Bh6 {[%clk 0:02:59.7]} 4. d3
+    {[%clk 0:02:37.9]} 4... Bxc1 {[%clk 0:03:00.2]} 5. Nd2 {[%clk 0:02:38.6]} 5...
+    Bxd2+ {[%clk 0:03:01.1]} 6. Qxd2 {[%clk 0:02:30.9]} 6... Nf6 {[%clk 0:02:58.4]}
+    7. e4 {[%clk 0:02:28.7]} 7... Nxe4 {[%clk 0:02:59.3]} 8. a4 {[%clk 0:02:28.3]}
+    8... Nxf2 {[%clk 0:03:00.2]} 9. g4 {[%clk 0:02:28.7]} 9... Nxg4 {[%clk
+    0:02:59.2]} 10. a5 {[%clk 0:02:28.4]} 10... b6 {[%clk 0:02:50.6]} 11. b4 {[%clk
+    0:02:28.2]} 11... bxa5 {[%clk 0:02:50.5]} 12. c3 {[%clk 0:02:29.6]} 12... axb4
+    {[%clk 0:02:51.6]} 13. d4 {[%clk 0:02:30.7]} 13... bxc3 {[%clk 0:02:53]} 14. d5
+    {[%clk 0:02:30.1]} 14... c6 {[%clk 0:02:53.6]} 15. Kd1 {[%clk 0:02:23.5]} 15...
+    cxd5 {[%clk 0:02:53.7]} 16. Nf3 {[%clk 0:02:19.1]} 16... Qa5 {[%clk 0:02:52.5]}
+    17. Ne1 {[%clk 0:02:11.8]} 17... cxd2 {[%clk 0:02:52.6]} 18. Bh3 {[%clk
+    0:02:04.7]} 18... Qc3 {[%clk 0:02:53]} 19. Bg2 {[%clk 0:02:06.2]} 19... Qd3
+    {[%clk 0:02:50.4]} 20. Bh3 {[%clk 0:02:07.8]} 20... Nf2# {[%clk 0:02:50.8]} 0-1`,
+    expectedAchievements: [
+      'Mythic Winner',
+      'The Underdog',
+      'Jousting',
+      'Pawn Shopper'
+    ]
+  },
+  {
+    gameNo: 37,
+    testColor: 'white',
+    pgn: `[Event "Live Chess"]
+    [Site "Chess.com"]
+    [Date "2021.07.03"]
+    [Round "?"]
+    [White "eldesdichado75"]
+    [Black "b4forthewin"]
+    [Result "1-0"]
+    [ECO "D02"]
+    [WhiteElo "2012"]
+    [BlackElo "1877"]
+    [TimeControl "120+1"]
+    [EndTime "21:49:29 PDT"]
+    [Termination "eldesdichado75 won by checkmate"]
 
-  // 1. g4 d5 2. Bg2 c6 3. h3 e5 4. c4 dxc4 5. Nc3 Ne7 6. Qa4 Ng6 7. Qxc4 Be6 8. Qa4
-  // Nd7 9. d3 Nh4 10. Bf1 Be7 11. Be3 Nb6 12. Qc2 Nd5 13. Bd2 O-O 14. Ne4 Nb4 15.
-  // Qc3 f6 16. a3 Nd5 17. Qc2 Kh8 18. Nc5 Bxc5 19. Qxc5 Nb6 20. Qc2 Bd5 21. Rh2 a5
-  // 22. e4 Bg8 23. f4 exf4 24. Bxf4 Ng6 25. Be3 Nd7 26. Nf3 Nde5 27. Nxe5 fxe5 28.
-  // O-O-O a4 29. Qc3 Bb3 30. Re1 Nh4 31. Be2 Nf3 32. Bxf3 Rxf3 33. Qxe5 Qxd3 34. Bd4
-  // Rf7 35. Rd2 Qxh3 36. Rh2 Qxg4 37. Reh1 Qf4+ 38. Qxf4 Kg8 39. Rxh7 Kf8 40. Qe5
-  // Re7 41. Rh8+ Bg8 42. Rf1+ Ke8 43. Rxg8+ Kd7 44. Qf5+ Kc7 45. Rxg7 Rxg7 46. Bxg7
-  // Kb6 47. Bd4+ Ka6 48. Qc5 b5 49. Qb6# 1-0`,
+    1. d4 d5 2. Nf3 e6 3. c4 f5 4. cxd5 exd5 5. Bg5 Nf6 6. Bxf6 Qxf6 7. Nc3 c6 8. e3
+    Bd6 9. Bd3 O-O 10. Qc2 Be6 11. O-O Nd7 12. Rac1 Qg6 13. Kh1 Qh5 14. Be2 Rf6 15.
+    g3 Rh6 16. Kg1 Qh3 17. Rfd1 Nf6 18. Bf1 Qg4 19. Bg2 Ne4 20. Qe2 Ng5 21. Nxg5
+    Qxg5 22. f4 Qe7 23. Re1 Re8 24. Qc2 Bc8 25. a3 Re6 26. Nd1 Bc7 27. b4 Bb6 28.
+    Rf1 a5 29. b5 Rxe3 30. Nxe3 Qxe3+ 31. Kh1 cxb5 32. Bxd5+ Kh8 33. Rce1 Qxd4 34.
+    Rxe8# 1-0`,
+    expectedAchievements: ['1500+ Winner', "Checkin' You Out", 'Pawn Shy']
+  },
+  {
+    gameNo: 38,
+    testColor: 'black',
+    pgn: `[Event "Live Chess"]
+    [Site "Chess.com"]
+    [Date "2021.07.03"]
+    [Round "?"]
+    [White "eldesdichado75"]
+    [Black "b4forthewin"]
+    [Result "1-0"]
+    [ECO "D02"]
+    [WhiteElo "2012"]
+    [BlackElo "1877"]
+    [TimeControl "120+1"]
+    [EndTime "21:49:29 PDT"]
+    [Termination "eldesdichado75 won by checkmate"]
+  
+    1. d4 d5 2. Nf3 e6 3. c4 f5 4. cxd5 exd5 5. Bg5 Nf6 6. Bxf6 Qxf6 7. Nc3 c6 8. e3
+    Bd6 9. Bd3 O-O 10. Qc2 Be6 11. O-O Nd7 12. Rac1 Qg6 13. Kh1 Qh5 14. Be2 Rf6 15.
+    g3 Rh6 16. Kg1 Qh3 17. Rfd1 Nf6 18. Bf1 Qg4 19. Bg2 Ne4 20. Qe2 Ng5 21. Nxg5
+    Qxg5 22. f4 Qe7 23. Re1 Re8 24. Qc2 Bc8 25. a3 Re6 26. Nd1 Bc7 27. b4 Bb6 28.
+    Rf1 a5 29. b5 Rxe3 30. Nxe3 Qxe3+ 31. Kh1 cxb5 32. Bxd5+ Kh8 33. Rce1 Qxd4 34.
+    Rxe8# 1-0`,
+    expectedAchievements: ['Played 2000+', 'Pawn Shy']
+  },
+  {
+    gameNo: 39,
+    testColor: 'white',
+    pgn: `[Event "Live Chess"]
+    [Site "Chess.com"]
+    [Date "2021.09.27"]
+    [Round "?"]
+    [White "Cicmis"]
+    [Black "ChadBiryani"]
+    [Result "1-0"]
+    [ECO "B18"]
+    [WhiteElo "1830"]
+    [BlackElo "2423"]
+    [TimeControl "120+1"]
+    [EndTime "16:33:20 PDT"]
+    [Termination "Cicmis won by checkmate"]
+    
+    1. e4 c6 2. d4 d5 3. Nc3 dxe4 4. Nxe4 Bf5 5. Ng3 Bg6 6. Nf3 Nf6 7. Be2 e6 8. O-O
+    Nbd7 9. Bg5 Be7 10. c3 h6 11. Bxf6 Nxf6 12. Ne5 Bh7 13. f3 O-O 14. Qd2 c5 15.
+    Rad1 cxd4 16. Qxd4 Qc7 17. Kh1 Bc5 18. Qf4 Bd6 19. Rxd6 Qxd6 20. Ne4 Nxe4 21.
+    fxe4 f6 22. Ng6 Qxf4 23. Nxf4 Rfe8 24. Bf3 Rad8 25. a3 Rd2 26. b4 Rc2 27. Bg4
+    Kf8 28. Nxe6+ Kf7 29. Nc7 Rxe4 30. Bf3 Rc4 31. Bd5+ Ke7 32. Bxc4 Kd7 33. Nd5 a6
+    34. Rd1 Kc8 35. Ne7+ Kc7 36. Nd5+ Kb8 37. Bb3 Rb2 38. Ba4 Be4 39. Nb6 Bxg2+ 40.
+    Kg1 Bf3 41. Re1 g5 42. Nd7+ Kc7 43. Nxf6 g4 44. Ne4 h5 45. Nc5 b5 46. Bd1 Bxd1
+    47. Rxd1 h4 48. Ne6+ Kc6 49. Rd4 g3 50. hxg3 hxg3 51. Rg4 Kd5 52. Nd4 Kc4 53.
+    Rxg3 Ra2 54. Nc6 Rxa3 55. Na5+ Kd5 56. Rd3+ Ke4 57. Rd4+ Ke5 58. Nc6+ Ke6 59.
+    Rd3 Ra2 60. Kf1 Rh2 61. Ke1 Rg2 62. Kd1 Rh2 63. Kc1 Rg2 64. Rd2 Rg3 65. Kc2 Rh3
+    66. Nd4+ Kd5 67. Nf3+ Kc6 68. Nd4+ Kb6 69. Kb3 Rh1 70. Rb2 Rh3 71. Nf5 Rf3 72.
+    Nd4 Rh3 73. Re2 Rg3 74. Re6+ Kb7 75. Nf5 Rg1 76. Nd6+ Ka7 77. Ne4 Kb7 78. Nc5+
+    Kc7 79. Nxa6+ Kb7 80. Nc5+ Ka7 81. Ra6+ Kb8 82. Rb6+ Ka7 83. Rxb5 Rg2 84. Ra5+
+    Kb6 85. Ne4 Rh2 86. Rg5 Rh3 87. Rg6+ Kb7 88. b5 Rh1 89. Re6 Kc7 90. c4 Kb7 91.
+    Kb4 Kc7 92. c5 Kd7 93. Rg6 Kc7 94. b6+ Kb7 95. Nd6+ Kc6 96. Nc4+ Kb7 97. Na5+
+    Ka6 98. b7+ Ka7 99. Kb5 Rb1+ 100. Kc6 Ka6 101. Nc4 Rxb7 102. Nb6 Rh7 103. Rg8
+    Ra7 104. Ra8 Rxa8 105. Nxa8 Ka7 106. Nc7 Kb8 107. Kd7 Kb7 108. c6+ Kb8 109. Nd5
+    Ka7 110. c7 Ka6 111. c8=Q+ Kb5 112. Qc6+ Ka5 113. Qb6+ Ka4 114. Qb4# 1-0`,
+    expectedAchievements: [
+      'Triple Digit Club',
+      'Mythic Winner',
+      'The Underdog',
+      'Pawn Shopper',
+      "Checkin' You Out",
+      'Mr. Marathon Man'
+    ]
+  },
+  {
+    gameNo: 40,
+    testColor: 'black',
+    pgn: `[Event "Live Chess"]
+    [Site "Chess.com"]
+    [Date "2021.09.27"]
+    [Round "?"]
+    [White "Cicmis"]
+    [Black "ChadBiryani"]
+    [Result "1-0"]
+    [ECO "B18"]
+    [WhiteElo "1830"]
+    [BlackElo "2423"]
+    [TimeControl "120+1"]
+    [EndTime "16:33:20 PDT"]
+    [Termination "Cicmis won by checkmate"]
+    
+    1. e4 c6 2. d4 d5 3. Nc3 dxe4 4. Nxe4 Bf5 5. Ng3 Bg6 6. Nf3 Nf6 7. Be2 e6 8. O-O
+    Nbd7 9. Bg5 Be7 10. c3 h6 11. Bxf6 Nxf6 12. Ne5 Bh7 13. f3 O-O 14. Qd2 c5 15.
+    Rad1 cxd4 16. Qxd4 Qc7 17. Kh1 Bc5 18. Qf4 Bd6 19. Rxd6 Qxd6 20. Ne4 Nxe4 21.
+    fxe4 f6 22. Ng6 Qxf4 23. Nxf4 Rfe8 24. Bf3 Rad8 25. a3 Rd2 26. b4 Rc2 27. Bg4
+    Kf8 28. Nxe6+ Kf7 29. Nc7 Rxe4 30. Bf3 Rc4 31. Bd5+ Ke7 32. Bxc4 Kd7 33. Nd5 a6
+    34. Rd1 Kc8 35. Ne7+ Kc7 36. Nd5+ Kb8 37. Bb3 Rb2 38. Ba4 Be4 39. Nb6 Bxg2+ 40.
+    Kg1 Bf3 41. Re1 g5 42. Nd7+ Kc7 43. Nxf6 g4 44. Ne4 h5 45. Nc5 b5 46. Bd1 Bxd1
+    47. Rxd1 h4 48. Ne6+ Kc6 49. Rd4 g3 50. hxg3 hxg3 51. Rg4 Kd5 52. Nd4 Kc4 53.
+    Rxg3 Ra2 54. Nc6 Rxa3 55. Na5+ Kd5 56. Rd3+ Ke4 57. Rd4+ Ke5 58. Nc6+ Ke6 59.
+    Rd3 Ra2 60. Kf1 Rh2 61. Ke1 Rg2 62. Kd1 Rh2 63. Kc1 Rg2 64. Rd2 Rg3 65. Kc2 Rh3
+    66. Nd4+ Kd5 67. Nf3+ Kc6 68. Nd4+ Kb6 69. Kb3 Rh1 70. Rb2 Rh3 71. Nf5 Rf3 72.
+    Nd4 Rh3 73. Re2 Rg3 74. Re6+ Kb7 75. Nf5 Rg1 76. Nd6+ Ka7 77. Ne4 Kb7 78. Nc5+
+    Kc7 79. Nxa6+ Kb7 80. Nc5+ Ka7 81. Ra6+ Kb8 82. Rb6+ Ka7 83. Rxb5 Rg2 84. Ra5+
+    Kb6 85. Ne4 Rh2 86. Rg5 Rh3 87. Rg6+ Kb7 88. b5 Rh1 89. Re6 Kc7 90. c4 Kb7 91.
+    Kb4 Kc7 92. c5 Kd7 93. Rg6 Kc7 94. b6+ Kb7 95. Nd6+ Kc6 96. Nc4+ Kb7 97. Na5+
+    Ka6 98. b7+ Ka7 99. Kb5 Rb1+ 100. Kc6 Ka6 101. Nc4 Rxb7 102. Nb6 Rh7 103. Rg8
+    Ra7 104. Ra8 Rxa8 105. Nxa8 Ka7 106. Nc7 Kb8 107. Kd7 Kb7 108. c6+ Kb8 109. Nd5
+    Ka7 110. c7 Ka6 111. c8=Q+ Kb5 112. Qc6+ Ka5 113. Qb6+ Ka4 114. Qb4# 1-0`,
+    expectedAchievements: [
+      'Triple Digit Club',
+      "Checkin' You Out",
+      'Pawn Shopper',
+      'Mr. Marathon Man'
+    ]
+  },
+  {
+    gameNo: 41,
+    testColor: 'white',
+    pgn: `[Event "Live Chess"]
+    [Site "Chess.com"]
+    [Date "2021.09.28"]
+    [Round "?"]
+    [White "ChadBiryani"]
+    [Black "mcrayudu"]
+    [Result "0-1"]
+    [ECO "A00"]
+    [WhiteElo "2415"]
+    [BlackElo "1148"]
+    [TimeControl "180+2"]
+    [EndTime "15:36:53 PDT"]
+    [Termination "mcrayudu won by checkmate"]
 
-  // `[Event "Live Chess"]
-  // [Site "Chess.com"]
-  // [Date "2021.09.27"]
-  // [Round "?"]
-  // [White "DarkSh33p"]
-  // [Black "ChadBiryani"]
-  // [Result "1-0"]
-  // [TimeControl "180+2"]
-  // [WhiteElo "1715"]
-  // [BlackElo "2415"]
-  // [Termination "DarkSh33p won by checkmate"]
+    1. g4 b6 2. Bg2 Bb7 3. Nf3 Bxf3 4. a3 Bxg2 5. Nc3 Bxh1 6. Ne4 Bxe4 7. d4 e6 8.
+    Bg5 Qxg5 9. Kf1 Bg6 10. Kg2 h5 11. Kf3 h4 12. Rb1 d5 13. b3 Be4# 0-1`,
+    expectedAchievements: ['Played 750+', 'Pawn Shy']
+  },
+  {
+    gameNo: 42,
+    testColor: 'black',
+    pgn: `[Event "Live Chess"]
+    [Site "Chess.com"]
+    [Date "2021.09.28"]
+    [Round "?"]
+    [White "ChadBiryani"]
+    [Black "mcrayudu"]
+    [Result "0-1"]
+    [ECO "A00"]
+    [WhiteElo "2415"]
+    [BlackElo "1148"]
+    [TimeControl "180+2"]
+    [EndTime "15:36:53 PDT"]
+    [Termination "mcrayudu won by checkmate"]
 
-  // 1. e4 {[%clk 0:03:02]} 1... d5 {[%clk 0:03:02]} 2. exd5 {[%clk 0:03:02.7]} 2...
-  // e6 {[%clk 0:03:02.7]} 3. dxe6 {[%clk 0:03:03.9]} 3... Na6 {[%clk 0:03:02.7]} 4.
-  // exf7+ {[%clk 0:03:04.5]} 4... Ke7 {[%clk 0:03:04.3]} 5. Bxa6 {[%clk 0:03:04.5]}
-  // 5... Rb8 {[%clk 0:03:04.5]} 6. Bxb7 {[%clk 0:03:04.1]} 6... Qd7 {[%clk
-  // 0:02:56.4]} 7. Bxc8 {[%clk 0:03:05]} 7... Qc6 {[%clk 0:02:56.8]} 8. Qf3 {[%clk
-  // 0:03:04.1]} 8... Qd5 {[%clk 0:02:53.2]} 9. Qxd5 {[%clk 0:03:04.6]} 9... Ra8
-  // {[%clk 0:02:54.7]} 10. Qxa8 {[%clk 0:03:05.2]} 10... c6 {[%clk 0:02:55.2]} 11.
-  // Qxa7+ {[%clk 0:03:05.5]} 11... Kd8 {[%clk 0:02:51.6]} 12. d4 {[%clk 0:03:03.3]}
-  // 12... h6 {[%clk 0:02:46.1]} 13. Bxh6 {[%clk 0:03:01.7]} 13... c5 {[%clk
-  // 0:02:47.1]} 14. dxc5 {[%clk 0:03:00.5]} 14... Bd6 {[%clk 0:02:45.6]} 15. cxd6
-  // {[%clk 0:03:00.9]} 15... Rh7 {[%clk 0:02:46]} 16. Bxg7 {[%clk 0:03:01.5]} 16...
-  // Rh5 {[%clk 0:02:44.2]} 17. fxg8=Q# {[%clk 0:02:48.7]} 1-0`,
-
-  // `[Event "Live Chess"]
-  // [Site "Chess.com"]
-  // [Date "2021.09.27"]
-  // [Round "?"]
-  // [White "ChadBiryani"]
-  // [Black "DarkSh33p"]
-  // [Result "0-1"]
-  // [TimeControl "180+2"]
-  // [WhiteElo "2415"]
-  // [BlackElo "1715"]
-  // [Termination "DarkSh33p won by checkmate"]
-
-  // 1. h4 {[%clk 0:03:02]} 1... g5 {[%clk 0:03:02]} 2. a3 {[%clk 0:03:02]} 2... gxh4
-  // {[%clk 0:03:03.1]} 3. b3 {[%clk 0:02:37.3]} 3... Bh6 {[%clk 0:02:59.7]} 4. d3
-  // {[%clk 0:02:37.9]} 4... Bxc1 {[%clk 0:03:00.2]} 5. Nd2 {[%clk 0:02:38.6]} 5...
-  // Bxd2+ {[%clk 0:03:01.1]} 6. Qxd2 {[%clk 0:02:30.9]} 6... Nf6 {[%clk 0:02:58.4]}
-  // 7. e4 {[%clk 0:02:28.7]} 7... Nxe4 {[%clk 0:02:59.3]} 8. a4 {[%clk 0:02:28.3]}
-  // 8... Nxf2 {[%clk 0:03:00.2]} 9. g4 {[%clk 0:02:28.7]} 9... Nxg4 {[%clk
-  // 0:02:59.2]} 10. a5 {[%clk 0:02:28.4]} 10... b6 {[%clk 0:02:50.6]} 11. b4 {[%clk
-  // 0:02:28.2]} 11... bxa5 {[%clk 0:02:50.5]} 12. c3 {[%clk 0:02:29.6]} 12... axb4
-  // {[%clk 0:02:51.6]} 13. d4 {[%clk 0:02:30.7]} 13... bxc3 {[%clk 0:02:53]} 14. d5
-  // {[%clk 0:02:30.1]} 14... c6 {[%clk 0:02:53.6]} 15. Kd1 {[%clk 0:02:23.5]} 15...
-  // cxd5 {[%clk 0:02:53.7]} 16. Nf3 {[%clk 0:02:19.1]} 16... Qa5 {[%clk 0:02:52.5]}
-  // 17. Ne1 {[%clk 0:02:11.8]} 17... cxd2 {[%clk 0:02:52.6]} 18. Bh3 {[%clk
-  // 0:02:04.7]} 18... Qc3 {[%clk 0:02:53]} 19. Bg2 {[%clk 0:02:06.2]} 19... Qd3
-  // {[%clk 0:02:50.4]} 20. Bh3 {[%clk 0:02:07.8]} 20... Nf2# {[%clk 0:02:50.8]} 0-1`,
-
-  // `[Event "Live Chess"]
-  // [Site "Chess.com"]
-  // [Date "2021.07.03"]
-  // [Round "?"]
-  // [White "eldesdichado75"]
-  // [Black "b4forthewin"]
-  // [Result "1-0"]
-  // [ECO "D02"]
-  // [WhiteElo "2012"]
-  // [BlackElo "1877"]
-  // [TimeControl "120+1"]
-  // [EndTime "21:49:29 PDT"]
-  // [Termination "eldesdichado75 won by checkmate"]
-
-  // 1. d4 d5 2. Nf3 e6 3. c4 f5 4. cxd5 exd5 5. Bg5 Nf6 6. Bxf6 Qxf6 7. Nc3 c6 8. e3
-  // Bd6 9. Bd3 O-O 10. Qc2 Be6 11. O-O Nd7 12. Rac1 Qg6 13. Kh1 Qh5 14. Be2 Rf6 15.
-  // g3 Rh6 16. Kg1 Qh3 17. Rfd1 Nf6 18. Bf1 Qg4 19. Bg2 Ne4 20. Qe2 Ng5 21. Nxg5
-  // Qxg5 22. f4 Qe7 23. Re1 Re8 24. Qc2 Bc8 25. a3 Re6 26. Nd1 Bc7 27. b4 Bb6 28.
-  // Rf1 a5 29. b5 Rxe3 30. Nxe3 Qxe3+ 31. Kh1 cxb5 32. Bxd5+ Kh8 33. Rce1 Qxd4 34.
-  // Rxe8# 1-0`,
-
-  // `[Event "Live Chess"]
-  // [Site "Chess.com"]
-  // [Date "2021.09.27"]
-  // [Round "-"]
-  // [White "Cicmis"]
-  // [Black "ChadBiryani"]
-  // [Result "1-0"]
-  // [CurrentPosition "8/3K4/8/3N4/kQ6/8/8/8 b - -"]
-  // [Timezone "UTC"]
-  // [ECO "B18"]
-  // [ECOUrl "https://www.chess.com/openings/Caro-Kann-Defense-Classical-Variation-5.Ng3-Bg6-6.Nf3"]
-  // [UTCDate "2021.09.27"]
-  // [UTCTime "23:25:16"]
-  // [WhiteElo "1830"]
-  // [BlackElo "2423"]
-  // [TimeControl "120+1"]
-  // [Termination "Cicmis won by checkmate"]
-  // [StartTime "23:25:16"]
-  // [EndDate "2021.09.27"]
-  // [EndTime "23:33:20"]
-  // [Link "https://www.chess.com/game/live/26524183739"]
-
-  // 1. e4 {[%clk 0:02:00.1]} 1... c6 {[%clk 0:02:00.1]} 2. d4 {[%clk 0:01:59.5]}
-  // 2... d5 {[%clk 0:02:00.7]} 3. Nc3 {[%clk 0:01:59.7]} 3... dxe4 {[%clk
-  // 0:02:00.2]} 4. Nxe4 {[%clk 0:02:00]} 4... Bf5 {[%clk 0:02:01.1]} 5. Ng3 {[%clk
-  // 0:01:59.8]} 5... Bg6 {[%clk 0:02:01.4]} 6. Nf3 {[%clk 0:02:00.6]} 6... Nf6
-  // {[%clk 0:02:01.4]} 7. Be2 {[%clk 0:02:01]} 7... e6 {[%clk 0:02:00.9]} 8. O-O
-  // {[%clk 0:02:00.9]} 8... Nbd7 {[%clk 0:02:01.5]} 9. Bg5 {[%clk 0:01:59.9]} 9...
-  // Be7 {[%clk 0:02:01.3]} 10. c3 {[%clk 0:01:59.5]} 10... h6 {[%clk 0:02:01.2]} 11.
-  // Bxf6 {[%clk 0:01:55.7]} 11... Nxf6 {[%clk 0:02:02.1]} 12. Ne5 {[%clk 0:01:54.6]}
-  // 12... Bh7 {[%clk 0:02:01.5]} 13. f3 {[%clk 0:01:51.1]} 13... O-O {[%clk
-  // 0:02:01.1]} 14. Qd2 {[%clk 0:01:44.7]} 14... c5 {[%clk 0:02:01.2]} 15. Rad1
-  // {[%clk 0:01:41]} 15... cxd4 {[%clk 0:02:00.7]} 16. Qxd4 {[%clk 0:01:40.6]} 16...
-  // Qc7 {[%clk 0:02:01.1]} 17. Kh1 {[%clk 0:01:39.2]} 17... Bc5 {[%clk 0:01:58.9]}
-  // 18. Qf4 {[%clk 0:01:38.6]} 18... Bd6 {[%clk 0:01:59.1]} 19. Rxd6 {[%clk
-  // 0:01:32.3]} 19... Qxd6 {[%clk 0:01:58.8]} 20. Ne4 {[%clk 0:01:32.2]} 20... Nxe4
-  // {[%clk 0:01:58.3]} 21. fxe4 {[%clk 0:01:32]} 21... f6 {[%clk 0:01:58.2]} 22. Ng6
-  // {[%clk 0:01:25.7]} 22... Qxf4 {[%clk 0:01:57]} 23. Nxf4 {[%clk 0:01:24.4]} 23...
-  // Rfe8 {[%clk 0:01:57.5]} 24. Bf3 {[%clk 0:01:22.3]} 24... Rad8 {[%clk 0:01:55.7]}
-  // 25. a3 {[%clk 0:01:20.8]} 25... Rd2 {[%clk 0:01:55.1]} 26. b4 {[%clk 0:01:19.5]}
-  // 26... Rc2 {[%clk 0:01:55]} 27. Bg4 {[%clk 0:01:13.2]} 27... Kf8 {[%clk
-  // 0:01:53.9]} 28. Nxe6+ {[%clk 0:01:12]} 28... Kf7 {[%clk 0:01:54.3]} 29. Nc7
-  // {[%clk 0:01:08.5]} 29... Rxe4 {[%clk 0:01:51.9]} 30. Bf3 {[%clk 0:01:03.6]}
-  // 30... Rc4 {[%clk 0:01:51.3]} 31. Bd5+ {[%clk 0:01:00.3]} 31... Ke7 {[%clk
-  // 0:01:50.9]} 32. Bxc4 {[%clk 0:01:01.2]} 32... Kd7 {[%clk 0:01:49.9]} 33. Nd5
-  // {[%clk 0:00:59.9]} 33... a6 {[%clk 0:01:46.8]} 34. Rd1 {[%clk 0:00:59.5]} 34...
-  // Kc8 {[%clk 0:01:39]} 35. Ne7+ {[%clk 0:00:58.6]} 35... Kc7 {[%clk 0:01:39.5]}
-  // 36. Nd5+ {[%clk 0:00:55]} 36... Kb8 {[%clk 0:01:39.5]} 37. Bb3 {[%clk
-  // 0:00:54.9]} 37... Rb2 {[%clk 0:01:38.1]} 38. Ba4 {[%clk 0:00:53.4]} 38... Be4
-  // {[%clk 0:01:37.7]} 39. Nb6 {[%clk 0:00:51.6]} 39... Bxg2+ {[%clk 0:01:33.7]} 40.
-  // Kg1 {[%clk 0:00:50.9]} 40... Bf3 {[%clk 0:01:32.2]} 41. Re1 {[%clk 0:00:48.2]}
-  // 41... g5 {[%clk 0:01:26.1]} 42. Nd7+ {[%clk 0:00:46.5]} 42... Kc7 {[%clk
-  // 0:01:25.9]} 43. Nxf6 {[%clk 0:00:46.9]} 43... g4 {[%clk 0:01:25.7]} 44. Ne4
-  // {[%clk 0:00:46.2]} 44... h5 {[%clk 0:01:24.1]} 45. Nc5 {[%clk 0:00:45.3]} 45...
-  // b5 {[%clk 0:01:21]} 46. Bd1 {[%clk 0:00:44.3]} 46... Bxd1 {[%clk 0:01:18.6]} 47.
-  // Rxd1 {[%clk 0:00:44.1]} 47... h4 {[%clk 0:01:18.9]} 48. Ne6+ {[%clk 0:00:43.1]}
-  // 48... Kc6 {[%clk 0:01:17.4]} 49. Rd4 {[%clk 0:00:41.9]} 49... g3 {[%clk
-  // 0:01:13.6]} 50. hxg3 {[%clk 0:00:41.5]} 50... hxg3 {[%clk 0:01:14.5]} 51. Rg4
-  // {[%clk 0:00:41.6]} 51... Kd5 {[%clk 0:01:08.7]} 52. Nd4 {[%clk 0:00:41.1]} 52...
-  // Kc4 {[%clk 0:01:07.7]} 53. Rxg3 {[%clk 0:00:40.9]} 53... Ra2 {[%clk 0:01:07.2]}
-  // 54. Nc6 {[%clk 0:00:37]} 54... Rxa3 {[%clk 0:01:05.6]} 55. Na5+ {[%clk
-  // 0:00:36.4]} 55... Kd5 {[%clk 0:01:00.1]} 56. Rd3+ {[%clk 0:00:35.1]} 56... Ke4
-  // {[%clk 0:00:58.9]} 57. Rd4+ {[%clk 0:00:35.1]} 57... Ke5 {[%clk 0:00:58.8]} 58.
-  // Nc6+ {[%clk 0:00:33.9]} 58... Ke6 {[%clk 0:00:58.8]} 59. Rd3 {[%clk 0:00:32.9]}
-  // 59... Ra2 {[%clk 0:00:59.1]} 60. Kf1 {[%clk 0:00:31.9]} 60... Rh2 {[%clk
-  // 0:00:58.5]} 61. Ke1 {[%clk 0:00:31.9]} 61... Rg2 {[%clk 0:00:57.8]} 62. Kd1
-  // {[%clk 0:00:30.5]} 62... Rh2 {[%clk 0:00:58.4]} 63. Kc1 {[%clk 0:00:30.2]} 63...
-  // Rg2 {[%clk 0:00:58.6]} 64. Rd2 {[%clk 0:00:29.3]} 64... Rg3 {[%clk 0:00:55.8]}
-  // 65. Kc2 {[%clk 0:00:29]} 65... Rh3 {[%clk 0:00:56.2]} 66. Nd4+ {[%clk
-  // 0:00:27.5]} 66... Kd5 {[%clk 0:00:56.1]} 67. Nf3+ {[%clk 0:00:26.7]} 67... Kc6
-  // {[%clk 0:00:55.2]} 68. Nd4+ {[%clk 0:00:26]} 68... Kb6 {[%clk 0:00:55]} 69. Kb3
-  // {[%clk 0:00:25.1]} 69... Rh1 {[%clk 0:00:54.9]} 70. Rb2 {[%clk 0:00:24.3]} 70...
-  // Rh3 {[%clk 0:00:54.3]} 71. Nf5 {[%clk 0:00:22.9]} 71... Rf3 {[%clk 0:00:53.4]}
-  // 72. Nd4 {[%clk 0:00:21.4]} 72... Rh3 {[%clk 0:00:53.4]} 73. Re2 {[%clk
-  // 0:00:21.8]} 73... Rg3 {[%clk 0:00:47.8]} 74. Re6+ {[%clk 0:00:21]} 74... Kb7
-  // {[%clk 0:00:48.4]} 75. Nf5 {[%clk 0:00:19.5]} 75... Rg1 {[%clk 0:00:47.4]} 76.
-  // Nd6+ {[%clk 0:00:19.3]} 76... Ka7 {[%clk 0:00:47.8]} 77. Ne4 {[%clk 0:00:18]}
-  // 77... Kb7 {[%clk 0:00:47.9]} 78. Nc5+ {[%clk 0:00:16.8]} 78... Kc7 {[%clk
-  // 0:00:48.2]} 79. Nxa6+ {[%clk 0:00:15.8]} 79... Kb7 {[%clk 0:00:48.2]} 80. Nc5+
-  // {[%clk 0:00:15.1]} 80... Ka7 {[%clk 0:00:47.8]} 81. Ra6+ {[%clk 0:00:14.4]}
-  // 81... Kb8 {[%clk 0:00:48]} 82. Rb6+ {[%clk 0:00:13.9]} 82... Ka7 {[%clk
-  // 0:00:48.8]} 83. Rxb5 {[%clk 0:00:14.5]} 83... Rg2 {[%clk 0:00:49]} 84. Ra5+
-  // {[%clk 0:00:14.3]} 84... Kb6 {[%clk 0:00:49]} 85. Ne4 {[%clk 0:00:13.2]} 85...
-  // Rh2 {[%clk 0:00:47.9]} 86. Rg5 {[%clk 0:00:11.3]} 86... Rh3 {[%clk 0:00:47.6]}
-  // 87. Rg6+ {[%clk 0:00:09.3]} 87... Kb7 {[%clk 0:00:47.3]} 88. b5 {[%clk
-  // 0:00:07.7]} 88... Rh1 {[%clk 0:00:45.7]} 89. Re6 {[%clk 0:00:07.1]} 89... Kc7
-  // {[%clk 0:00:45.8]} 90. c4 {[%clk 0:00:06.6]} 90... Kb7 {[%clk 0:00:46]} 91. Kb4
-  // {[%clk 0:00:06.3]} 91... Kc7 {[%clk 0:00:46]} 92. c5 {[%clk 0:00:05.9]} 92...
-  // Kd7 {[%clk 0:00:45.8]} 93. Rg6 {[%clk 0:00:04.6]} 93... Kc7 {[%clk 0:00:45.9]}
-  // 94. b6+ {[%clk 0:00:04.2]} 94... Kb7 {[%clk 0:00:45.7]} 95. Nd6+ {[%clk
-  // 0:00:03.6]} 95... Kc6 {[%clk 0:00:44.6]} 96. Nc4+ {[%clk 0:00:03.9]} 96... Kb7
-  // {[%clk 0:00:44.7]} 97. Na5+ {[%clk 0:00:03.1]} 97... Ka6 {[%clk 0:00:44.6]} 98.
-  // b7+ {[%clk 0:00:02.8]} 98... Ka7 {[%clk 0:00:44.6]} 99. Kb5 {[%clk 0:00:03]}
-  // 99... Rb1+ {[%clk 0:00:41.9]} 100. Kc6 {[%clk 0:00:02.6]} 100... Ka6 {[%clk
-  // 0:00:42.4]} 101. Nc4 {[%clk 0:00:01.5]} 101... Rxb7 {[%clk 0:00:41.2]} 102. Nb6
-  // {[%clk 0:00:01.3]} 102... Rh7 {[%clk 0:00:38.8]} 103. Rg8 {[%clk 0:00:01.4]}
-  // 103... Ra7 {[%clk 0:00:37.4]} 104. Ra8 {[%clk 0:00:02.3]} 104... Rxa8 {[%clk
-  // 0:00:34.9]} 105. Nxa8 {[%clk 0:00:03.2]} 105... Ka7 {[%clk 0:00:35]} 106. Nc7
-  // {[%clk 0:00:03.7]} 106... Kb8 {[%clk 0:00:34.8]} 107. Kd7 {[%clk 0:00:04.6]}
-  // 107... Kb7 {[%clk 0:00:35]} 108. c6+ {[%clk 0:00:03.8]} 108... Kb8 {[%clk
-  // 0:00:35.2]} 109. Nd5 {[%clk 0:00:04.7]} 109... Ka7 {[%clk 0:00:34.7]} 110. c7
-  // {[%clk 0:00:05]} 110... Ka6 {[%clk 0:00:34]} 111. c8=Q+ {[%clk 0:00:05.9]}
-  // 111... Kb5 {[%clk 0:00:34.1]} 112. Qc6+ {[%clk 0:00:05.9]} 112... Ka5 {[%clk
-  // 0:00:34.2]} 113. Qb6+ {[%clk 0:00:05.6]} 113... Ka4 {[%clk 0:00:34.1]} 114. Qb4#
-  // {[%clk 0:00:06.4]`,
-
-  // `[Event "Live Chess"]
-  // [Site "Chess.com"]
-  // [Date "2021.09.28"]
-  // [Round "?"]
-  // [White "ChadBiryani"]
-  // [Black "mcrayudu"]
-  // [Result "0-1"]
-  // [ECO "A00"]
-  // [WhiteElo "2415"]
-  // [BlackElo "1148"]
-  // [TimeControl "180+2"]
-  // [EndTime "15:36:53 PDT"]
-  // [Termination "mcrayudu won by checkmate"]
-
-  // 1. g4 b6 2. Bg2 Bb7 3. Nf3 Bxf3 4. a3 Bxg2 5. Nc3 Bxh1 6. Ne4 Bxe4 7. d4 e6 8.
-  // Bg5 Qxg5 9. Kf1 Bg6 10. Kg2 h5 11. Kf3 h4 12. Rb1 d5 13. b3 Be4# 0-1`
+    1. g4 b6 2. Bg2 Bb7 3. Nf3 Bxf3 4. a3 Bxg2 5. Nc3 Bxh1 6. Ne4 Bxe4 7. d4 e6 8.
+    Bg5 Qxg5 9. Kf1 Bg6 10. Kg2 h5 11. Kf3 h4 12. Rb1 d5 13. b3 Be4# 0-1`,
+    expectedAchievements: [
+      'Mythic Winner',
+      'A Minor Problem',
+      'Criss Cross',
+      'The Underdog',
+      'Pawn Shy'
+    ]
+  },
 ];
 
 module.exports = examplePgns;
