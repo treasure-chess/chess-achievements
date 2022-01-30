@@ -78,7 +78,7 @@ jobs:
             Install this PR (you need to setup Github packages):
               
             ```bash
-            yarn add @treasure-chess/chess-achievements@PR${{ steps.pr.outputs.pr_number }}
+            yarn add @treasure-chess/chess-achievements@PR${{ steps.pr.outputs.pr_number }} --registry https://npm.pkg.github.com
             ```
 
             <details><summary>:octocat: Click to learn how to use Github packages</summary>
@@ -88,7 +88,6 @@ jobs:
             Next add these lines to your `.npmrc` file, replacing TOKEN with your personal access token. See [Installing a package from Github](https://docs.github.com/en/packages/guides/configuring-npm-for-use-with-github-packages#installing-a-package) if you get stuck.
 
             ```
-            @treasure-chess:registry=https://npm.pkg.github.com
             //npm.pkg.github.com/:_authToken=TOKEN
             ```
 

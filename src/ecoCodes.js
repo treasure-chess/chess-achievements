@@ -1,2505 +1,2524 @@
 const codes = [
   {
-    ECO: 'A00',
-    Opening: 'Uncommon Opening',
-    Name: 'Uncommon'
+    eco: 'A00',
+    opening: 'Uncommon Opening',
+    name: 'Uncommon',
+    value: 'Uncommon'
   },
   {
-    ECO: 'A01',
-    Opening: 'Nimzovich-Larsen Attack',
-    Name: 'Nimzo-Larsen'
+    eco: 'A01',
+    opening: 'Nimzovich-Larsen Attack',
+    name: 'Nimzo-Larsen',
+    value: 'NimzoLarsen'
   },
   {
-    ECO: 'A02',
-    Opening: "Bird's Opening",
-    Name: 'Bird'
+    eco: 'A02',
+    opening: "Bird's Opening",
+    name: "Bird's Opening",
+    value: 'BirdsOpening'
   },
   {
-    ECO: 'A03',
-    Opening: "Bird's Opening",
-    Name: 'Bird'
+    eco: 'A03',
+    opening: "Bird's Opening",
+    name: "Bird's Opening",
+    value: 'BirdsOpening'
   },
   {
-    ECO: 'A04',
-    Opening: 'Reti Opening',
-    Name: 'Reti'
+    eco: 'A04',
+    opening: 'Reti Opening',
+    name: 'Reti Opening',
+    value: 'RetiOpening'
   },
   {
-    ECO: 'A05',
-    Opening: 'Reti Opening',
-    Name: 'Reti'
+    eco: 'A05',
+    opening: 'Reti Opening',
+    name: 'Reti Opening',
+    value: 'RetiOpening'
   },
   {
-    ECO: 'A06',
-    Opening: 'Reti Opening',
-    Name: 'Reti'
+    eco: 'A06',
+    opening: 'Reti Opening',
+    name: 'Reti Opening',
+    value: 'RetiOpening'
   },
   {
-    ECO: 'A07',
-    Opening: "King's Indian Attack",
-    Name: "King's Indian Attack"
+    eco: 'A07',
+    opening: "King's Indian Attack",
+    name: "King's Indian Attack",
+    value: 'KingsIndianAttack'
   },
   {
-    ECO: 'A08',
-    Opening: "King's Indian Attack",
-    Name: "King's Indian Attack"
+    eco: 'A08',
+    opening: "King's Indian Attack",
+    name: "King's Indian Attack",
+    value: 'KingsIndianAttack'
   },
+  { eco: 'A09', opening: 'Reti Opening', name: 'Reti', value: 'Reti' },
+  { eco: 'A10', opening: 'English', name: 'English', value: 'English' },
   {
-    ECO: 'A09',
-    Opening: 'Reti Opening',
-    Name: 'Reti'
+    eco: 'A11',
+    opening: 'English, Caro-Kann Defensive System',
+    name: 'English',
+    value: 'English'
   },
+  { eco: 'A12', opening: 'English with b3', name: 'English', value: 'English' },
+  { eco: 'A13', opening: 'English', name: 'English', value: 'English' },
+  { eco: 'A14', opening: 'English', name: 'English', value: 'English' },
+  { eco: 'A15', opening: 'English', name: 'English', value: 'English' },
+  { eco: 'A16', opening: 'English', name: 'English', value: 'English' },
+  { eco: 'A17', opening: 'English', name: 'English', value: 'English' },
   {
-    ECO: 'A10',
-    Opening: 'English',
-    Name: 'English'
+    eco: 'A18',
+    opening: 'English, Mikenas-Carls',
+    name: 'English',
+    value: 'English'
   },
   {
-    ECO: 'A11',
-    Opening: 'English, Caro-Kann Defensive System',
-    Name: 'English'
+    eco: 'A19',
+    opening: 'English, Mikenas-Carls, Sicilian Variation',
+    name: 'English',
+    value: 'English'
   },
+  { eco: 'A20', opening: 'English', name: 'English', value: 'English' },
+  { eco: 'A21', opening: 'English', name: 'English', value: 'English' },
+  { eco: 'A22', opening: 'English', name: 'English', value: 'English' },
   {
-    ECO: 'A12',
-    Opening: 'English with b3',
-    Name: 'English'
+    eco: 'A23',
+    opening: 'English, Bremen System, Keres Variation',
+    name: 'English',
+    value: 'English'
   },
   {
-    ECO: 'A13',
-    Opening: 'English',
-    Name: 'English'
+    eco: 'A24',
+    opening: 'English, Bremen System with ...g6',
+    name: 'English',
+    value: 'English'
   },
+  { eco: 'A25', opening: 'English', name: 'English', value: 'English' },
+  { eco: 'A26', opening: 'English', name: 'English', value: 'English' },
   {
-    ECO: 'A14',
-    Opening: 'English',
-    Name: 'English'
+    eco: 'A27',
+    opening: 'English, Three Knights System',
+    name: 'English',
+    value: 'English'
   },
+  { eco: 'A28', opening: 'English', name: 'English', value: 'English' },
   {
-    ECO: 'A15',
-    Opening: 'English',
-    Name: 'English'
+    eco: 'A29',
+    opening: 'English, Four Knights, Kingside Fianchetto',
+    name: 'English',
+    value: 'English'
   },
   {
-    ECO: 'A16',
-    Opening: 'English',
-    Name: 'English'
+    eco: 'A30',
+    opening: 'English, Symmetrical',
+    name: 'English',
+    value: 'English'
   },
   {
-    ECO: 'A17',
-    Opening: 'English',
-    Name: 'English'
+    eco: 'A31',
+    opening: 'English, Symmetrical, Benoni Formation',
+    name: 'English',
+    value: 'English'
   },
   {
-    ECO: 'A18',
-    Opening: 'English, Mikenas-Carls',
-    Name: 'English'
+    eco: 'A32',
+    opening: 'English, Symmetrical Variation',
+    name: 'English',
+    value: 'English'
   },
   {
-    ECO: 'A19',
-    Opening: 'English, Mikenas-Carls, Sicilian Variation',
-    Name: 'English'
+    eco: 'A33',
+    opening: 'English, Symmetrical',
+    name: 'English',
+    value: 'English'
   },
   {
-    ECO: 'A20',
-    Opening: 'English',
-    Name: 'English'
+    eco: 'A34',
+    opening: 'English, Symmetrical',
+    name: 'English',
+    value: 'English'
   },
   {
-    ECO: 'A21',
-    Opening: 'English',
-    Name: 'English'
+    eco: 'A35',
+    opening: 'English, Symmetrical',
+    name: 'English',
+    value: 'English'
   },
+  { eco: 'A36', opening: 'English', name: 'English', value: 'English' },
   {
-    ECO: 'A22',
-    Opening: 'English',
-    Name: 'English'
+    eco: 'A37',
+    opening: 'English, Symmetrical',
+    name: 'English',
+    value: 'English'
   },
   {
-    ECO: 'A23',
-    Opening: 'English, Bremen System, Keres Variation',
-    Name: 'English'
+    eco: 'A38',
+    opening: 'English, Symmetrical',
+    name: 'English',
+    value: 'English'
   },
   {
-    ECO: 'A24',
-    Opening: 'English, Bremen System with ...g6',
-    Name: 'English'
+    eco: 'A39',
+    opening: 'English, Symmetrical, Main line with d4',
+    name: 'English',
+    value: 'English'
   },
   {
-    ECO: 'A25',
-    Opening: 'English',
-    Name: 'English'
+    eco: 'A40',
+    opening: "Queen's Pawn Game",
+    name: "Queen's Pawn Game",
+    value: 'QueensPawnGame'
   },
   {
-    ECO: 'A26',
-    Opening: 'English',
-    Name: 'English'
+    eco: 'A41',
+    opening: "Queen's Pawn Game (with ...d6)",
+    name: "Queen's Pawn Game",
+    value: 'QueensPawnGame'
   },
   {
-    ECO: 'A27',
-    Opening: 'English, Three Knights System',
-    Name: 'English'
+    eco: 'A42',
+    opening: 'Modern Defense, Averbakh System',
+    name: 'Modern',
+    value: 'Modern'
   },
+  { eco: 'A43', opening: 'Old Benoni', name: 'Benoni', value: 'Benoni' },
   {
-    ECO: 'A28',
-    Opening: 'English',
-    Name: 'English'
+    eco: 'A44',
+    opening: 'Old Benoni Defense',
+    name: 'Benoni',
+    value: 'Benoni'
   },
   {
-    ECO: 'A29',
-    Opening: 'English, Four Knights, Kingside Fianchetto',
-    Name: 'English'
+    eco: 'A45',
+    opening: "Queen's Pawn Game",
+    name: "Queen's Pawn Game",
+    value: 'QueensPawnGame'
   },
   {
-    ECO: 'A30',
-    Opening: 'English, Symmetrical',
-    Name: 'English'
+    eco: 'A46',
+    opening: "Queen's Pawn Game",
+    name: "Queen's Pawn Game",
+    value: 'QueensPawnGame'
   },
   {
-    ECO: 'A31',
-    Opening: 'English, Symmetrical, Benoni Formation',
-    Name: 'English'
+    eco: 'A47',
+    opening: "Queen's Indian",
+    name: "Queen's Indian",
+    value: 'QueensIndian'
   },
   {
-    ECO: 'A32',
-    Opening: 'English, Symmetrical Variation',
-    Name: 'English'
+    eco: 'A48',
+    opening: "King's Indian",
+    name: "King's Indian",
+    value: 'KingsIndian'
   },
   {
-    ECO: 'A33',
-    Opening: 'English, Symmetrical',
-    Name: 'English'
+    eco: 'A49',
+    opening: "King's Indian, Fianchetto without c4",
+    name: "King's Indian",
+    value: 'KingsIndian'
   },
   {
-    ECO: 'A34',
-    Opening: 'English, Symmetrical',
-    Name: 'English'
+    eco: 'A50',
+    opening: "Queen's Pawn Game",
+    name: "Queen's Pawn Game",
+    value: 'QueensPawnGame'
   },
   {
-    ECO: 'A35',
-    Opening: 'English, Symmetrical',
-    Name: 'English'
+    eco: 'A51',
+    opening: 'Budapest Gambit',
+    name: 'Budapest Gambit',
+    value: 'BudapestGambit'
   },
   {
-    ECO: 'A36',
-    Opening: 'English',
-    Name: 'English'
+    eco: 'A52',
+    opening: 'Budapest Gambit',
+    name: 'Budapest Gambit',
+    value: 'BudapestGambit'
   },
+  { eco: 'A53', opening: 'Old Indian', name: 'Old Indian', value: 'OldIndian' },
   {
-    ECO: 'A37',
-    Opening: 'English, Symmetrical',
-    Name: 'English'
+    eco: 'A54',
+    opening: 'Old Indian, Ukrainian Variation, 4.Nf3',
+    name: 'Old Indian',
+    value: 'OldIndian'
   },
   {
-    ECO: 'A38',
-    Opening: 'English, Symmetrical',
-    Name: 'English'
+    eco: 'A55',
+    opening: 'Old Indian, Main line',
+    name: 'Old Indian',
+    value: 'OldIndian'
   },
+  { eco: 'A56', opening: 'Benoni Defense', name: 'Benoni', value: 'Benoni' },
   {
-    ECO: 'A39',
-    Opening: 'English, Symmetrical, Main line with d4',
-    Name: 'English'
+    eco: 'A57',
+    opening: 'Benko Gambit',
+    name: 'Benko Gambit',
+    value: 'BenkoGambit'
   },
   {
-    ECO: 'A40',
-    Opening: "Queen's Pawn Game",
-    Name: "Queen's Pawn Game"
+    eco: 'A58',
+    opening: 'Benko Gambit',
+    name: 'Benko Gambit',
+    value: 'BenkoGambit'
   },
   {
-    ECO: 'A41',
-    Opening: "Queen's Pawn Game (with ...d6)",
-    Name: "Queen's Pawn Game"
+    eco: 'A59',
+    opening: 'Benko Gambit',
+    name: 'Benko Gambit',
+    value: 'BenkoGambit'
   },
+  { eco: 'A60', opening: 'Benoni Defense', name: 'Benoni', value: 'Benoni' },
+  { eco: 'A61', opening: 'Benoni', name: 'Benoni', value: 'Benoni' },
   {
-    ECO: 'A42',
-    Opening: 'Modern Defense, Averbakh System',
-    Name: 'Modern'
+    eco: 'A62',
+    opening: 'Benoni, Fianchetto Variation',
+    name: 'Benoni',
+    value: 'Benoni'
   },
   {
-    ECO: 'A43',
-    Opening: 'Old Benoni',
-    Name: 'Benoni'
+    eco: 'A63',
+    opening: 'Benoni, Fianchetto, 9...Nbd7',
+    name: 'Benoni',
+    value: 'Benoni'
   },
   {
-    ECO: 'A44',
-    Opening: 'Old Benoni Defense',
-    Name: 'Benoni'
+    eco: 'A64',
+    opening: 'Benoni, Fianchetto, 11...Re8',
+    name: 'Benoni',
+    value: 'Benoni'
   },
+  { eco: 'A65', opening: 'Benoni, 6.e4', name: 'Benoni', value: 'Benoni' },
+  { eco: 'A66', opening: 'Benoni', name: 'Benoni', value: 'Benoni' },
   {
-    ECO: 'A45',
-    Opening: "Queen's Pawn Game",
-    Name: "Queen's Pawn Game"
+    eco: 'A67',
+    opening: 'Benoni, Taimanov Variation',
+    name: 'Benoni',
+    value: 'Benoni'
   },
   {
-    ECO: 'A46',
-    Opening: "Queen's Pawn Game",
-    Name: "Queen's Pawn Game"
+    eco: 'A68',
+    opening: 'Benoni, Four Pawns Attack',
+    name: 'Benoni',
+    value: 'Benoni'
   },
   {
-    ECO: 'A47',
-    Opening: "Queen's Indian",
-    Name: "Queen's Indian"
+    eco: 'A69',
+    opening: 'Benoni, Four Pawns Attack, Main line',
+    name: 'Benoni',
+    value: 'Benoni'
   },
   {
-    ECO: 'A48',
-    Opening: "King's Indian",
-    Name: "King's Indian"
+    eco: 'A70',
+    opening: 'Benoni, Classical with 7.Nf3',
+    name: 'Benoni',
+    value: 'Benoni'
   },
   {
-    ECO: 'A49',
-    Opening: "King's Indian, Fianchetto without c4",
-    Name: "King's Indian"
+    eco: 'A71',
+    opening: 'Benoni, Classical, 8.Bg5',
+    name: 'Benoni',
+    value: 'Benoni'
   },
   {
-    ECO: 'A50',
-    Opening: "Queen's Pawn Game",
-    Name: "Queen's Pawn Game"
+    eco: 'A72',
+    opening: 'Benoni, Classical without 9.O-O',
+    name: 'Benoni',
+    value: 'Benoni'
   },
   {
-    ECO: 'A51',
-    Opening: 'Budapest Gambit',
-    Name: 'Budapest Gambit'
+    eco: 'A73',
+    opening: 'Benoni, Classical, 9.O-O',
+    name: 'Benoni',
+    value: 'Benoni'
   },
   {
-    ECO: 'A52',
-    Opening: 'Budapest Gambit',
-    Name: 'Budapest Gambit'
+    eco: 'A74',
+    opening: 'Benoni, Classical, 9...a6, 10.a4',
+    name: 'Benoni',
+    value: 'Benoni'
   },
   {
-    ECO: 'A53',
-    Opening: 'Old Indian',
-    Name: 'Old Indian'
+    eco: 'A75',
+    opening: 'Benoni, Classical with ...a6 and 10...Bg4',
+    name: 'Benoni',
+    value: 'Benoni'
   },
   {
-    ECO: 'A54',
-    Opening: 'Old Indian, Ukrainian Variation, 4.Nf3',
-    Name: 'Old Indian'
+    eco: 'A76',
+    opening: 'Benoni, Classical, 9...Re8',
+    name: 'Benoni',
+    value: 'Benoni'
   },
   {
-    ECO: 'A55',
-    Opening: 'Old Indian, Main line',
-    Name: 'Old Indian'
+    eco: 'A77',
+    opening: 'Benoni, Classical, 9...Re8, 10.Nd2',
+    name: 'Benoni',
+    value: 'Benoni'
   },
   {
-    ECO: 'A56',
-    Opening: 'Benoni Defense',
-    Name: 'Benoni'
+    eco: 'A78',
+    opening: 'Benoni, Classical with ...Re8 and ...Na6',
+    name: 'Benoni',
+    value: 'Benoni'
   },
   {
-    ECO: 'A57',
-    Opening: 'Benko Gambit',
-    Name: 'Benko Gambit'
+    eco: 'A79',
+    opening: 'Benoni, Classical, 11.f3',
+    name: 'Benoni',
+    value: 'Benoni'
   },
+  { eco: 'A80', opening: 'Dutch', name: 'Dutch', value: 'Dutch' },
+  { eco: 'A81', opening: 'Dutch', name: 'Dutch', value: 'Dutch' },
   {
-    ECO: 'A58',
-    Opening: 'Benko Gambit',
-    Name: 'Benko Gambit'
+    eco: 'A82',
+    opening: 'Dutch, Staunton Gambit',
+    name: 'Dutch',
+    value: 'Dutch'
   },
   {
-    ECO: 'A59',
-    Opening: 'Benko Gambit',
-    Name: 'Benko Gambit'
+    eco: 'A83',
+    opening: 'Dutch, Staunton Gambit',
+    name: 'Dutch',
+    value: 'Dutch'
   },
+  { eco: 'A84', opening: 'Dutch', name: 'Dutch', value: 'Dutch' },
   {
-    ECO: 'A60',
-    Opening: 'Benoni Defense',
-    Name: 'Benoni'
+    eco: 'A85',
+    opening: 'Dutch, with c4 & Nc3',
+    name: 'Dutch',
+    value: 'Dutch'
   },
+  { eco: 'A86', opening: 'Dutch', name: 'Dutch', value: 'Dutch' },
   {
-    ECO: 'A61',
-    Opening: 'Benoni',
-    Name: 'Benoni'
+    eco: 'A87',
+    opening: 'Dutch, Leningrad, Main Variation',
+    name: 'Dutch',
+    value: 'Dutch'
   },
   {
-    ECO: 'A62',
-    Opening: 'Benoni, Fianchetto Variation',
-    Name: 'Benoni'
+    eco: 'A88',
+    opening: 'Dutch, Leningrad, Main Variation with c6',
+    name: 'Dutch',
+    value: 'Dutch'
   },
   {
-    ECO: 'A63',
-    Opening: 'Benoni, Fianchetto, 9...Nbd7',
-    Name: 'Benoni'
+    eco: 'A89',
+    opening: 'Dutch, Leningrad, Main Variation with Nc6',
+    name: 'Dutch',
+    value: 'Dutch'
   },
+  { eco: 'A90', opening: 'Dutch', name: 'Dutch', value: 'Dutch' },
+  { eco: 'A91', opening: 'Dutch Defense', name: 'Dutch', value: 'Dutch' },
+  { eco: 'A92', opening: 'Dutch', name: 'Dutch', value: 'Dutch' },
   {
-    ECO: 'A64',
-    Opening: 'Benoni, Fianchetto, 11...Re8',
-    Name: 'Benoni'
+    eco: 'A93',
+    opening: 'Dutch, Stonewall, Botvinnik Variation',
+    name: 'Dutch',
+    value: 'Dutch'
   },
   {
-    ECO: 'A65',
-    Opening: 'Benoni, 6.e4',
-    Name: 'Benoni'
+    eco: 'A94',
+    opening: 'Dutch, Stonewall with Ba3',
+    name: 'Dutch',
+    value: 'Dutch'
   },
+  { eco: 'A95', opening: 'Dutch, Stonewall', name: 'Dutch', value: 'Dutch' },
   {
-    ECO: 'A66',
-    Opening: 'Benoni',
-    Name: 'Benoni'
+    eco: 'A96',
+    opening: 'Dutch, Classical Variation',
+    name: 'Dutch',
+    value: 'Dutch'
   },
   {
-    ECO: 'A67',
-    Opening: 'Benoni, Taimanov Variation',
-    Name: 'Benoni'
+    eco: 'A97',
+    opening: 'Dutch, Ilyin-Genevsky',
+    name: 'Dutch',
+    value: 'Dutch'
   },
   {
-    ECO: 'A68',
-    Opening: 'Benoni, Four Pawns Attack',
-    Name: 'Benoni'
+    eco: 'A98',
+    opening: 'Dutch, Ilyin-Genevsky Variation with Qc2',
+    name: 'Dutch',
+    value: 'Dutch'
   },
   {
-    ECO: 'A69',
-    Opening: 'Benoni, Four Pawns Attack, Main line',
-    Name: 'Benoni'
+    eco: 'A99',
+    opening: 'Dutch, Ilyin-Genevsky Variation with b3',
+    name: 'Dutch',
+    value: 'Dutch'
   },
   {
-    ECO: 'A70',
-    Opening: 'Benoni, Classical with 7.Nf3',
-    Name: 'Benoni'
+    eco: 'B00',
+    opening: "Uncommon King's Pawn Opening",
+    name: 'Uncommon',
+    value: 'Uncommon'
   },
   {
-    ECO: 'A71',
-    Opening: 'Benoni, Classical, 8.Bg5',
-    Name: 'Benoni'
+    eco: 'B01',
+    opening: 'Scandinavian',
+    name: 'Scandinavian',
+    value: 'Scandinavian'
   },
   {
-    ECO: 'A72',
-    Opening: 'Benoni, Classical without 9.O-O',
-    Name: 'Benoni'
+    eco: 'B02',
+    opening: "Alekhine's Defense",
+    name: 'Alekhine',
+    value: 'Alekhine'
   },
   {
-    ECO: 'A73',
-    Opening: 'Benoni, Classical, 9.O-O',
-    Name: 'Benoni'
+    eco: 'B03',
+    opening: "Alekhine's Defense",
+    name: 'Alekhine',
+    value: 'Alekhine'
   },
   {
-    ECO: 'A74',
-    Opening: 'Benoni, Classical, 9...a6, 10.a4',
-    Name: 'Benoni'
+    eco: 'B04',
+    opening: "Alekhine's Defense, Modern",
+    name: 'Alekhine',
+    value: 'Alekhine'
   },
   {
-    ECO: 'A75',
-    Opening: 'Benoni, Classical with ...a6 and 10...Bg4',
-    Name: 'Benoni'
+    eco: 'B05',
+    opening: "Alekhine's Defense, Modern",
+    name: 'Alekhine',
+    value: 'Alekhine'
   },
+  { eco: 'B06', opening: 'Robatsch', name: 'Modern', value: 'Modern' },
+  { eco: 'B07', opening: 'Pirc', name: 'Pirc', value: 'Pirc' },
+  { eco: 'B08', opening: 'Pirc, Classical', name: 'Pirc', value: 'Pirc' },
+  { eco: 'B09', opening: 'Pirc, Austrian Attack', name: 'Pirc', value: 'Pirc' },
+  { eco: 'B10', opening: 'Caro-Kann', name: 'Caro-Kann', value: 'CaroKann' },
   {
-    ECO: 'A76',
-    Opening: 'Benoni, Classical, 9...Re8',
-    Name: 'Benoni'
+    eco: 'B11',
+    opening: 'Caro-Kann, Two Knights, 3...Bg4',
+    name: 'Caro-Kann',
+    value: 'CaroKann'
   },
   {
-    ECO: 'A77',
-    Opening: 'Benoni, Classical, 9...Re8, 10.Nd2',
-    Name: 'Benoni'
+    eco: 'B12',
+    opening: 'Caro-Kann Defense',
+    name: 'Caro-Kann',
+    value: 'CaroKann'
   },
   {
-    ECO: 'A78',
-    Opening: 'Benoni, Classical with ...Re8 and ...Na6',
-    Name: 'Benoni'
+    eco: 'B13',
+    opening: 'Caro-Kann, Exchange',
+    name: 'Caro-Kann',
+    value: 'CaroKann'
   },
   {
-    ECO: 'A79',
-    Opening: 'Benoni, Classical, 11.f3',
-    Name: 'Benoni'
+    eco: 'B14',
+    opening: 'Caro-Kann, Panov-Botvinnik Attack',
+    name: 'Caro-Kann',
+    value: 'CaroKann'
   },
+  { eco: 'B15', opening: 'Caro-Kann', name: 'Caro-Kann', value: 'CaroKann' },
   {
-    ECO: 'A80',
-    Opening: 'Dutch',
-    Name: 'Dutch'
+    eco: 'B16',
+    opening: 'Caro-Kann, Bronstein-Larsen Variation',
+    name: 'Caro-Kann',
+    value: 'CaroKann'
   },
   {
-    ECO: 'A81',
-    Opening: 'Dutch',
-    Name: 'Dutch'
+    eco: 'B17',
+    opening: 'Caro-Kann, Steinitz Variation',
+    name: 'Caro-Kann',
+    value: 'CaroKann'
   },
   {
-    ECO: 'A82',
-    Opening: 'Dutch, Staunton Gambit',
-    Name: 'Dutch'
+    eco: 'B18',
+    opening: 'Caro-Kann, Classical',
+    name: 'Caro-Kann',
+    value: 'CaroKann'
   },
   {
-    ECO: 'A83',
-    Opening: 'Dutch, Staunton Gambit',
-    Name: 'Dutch'
+    eco: 'B19',
+    opening: 'Caro-Kann, Classical',
+    name: 'Caro-Kann',
+    value: 'CaroKann'
   },
+  { eco: 'B20', opening: 'Sicilian', name: 'Sicilian', value: 'Sicilian' },
   {
-    ECO: 'A84',
-    Opening: 'Dutch',
-    Name: 'Dutch'
+    eco: 'B21',
+    opening: 'Sicilian, 2.f4 and 2.d4',
+    name: 'Sicilian',
+    value: 'Sicilian'
   },
   {
-    ECO: 'A85',
-    Opening: 'Dutch, with c4 & Nc3',
-    Name: 'Dutch'
+    eco: 'B22',
+    opening: 'Sicilian, Alapin',
+    name: 'Sicilian',
+    value: 'Sicilian'
   },
   {
-    ECO: 'A86',
-    Opening: 'Dutch',
-    Name: 'Dutch'
+    eco: 'B23',
+    opening: 'Sicilian, Closed',
+    name: 'Sicilian',
+    value: 'Sicilian'
   },
   {
-    ECO: 'A87',
-    Opening: 'Dutch, Leningrad, Main Variation',
-    Name: 'Dutch'
+    eco: 'B24',
+    opening: 'Sicilian, Closed',
+    name: 'Sicilian',
+    value: 'Sicilian'
   },
   {
-    ECO: 'A88',
-    Opening: 'Dutch, Leningrad, Main Variation with c6',
-    Name: 'Dutch'
+    eco: 'B25',
+    opening: 'Sicilian, Closed',
+    name: 'Sicilian',
+    value: 'Sicilian'
   },
   {
-    ECO: 'A89',
-    Opening: 'Dutch, Leningrad, Main Variation with Nc6',
-    Name: 'Dutch'
+    eco: 'B26',
+    opening: 'Sicilian, Closed, 6.Be3',
+    name: 'Sicilian',
+    value: 'Sicilian'
   },
+  { eco: 'B27', opening: 'Sicilian', name: 'Sicilian', value: 'Sicilian' },
   {
-    ECO: 'A90',
-    Opening: 'Dutch',
-    Name: 'Dutch'
+    eco: 'B28',
+    opening: "Sicilian, O'Kelly Variation",
+    name: 'Sicilian',
+    value: 'Sicilian'
   },
   {
-    ECO: 'A91',
-    Opening: 'Dutch Defense',
-    Name: 'Dutch'
+    eco: 'B29',
+    opening: 'Sicilian, Nimzovich-Rubinstein',
+    name: 'Sicilian',
+    value: 'Sicilian'
   },
+  { eco: 'B30', opening: 'Sicilian', name: 'Sicilian', value: 'Sicilian' },
   {
-    ECO: 'A92',
-    Opening: 'Dutch',
-    Name: 'Dutch'
+    eco: 'B31',
+    opening: 'Sicilian, Rossolimo Variation',
+    name: 'Sicilian',
+    value: 'Sicilian'
   },
+  { eco: 'B32', opening: 'Sicilian', name: 'Sicilian', value: 'Sicilian' },
+  { eco: 'B33', opening: 'Sicilian', name: 'Sicilian', value: 'Sicilian' },
   {
-    ECO: 'A93',
-    Opening: 'Dutch, Stonewall, Botvinnik Variation',
-    Name: 'Dutch'
+    eco: 'B34',
+    opening: 'Sicilian, Accelerated Fianchetto',
+    name: 'Sicilian',
+    value: 'Sicilian'
   },
   {
-    ECO: 'A94',
-    Opening: 'Dutch, Stonewall with Ba3',
-    Name: 'Dutch'
+    eco: 'B35',
+    opening: 'Sicilian, Accelerated Fianchetto, Modern Variation with Bc4',
+    name: 'Sicilian',
+    value: 'Sicilian'
   },
   {
-    ECO: 'A95',
-    Opening: 'Dutch, Stonewall',
-    Name: 'Dutch'
+    eco: 'B36',
+    opening: 'Sicilian, Accelerated Fianchetto',
+    name: 'Sicilian',
+    value: 'Sicilian'
   },
   {
-    ECO: 'A96',
-    Opening: 'Dutch, Classical Variation',
-    Name: 'Dutch'
+    eco: 'B37',
+    opening: 'Sicilian, Accelerated Fianchetto',
+    name: 'Sicilian',
+    value: 'Sicilian'
   },
   {
-    ECO: 'A97',
-    Opening: 'Dutch, Ilyin-Genevsky',
-    Name: 'Dutch'
+    eco: 'B38',
+    opening: 'Sicilian, Accelerated Fianchetto, Maroczy Bind, 6.Be3',
+    name: 'Sicilian',
+    value: 'Sicilian'
   },
   {
-    ECO: 'A98',
-    Opening: 'Dutch, Ilyin-Genevsky Variation with Qc2',
-    Name: 'Dutch'
+    eco: 'B39',
+    opening: 'Sicilian, Accelerated Fianchetto, Breyer Variation',
+    name: 'Sicilian',
+    value: 'Sicilian'
   },
+  { eco: 'B40', opening: 'Sicilian', name: 'Sicilian', value: 'Sicilian' },
+  { eco: 'B41', opening: 'Sicilian, Kan', name: 'Sicilian', value: 'Sicilian' },
+  { eco: 'B42', opening: 'Sicilian, Kan', name: 'Sicilian', value: 'Sicilian' },
   {
-    ECO: 'A99',
-    Opening: 'Dutch, Ilyin-Genevsky Variation with b3',
-    Name: 'Dutch'
+    eco: 'B43',
+    opening: 'Sicilian, Kan, 5.Nc3',
+    name: 'Sicilian',
+    value: 'Sicilian'
   },
+  { eco: 'B44', opening: 'Sicilian', name: 'Sicilian', value: 'Sicilian' },
   {
-    ECO: 'B00',
-    Opening: "Uncommon King's Pawn Opening",
-    Name: 'Uncommon'
+    eco: 'B45',
+    opening: 'Sicilian, Taimanov',
+    name: 'Sicilian',
+    value: 'Sicilian'
   },
   {
-    ECO: 'B01',
-    Opening: 'Scandinavian',
-    Name: 'Scandinavian'
+    eco: 'B46',
+    opening: 'Sicilian, Taimanov Variation',
+    name: 'Sicilian',
+    value: 'Sicilian'
   },
   {
-    ECO: 'B02',
-    Opening: "Alekhine's Defense",
-    Name: 'Alekhine'
+    eco: 'B47',
+    opening: 'Sicilian, Taimanov (Bastrikov) Variation',
+    name: 'Sicilian',
+    value: 'Sicilian'
   },
   {
-    ECO: 'B03',
-    Opening: "Alekhine's Defense",
-    Name: 'Alekhine'
+    eco: 'B48',
+    opening: 'Sicilian, Taimanov Variation',
+    name: 'Sicilian',
+    value: 'Sicilian'
   },
   {
-    ECO: 'B04',
-    Opening: "Alekhine's Defense, Modern",
-    Name: 'Alekhine'
+    eco: 'B49',
+    opening: 'Sicilian, Taimanov Variation',
+    name: 'Sicilian',
+    value: 'Sicilian'
   },
+  { eco: 'B50', opening: 'Sicilian', name: 'Sicilian', value: 'Sicilian' },
   {
-    ECO: 'B05',
-    Opening: "Alekhine's Defense, Modern",
-    Name: 'Alekhine'
+    eco: 'B51',
+    opening: 'Sicilian, Canal-Sokolsky (Rossolimo) Attack',
+    name: 'Sicilian',
+    value: 'Sicilian'
   },
   {
-    ECO: 'B06',
-    Opening: 'Robatsch',
-    Name: 'Modern'
+    eco: 'B52',
+    opening: 'Sicilian, Canal-Sokolsky (Rossolimo) Attack',
+    name: 'Sicilian',
+    value: 'Sicilian'
   },
+  { eco: 'B53', opening: 'Sicilian', name: 'Sicilian', value: 'Sicilian' },
+  { eco: 'B54', opening: 'Sicilian', name: 'Sicilian', value: 'Sicilian' },
   {
-    ECO: 'B07',
-    Opening: 'Pirc',
-    Name: 'Pirc'
+    eco: 'B55',
+    opening: 'Sicilian, Prins Variation, Venice Attack',
+    name: 'Sicilian',
+    value: 'Sicilian'
   },
+  { eco: 'B56', opening: 'Sicilian', name: 'Sicilian', value: 'Sicilian' },
+  { eco: 'B57', opening: 'Sicilian', name: 'Sicilian', value: 'Sicilian' },
+  { eco: 'B58', opening: 'Sicilian', name: 'Sicilian', value: 'Sicilian' },
   {
-    ECO: 'B08',
-    Opening: 'Pirc, Classical',
-    Name: 'Pirc'
+    eco: 'B59',
+    opening: 'Sicilian, Boleslavsky Variation, 7.Nb3',
+    name: 'Sicilian',
+    value: 'Sicilian'
   },
   {
-    ECO: 'B09',
-    Opening: 'Pirc, Austrian Attack',
-    Name: 'Pirc'
+    eco: 'B60',
+    opening: 'Sicilian, Richter-Rauzer',
+    name: 'Sicilian',
+    value: 'Sicilian'
   },
   {
-    ECO: 'B10',
-    Opening: 'Caro-Kann',
-    Name: 'Caro-Kann'
+    eco: 'B61',
+    opening: 'Sicilian, Richter-Rauzer, Larsen Variation, 7.Qd2',
+    name: 'Sicilian',
+    value: 'Sicilian'
   },
   {
-    ECO: 'B11',
-    Opening: 'Caro-Kann, Two Knights, 3...Bg4',
-    Name: 'Caro-Kann'
+    eco: 'B62',
+    opening: 'Sicilian, Richter-Rauzer',
+    name: 'Sicilian',
+    value: 'Sicilian'
   },
   {
-    ECO: 'B12',
-    Opening: 'Caro-Kann Defense',
-    Name: 'Caro-Kann'
+    eco: 'B63',
+    opening: 'Sicilian, Richter-Rauzer Attack',
+    name: 'Sicilian',
+    value: 'Sicilian'
   },
   {
-    ECO: 'B13',
-    Opening: 'Caro-Kann, Exchange',
-    Name: 'Caro-Kann'
+    eco: 'B64',
+    opening: 'Sicilian, Richter-Rauzer Attack',
+    name: 'Sicilian',
+    value: 'Sicilian'
   },
   {
-    ECO: 'B14',
-    Opening: 'Caro-Kann, Panov-Botvinnik Attack',
-    Name: 'Caro-Kann'
+    eco: 'B65',
+    opening: 'Sicilian, Richter-Rauzer Attack, 7...Be7 Defense, 9...Nxd4',
+    name: 'Sicilian',
+    value: 'Sicilian'
   },
   {
-    ECO: 'B15',
-    Opening: 'Caro-Kann',
-    Name: 'Caro-Kann'
+    eco: 'B66',
+    opening: 'Sicilian, Richter-Rauzer Attack, 7...a6',
+    name: 'Sicilian',
+    value: 'Sicilian'
   },
   {
-    ECO: 'B16',
-    Opening: 'Caro-Kann, Bronstein-Larsen Variation',
-    Name: 'Caro-Kann'
+    eco: 'B67',
+    opening: 'Sicilian, Richter-Rauzer Attack, 7...a6 Defense, 8...Bd7',
+    name: 'Sicilian',
+    value: 'Sicilian'
   },
   {
-    ECO: 'B17',
-    Opening: 'Caro-Kann, Steinitz Variation',
-    Name: 'Caro-Kann'
+    eco: 'B68',
+    opening: 'Sicilian, Richter-Rauzer Attack, 7...a6 Defense, 9...Be7',
+    name: 'Sicilian',
+    value: 'Sicilian'
   },
   {
-    ECO: 'B18',
-    Opening: 'Caro-Kann, Classical',
-    Name: 'Caro-Kann'
+    eco: 'B69',
+    opening: 'Sicilian, Richter-Rauzer Attack, 7...a6 Defense, 11.Bxf6',
+    name: 'Sicilian',
+    value: 'Sicilian'
   },
   {
-    ECO: 'B19',
-    Opening: 'Caro-Kann, Classical',
-    Name: 'Caro-Kann'
+    eco: 'B70',
+    opening: 'Sicilian, Dragon Variation',
+    name: 'Sicilian',
+    value: 'Sicilian'
   },
   {
-    ECO: 'B20',
-    Opening: 'Sicilian',
-    Name: 'Sicilian'
+    eco: 'B71',
+    opening: 'Sicilian, Dragon, Levenfish Variation',
+    name: 'Sicilian',
+    value: 'Sicilian'
   },
   {
-    ECO: 'B21',
-    Opening: 'Sicilian, 2.f4 and 2.d4',
-    Name: 'Sicilian'
+    eco: 'B72',
+    opening: 'Sicilian, Dragon',
+    name: 'Sicilian',
+    value: 'Sicilian'
   },
   {
-    ECO: 'B22',
-    Opening: 'Sicilian, Alapin',
-    Name: 'Sicilian'
+    eco: 'B73',
+    opening: 'Sicilian, Dragon, Classical',
+    name: 'Sicilian',
+    value: 'Sicilian'
   },
   {
-    ECO: 'B23',
-    Opening: 'Sicilian, Closed',
-    Name: 'Sicilian'
+    eco: 'B74',
+    opening: 'Sicilian, Dragon, Classical',
+    name: 'Sicilian',
+    value: 'Sicilian'
   },
   {
-    ECO: 'B24',
-    Opening: 'Sicilian, Closed',
-    Name: 'Sicilian'
+    eco: 'B75',
+    opening: 'Sicilian, Dragon, Yugoslav Attack',
+    name: 'Sicilian',
+    value: 'Sicilian'
   },
   {
-    ECO: 'B25',
-    Opening: 'Sicilian, Closed',
-    Name: 'Sicilian'
+    eco: 'B76',
+    opening: 'Sicilian, Dragon, Yugoslav Attack',
+    name: 'Sicilian',
+    value: 'Sicilian'
   },
   {
-    ECO: 'B26',
-    Opening: 'Sicilian, Closed, 6.Be3',
-    Name: 'Sicilian'
+    eco: 'B77',
+    opening: 'Sicilian, Dragon, Yugoslav Attack',
+    name: 'Sicilian',
+    value: 'Sicilian'
   },
   {
-    ECO: 'B27',
-    Opening: 'Sicilian',
-    Name: 'Sicilian'
+    eco: 'B78',
+    opening: 'Sicilian, Dragon, Yugoslav Attack, 10.castle long',
+    name: 'Sicilian',
+    value: 'Sicilian'
   },
   {
-    ECO: 'B28',
-    Opening: "Sicilian, O'Kelly Variation",
-    Name: 'Sicilian'
+    eco: 'B79',
+    opening: 'Sicilian, Dragon, Yugoslav Attack, 12.h4',
+    name: 'Sicilian',
+    value: 'Sicilian'
   },
   {
-    ECO: 'B29',
-    Opening: 'Sicilian, Nimzovich-Rubinstein',
-    Name: 'Sicilian'
+    eco: 'B80',
+    opening: 'Sicilian, Scheveningen',
+    name: 'Sicilian',
+    value: 'Sicilian'
   },
   {
-    ECO: 'B30',
-    Opening: 'Sicilian',
-    Name: 'Sicilian'
+    eco: 'B81',
+    opening: 'Sicilian, Scheveningen, Keres Attack',
+    name: 'Sicilian',
+    value: 'Sicilian'
   },
   {
-    ECO: 'B31',
-    Opening: 'Sicilian, Rossolimo Variation',
-    Name: 'Sicilian'
+    eco: 'B82',
+    opening: 'Sicilian, Scheveningen',
+    name: 'Sicilian',
+    value: 'Sicilian'
   },
+  { eco: 'B83', opening: 'Sicilian', name: 'Sicilian', value: 'Sicilian' },
   {
-    ECO: 'B32',
-    Opening: 'Sicilian',
-    Name: 'Sicilian'
+    eco: 'B84',
+    opening: 'Sicilian, Scheveningen',
+    name: 'Sicilian',
+    value: 'Sicilian'
   },
   {
-    ECO: 'B33',
-    Opening: 'Sicilian',
-    Name: 'Sicilian'
+    eco: 'B85',
+    opening: 'Sicilian, Scheveningen, Classical',
+    name: 'Sicilian',
+    value: 'Sicilian'
   },
   {
-    ECO: 'B34',
-    Opening: 'Sicilian, Accelerated Fianchetto',
-    Name: 'Sicilian'
+    eco: 'B86',
+    opening: 'Sicilian, Fischer-Sozin Attack',
+    name: 'Sicilian',
+    value: 'Sicilian'
   },
   {
-    ECO: 'B35',
-    Opening: 'Sicilian, Accelerated Fianchetto, Modern Variation with Bc4',
-    Name: 'Sicilian'
+    eco: 'B87',
+    opening: 'Sicilian, Fischer-Sozin with ...a6 and ...b5',
+    name: 'Sicilian',
+    value: 'Sicilian'
   },
   {
-    ECO: 'B36',
-    Opening: 'Sicilian, Accelerated Fianchetto',
-    Name: 'Sicilian'
+    eco: 'B88',
+    opening: 'Sicilian, Fischer-Sozin Attack',
+    name: 'Sicilian',
+    value: 'Sicilian'
   },
+  { eco: 'B89', opening: 'Sicilian', name: 'Sicilian', value: 'Sicilian' },
   {
-    ECO: 'B37',
-    Opening: 'Sicilian, Accelerated Fianchetto',
-    Name: 'Sicilian'
+    eco: 'B90',
+    opening: 'Sicilian, Najdorf',
+    name: 'Sicilian',
+    value: 'Sicilian'
   },
   {
-    ECO: 'B38',
-    Opening: 'Sicilian, Accelerated Fianchetto, Maroczy Bind, 6.Be3',
-    Name: 'Sicilian'
+    eco: 'B91',
+    opening: 'Sicilian, Najdorf, Zagreb (Fianchetto) Variation',
+    name: 'Sicilian',
+    value: 'Sicilian'
   },
   {
-    ECO: 'B39',
-    Opening: 'Sicilian, Accelerated Fianchetto, Breyer Variation',
-    Name: 'Sicilian'
+    eco: 'B92',
+    opening: 'Sicilian, Najdorf, Opocensky Variation',
+    name: 'Sicilian',
+    value: 'Sicilian'
   },
   {
-    ECO: 'B40',
-    Opening: 'Sicilian',
-    Name: 'Sicilian'
+    eco: 'B93',
+    opening: 'Sicilian, Najdorf, 6.f4',
+    name: 'Sicilian',
+    value: 'Sicilian'
   },
   {
-    ECO: 'B41',
-    Opening: 'Sicilian, Kan',
-    Name: 'Sicilian'
+    eco: 'B94',
+    opening: 'Sicilian, Najdorf',
+    name: 'Sicilian',
+    value: 'Sicilian'
   },
   {
-    ECO: 'B42',
-    Opening: 'Sicilian, Kan',
-    Name: 'Sicilian'
+    eco: 'B95',
+    opening: 'Sicilian, Najdorf, 6...e6',
+    name: 'Sicilian',
+    value: 'Sicilian'
   },
   {
-    ECO: 'B43',
-    Opening: 'Sicilian, Kan, 5.Nc3',
-    Name: 'Sicilian'
+    eco: 'B96',
+    opening: 'Sicilian, Najdorf',
+    name: 'Sicilian',
+    value: 'Sicilian'
   },
   {
-    ECO: 'B44',
-    Opening: 'Sicilian',
-    Name: 'Sicilian'
+    eco: 'B97',
+    opening: 'Sicilian, Najdorf',
+    name: 'Sicilian',
+    value: 'Sicilian'
   },
   {
-    ECO: 'B45',
-    Opening: 'Sicilian, Taimanov',
-    Name: 'Sicilian'
+    eco: 'B98',
+    opening: 'Sicilian, Najdorf',
+    name: 'Sicilian',
+    value: 'Sicilian'
   },
   {
-    ECO: 'B46',
-    Opening: 'Sicilian, Taimanov Variation',
-    Name: 'Sicilian'
+    eco: 'B99',
+    opening: 'Sicilian, Najdorf, 7...Be7 Main line',
+    name: 'Sicilian',
+    value: 'Sicilian'
   },
   {
-    ECO: 'B47',
-    Opening: 'Sicilian, Taimanov (Bastrikov) Variation',
-    Name: 'Sicilian'
+    eco: 'C00',
+    opening: 'French Defense',
+    name: 'French Defense',
+    value: 'FrenchDefense'
   },
+  { eco: 'C01', opening: 'French, Exchange', name: 'French', value: 'French' },
+  { eco: 'C02', opening: 'French, Advance', name: 'French', value: 'French' },
+  { eco: 'C03', opening: 'French, Tarrasch', name: 'French', value: 'French' },
   {
-    ECO: 'B48',
-    Opening: 'Sicilian, Taimanov Variation',
-    Name: 'Sicilian'
+    eco: 'C04',
+    opening: 'French, Tarrasch, Guimard Main line',
+    name: 'French',
+    value: 'French'
   },
+  { eco: 'C05', opening: 'French, Tarrasch', name: 'French', value: 'French' },
+  { eco: 'C06', opening: 'French, Tarrasch', name: 'French', value: 'French' },
+  { eco: 'C07', opening: 'French, Tarrasch', name: 'French', value: 'French' },
   {
-    ECO: 'B49',
-    Opening: 'Sicilian, Taimanov Variation',
-    Name: 'Sicilian'
+    eco: 'C08',
+    opening: 'French, Tarrasch, Open, 4.ed ed',
+    name: 'French',
+    value: 'French'
   },
   {
-    ECO: 'B50',
-    Opening: 'Sicilian',
-    Name: 'Sicilian'
+    eco: 'C09',
+    opening: 'French, Tarrasch, Open Variation, Main line',
+    name: 'French',
+    value: 'French'
   },
+  { eco: 'C10', opening: 'French', name: 'French', value: 'French' },
+  { eco: 'C11', opening: 'French', name: 'French', value: 'French' },
   {
-    ECO: 'B51',
-    Opening: 'Sicilian, Canal-Sokolsky (Rossolimo) Attack',
-    Name: 'Sicilian'
+    eco: 'C12',
+    opening: 'French, McCutcheon',
+    name: 'French',
+    value: 'French'
   },
+  { eco: 'C13', opening: 'French', name: 'French', value: 'French' },
+  { eco: 'C14', opening: 'French, Classical', name: 'French', value: 'French' },
+  { eco: 'C15', opening: 'French, Winawer', name: 'French', value: 'French' },
+  { eco: 'C16', opening: 'French, Winawer', name: 'French', value: 'French' },
   {
-    ECO: 'B52',
-    Opening: 'Sicilian, Canal-Sokolsky (Rossolimo) Attack',
-    Name: 'Sicilian'
+    eco: 'C17',
+    opening: 'French, Winawer, Advance',
+    name: 'French',
+    value: 'French'
   },
+  { eco: 'C18', opening: 'French, Winawer', name: 'French', value: 'French' },
   {
-    ECO: 'B53',
-    Opening: 'Sicilian',
-    Name: 'Sicilian'
+    eco: 'C19',
+    opening: 'French, Winawer, Advance',
+    name: 'French',
+    value: 'French'
   },
   {
-    ECO: 'B54',
-    Opening: 'Sicilian',
-    Name: 'Sicilian'
+    eco: 'C20',
+    opening: "King's Pawn Game",
+    name: "King's Pawn Game",
+    value: 'KingsPawnGame'
   },
   {
-    ECO: 'B55',
-    Opening: 'Sicilian, Prins Variation, Venice Attack',
-    Name: 'Sicilian'
+    eco: 'C21',
+    opening: 'Center Game',
+    name: 'Center Game',
+    value: 'CenterGame'
   },
   {
-    ECO: 'B56',
-    Opening: 'Sicilian',
-    Name: 'Sicilian'
+    eco: 'C22',
+    opening: 'Center Game',
+    name: 'Center Game',
+    value: 'CenterGame'
   },
   {
-    ECO: 'B57',
-    Opening: 'Sicilian',
-    Name: 'Sicilian'
+    eco: 'C23',
+    opening: "Bishop's Opening",
+    name: "Bishop's Opening",
+    value: 'BishopsOpening'
   },
   {
-    ECO: 'B58',
-    Opening: 'Sicilian',
-    Name: 'Sicilian'
+    eco: 'C24',
+    opening: "Bishop's Opening",
+    name: "Bishop's Opening",
+    value: 'BishopsOpening'
   },
+  { eco: 'C25', opening: 'Vienna', name: 'Vienna', value: 'Vienna' },
+  { eco: 'C26', opening: 'Vienna', name: 'Vienna', value: 'Vienna' },
+  { eco: 'C27', opening: 'Vienna Game', name: 'Vienna', value: 'Vienna' },
+  { eco: 'C28', opening: 'Vienna Game', name: 'Vienna', value: 'Vienna' },
+  { eco: 'C29', opening: 'Vienna Gambit', name: 'Vienna', value: 'Vienna' },
   {
-    ECO: 'B59',
-    Opening: 'Sicilian, Boleslavsky Variation, 7.Nb3',
-    Name: 'Sicilian'
+    eco: 'C30',
+    opening: "King's Gambit Declined",
+    name: "King's Gambit",
+    value: 'KingsGambit'
   },
   {
-    ECO: 'B60',
-    Opening: 'Sicilian, Richter-Rauzer',
-    Name: 'Sicilian'
+    eco: 'C31',
+    opening: "King's Gambit Declined, Falkbeer Counter Gambit",
+    name: "King's Gambit",
+    value: 'KingsGambit'
   },
   {
-    ECO: 'B61',
-    Opening: 'Sicilian, Richter-Rauzer, Larsen Variation, 7.Qd2',
-    Name: 'Sicilian'
+    eco: 'C32',
+    opening: "King's Gambit Declined, Falkbeer Counter Gambit",
+    name: "King's Gambit",
+    value: 'KingsGambit'
   },
   {
-    ECO: 'B62',
-    Opening: 'Sicilian, Richter-Rauzer',
-    Name: 'Sicilian'
+    eco: 'C33',
+    opening: "King's Gambit Accepted",
+    name: "King's Gambit",
+    value: 'KingsGambit'
   },
   {
-    ECO: 'B63',
-    Opening: 'Sicilian, Richter-Rauzer Attack',
-    Name: 'Sicilian'
+    eco: 'C34',
+    opening: "King's Gambit Accepted",
+    name: "King's Gambit",
+    value: 'KingsGambit'
   },
   {
-    ECO: 'B64',
-    Opening: 'Sicilian, Richter-Rauzer Attack',
-    Name: 'Sicilian'
+    eco: 'C35',
+    opening: "King's Gambit Accepted, Cunningham",
+    name: "King's Gambit",
+    value: 'KingsGambit'
   },
   {
-    ECO: 'B65',
-    Opening: 'Sicilian, Richter-Rauzer Attack, 7...Be7 Defense, 9...Nxd4',
-    Name: 'Sicilian'
+    eco: 'C36',
+    opening: "King's Gambit Accepted, Abbazia Defense",
+    name: "King's Gambit",
+    value: 'KingsGambit'
   },
   {
-    ECO: 'B66',
-    Opening: 'Sicilian, Richter-Rauzer Attack, 7...a6',
-    Name: 'Sicilian'
+    eco: 'C37',
+    opening: "King's Gambit Accepted",
+    name: "King's Gambit",
+    value: 'KingsGambit'
   },
   {
-    ECO: 'B67',
-    Opening: 'Sicilian, Richter-Rauzer Attack, 7...a6 Defense, 8...Bd7',
-    Name: 'Sicilian'
+    eco: 'C38',
+    opening: "King's Gambit Accepted",
+    name: "King's Gambit",
+    value: 'KingsGambit'
   },
   {
-    ECO: 'B68',
-    Opening: 'Sicilian, Richter-Rauzer Attack, 7...a6 Defense, 9...Be7',
-    Name: 'Sicilian'
+    eco: 'C39',
+    opening: "King's Gambit Accepted",
+    name: "King's Gambit",
+    value: 'KingsGambit'
   },
   {
-    ECO: 'B69',
-    Opening: 'Sicilian, Richter-Rauzer Attack, 7...a6 Defense, 11.Bxf6',
-    Name: 'Sicilian'
+    eco: 'C40',
+    opening: "King's Knight Opening",
+    name: "King's Knight Opening",
+    value: 'KingsKnightOpening'
   },
   {
-    ECO: 'B70',
-    Opening: 'Sicilian, Dragon Variation',
-    Name: 'Sicilian'
+    eco: 'C41',
+    opening: 'Philidor Defense',
+    name: 'Philidor',
+    value: 'Philidor'
   },
+  { eco: 'C42', opening: 'Petrov Defense', name: 'Petroff', value: 'Petroff' },
   {
-    ECO: 'B71',
-    Opening: 'Sicilian, Dragon, Levenfish Variation',
-    Name: 'Sicilian'
+    eco: 'C43',
+    opening: 'Petrov, Modern Attack',
+    name: 'Petroff',
+    value: 'Petroff'
   },
   {
-    ECO: 'B72',
-    Opening: 'Sicilian, Dragon',
-    Name: 'Sicilian'
+    eco: 'C44',
+    opening: "King's Pawn Game",
+    name: "King's Pawn Game",
+    value: 'KingsPawnGame'
   },
   {
-    ECO: 'B73',
-    Opening: 'Sicilian, Dragon, Classical',
-    Name: 'Sicilian'
+    eco: 'C45',
+    opening: 'Scotch Game',
+    name: 'Scotch Game',
+    value: 'ScotchGame'
   },
   {
-    ECO: 'B74',
-    Opening: 'Sicilian, Dragon, Classical',
-    Name: 'Sicilian'
+    eco: 'C46',
+    opening: 'Three Knights',
+    name: 'Three Knights',
+    value: 'ThreeKnights'
   },
   {
-    ECO: 'B75',
-    Opening: 'Sicilian, Dragon, Yugoslav Attack',
-    Name: 'Sicilian'
+    eco: 'C47',
+    opening: 'Four Knights',
+    name: 'Four Knights',
+    value: 'FourKnights'
   },
   {
-    ECO: 'B76',
-    Opening: 'Sicilian, Dragon, Yugoslav Attack',
-    Name: 'Sicilian'
+    eco: 'C48',
+    opening: 'Four Knights',
+    name: 'Four Knights',
+    value: 'FourKnights'
   },
   {
-    ECO: 'B77',
-    Opening: 'Sicilian, Dragon, Yugoslav Attack',
-    Name: 'Sicilian'
+    eco: 'C49',
+    opening: 'Four Knights',
+    name: 'Four Knights',
+    value: 'FourKnights'
   },
+  { eco: 'C50', opening: 'Giuoco Piano', name: 'Italian', value: 'Italian' },
   {
-    ECO: 'B78',
-    Opening: 'Sicilian, Dragon, Yugoslav Attack, 10.castle long',
-    Name: 'Sicilian'
+    eco: 'C51',
+    opening: 'Evans Gambit',
+    name: 'Evans Gambit',
+    value: 'EvansGambit'
   },
   {
-    ECO: 'B79',
-    Opening: 'Sicilian, Dragon, Yugoslav Attack, 12.h4',
-    Name: 'Sicilian'
+    eco: 'C52',
+    opening: 'Evans Gambit',
+    name: 'Evans Gambit',
+    value: 'EvansGambit'
   },
+  { eco: 'C53', opening: 'Giuoco Piano', name: 'Italian', value: 'Italian' },
+  { eco: 'C54', opening: 'Giuoco Piano', name: 'Italian', value: 'Italian' },
   {
-    ECO: 'B80',
-    Opening: 'Sicilian, Scheveningen',
-    Name: 'Sicilian'
+    eco: 'C55',
+    opening: 'Two Knights Defense',
+    name: 'Two Knights',
+    value: 'TwoKnights'
   },
   {
-    ECO: 'B81',
-    Opening: 'Sicilian, Scheveningen, Keres Attack',
-    Name: 'Sicilian'
+    eco: 'C56',
+    opening: 'Two Knights',
+    name: 'Two Knights',
+    value: 'TwoKnights'
   },
   {
-    ECO: 'B82',
-    Opening: 'Sicilian, Scheveningen',
-    Name: 'Sicilian'
+    eco: 'C57',
+    opening: 'Two Knights',
+    name: 'Two Knights',
+    value: 'TwoKnights'
   },
   {
-    ECO: 'B83',
-    Opening: 'Sicilian',
-    Name: 'Sicilian'
+    eco: 'C58',
+    opening: 'Two Knights',
+    name: 'Two Knights',
+    value: 'TwoKnights'
   },
   {
-    ECO: 'B84',
-    Opening: 'Sicilian, Scheveningen',
-    Name: 'Sicilian'
+    eco: 'C59',
+    opening: 'Two Knights',
+    name: 'Two Knights',
+    value: 'TwoKnights'
   },
+  { eco: 'C60', opening: 'Ruy Lopez', name: 'Ruy Lopez', value: 'RuyLopez' },
   {
-    ECO: 'B85',
-    Opening: 'Sicilian, Scheveningen, Classical',
-    Name: 'Sicilian'
+    eco: 'C61',
+    opening: "Ruy Lopez, Bird's Defense",
+    name: 'Ruy Lopez',
+    value: 'RuyLopez'
   },
   {
-    ECO: 'B86',
-    Opening: 'Sicilian, Fischer-Sozin Attack',
-    Name: 'Sicilian'
+    eco: 'C62',
+    opening: 'Ruy Lopez, Old Steinitz Defense',
+    name: 'Ruy Lopez',
+    value: 'RuyLopez'
   },
   {
-    ECO: 'B87',
-    Opening: 'Sicilian, Fischer-Sozin with ...a6 and ...b5',
-    Name: 'Sicilian'
+    eco: 'C63',
+    opening: 'Ruy Lopez, Schliemann Defense',
+    name: 'Ruy Lopez',
+    value: 'RuyLopez'
   },
   {
-    ECO: 'B88',
-    Opening: 'Sicilian, Fischer-Sozin Attack',
-    Name: 'Sicilian'
+    eco: 'C64',
+    opening: 'Ruy Lopez, Classical',
+    name: 'Ruy Lopez',
+    value: 'RuyLopez'
   },
   {
-    ECO: 'B89',
-    Opening: 'Sicilian',
-    Name: 'Sicilian'
+    eco: 'C65',
+    opening: 'Ruy Lopez, Berlin Defense',
+    name: 'Ruy Lopez',
+    value: 'RuyLopez'
   },
+  { eco: 'C66', opening: 'Ruy Lopez', name: 'Ruy Lopez', value: 'RuyLopez' },
+  { eco: 'C67', opening: 'Ruy Lopez', name: 'Ruy Lopez', value: 'RuyLopez' },
   {
-    ECO: 'B90',
-    Opening: 'Sicilian, Najdorf',
-    Name: 'Sicilian'
+    eco: 'C68',
+    opening: 'Ruy Lopez, Exchange',
+    name: 'Ruy Lopez',
+    value: 'RuyLopez'
   },
   {
-    ECO: 'B91',
-    Opening: 'Sicilian, Najdorf, Zagreb (Fianchetto) Variation',
-    Name: 'Sicilian'
+    eco: 'C69',
+    opening: 'Ruy Lopez, Exchange, Gligoric Variation',
+    name: 'Ruy Lopez',
+    value: 'RuyLopez'
   },
+  { eco: 'C70', opening: 'Ruy Lopez', name: 'Ruy Lopez', value: 'RuyLopez' },
+  { eco: 'C71', opening: 'Ruy Lopez', name: 'Ruy Lopez', value: 'RuyLopez' },
   {
-    ECO: 'B92',
-    Opening: 'Sicilian, Najdorf, Opocensky Variation',
-    Name: 'Sicilian'
+    eco: 'C72',
+    opening: 'Ruy Lopez, Modern Steinitz Defense, 5.O-O',
+    name: 'Ruy Lopez',
+    value: 'RuyLopez'
   },
   {
-    ECO: 'B93',
-    Opening: 'Sicilian, Najdorf, 6.f4',
-    Name: 'Sicilian'
+    eco: 'C73',
+    opening: 'Ruy Lopez, Modern Steinitz Defense',
+    name: 'Ruy Lopez',
+    value: 'RuyLopez'
   },
   {
-    ECO: 'B94',
-    Opening: 'Sicilian, Najdorf',
-    Name: 'Sicilian'
+    eco: 'C74',
+    opening: 'Ruy Lopez, Modern Steinitz Defense',
+    name: 'Ruy Lopez',
+    value: 'RuyLopez'
   },
   {
-    ECO: 'B95',
-    Opening: 'Sicilian, Najdorf, 6...e6',
-    Name: 'Sicilian'
+    eco: 'C75',
+    opening: 'Ruy Lopez, Modern Steinitz Defense',
+    name: 'Ruy Lopez',
+    value: 'RuyLopez'
   },
   {
-    ECO: 'B96',
-    Opening: 'Sicilian, Najdorf',
-    Name: 'Sicilian'
+    eco: 'C76',
+    opening: 'Ruy Lopez, Modern Steinitz Defense, Fianchetto Variation',
+    name: 'Ruy Lopez',
+    value: 'RuyLopez'
   },
+  { eco: 'C77', opening: 'Ruy Lopez', name: 'Ruy Lopez', value: 'RuyLopez' },
+  { eco: 'C78', opening: 'Ruy Lopez', name: 'Ruy Lopez', value: 'RuyLopez' },
   {
-    ECO: 'B97',
-    Opening: 'Sicilian, Najdorf',
-    Name: 'Sicilian'
+    eco: 'C79',
+    opening: 'Ruy Lopez, Steinitz Defense Deferred',
+    name: 'Ruy Lopez',
+    value: 'RuyLopez'
   },
   {
-    ECO: 'B98',
-    Opening: 'Sicilian, Najdorf',
-    Name: 'Sicilian'
+    eco: 'C80',
+    opening: 'Ruy Lopez, Open',
+    name: 'Ruy Lopez',
+    value: 'RuyLopez'
   },
   {
-    ECO: 'B99',
-    Opening: 'Sicilian, Najdorf, 7...Be7 Main line',
-    Name: 'Sicilian'
+    eco: 'C81',
+    opening: 'Ruy Lopez, Open, Howell Attack',
+    name: 'Ruy Lopez',
+    value: 'RuyLopez'
   },
   {
-    ECO: 'C00',
-    Opening: 'French Defense',
-    Name: 'French'
+    eco: 'C82',
+    opening: 'Ruy Lopez, Open',
+    name: 'Ruy Lopez',
+    value: 'RuyLopez'
   },
   {
-    ECO: 'C01',
-    Opening: 'French, Exchange',
-    Name: 'French'
+    eco: 'C83',
+    opening: 'Ruy Lopez, Open',
+    name: 'Ruy Lopez',
+    value: 'RuyLopez'
   },
   {
-    ECO: 'C02',
-    Opening: 'French, Advance',
-    Name: 'French'
+    eco: 'C84',
+    opening: 'Ruy Lopez, Closed',
+    name: 'Ruy Lopez',
+    value: 'RuyLopez'
   },
   {
-    ECO: 'C03',
-    Opening: 'French, Tarrasch',
-    Name: 'French'
+    eco: 'C85',
+    opening: 'Ruy Lopez, Exchange Variation Doubly Deferred (DERLD)',
+    name: 'Ruy Lopez',
+    value: 'RuyLopez'
   },
   {
-    ECO: 'C04',
-    Opening: 'French, Tarrasch, Guimard Main line',
-    Name: 'French'
+    eco: 'C86',
+    opening: 'Ruy Lopez, Worrall Attack',
+    name: 'Ruy Lopez',
+    value: 'RuyLopez'
   },
+  { eco: 'C87', opening: 'Ruy Lopez', name: 'Ruy Lopez', value: 'RuyLopez' },
+  { eco: 'C88', opening: 'Ruy Lopez', name: 'Ruy Lopez', value: 'RuyLopez' },
   {
-    ECO: 'C05',
-    Opening: 'French, Tarrasch',
-    Name: 'French'
+    eco: 'C89',
+    opening: 'Ruy Lopez, Marshall',
+    name: 'Ruy Lopez',
+    value: 'RuyLopez'
   },
   {
-    ECO: 'C06',
-    Opening: 'French, Tarrasch',
-    Name: 'French'
+    eco: 'C90',
+    opening: 'Ruy Lopez, Closed',
+    name: 'Ruy Lopez',
+    value: 'RuyLopez'
   },
   {
-    ECO: 'C07',
-    Opening: 'French, Tarrasch',
-    Name: 'French'
+    eco: 'C91',
+    opening: 'Ruy Lopez, Closed',
+    name: 'Ruy Lopez',
+    value: 'RuyLopez'
   },
   {
-    ECO: 'C08',
-    Opening: 'French, Tarrasch, Open, 4.ed ed',
-    Name: 'French'
+    eco: 'C92',
+    opening: 'Ruy Lopez, Closed',
+    name: 'Ruy Lopez',
+    value: 'RuyLopez'
   },
   {
-    ECO: 'C09',
-    Opening: 'French, Tarrasch, Open Variation, Main line',
-    Name: 'French'
+    eco: 'C93',
+    opening: 'Ruy Lopez, Closed, Smyslov Defense',
+    name: 'Ruy Lopez',
+    value: 'RuyLopez'
   },
   {
-    ECO: 'C10',
-    Opening: 'French',
-    Name: 'French'
+    eco: 'C94',
+    opening: 'Ruy Lopez, Closed, Breyer Defense',
+    name: 'Ruy Lopez',
+    value: 'RuyLopez'
   },
   {
-    ECO: 'C11',
-    Opening: 'French',
-    Name: 'French'
+    eco: 'C95',
+    opening: 'Ruy Lopez, Closed, Breyer',
+    name: 'Ruy Lopez',
+    value: 'RuyLopez'
   },
   {
-    ECO: 'C12',
-    Opening: 'French, McCutcheon',
-    Name: 'French'
+    eco: 'C96',
+    opening: 'Ruy Lopez, Closed',
+    name: 'Ruy Lopez',
+    value: 'RuyLopez'
   },
   {
-    ECO: 'C13',
-    Opening: 'French',
-    Name: 'French'
+    eco: 'C97',
+    opening: 'Ruy Lopez, Closed, Chigorin',
+    name: 'Ruy Lopez',
+    value: 'RuyLopez'
   },
   {
-    ECO: 'C14',
-    Opening: 'French, Classical',
-    Name: 'French'
+    eco: 'C98',
+    opening: 'Ruy Lopez, Closed, Chigorin',
+    name: 'Ruy Lopez',
+    value: 'RuyLopez'
   },
   {
-    ECO: 'C15',
-    Opening: 'French, Winawer',
-    Name: 'French'
+    eco: 'C99',
+    opening: 'Ruy Lopez, Closed, Chigorin, 12...cd',
+    name: 'Ruy Lopez',
+    value: 'RuyLopez'
   },
   {
-    ECO: 'C16',
-    Opening: 'French, Winawer',
-    Name: 'French'
+    eco: 'D00',
+    opening: "Queen's Pawn Game",
+    name: "Queen's Pawn Game",
+    value: 'QueensPawnGame'
   },
   {
-    ECO: 'C17',
-    Opening: 'French, Winawer, Advance',
-    Name: 'French'
+    eco: 'D01',
+    opening: 'Richter-Veresov Attack',
+    name: 'Veresov',
+    value: 'Veresov'
   },
   {
-    ECO: 'C18',
-    Opening: 'French, Winawer',
-    Name: 'French'
+    eco: 'D02',
+    opening: "Queen's Pawn Game",
+    name: "Queen's Pawn Game",
+    value: 'QueensPawnGame'
   },
   {
-    ECO: 'C19',
-    Opening: 'French, Winawer, Advance',
-    Name: 'French'
+    eco: 'D03',
+    opening: 'Torre Attack (Tartakower Variation)',
+    name: 'Torre',
+    value: 'Torre'
   },
   {
-    ECO: 'C20',
-    Opening: "King's Pawn Game",
-    Name: "King's Pawn Game"
+    eco: 'D04',
+    opening: "Queen's Pawn Game",
+    name: "Queen's Pawn Game",
+    value: 'QueensPawnGame'
   },
   {
-    ECO: 'C21',
-    Opening: 'Center Game',
-    Name: 'Center Game'
+    eco: 'D05',
+    opening: "Queen's Pawn Game",
+    name: "Queen's Pawn Game",
+    value: 'QueensPawnGame'
   },
   {
-    ECO: 'C22',
-    Opening: 'Center Game',
-    Name: 'Center Game'
+    eco: 'D06',
+    opening: "Queen's Gambit Declined",
+    name: "Queen's Gambit",
+    value: 'QueensGambit'
   },
   {
-    ECO: 'C23',
-    Opening: "Bishop's Opening",
-    Name: "Bishop's Opening"
+    eco: 'D07',
+    opening: "Queen's Gambit Declined, Chigorin Defense",
+    name: "Queen's Gambit",
+    value: 'QueensGambit'
   },
   {
-    ECO: 'C24',
-    Opening: "Bishop's Opening",
-    Name: "Bishop's Opening"
+    eco: 'D08',
+    opening: "Queen's Gambit Declined, Albin Counter Gambit",
+    name: "Queen's Gambit",
+    value: 'QueensGambit'
   },
   {
-    ECO: 'C25',
-    Opening: 'Vienna',
-    Name: 'Vienna'
+    eco: 'D09',
+    opening: "Queen's Gambit Declined, Albin Counter Gambit, 5.g3",
+    name: "Queen's Gambit",
+    value: 'QueensGambit'
   },
   {
-    ECO: 'C26',
-    Opening: 'Vienna',
-    Name: 'Vienna'
+    eco: 'D10',
+    opening: "Queen's Gambit Declined Slav",
+    name: "Queen's Gambit",
+    value: 'QueensGambit'
   },
   {
-    ECO: 'C27',
-    Opening: 'Vienna Game',
-    Name: 'Vienna'
+    eco: 'D11',
+    opening: "Queen's Gambit Declined Slav",
+    name: "Queen's Gambit",
+    value: 'QueensGambit'
   },
   {
-    ECO: 'C28',
-    Opening: 'Vienna Game',
-    Name: 'Vienna'
+    eco: 'D12',
+    opening: "Queen's Gambit Declined Slav",
+    name: "Queen's Gambit",
+    value: 'QueensGambit'
   },
   {
-    ECO: 'C29',
-    Opening: 'Vienna Gambit',
-    Name: 'Vienna'
+    eco: 'D13',
+    opening: "Queen's Gambit Declined Slav, Exchange Variation",
+    name: "Queen's Gambit",
+    value: 'QueensGambit'
   },
   {
-    ECO: 'C30',
-    Opening: "King's Gambit Declined",
-    Name: "King's Gambit"
+    eco: 'D14',
+    opening: "Queen's Gambit Declined Slav, Exchange Variation",
+    name: "Queen's Gambit",
+    value: 'QueensGambit'
   },
   {
-    ECO: 'C31',
-    Opening: "King's Gambit Declined, Falkbeer Counter Gambit",
-    Name: "King's Gambit"
+    eco: 'D15',
+    opening: "Queen's Gambit Declined Slav",
+    name: "Queen's Gambit",
+    value: 'QueensGambit'
   },
   {
-    ECO: 'C32',
-    Opening: "King's Gambit Declined, Falkbeer Counter Gambit",
-    Name: "King's Gambit"
+    eco: 'D16',
+    opening: "Queen's Gambit Declined Slav",
+    name: "Queen's Gambit",
+    value: 'QueensGambit'
   },
   {
-    ECO: 'C33',
-    Opening: "King's Gambit Accepted",
-    Name: "King's Gambit"
+    eco: 'D17',
+    opening: "Queen's Gambit Declined Slav",
+    name: "Queen's Gambit",
+    value: 'QueensGambit'
   },
   {
-    ECO: 'C34',
-    Opening: "King's Gambit Accepted",
-    Name: "King's Gambit"
+    eco: 'D18',
+    opening: "Queen's Gambit Declined Slav, Dutch",
+    name: "Queen's Gambit",
+    value: 'QueensGambit'
   },
   {
-    ECO: 'C35',
-    Opening: "King's Gambit Accepted, Cunningham",
-    Name: "King's Gambit"
+    eco: 'D19',
+    opening: "Queen's Gambit Declined Slav, Dutch",
+    name: "Queen's Gambit",
+    value: 'QueensGambit'
   },
   {
-    ECO: 'C36',
-    Opening: "King's Gambit Accepted, Abbazia Defense",
-    Name: "King's Gambit"
+    eco: 'D20',
+    opening: "Queen's Gambit Accepted",
+    name: "Queen's Gambit",
+    value: 'QueensGambit'
   },
   {
-    ECO: 'C37',
-    Opening: "King's Gambit Accepted",
-    Name: "King's Gambit"
+    eco: 'D21',
+    opening: "Queen's Gambit Accepted",
+    name: "Queen's Gambit",
+    value: 'QueensGambit'
   },
   {
-    ECO: 'C38',
-    Opening: "King's Gambit Accepted",
-    Name: "King's Gambit"
+    eco: 'D22',
+    opening: "Queen's Gambit Accepted",
+    name: "Queen's Gambit",
+    value: 'QueensGambit'
   },
   {
-    ECO: 'C39',
-    Opening: "King's Gambit Accepted",
-    Name: "King's Gambit"
+    eco: 'D23',
+    opening: "Queen's Gambit Accepted",
+    name: "Queen's Gambit",
+    value: 'QueensGambit'
   },
   {
-    ECO: 'C40',
-    Opening: "King's Knight Opening",
-    Name: "King's Knight Opening"
+    eco: 'D24',
+    opening: "Queen's Gambit Accepted",
+    name: "Queen's Gambit",
+    value: 'QueensGambit'
   },
   {
-    ECO: 'C41',
-    Opening: 'Philidor Defense',
-    Name: 'Philidor'
+    eco: 'D25',
+    opening: "Queen's Gambit Accepted",
+    name: "Queen's Gambit",
+    value: 'QueensGambit'
   },
   {
-    ECO: 'C42',
-    Opening: 'Petrov Defense',
-    Name: 'Petroff'
+    eco: 'D26',
+    opening: "Queen's Gambit Accepted",
+    name: "Queen's Gambit",
+    value: 'QueensGambit'
   },
   {
-    ECO: 'C43',
-    Opening: 'Petrov, Modern Attack',
-    Name: 'Petroff'
+    eco: 'D27',
+    opening: "Queen's Gambit Accepted, Classical",
+    name: "Queen's Gambit",
+    value: 'QueensGambit'
   },
   {
-    ECO: 'C44',
-    Opening: "King's Pawn Game",
-    Name: "King's Pawn Game"
+    eco: 'D28',
+    opening: "Queen's Gambit Accepted, Classical",
+    name: "Queen's Gambit",
+    value: 'QueensGambit'
   },
   {
-    ECO: 'C45',
-    Opening: 'Scotch Game',
-    Name: 'Scotch'
+    eco: 'D29',
+    opening: "Queen's Gambit Accepted, Classical",
+    name: "Queen's Gambit",
+    value: 'QueensGambit'
   },
   {
-    ECO: 'C46',
-    Opening: 'Three Knights',
-    Name: 'Three Knights'
+    eco: 'D30',
+    opening: "Queen's Gambit Declined",
+    name: "Queen's Gambit",
+    value: 'QueensGambit'
   },
   {
-    ECO: 'C47',
-    Opening: 'Four Knights',
-    Name: 'Four Knights'
+    eco: 'D31',
+    opening: "Queen's Gambit Declined",
+    name: "Queen's Gambit",
+    value: 'QueensGambit'
   },
   {
-    ECO: 'C48',
-    Opening: 'Four Knights',
-    Name: 'Four Knights'
+    eco: 'D32',
+    opening: "Queen's Gambit Declined, Tarrasch",
+    name: "Queen's Gambit",
+    value: 'QueensGambit'
   },
   {
-    ECO: 'C49',
-    Opening: 'Four Knights',
-    Name: 'Four Knights'
+    eco: 'D33',
+    opening: "Queen's Gambit Declined, Tarrasch",
+    name: "Queen's Gambit",
+    value: 'QueensGambit'
   },
   {
-    ECO: 'C50',
-    Opening: 'Giuoco Piano',
-    Name: 'Italian'
+    eco: 'D34',
+    opening: "Queen's Gambit Declined, Tarrasch",
+    name: "Queen's Gambit",
+    value: 'QueensGambit'
   },
   {
-    ECO: 'C51',
-    Opening: 'Evans Gambit',
-    Name: 'Evans Gambit'
+    eco: 'D35',
+    opening: "Queen's Gambit Declined",
+    name: "Queen's Gambit",
+    value: 'QueensGambit'
   },
   {
-    ECO: 'C52',
-    Opening: 'Evans Gambit',
-    Name: 'Evans Gambit'
+    eco: 'D36',
+    opening: "Queen's Gambit Declined, Exchange, Positional line, 6.Qc2",
+    name: "Queen's Gambit",
+    value: 'QueensGambit'
   },
   {
-    ECO: 'C53',
-    Opening: 'Giuoco Piano',
-    Name: 'Italian'
+    eco: 'D37',
+    opening: "Queen's Gambit Declined",
+    name: "Queen's Gambit",
+    value: 'QueensGambit'
   },
   {
-    ECO: 'C54',
-    Opening: 'Giuoco Piano',
-    Name: 'Italian'
+    eco: 'D38',
+    opening: "Queen's Gambit Declined, Ragozin Variation",
+    name: "Queen's Gambit",
+    value: 'QueensGambit'
   },
   {
-    ECO: 'C55',
-    Opening: 'Two Knights Defense',
-    Name: 'Two Knights'
+    eco: 'D39',
+    opening: "Queen's Gambit Declined, Ragozin, Vienna Variation",
+    name: "Queen's Gambit",
+    value: 'QueensGambit'
   },
   {
-    ECO: 'C56',
-    Opening: 'Two Knights',
-    Name: 'Two Knights'
+    eco: 'D40',
+    opening: "Queen's Gambit Declined, Semi-Tarrasch",
+    name: "Queen's Gambit",
+    value: 'QueensGambit'
   },
   {
-    ECO: 'C57',
-    Opening: 'Two Knights',
-    Name: 'Two Knights'
+    eco: 'D41',
+    opening: "Queen's Gambit Declined, Semi-Tarrasch",
+    name: "Queen's Gambit",
+    value: 'QueensGambit'
   },
   {
-    ECO: 'C58',
-    Opening: 'Two Knights',
-    Name: 'Two Knights'
+    eco: 'D42',
+    opening: "Queen's Gambit Declined, Semi-Tarrasch, 7.Bd3",
+    name: "Queen's Gambit",
+    value: 'QueensGambit'
   },
   {
-    ECO: 'C59',
-    Opening: 'Two Knights',
-    Name: 'Two Knights'
+    eco: 'D43',
+    opening: "Queen's Gambit Declined Semi-Slav",
+    name: "Queen's Gambit",
+    value: 'QueensGambit'
   },
   {
-    ECO: 'C60',
-    Opening: 'Ruy Lopez',
-    Name: 'Ruy Lopez'
+    eco: 'D44',
+    opening: "Queen's Gambit Declined Semi-Slav",
+    name: "Queen's Gambit",
+    value: 'QueensGambit'
   },
   {
-    ECO: 'C61',
-    Opening: "Ruy Lopez, Bird's Defense",
-    Name: 'Ruy Lopez'
+    eco: 'D45',
+    opening: "Queen's Gambit Declined Semi-Slav",
+    name: "Queen's Gambit",
+    value: 'QueensGambit'
   },
   {
-    ECO: 'C62',
-    Opening: 'Ruy Lopez, Old Steinitz Defense',
-    Name: 'Ruy Lopez'
+    eco: 'D46',
+    opening: "Queen's Gambit Declined Semi-Slav",
+    name: "Queen's Gambit",
+    value: 'QueensGambit'
   },
   {
-    ECO: 'C63',
-    Opening: 'Ruy Lopez, Schliemann Defense',
-    Name: 'Ruy Lopez'
+    eco: 'D47',
+    opening: "Queen's Gambit Declined Semi-Slav",
+    name: "Queen's Gambit",
+    value: 'QueensGambit'
   },
   {
-    ECO: 'C64',
-    Opening: 'Ruy Lopez, Classical',
-    Name: 'Ruy Lopez'
+    eco: 'D48',
+    opening: "Queen's Gambit Declined Semi-Slav, Meran",
+    name: "Queen's Gambit",
+    value: 'QueensGambit'
   },
   {
-    ECO: 'C65',
-    Opening: 'Ruy Lopez, Berlin Defense',
-    Name: 'Ruy Lopez'
+    eco: 'D49',
+    opening: "Queen's Gambit Declined Semi-Slav, Meran",
+    name: "Queen's Gambit",
+    value: 'QueensGambit'
   },
   {
-    ECO: 'C66',
-    Opening: 'Ruy Lopez',
-    Name: 'Ruy Lopez'
+    eco: 'D50',
+    opening: "Queen's Gambit Declined",
+    name: "Queen's Gambit",
+    value: 'QueensGambit'
   },
   {
-    ECO: 'C67',
-    Opening: 'Ruy Lopez',
-    Name: 'Ruy Lopez'
+    eco: 'D51',
+    opening: "Queen's Gambit Declined",
+    name: "Queen's Gambit",
+    value: 'QueensGambit'
   },
   {
-    ECO: 'C68',
-    Opening: 'Ruy Lopez, Exchange',
-    Name: 'Ruy Lopez'
+    eco: 'D52',
+    opening: "Queen's Gambit Declined",
+    name: "Queen's Gambit",
+    value: 'QueensGambit'
   },
   {
-    ECO: 'C69',
-    Opening: 'Ruy Lopez, Exchange, Gligoric Variation',
-    Name: 'Ruy Lopez'
+    eco: 'D53',
+    opening: "Queen's Gambit Declined",
+    name: "Queen's Gambit",
+    value: 'QueensGambit'
   },
   {
-    ECO: 'C70',
-    Opening: 'Ruy Lopez',
-    Name: 'Ruy Lopez'
+    eco: 'D54',
+    opening: "Queen's Gambit Declined, Anti-Neo-Orthodox Variation",
+    name: "Queen's Gambit",
+    value: 'QueensGambit'
   },
   {
-    ECO: 'C71',
-    Opening: 'Ruy Lopez',
-    Name: 'Ruy Lopez'
+    eco: 'D55',
+    opening: "Queen's Gambit Declined",
+    name: "Queen's Gambit",
+    value: 'QueensGambit'
   },
   {
-    ECO: 'C72',
-    Opening: 'Ruy Lopez, Modern Steinitz Defense, 5.O-O',
-    Name: 'Ruy Lopez'
+    eco: 'D56',
+    opening: "Queen's Gambit Declined",
+    name: "Queen's Gambit",
+    value: 'QueensGambit'
   },
   {
-    ECO: 'C73',
-    Opening: 'Ruy Lopez, Modern Steinitz Defense',
-    Name: 'Ruy Lopez'
+    eco: 'D57',
+    opening: "Queen's Gambit Declined, Lasker Defense",
+    name: "Queen's Gambit",
+    value: 'QueensGambit'
   },
   {
-    ECO: 'C74',
-    Opening: 'Ruy Lopez, Modern Steinitz Defense',
-    Name: 'Ruy Lopez'
-  },
-  {
-    ECO: 'C75',
-    Opening: 'Ruy Lopez, Modern Steinitz Defense',
-    Name: 'Ruy Lopez'
-  },
-  {
-    ECO: 'C76',
-    Opening: 'Ruy Lopez, Modern Steinitz Defense, Fianchetto Variation',
-    Name: 'Ruy Lopez'
-  },
-  {
-    ECO: 'C77',
-    Opening: 'Ruy Lopez',
-    Name: 'Ruy Lopez'
-  },
-  {
-    ECO: 'C78',
-    Opening: 'Ruy Lopez',
-    Name: 'Ruy Lopez'
-  },
-  {
-    ECO: 'C79',
-    Opening: 'Ruy Lopez, Steinitz Defense Deferred',
-    Name: 'Ruy Lopez'
-  },
-  {
-    ECO: 'C80',
-    Opening: 'Ruy Lopez, Open',
-    Name: 'Ruy Lopez'
-  },
-  {
-    ECO: 'C81',
-    Opening: 'Ruy Lopez, Open, Howell Attack',
-    Name: 'Ruy Lopez'
-  },
-  {
-    ECO: 'C82',
-    Opening: 'Ruy Lopez, Open',
-    Name: 'Ruy Lopez'
-  },
-  {
-    ECO: 'C83',
-    Opening: 'Ruy Lopez, Open',
-    Name: 'Ruy Lopez'
-  },
-  {
-    ECO: 'C84',
-    Opening: 'Ruy Lopez, Closed',
-    Name: 'Ruy Lopez'
-  },
-  {
-    ECO: 'C85',
-    Opening: 'Ruy Lopez, Exchange Variation Doubly Deferred (DERLD)',
-    Name: 'Ruy Lopez'
-  },
-  {
-    ECO: 'C86',
-    Opening: 'Ruy Lopez, Worrall Attack',
-    Name: 'Ruy Lopez'
-  },
-  {
-    ECO: 'C87',
-    Opening: 'Ruy Lopez',
-    Name: 'Ruy Lopez'
-  },
-  {
-    ECO: 'C88',
-    Opening: 'Ruy Lopez',
-    Name: 'Ruy Lopez'
-  },
-  {
-    ECO: 'C89',
-    Opening: 'Ruy Lopez, Marshall',
-    Name: 'Ruy Lopez'
-  },
-  {
-    ECO: 'C90',
-    Opening: 'Ruy Lopez, Closed',
-    Name: 'Ruy Lopez'
-  },
-  {
-    ECO: 'C91',
-    Opening: 'Ruy Lopez, Closed',
-    Name: 'Ruy Lopez'
-  },
-  {
-    ECO: 'C92',
-    Opening: 'Ruy Lopez, Closed',
-    Name: 'Ruy Lopez'
-  },
-  {
-    ECO: 'C93',
-    Opening: 'Ruy Lopez, Closed, Smyslov Defense',
-    Name: 'Ruy Lopez'
-  },
-  {
-    ECO: 'C94',
-    Opening: 'Ruy Lopez, Closed, Breyer Defense',
-    Name: 'Ruy Lopez'
-  },
-  {
-    ECO: 'C95',
-    Opening: 'Ruy Lopez, Closed, Breyer',
-    Name: 'Ruy Lopez'
-  },
-  {
-    ECO: 'C96',
-    Opening: 'Ruy Lopez, Closed',
-    Name: 'Ruy Lopez'
-  },
-  {
-    ECO: 'C97',
-    Opening: 'Ruy Lopez, Closed, Chigorin',
-    Name: 'Ruy Lopez'
-  },
-  {
-    ECO: 'C98',
-    Opening: 'Ruy Lopez, Closed, Chigorin',
-    Name: 'Ruy Lopez'
-  },
-  {
-    ECO: 'C99',
-    Opening: 'Ruy Lopez, Closed, Chigorin, 12...cd',
-    Name: 'Ruy Lopez'
-  },
-  {
-    ECO: 'D00',
-    Opening: "Queen's Pawn Game",
-    Name: "Queen's Pawn Game"
-  },
-  {
-    ECO: 'D01',
-    Opening: 'Richter-Veresov Attack',
-    Name: 'Veresov'
-  },
-  {
-    ECO: 'D02',
-    Opening: "Queen's Pawn Game",
-    Name: "Queen's Pawn Game"
-  },
-  {
-    ECO: 'D03',
-    Opening: 'Torre Attack (Tartakower Variation)',
-    Name: 'Torre'
-  },
-  {
-    ECO: 'D04',
-    Opening: "Queen's Pawn Game",
-    Name: "Queen's Pawn Game"
-  },
-  {
-    ECO: 'D05',
-    Opening: "Queen's Pawn Game",
-    Name: "Queen's Pawn Game"
-  },
-  {
-    ECO: 'D06',
-    Opening: "Queen's Gambit Declined",
-    Name: "Queen's Gambit"
-  },
-  {
-    ECO: 'D07',
-    Opening: "Queen's Gambit Declined, Chigorin Defense",
-    Name: "Queen's Gambit"
-  },
-  {
-    ECO: 'D08',
-    Opening: "Queen's Gambit Declined, Albin Counter Gambit",
-    Name: "Queen's Gambit"
-  },
-  {
-    ECO: 'D09',
-    Opening: "Queen's Gambit Declined, Albin Counter Gambit, 5.g3",
-    Name: "Queen's Gambit"
-  },
-  {
-    ECO: 'D10',
-    Opening: "Queen's Gambit Declined Slav",
-    Name: "Queen's Gambit"
-  },
-  {
-    ECO: 'D11',
-    Opening: "Queen's Gambit Declined Slav",
-    Name: "Queen's Gambit"
-  },
-  {
-    ECO: 'D12',
-    Opening: "Queen's Gambit Declined Slav",
-    Name: "Queen's Gambit"
-  },
-  {
-    ECO: 'D13',
-    Opening: "Queen's Gambit Declined Slav, Exchange Variation",
-    Name: "Queen's Gambit"
-  },
-  {
-    ECO: 'D14',
-    Opening: "Queen's Gambit Declined Slav, Exchange Variation",
-    Name: "Queen's Gambit"
-  },
-  {
-    ECO: 'D15',
-    Opening: "Queen's Gambit Declined Slav",
-    Name: "Queen's Gambit"
-  },
-  {
-    ECO: 'D16',
-    Opening: "Queen's Gambit Declined Slav",
-    Name: "Queen's Gambit"
-  },
-  {
-    ECO: 'D17',
-    Opening: "Queen's Gambit Declined Slav",
-    Name: "Queen's Gambit"
-  },
-  {
-    ECO: 'D18',
-    Opening: "Queen's Gambit Declined Slav, Dutch",
-    Name: "Queen's Gambit"
-  },
-  {
-    ECO: 'D19',
-    Opening: "Queen's Gambit Declined Slav, Dutch",
-    Name: "Queen's Gambit"
-  },
-  {
-    ECO: 'D20',
-    Opening: "Queen's Gambit Accepted",
-    Name: "Queen's Gambit"
-  },
-  {
-    ECO: 'D21',
-    Opening: "Queen's Gambit Accepted",
-    Name: "Queen's Gambit"
-  },
-  {
-    ECO: 'D22',
-    Opening: "Queen's Gambit Accepted",
-    Name: "Queen's Gambit"
-  },
-  {
-    ECO: 'D23',
-    Opening: "Queen's Gambit Accepted",
-    Name: "Queen's Gambit"
-  },
-  {
-    ECO: 'D24',
-    Opening: "Queen's Gambit Accepted",
-    Name: "Queen's Gambit"
-  },
-  {
-    ECO: 'D25',
-    Opening: "Queen's Gambit Accepted",
-    Name: "Queen's Gambit"
-  },
-  {
-    ECO: 'D26',
-    Opening: "Queen's Gambit Accepted",
-    Name: "Queen's Gambit"
-  },
-  {
-    ECO: 'D27',
-    Opening: "Queen's Gambit Accepted, Classical",
-    Name: "Queen's Gambit"
-  },
-  {
-    ECO: 'D28',
-    Opening: "Queen's Gambit Accepted, Classical",
-    Name: "Queen's Gambit"
-  },
-  {
-    ECO: 'D29',
-    Opening: "Queen's Gambit Accepted, Classical",
-    Name: "Queen's Gambit"
-  },
-  {
-    ECO: 'D30',
-    Opening: "Queen's Gambit Declined",
-    Name: "Queen's Gambit"
-  },
-  {
-    ECO: 'D31',
-    Opening: "Queen's Gambit Declined",
-    Name: "Queen's Gambit"
-  },
-  {
-    ECO: 'D32',
-    Opening: "Queen's Gambit Declined, Tarrasch",
-    Name: "Queen's Gambit"
-  },
-  {
-    ECO: 'D33',
-    Opening: "Queen's Gambit Declined, Tarrasch",
-    Name: "Queen's Gambit"
-  },
-  {
-    ECO: 'D34',
-    Opening: "Queen's Gambit Declined, Tarrasch",
-    Name: "Queen's Gambit"
-  },
-  {
-    ECO: 'D35',
-    Opening: "Queen's Gambit Declined",
-    Name: "Queen's Gambit"
-  },
-  {
-    ECO: 'D36',
-    Opening: "Queen's Gambit Declined, Exchange, Positional line, 6.Qc2",
-    Name: "Queen's Gambit"
-  },
-  {
-    ECO: 'D37',
-    Opening: "Queen's Gambit Declined",
-    Name: "Queen's Gambit"
-  },
-  {
-    ECO: 'D38',
-    Opening: "Queen's Gambit Declined, Ragozin Variation",
-    Name: "Queen's Gambit"
-  },
-  {
-    ECO: 'D39',
-    Opening: "Queen's Gambit Declined, Ragozin, Vienna Variation",
-    Name: "Queen's Gambit"
-  },
-  {
-    ECO: 'D40',
-    Opening: "Queen's Gambit Declined, Semi-Tarrasch",
-    Name: "Queen's Gambit"
-  },
-  {
-    ECO: 'D41',
-    Opening: "Queen's Gambit Declined, Semi-Tarrasch",
-    Name: "Queen's Gambit"
-  },
-  {
-    ECO: 'D42',
-    Opening: "Queen's Gambit Declined, Semi-Tarrasch, 7.Bd3",
-    Name: "Queen's Gambit"
-  },
-  {
-    ECO: 'D43',
-    Opening: "Queen's Gambit Declined Semi-Slav",
-    Name: "Queen's Gambit"
-  },
-  {
-    ECO: 'D44',
-    Opening: "Queen's Gambit Declined Semi-Slav",
-    Name: "Queen's Gambit"
-  },
-  {
-    ECO: 'D45',
-    Opening: "Queen's Gambit Declined Semi-Slav",
-    Name: "Queen's Gambit"
-  },
-  {
-    ECO: 'D46',
-    Opening: "Queen's Gambit Declined Semi-Slav",
-    Name: "Queen's Gambit"
-  },
-  {
-    ECO: 'D47',
-    Opening: "Queen's Gambit Declined Semi-Slav",
-    Name: "Queen's Gambit"
-  },
-  {
-    ECO: 'D48',
-    Opening: "Queen's Gambit Declined Semi-Slav, Meran",
-    Name: "Queen's Gambit"
-  },
-  {
-    ECO: 'D49',
-    Opening: "Queen's Gambit Declined Semi-Slav, Meran",
-    Name: "Queen's Gambit"
-  },
-  {
-    ECO: 'D50',
-    Opening: "Queen's Gambit Declined",
-    Name: "Queen's Gambit"
-  },
-  {
-    ECO: 'D51',
-    Opening: "Queen's Gambit Declined",
-    Name: "Queen's Gambit"
-  },
-  {
-    ECO: 'D52',
-    Opening: "Queen's Gambit Declined",
-    Name: "Queen's Gambit"
-  },
-  {
-    ECO: 'D53',
-    Opening: "Queen's Gambit Declined",
-    Name: "Queen's Gambit"
-  },
-  {
-    ECO: 'D54',
-    Opening: "Queen's Gambit Declined, Anti-Neo-Orthodox Variation",
-    Name: "Queen's Gambit"
-  },
-  {
-    ECO: 'D55',
-    Opening: "Queen's Gambit Declined",
-    Name: "Queen's Gambit"
-  },
-  {
-    ECO: 'D56',
-    Opening: "Queen's Gambit Declined",
-    Name: "Queen's Gambit"
-  },
-  {
-    ECO: 'D57',
-    Opening: "Queen's Gambit Declined, Lasker Defense",
-    Name: "Queen's Gambit"
-  },
-  {
-    ECO: 'D58',
-    Opening:
+    eco: 'D58',
+    opening:
       "Queen's Gambit Declined, Tartakower (Makagonov-Bondarevsky) System",
-    Name: "Queen's Gambit"
+    name: "Queen's Gambit",
+    value: 'QueensGambit'
   },
   {
-    ECO: 'D59',
-    Opening: "Queen's Gambit Declined, Tartakower",
-    Name: "Queen's Gambit"
+    eco: 'D59',
+    opening: "Queen's Gambit Declined, Tartakower",
+    name: "Queen's Gambit",
+    value: 'QueensGambit'
   },
   {
-    ECO: 'D60',
-    Opening: "Queen's Gambit Declined, Orthodox Defense",
-    Name: "Queen's Gambit"
+    eco: 'D60',
+    opening: "Queen's Gambit Declined, Orthodox Defense",
+    name: "Queen's Gambit",
+    value: 'QueensGambit'
   },
   {
-    ECO: 'D61',
-    Opening: "Queen's Gambit Declined, Orthodox, Rubinstein Attack",
-    Name: "Queen's Gambit"
+    eco: 'D61',
+    opening: "Queen's Gambit Declined, Orthodox, Rubinstein Attack",
+    name: "Queen's Gambit",
+    value: 'QueensGambit'
   },
   {
-    ECO: 'D62',
-    Opening: "Queen's Gambit Declined, Orthodox, Rubinstein Attack",
-    Name: "Queen's Gambit"
+    eco: 'D62',
+    opening: "Queen's Gambit Declined, Orthodox, Rubinstein Attack",
+    name: "Queen's Gambit",
+    value: 'QueensGambit'
   },
   {
-    ECO: 'D63',
-    Opening: "Queen's Gambit Declined, Orthodox Defense",
-    Name: "Queen's Gambit"
+    eco: 'D63',
+    opening: "Queen's Gambit Declined, Orthodox Defense",
+    name: "Queen's Gambit",
+    value: 'QueensGambit'
   },
   {
-    ECO: 'D64',
-    Opening: "Queen's Gambit Declined, Orthodox, Rubinstein Attack",
-    Name: "Queen's Gambit"
+    eco: 'D64',
+    opening: "Queen's Gambit Declined, Orthodox, Rubinstein Attack",
+    name: "Queen's Gambit",
+    value: 'QueensGambit'
   },
   {
-    ECO: 'D65',
-    Opening: "Queen's Gambit Declined, Orthodox, Rubinstein Attack, Main line",
-    Name: "Queen's Gambit"
+    eco: 'D65',
+    opening: "Queen's Gambit Declined, Orthodox, Rubinstein Attack, Main line",
+    name: "Queen's Gambit",
+    value: 'QueensGambit'
   },
   {
-    ECO: 'D66',
-    Opening: "Queen's Gambit Declined, Orthodox Defense, Bd3 line",
-    Name: "Queen's Gambit"
+    eco: 'D66',
+    opening: "Queen's Gambit Declined, Orthodox Defense, Bd3 line",
+    name: "Queen's Gambit",
+    value: 'QueensGambit'
   },
   {
-    ECO: 'D67',
-    Opening: "Queen's Gambit Declined, Orthodox Defense, Bd3 line",
-    Name: "Queen's Gambit"
+    eco: 'D67',
+    opening: "Queen's Gambit Declined, Orthodox Defense, Bd3 line",
+    name: "Queen's Gambit",
+    value: 'QueensGambit'
   },
   {
-    ECO: 'D68',
-    Opening: "Queen's Gambit Declined, Orthodox Defense, Classical",
-    Name: "Queen's Gambit"
+    eco: 'D68',
+    opening: "Queen's Gambit Declined, Orthodox Defense, Classical",
+    name: "Queen's Gambit",
+    value: 'QueensGambit'
   },
   {
-    ECO: 'D69',
-    Opening: "Queen's Gambit Declined, Orthodox Defense, Classical, 13.de",
-    Name: "Queen's Gambit"
+    eco: 'D69',
+    opening: "Queen's Gambit Declined, Orthodox Defense, Classical, 13.de",
+    name: "Queen's Gambit",
+    value: 'QueensGambit'
   },
   {
-    ECO: 'D70',
-    Opening: 'Neo-Grunfeld Defense',
-    Name: 'Grunfeld'
+    eco: 'D70',
+    opening: 'Neo-Grunfeld Defense',
+    name: 'Grunfeld',
+    value: 'Grunfeld'
   },
+  { eco: 'D71', opening: 'Neo-Grunfeld', name: 'Grunfeld', value: 'Grunfeld' },
   {
-    ECO: 'D71',
-    Opening: 'Neo-Grunfeld',
-    Name: 'Grunfeld'
+    eco: 'D72',
+    opening: 'Neo-Grunfeld, 5.cd, Main line',
+    name: 'Grunfeld',
+    value: 'Grunfeld'
   },
   {
-    ECO: 'D72',
-    Opening: 'Neo-Grunfeld, 5.cd, Main line',
-    Name: 'Grunfeld'
+    eco: 'D73',
+    opening: 'Neo-Grunfeld, 5.Nf3',
+    name: 'Grunfeld',
+    value: 'Grunfeld'
   },
   {
-    ECO: 'D73',
-    Opening: 'Neo-Grunfeld, 5.Nf3',
-    Name: 'Grunfeld'
+    eco: 'D74',
+    opening: 'Neo-Grunfeld, 6.cd Nxd5, 7.O-O',
+    name: 'Grunfeld',
+    value: 'Grunfeld'
   },
   {
-    ECO: 'D74',
-    Opening: 'Neo-Grunfeld, 6.cd Nxd5, 7.O-O',
-    Name: 'Grunfeld'
+    eco: 'D75',
+    opening: 'Neo-Grunfeld, 6.cd Nxd5, 7.O-O c5, 8.dxc5',
+    name: 'Grunfeld',
+    value: 'Grunfeld'
   },
   {
-    ECO: 'D75',
-    Opening: 'Neo-Grunfeld, 6.cd Nxd5, 7.O-O c5, 8.dxc5',
-    Name: 'Grunfeld'
+    eco: 'D76',
+    opening: 'Neo-Grunfeld, 6.cd Nxd5, 7.O-O Nb6',
+    name: 'Grunfeld',
+    value: 'Grunfeld'
   },
   {
-    ECO: 'D76',
-    Opening: 'Neo-Grunfeld, 6.cd Nxd5, 7.O-O Nb6',
-    Name: 'Grunfeld'
+    eco: 'D77',
+    opening: 'Neo-Grunfeld, 6.O-O',
+    name: 'Grunfeld',
+    value: 'Grunfeld'
   },
   {
-    ECO: 'D77',
-    Opening: 'Neo-Grunfeld, 6.O-O',
-    Name: 'Grunfeld'
+    eco: 'D78',
+    opening: 'Neo-Grunfeld, 6.O-O c6',
+    name: 'Grunfeld',
+    value: 'Grunfeld'
   },
   {
-    ECO: 'D78',
-    Opening: 'Neo-Grunfeld, 6.O-O c6',
-    Name: 'Grunfeld'
+    eco: 'D79',
+    opening: 'Neo-Grunfeld, 6.O-O, Main line',
+    name: 'Grunfeld',
+    value: 'Grunfeld'
   },
+  { eco: 'D80', opening: 'Grunfeld', name: 'Grunfeld', value: 'Grunfeld' },
   {
-    ECO: 'D79',
-    Opening: 'Neo-Grunfeld, 6.O-O, Main line',
-    Name: 'Grunfeld'
+    eco: 'D81',
+    opening: 'Grunfeld, Russian Variation',
+    name: 'Grunfeld',
+    value: 'Grunfeld'
   },
   {
-    ECO: 'D80',
-    Opening: 'Grunfeld',
-    Name: 'Grunfeld'
+    eco: 'D82',
+    opening: 'Grunfeld, 4.Bf4',
+    name: 'Grunfeld',
+    value: 'Grunfeld'
   },
   {
-    ECO: 'D81',
-    Opening: 'Grunfeld, Russian Variation',
-    Name: 'Grunfeld'
+    eco: 'D83',
+    opening: 'Grunfeld, Grunfeld Gambit',
+    name: 'Grunfeld',
+    value: 'Grunfeld'
   },
   {
-    ECO: 'D82',
-    Opening: 'Grunfeld, 4.Bf4',
-    Name: 'Grunfeld'
+    eco: 'D84',
+    opening: 'Grunfeld, Grunfeld Gambit Accepted',
+    name: 'Grunfeld',
+    value: 'Grunfeld'
   },
+  { eco: 'D85', opening: 'Grunfeld', name: 'Grunfeld', value: 'Grunfeld' },
   {
-    ECO: 'D83',
-    Opening: 'Grunfeld, Grunfeld Gambit',
-    Name: 'Grunfeld'
+    eco: 'D86',
+    opening: 'Grunfeld, Exchange',
+    name: 'Grunfeld',
+    value: 'Grunfeld'
   },
   {
-    ECO: 'D84',
-    Opening: 'Grunfeld, Grunfeld Gambit Accepted',
-    Name: 'Grunfeld'
+    eco: 'D87',
+    opening: 'Grunfeld, Exchange',
+    name: 'Grunfeld',
+    value: 'Grunfeld'
   },
   {
-    ECO: 'D85',
-    Opening: 'Grunfeld',
-    Name: 'Grunfeld'
+    eco: 'D88',
+    opening: 'Grunfeld, Spassky Variation, Main line, 10...cd, 11.cd',
+    name: 'Grunfeld',
+    value: 'Grunfeld'
   },
+  { eco: 'D89', opening: 'Grunfeld', name: 'Grunfeld', value: 'Grunfeld' },
+  { eco: 'D90', opening: 'Grunfeld', name: 'Grunfeld', value: 'Grunfeld' },
   {
-    ECO: 'D86',
-    Opening: 'Grunfeld, Exchange',
-    Name: 'Grunfeld'
+    eco: 'D91',
+    opening: 'Grunfeld, 5.Bg5',
+    name: 'Grunfeld',
+    value: 'Grunfeld'
   },
   {
-    ECO: 'D87',
-    Opening: 'Grunfeld, Exchange',
-    Name: 'Grunfeld'
+    eco: 'D92',
+    opening: 'Grunfeld, 5.Bf4',
+    name: 'Grunfeld',
+    value: 'Grunfeld'
   },
   {
-    ECO: 'D88',
-    Opening: 'Grunfeld, Spassky Variation, Main line, 10...cd, 11.cd',
-    Name: 'Grunfeld'
+    eco: 'D93',
+    opening: 'Grunfeld, with Bf4 & e3',
+    name: 'Grunfeld',
+    value: 'Grunfeld'
   },
+  { eco: 'D94', opening: 'Grunfeld', name: 'Grunfeld', value: 'Grunfeld' },
+  { eco: 'D95', opening: 'Grunfeld', name: 'Grunfeld', value: 'Grunfeld' },
   {
-    ECO: 'D89',
-    Opening: 'Grunfeld',
-    Name: 'Grunfeld'
+    eco: 'D96',
+    opening: 'Grunfeld, Russian Variation',
+    name: 'Grunfeld',
+    value: 'Grunfeld'
   },
   {
-    ECO: 'D90',
-    Opening: 'Grunfeld',
-    Name: 'Grunfeld'
+    eco: 'D97',
+    opening: 'Grunfeld, Russian',
+    name: 'Grunfeld',
+    value: 'Grunfeld'
   },
   {
-    ECO: 'D91',
-    Opening: 'Grunfeld, 5.Bg5',
-    Name: 'Grunfeld'
+    eco: 'D98',
+    opening: 'Grunfeld, Russian',
+    name: 'Grunfeld',
+    value: 'Grunfeld'
   },
   {
-    ECO: 'D92',
-    Opening: 'Grunfeld, 5.Bf4',
-    Name: 'Grunfeld'
+    eco: 'D99',
+    opening: 'Grunfeld Defense, Smyslov',
+    name: 'Grunfeld',
+    value: 'Grunfeld'
   },
   {
-    ECO: 'D93',
-    Opening: 'Grunfeld, with Bf4 & e3',
-    Name: 'Grunfeld'
+    eco: 'E00',
+    opening: "Queen's Pawn Game",
+    name: "Queen's Pawn Game",
+    value: 'QueensPawnGame'
   },
+  { eco: 'E01', opening: 'Catalan, Closed', name: 'Catalan', value: 'Catalan' },
   {
-    ECO: 'D94',
-    Opening: 'Grunfeld',
-    Name: 'Grunfeld'
+    eco: 'E02',
+    opening: 'Catalan, Open, 5.Qa4',
+    name: 'Catalan',
+    value: 'Catalan'
   },
+  { eco: 'E03', opening: 'Catalan, Open', name: 'Catalan', value: 'Catalan' },
   {
-    ECO: 'D95',
-    Opening: 'Grunfeld',
-    Name: 'Grunfeld'
+    eco: 'E04',
+    opening: 'Catalan, Open, 5.Nf3',
+    name: 'Catalan',
+    value: 'Catalan'
   },
   {
-    ECO: 'D96',
-    Opening: 'Grunfeld, Russian Variation',
-    Name: 'Grunfeld'
+    eco: 'E05',
+    opening: 'Catalan, Open, Classical line',
+    name: 'Catalan',
+    value: 'Catalan'
   },
   {
-    ECO: 'D97',
-    Opening: 'Grunfeld, Russian',
-    Name: 'Grunfeld'
+    eco: 'E06',
+    opening: 'Catalan, Closed, 5.Nf3',
+    name: 'Catalan',
+    value: 'Catalan'
   },
+  { eco: 'E07', opening: 'Catalan, Closed', name: 'Catalan', value: 'Catalan' },
+  { eco: 'E08', opening: 'Catalan, Closed', name: 'Catalan', value: 'Catalan' },
+  { eco: 'E09', opening: 'Catalan, Closed', name: 'Catalan', value: 'Catalan' },
   {
-    ECO: 'D98',
-    Opening: 'Grunfeld, Russian',
-    Name: 'Grunfeld'
+    eco: 'E10',
+    opening: "Queen's Pawn Game",
+    name: "Queen's Pawn Game",
+    value: 'QueensPawnGame'
   },
   {
-    ECO: 'D99',
-    Opening: 'Grunfeld Defense, Smyslov',
-    Name: 'Grunfeld'
+    eco: 'E11',
+    opening: 'Bogo-Indian Defense',
+    name: 'Bogo-Indian',
+    value: 'BogoIndian'
   },
   {
-    ECO: 'E00',
-    Opening: "Queen's Pawn Game",
-    Name: "Queen's Pawn Game"
+    eco: 'E12',
+    opening: "Queen's Indian",
+    name: "Queen's Indian",
+    value: 'QueensIndian'
   },
   {
-    ECO: 'E01',
-    Opening: 'Catalan, Closed',
-    Name: 'Catalan'
+    eco: 'E13',
+    opening: "Queen's Indian, 4.Nc3, Main line",
+    name: "Queen's Indian",
+    value: 'QueensIndian'
   },
   {
-    ECO: 'E02',
-    Opening: 'Catalan, Open, 5.Qa4',
-    Name: 'Catalan'
+    eco: 'E14',
+    opening: "Queen's Indian",
+    name: "Queen's Indian",
+    value: 'QueensIndian'
   },
   {
-    ECO: 'E03',
-    Opening: 'Catalan, Open',
-    Name: 'Catalan'
+    eco: 'E15',
+    opening: "Queen's Indian",
+    name: "Queen's Indian",
+    value: 'QueensIndian'
   },
   {
-    ECO: 'E04',
-    Opening: 'Catalan, Open, 5.Nf3',
-    Name: 'Catalan'
+    eco: 'E16',
+    opening: "Queen's Indian",
+    name: "Queen's Indian",
+    value: 'QueensIndian'
   },
   {
-    ECO: 'E05',
-    Opening: 'Catalan, Open, Classical line',
-    Name: 'Catalan'
+    eco: 'E17',
+    opening: "Queen's Indian",
+    name: "Queen's Indian",
+    value: 'QueensIndian'
   },
   {
-    ECO: 'E06',
-    Opening: 'Catalan, Closed, 5.Nf3',
-    Name: 'Catalan'
+    eco: 'E18',
+    opening: "Queen's Indian, Old Main line, 7.Nc3",
+    name: "Queen's Indian",
+    value: 'QueensIndian'
   },
   {
-    ECO: 'E07',
-    Opening: 'Catalan, Closed',
-    Name: 'Catalan'
+    eco: 'E19',
+    opening: "Queen's Indian, Old Main line, 9.Qxc3",
+    name: "Queen's Indian",
+    value: 'QueensIndian'
   },
   {
-    ECO: 'E08',
-    Opening: 'Catalan, Closed',
-    Name: 'Catalan'
+    eco: 'E20',
+    opening: 'Nimzo-Indian',
+    name: 'Nimzo-Indian',
+    value: 'NimzoIndian'
   },
   {
-    ECO: 'E09',
-    Opening: 'Catalan, Closed',
-    Name: 'Catalan'
+    eco: 'E21',
+    opening: 'Nimzo-Indian, Three Knights',
+    name: 'Nimzo-Indian',
+    value: 'NimzoIndian'
   },
   {
-    ECO: 'E10',
-    Opening: "Queen's Pawn Game",
-    Name: "Queen's Pawn Game"
+    eco: 'E22',
+    opening: 'Nimzo-Indian, Spielmann Variation',
+    name: 'Nimzo-Indian',
+    value: 'NimzoIndian'
   },
   {
-    ECO: 'E11',
-    Opening: 'Bogo-Indian Defense',
-    Name: 'Bogo-Indian'
+    eco: 'E23',
+    opening: 'Nimzo-Indian, Spielmann',
+    name: 'Nimzo-Indian',
+    value: 'NimzoIndian'
   },
   {
-    ECO: 'E12',
-    Opening: "Queen's Indian",
-    Name: "Queen's Indian"
+    eco: 'E24',
+    opening: 'Nimzo-Indian, Samisch',
+    name: 'Nimzo-Indian',
+    value: 'NimzoIndian'
   },
   {
-    ECO: 'E13',
-    Opening: "Queen's Indian, 4.Nc3, Main line",
-    Name: "Queen's Indian"
+    eco: 'E25',
+    opening: 'Nimzo-Indian, Samisch',
+    name: 'Nimzo-Indian',
+    value: 'NimzoIndian'
   },
   {
-    ECO: 'E14',
-    Opening: "Queen's Indian",
-    Name: "Queen's Indian"
+    eco: 'E26',
+    opening: 'Nimzo-Indian, Samisch',
+    name: 'Nimzo-Indian',
+    value: 'NimzoIndian'
   },
   {
-    ECO: 'E15',
-    Opening: "Queen's Indian",
-    Name: "Queen's Indian"
+    eco: 'E27',
+    opening: 'Nimzo-Indian, Samisch Variation',
+    name: 'Nimzo-Indian',
+    value: 'NimzoIndian'
   },
   {
-    ECO: 'E16',
-    Opening: "Queen's Indian",
-    Name: "Queen's Indian"
+    eco: 'E28',
+    opening: 'Nimzo-Indian, Samisch Variation',
+    name: 'Nimzo-Indian',
+    value: 'NimzoIndian'
   },
   {
-    ECO: 'E17',
-    Opening: "Queen's Indian",
-    Name: "Queen's Indian"
+    eco: 'E29',
+    opening: 'Nimzo-Indian, Samisch',
+    name: 'Nimzo-Indian',
+    value: 'NimzoIndian'
   },
   {
-    ECO: 'E18',
-    Opening: "Queen's Indian, Old Main line, 7.Nc3",
-    Name: "Queen's Indian"
+    eco: 'E30',
+    opening: 'Nimzo-Indian, Leningrad',
+    name: 'Nimzo-Indian',
+    value: 'NimzoIndian'
   },
   {
-    ECO: 'E19',
-    Opening: "Queen's Indian, Old Main line, 9.Qxc3",
-    Name: "Queen's Indian"
+    eco: 'E31',
+    opening: 'Nimzo-Indian, Leningrad, Main line',
+    name: 'Nimzo-Indian',
+    value: 'NimzoIndian'
   },
   {
-    ECO: 'E20',
-    Opening: 'Nimzo-Indian',
-    Name: 'Nimzo-Indian'
+    eco: 'E32',
+    opening: 'Nimzo-Indian, Classical',
+    name: 'Nimzo-Indian',
+    value: 'NimzoIndian'
   },
   {
-    ECO: 'E21',
-    Opening: 'Nimzo-Indian, Three Knights',
-    Name: 'Nimzo-Indian'
+    eco: 'E33',
+    opening: 'Nimzo-Indian, Classical',
+    name: 'Nimzo-Indian',
+    value: 'NimzoIndian'
   },
   {
-    ECO: 'E22',
-    Opening: 'Nimzo-Indian, Spielmann Variation',
-    Name: 'Nimzo-Indian'
+    eco: 'E34',
+    opening: 'Nimzo-Indian, Classical, Noa Variation',
+    name: 'Nimzo-Indian',
+    value: 'NimzoIndian'
   },
   {
-    ECO: 'E23',
-    Opening: 'Nimzo-Indian, Spielmann',
-    Name: 'Nimzo-Indian'
+    eco: 'E35',
+    opening: 'Nimzo-Indian, Classical, Noa Variation, 5.cd ed',
+    name: 'Nimzo-Indian',
+    value: 'NimzoIndian'
   },
   {
-    ECO: 'E24',
-    Opening: 'Nimzo-Indian, Samisch',
-    Name: 'Nimzo-Indian'
+    eco: 'E36',
+    opening: 'Nimzo-Indian, Classical',
+    name: 'Nimzo-Indian',
+    value: 'NimzoIndian'
   },
   {
-    ECO: 'E25',
-    Opening: 'Nimzo-Indian, Samisch',
-    Name: 'Nimzo-Indian'
+    eco: 'E37',
+    opening: 'Nimzo-Indian, Classical',
+    name: 'Nimzo-Indian',
+    value: 'NimzoIndian'
   },
   {
-    ECO: 'E26',
-    Opening: 'Nimzo-Indian, Samisch',
-    Name: 'Nimzo-Indian'
+    eco: 'E38',
+    opening: 'Nimzo-Indian, Classical, 4...c5',
+    name: 'Nimzo-Indian',
+    value: 'NimzoIndian'
   },
   {
-    ECO: 'E27',
-    Opening: 'Nimzo-Indian, Samisch Variation',
-    Name: 'Nimzo-Indian'
+    eco: 'E39',
+    opening: 'Nimzo-Indian, Classical, Pirc Variation',
+    name: 'Nimzo-Indian',
+    value: 'NimzoIndian'
   },
   {
-    ECO: 'E28',
-    Opening: 'Nimzo-Indian, Samisch Variation',
-    Name: 'Nimzo-Indian'
+    eco: 'E40',
+    opening: 'Nimzo-Indian, 4.e3',
+    name: 'Nimzo-Indian',
+    value: 'NimzoIndian'
   },
   {
-    ECO: 'E29',
-    Opening: 'Nimzo-Indian, Samisch',
-    Name: 'Nimzo-Indian'
+    eco: 'E41',
+    opening: 'Nimzo-Indian',
+    name: 'Nimzo-Indian',
+    value: 'NimzoIndian'
   },
   {
-    ECO: 'E30',
-    Opening: 'Nimzo-Indian, Leningrad',
-    Name: 'Nimzo-Indian'
+    eco: 'E42',
+    opening: 'Nimzo-Indian, 4.e3 c5, 5.Ne2 (Rubinstein)',
+    name: 'Nimzo-Indian',
+    value: 'NimzoIndian'
   },
   {
-    ECO: 'E31',
-    Opening: 'Nimzo-Indian, Leningrad, Main line',
-    Name: 'Nimzo-Indian'
+    eco: 'E43',
+    opening: 'Nimzo-Indian, Fischer Variation',
+    name: 'Nimzo-Indian',
+    value: 'NimzoIndian'
   },
   {
-    ECO: 'E32',
-    Opening: 'Nimzo-Indian, Classical',
-    Name: 'Nimzo-Indian'
+    eco: 'E44',
+    opening: 'Nimzo-Indian, Fischer Variation, 5.Ne2',
+    name: 'Nimzo-Indian',
+    value: 'NimzoIndian'
   },
   {
-    ECO: 'E33',
-    Opening: 'Nimzo-Indian, Classical',
-    Name: 'Nimzo-Indian'
+    eco: 'E45',
+    opening: 'Nimzo-Indian, 4.e3, Bronstein (Byrne) Variation',
+    name: 'Nimzo-Indian',
+    value: 'NimzoIndian'
   },
   {
-    ECO: 'E34',
-    Opening: 'Nimzo-Indian, Classical, Noa Variation',
-    Name: 'Nimzo-Indian'
+    eco: 'E46',
+    opening: 'Nimzo-Indian',
+    name: 'Nimzo-Indian',
+    value: 'NimzoIndian'
   },
   {
-    ECO: 'E35',
-    Opening: 'Nimzo-Indian, Classical, Noa Variation, 5.cd ed',
-    Name: 'Nimzo-Indian'
+    eco: 'E47',
+    opening: 'Nimzo-Indian, 4.e3 O-O 5.Bd3',
+    name: 'Nimzo-Indian',
+    value: 'NimzoIndian'
   },
   {
-    ECO: 'E36',
-    Opening: 'Nimzo-Indian, Classical',
-    Name: 'Nimzo-Indian'
+    eco: 'E48',
+    opening: 'Nimzo-Indian, 4.e3 O-O 5.Bd3 d5',
+    name: 'Nimzo-Indian',
+    value: 'NimzoIndian'
   },
   {
-    ECO: 'E37',
-    Opening: 'Nimzo-Indian, Classical',
-    Name: 'Nimzo-Indian'
+    eco: 'E49',
+    opening: 'Nimzo-Indian, 4.e3, Botvinnik System',
+    name: 'Nimzo-Indian',
+    value: 'NimzoIndian'
   },
   {
-    ECO: 'E38',
-    Opening: 'Nimzo-Indian, Classical, 4...c5',
-    Name: 'Nimzo-Indian'
+    eco: 'E50',
+    opening: 'Nimzo-Indian, 4.e3 O-O 5.Nf3, without ...d5',
+    name: 'Nimzo-Indian',
+    value: 'NimzoIndian'
   },
   {
-    ECO: 'E39',
-    Opening: 'Nimzo-Indian, Classical, Pirc Variation',
-    Name: 'Nimzo-Indian'
+    eco: 'E51',
+    opening: 'Nimzo-Indian, 4.e3',
+    name: 'Nimzo-Indian',
+    value: 'NimzoIndian'
   },
   {
-    ECO: 'E40',
-    Opening: 'Nimzo-Indian, 4.e3',
-    Name: 'Nimzo-Indian'
+    eco: 'E52',
+    opening: 'Nimzo-Indian, 4.e3, Main line with ...b6',
+    name: 'Nimzo-Indian',
+    value: 'NimzoIndian'
   },
   {
-    ECO: 'E41',
-    Opening: 'Nimzo-Indian',
-    Name: 'Nimzo-Indian'
+    eco: 'E53',
+    opening: 'Nimzo-Indian, 4.e3',
+    name: 'Nimzo-Indian',
+    value: 'NimzoIndian'
   },
   {
-    ECO: 'E42',
-    Opening: 'Nimzo-Indian, 4.e3 c5, 5.Ne2 (Rubinstein)',
-    Name: 'Nimzo-Indian'
+    eco: 'E54',
+    opening: 'Nimzo-Indian, 4.e3, Gligoric System',
+    name: 'Nimzo-Indian',
+    value: 'NimzoIndian'
   },
   {
-    ECO: 'E43',
-    Opening: 'Nimzo-Indian, Fischer Variation',
-    Name: 'Nimzo-Indian'
+    eco: 'E55',
+    opening: 'Nimzo-Indian, 4.e3, Gligoric System, Bronstein Variation',
+    name: 'Nimzo-Indian',
+    value: 'NimzoIndian'
   },
   {
-    ECO: 'E44',
-    Opening: 'Nimzo-Indian, Fischer Variation, 5.Ne2',
-    Name: 'Nimzo-Indian'
+    eco: 'E56',
+    opening: 'Nimzo-Indian, 4.e3, Main line with 7...Nc6',
+    name: 'Nimzo-Indian',
+    value: 'NimzoIndian'
   },
   {
-    ECO: 'E45',
-    Opening: 'Nimzo-Indian, 4.e3, Bronstein (Byrne) Variation',
-    Name: 'Nimzo-Indian'
+    eco: 'E57',
+    opening: 'Nimzo-Indian, 4.e3, Main line with 8...dc and 9...cd',
+    name: 'Nimzo-Indian',
+    value: 'NimzoIndian'
   },
   {
-    ECO: 'E46',
-    Opening: 'Nimzo-Indian',
-    Name: 'Nimzo-Indian'
+    eco: 'E58',
+    opening: 'Nimzo-Indian, 4.e3, Main line with 8...Bxc3',
+    name: 'Nimzo-Indian',
+    value: 'NimzoIndian'
   },
   {
-    ECO: 'E47',
-    Opening: 'Nimzo-Indian, 4.e3 O-O 5.Bd3',
-    Name: 'Nimzo-Indian'
+    eco: 'E59',
+    opening: 'Nimzo-Indian, 4.e3, Main line',
+    name: 'Nimzo-Indian',
+    value: 'NimzoIndian'
   },
   {
-    ECO: 'E48',
-    Opening: 'Nimzo-Indian, 4.e3 O-O 5.Bd3 d5',
-    Name: 'Nimzo-Indian'
+    eco: 'E60',
+    opening: "King's Indian Defense",
+    name: "King's Indian",
+    value: 'KingsIndian'
   },
   {
-    ECO: 'E49',
-    Opening: 'Nimzo-Indian, 4.e3, Botvinnik System',
-    Name: 'Nimzo-Indian'
+    eco: 'E61',
+    opening: "King's Indian",
+    name: "King's Indian",
+    value: 'KingsIndian'
   },
   {
-    ECO: 'E50',
-    Opening: 'Nimzo-Indian, 4.e3 O-O 5.Nf3, without ...d5',
-    Name: 'Nimzo-Indian'
+    eco: 'E62',
+    opening: "King's Indian, Fianchetto",
+    name: "King's Indian",
+    value: 'KingsIndian'
   },
   {
-    ECO: 'E51',
-    Opening: 'Nimzo-Indian, 4.e3',
-    Name: 'Nimzo-Indian'
+    eco: 'E63',
+    opening: "King's Indian, Fianchetto, Panno Variation",
+    name: "King's Indian",
+    value: 'KingsIndian'
   },
   {
-    ECO: 'E52',
-    Opening: 'Nimzo-Indian, 4.e3, Main line with ...b6',
-    Name: 'Nimzo-Indian'
+    eco: 'E64',
+    opening: "King's Indian, Fianchetto, Yugoslav System",
+    name: "King's Indian",
+    value: 'KingsIndian'
   },
   {
-    ECO: 'E53',
-    Opening: 'Nimzo-Indian, 4.e3',
-    Name: 'Nimzo-Indian'
+    eco: 'E65',
+    opening: "King's Indian, Fianchetto, Yugoslav, 7.O-O",
+    name: "King's Indian",
+    value: 'KingsIndian'
   },
   {
-    ECO: 'E54',
-    Opening: 'Nimzo-Indian, 4.e3, Gligoric System',
-    Name: 'Nimzo-Indian'
+    eco: 'E66',
+    opening: "King's Indian, Fianchetto, Yugoslav Panno",
+    name: "King's Indian",
+    value: 'KingsIndian'
   },
   {
-    ECO: 'E55',
-    Opening: 'Nimzo-Indian, 4.e3, Gligoric System, Bronstein Variation',
-    Name: 'Nimzo-Indian'
+    eco: 'E67',
+    opening: "King's Indian, Fianchetto",
+    name: "King's Indian",
+    value: 'KingsIndian'
   },
   {
-    ECO: 'E56',
-    Opening: 'Nimzo-Indian, 4.e3, Main line with 7...Nc6',
-    Name: 'Nimzo-Indian'
+    eco: 'E68',
+    opening: "King's Indian, Fianchetto, Classical Variation, 8.e4",
+    name: "King's Indian",
+    value: 'KingsIndian'
   },
   {
-    ECO: 'E57',
-    Opening: 'Nimzo-Indian, 4.e3, Main line with 8...dc and 9...cd',
-    Name: 'Nimzo-Indian'
+    eco: 'E69',
+    opening: "King's Indian, Fianchetto, Classical Main line",
+    name: "King's Indian",
+    value: 'KingsIndian'
   },
   {
-    ECO: 'E58',
-    Opening: 'Nimzo-Indian, 4.e3, Main line with 8...Bxc3',
-    Name: 'Nimzo-Indian'
+    eco: 'E70',
+    opening: "King's Indian",
+    name: "King's Indian",
+    value: 'KingsIndian'
   },
   {
-    ECO: 'E59',
-    Opening: 'Nimzo-Indian, 4.e3, Main line',
-    Name: 'Nimzo-Indian'
+    eco: 'E71',
+    opening: "King's Indian, Makagonov System (5.h3)",
+    name: "King's Indian",
+    value: 'KingsIndian'
   },
   {
-    ECO: 'E60',
-    Opening: "King's Indian Defense",
-    Name: "King's Indian"
+    eco: 'E72',
+    opening: "King's Indian",
+    name: "King's Indian",
+    value: 'KingsIndian'
   },
   {
-    ECO: 'E61',
-    Opening: "King's Indian",
-    Name: "King's Indian"
+    eco: 'E73',
+    opening: "King's Indian",
+    name: "King's Indian",
+    value: 'KingsIndian'
   },
   {
-    ECO: 'E62',
-    Opening: "King's Indian, Fianchetto",
-    Name: "King's Indian"
+    eco: 'E74',
+    opening: "King's Indian, Averbakh, 6...c5",
+    name: "King's Indian",
+    value: 'KingsIndian'
   },
   {
-    ECO: 'E63',
-    Opening: "King's Indian, Fianchetto, Panno Variation",
-    Name: "King's Indian"
+    eco: 'E75',
+    opening: "King's Indian, Averbakh, Main line",
+    name: "King's Indian",
+    value: 'KingsIndian'
   },
   {
-    ECO: 'E64',
-    Opening: "King's Indian, Fianchetto, Yugoslav System",
-    Name: "King's Indian"
+    eco: 'E76',
+    opening: "King's Indian, Four Pawns Attack",
+    name: "King's Indian",
+    value: 'KingsIndian'
   },
   {
-    ECO: 'E65',
-    Opening: "King's Indian, Fianchetto, Yugoslav, 7.O-O",
-    Name: "King's Indian"
+    eco: 'E77',
+    opening: "King's Indian",
+    name: "King's Indian",
+    value: 'KingsIndian'
   },
   {
-    ECO: 'E66',
-    Opening: "King's Indian, Fianchetto, Yugoslav Panno",
-    Name: "King's Indian"
+    eco: 'E78',
+    opening: "King's Indian, Four Pawns Attack, with Be2 and Nf3",
+    name: "King's Indian",
+    value: 'KingsIndian'
   },
   {
-    ECO: 'E67',
-    Opening: "King's Indian, Fianchetto",
-    Name: "King's Indian"
+    eco: 'E79',
+    opening: "King's Indian, Four Pawns Attack, Main line",
+    name: "King's Indian",
+    value: 'KingsIndian'
   },
   {
-    ECO: 'E68',
-    Opening: "King's Indian, Fianchetto, Classical Variation, 8.e4",
-    Name: "King's Indian"
+    eco: 'E80',
+    opening: "King's Indian, Samisch Variation",
+    name: "King's Indian",
+    value: 'KingsIndian'
   },
   {
-    ECO: 'E69',
-    Opening: "King's Indian, Fianchetto, Classical Main line",
-    Name: "King's Indian"
+    eco: 'E81',
+    opening: "King's Indian, Samisch",
+    name: "King's Indian",
+    value: 'KingsIndian'
   },
   {
-    ECO: 'E70',
-    Opening: "King's Indian",
-    Name: "King's Indian"
+    eco: 'E82',
+    opening: "King's Indian, Samisch, double Fianchetto Variation",
+    name: "King's Indian",
+    value: 'KingsIndian'
   },
   {
-    ECO: 'E71',
-    Opening: "King's Indian, Makagonov System (5.h3)",
-    Name: "King's Indian"
+    eco: 'E83',
+    opening: "King's Indian, Samisch",
+    name: "King's Indian",
+    value: 'KingsIndian'
   },
   {
-    ECO: 'E72',
-    Opening: "King's Indian",
-    Name: "King's Indian"
+    eco: 'E84',
+    opening: "King's Indian, Samisch, Panno Main line",
+    name: "King's Indian",
+    value: 'KingsIndian'
   },
   {
-    ECO: 'E73',
-    Opening: "King's Indian",
-    Name: "King's Indian"
+    eco: 'E85',
+    opening: "King's Indian, Samisch, Orthodox Variation",
+    name: "King's Indian",
+    value: 'KingsIndian'
   },
   {
-    ECO: 'E74',
-    Opening: "King's Indian, Averbakh, 6...c5",
-    Name: "King's Indian"
+    eco: 'E86',
+    opening: "King's Indian, Samisch, Orthodox, 7.Nge2 c6",
+    name: "King's Indian",
+    value: 'KingsIndian'
   },
   {
-    ECO: 'E75',
-    Opening: "King's Indian, Averbakh, Main line",
-    Name: "King's Indian"
+    eco: 'E87',
+    opening: "King's Indian, Samisch, Orthodox",
+    name: "King's Indian",
+    value: 'KingsIndian'
   },
   {
-    ECO: 'E76',
-    Opening: "King's Indian, Four Pawns Attack",
-    Name: "King's Indian"
+    eco: 'E88',
+    opening: "King's Indian, Samisch, Orthodox, 7.d5 c6",
+    name: "King's Indian",
+    value: 'KingsIndian'
   },
   {
-    ECO: 'E77',
-    Opening: "King's Indian",
-    Name: "King's Indian"
+    eco: 'E89',
+    opening: "King's Indian, Samisch, Orthodox Main line",
+    name: "King's Indian",
+    value: 'KingsIndian'
   },
   {
-    ECO: 'E78',
-    Opening: "King's Indian, Four Pawns Attack, with Be2 and Nf3",
-    Name: "King's Indian"
+    eco: 'E90',
+    opening: "King's Indian",
+    name: "King's Indian",
+    value: 'KingsIndian'
   },
   {
-    ECO: 'E79',
-    Opening: "King's Indian, Four Pawns Attack, Main line",
-    Name: "King's Indian"
+    eco: 'E91',
+    opening: "King's Indian",
+    name: "King's Indian",
+    value: 'KingsIndian'
   },
   {
-    ECO: 'E80',
-    Opening: "King's Indian, Samisch Variation",
-    Name: "King's Indian"
+    eco: 'E92',
+    opening: "King's Indian",
+    name: "King's Indian",
+    value: 'KingsIndian'
   },
   {
-    ECO: 'E81',
-    Opening: "King's Indian, Samisch",
-    Name: "King's Indian"
+    eco: 'E93',
+    opening: "King's Indian, Petrosian System",
+    name: "King's Indian",
+    value: 'KingsIndian'
   },
   {
-    ECO: 'E82',
-    Opening: "King's Indian, Samisch, double Fianchetto Variation",
-    Name: "King's Indian"
+    eco: 'E94',
+    opening: "King's Indian, Orthodox",
+    name: "King's Indian",
+    value: 'KingsIndian'
   },
   {
-    ECO: 'E83',
-    Opening: "King's Indian, Samisch",
-    Name: "King's Indian"
+    eco: 'E95',
+    opening: "King's Indian, Orthodox, 7...Nbd7, 8.Re1",
+    name: "King's Indian",
+    value: 'KingsIndian'
   },
   {
-    ECO: 'E84',
-    Opening: "King's Indian, Samisch, Panno Main line",
-    Name: "King's Indian"
+    eco: 'E96',
+    opening: "King's Indian, Orthodox, 7...Nbd7, Main line",
+    name: "King's Indian",
+    value: 'KingsIndian'
   },
   {
-    ECO: 'E85',
-    Opening: "King's Indian, Samisch, Orthodox Variation",
-    Name: "King's Indian"
+    eco: 'E97',
+    opening: "King's Indian",
+    name: "King's Indian",
+    value: 'KingsIndian'
   },
   {
-    ECO: 'E86',
-    Opening: "King's Indian, Samisch, Orthodox, 7.Nge2 c6",
-    Name: "King's Indian"
+    eco: 'E98',
+    opening: "King's Indian, Orthodox, Taimanov, 9.Ne1",
+    name: "King's Indian",
+    value: 'KingsIndian'
   },
   {
-    ECO: 'E87',
-    Opening: "King's Indian, Samisch, Orthodox",
-    Name: "King's Indian"
-  },
-  {
-    ECO: 'E88',
-    Opening: "King's Indian, Samisch, Orthodox, 7.d5 c6",
-    Name: "King's Indian"
-  },
-  {
-    ECO: 'E89',
-    Opening: "King's Indian, Samisch, Orthodox Main line",
-    Name: "King's Indian"
-  },
-  {
-    ECO: 'E90',
-    Opening: "King's Indian",
-    Name: "King's Indian"
-  },
-  {
-    ECO: 'E91',
-    Opening: "King's Indian",
-    Name: "King's Indian"
-  },
-  {
-    ECO: 'E92',
-    Opening: "King's Indian",
-    Name: "King's Indian"
-  },
-  {
-    ECO: 'E93',
-    Opening: "King's Indian, Petrosian System",
-    Name: "King's Indian"
-  },
-  {
-    ECO: 'E94',
-    Opening: "King's Indian, Orthodox",
-    Name: "King's Indian"
-  },
-  {
-    ECO: 'E95',
-    Opening: "King's Indian, Orthodox, 7...Nbd7, 8.Re1",
-    Name: "King's Indian"
-  },
-  {
-    ECO: 'E96',
-    Opening: "King's Indian, Orthodox, 7...Nbd7, Main line",
-    Name: "King's Indian"
-  },
-  {
-    ECO: 'E97',
-    Opening: "King's Indian",
-    Name: "King's Indian"
-  },
-  {
-    ECO: 'E98',
-    Opening: "King's Indian, Orthodox, Taimanov, 9.Ne1",
-    Name: "King's Indian"
-  },
-  {
-    ECO: 'E99',
-    Opening: "King's Indian, Orthodox, Taimanov",
-    Name: "King's Indian"
+    eco: 'E99',
+    opening: "King's Indian, Orthodox, Taimanov",
+    name: "King's Indian",
+    value: 'KingsIndian'
   }
 ];
-
 module.exports = codes;
