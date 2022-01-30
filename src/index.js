@@ -496,15 +496,18 @@ function achievementsCalculator(pgn, rawColor) {
 
   let opening = '';
   let openingName = '';
+  let openingValue = '';
   ecoCodes.map(codeObject => {
-    if (codeObject.ECO == eco) {
-      opening = codeObject.Opening;
-      openingName = codeObject.Name;
+    if (codeObject.eco == eco) {
+      opening = codeObject.opening;
+      openingName = codeObject.name;
+      openingValue = codeObject.value;
     }
   });
 
   return {
     opening,
+    openingValue,
     openingName,
     score,
     achievements: finalAchievements,
@@ -516,3 +519,4 @@ function achievementsCalculator(pgn, rawColor) {
 //and then export functions here to be used as a library elsewhere.
 module.exports = achievementsCalculator;
 module.exports.achievements = achievements;
+module.exports.ecoCodes = ecoCodes;
