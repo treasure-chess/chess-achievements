@@ -1,6 +1,6 @@
 {
   "name": "@treasure-chess/chess-achievements",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Calculate chess achievements based on moves ",
   "main": "src/index.js",
   "scripts": {
@@ -8,7 +8,6 @@
     "lint": "eslint ./src"
   },
   "dependencies": {
-    "@treasure-chess/chess-achievements": "^0.1.2",
     "chess.js": "^0.12.0"
   },
   "devDependencies": {
