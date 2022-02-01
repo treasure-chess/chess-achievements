@@ -9,6 +9,7 @@ let result;
 let gamesToCheck = [];
 let errorGames = [];
 let successfulGames = [];
+let achievementsToCheck = {};
 
 examplePgns.forEach(game => {
   let gameNo = game.gameNo;
@@ -38,6 +39,11 @@ examplePgns.forEach(game => {
       if (!calculatedAchievements.includes(achievement)) {
         gamesToCheck.push(gameNo);
         console.log('MISSING ACHIEVEMENT: ' + achievement);
+        if (achievementsToCheck.hasOwnProperty(achievement)) {
+          achievementsToCheck[achievement] += 1;
+        } else {
+          achievementsToCheck[achievement] = 1;
+        }
         missingAchievements.push(achievement);
         errorFlag = true;
       }
@@ -70,4 +76,6 @@ console.log('Successful Games:');
 console.log(successfulGames);
 console.log('GAMES TO CHECK:');
 console.log(errorGames);
+console.log('Achievement Error Log:');
+console.log(achievementsToCheck);
 console.log('====================================');
