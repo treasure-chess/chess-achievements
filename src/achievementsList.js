@@ -156,7 +156,7 @@ const list = [
   {
     number: 23,
     value: 'Hellomlady',
-    name: "Hello, m'lady",
+    name: "Hello m'lady",
     description: 'Queen side castle',
     points: 1
   },
