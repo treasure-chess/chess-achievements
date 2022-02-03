@@ -321,42 +321,94 @@ function setResult(pgn, color) {
 
 function gameMoves(pgn, color) {
   const game = new Chess();
-  game.load_pgn(pgn);
+  const options = { sloppy: true };
+  game.load_pgn(pgn, options);
   const moves = game.history({ verbose: true });
+
+  // console.log(moves);
 
   let checkFlag = false;
   let enPassantFlag = false;
   let enPassantMateFlag = false;
+  let queensideCastleFlag = false;
+  let knightPromotionFlag = false;
+  let bishopPromotionFlag = false;
   let kingMoves = 0;
 
   for (let i = 0; i < moves.length; i++) {
     if (color.toLowerCase() === 'white') {
+      // Calculates for white moves
       if (moves[i].color === 'w') {
+        if (moves[i].flags === 'q') {
+          // Queenside castle achievement
+          queensideCastleFlag = true;
+        }
         if (moves[i].san.includes('+')) {
+          // Check achievement
           checkFlag = true;
         }
         if (moves[i].flags === 'e') {
+          // En passant achievement
           enPassantFlag = true;
           if (moves[i].san.includes('#')) {
+            // En passant mate achievement
             enPassantMateFlag = true;
           }
         }
-        if (moves[i].piece === 'k') {
+        if (moves[i].flags === 'p') {
+          // Checks for underpromotions
+          if (moves[i].san.includes('N')) {
+            // Underpromote to knight achievement
+            knightPromotionFlag = true;
+          } else if (moves[i].san.includes('B')) {
+            // Underpromote to bishop achievement
+            bishopPromotionFlag = true;
+          }
+        }
+        if (
+          // Checks for king moves or any castling
+          moves[i].piece === 'k' ||
+          moves[i].flags === 'k' ||
+          moves[i].flags === 'q'
+        ) {
           kingMoves++;
         }
       }
     } else {
+      // Calculates for black moves
       if (moves[i].color === 'b') {
+        if (moves[i].flags === 'q') {
+          // Queenside castle achievement
+          queensideCastleFlag = true;
+        }
         if (moves[i].san.includes('+')) {
+          // Check achievement
           checkFlag = true;
         }
         if (moves[i].flags === 'e') {
+          // En passant achievement
           enPassantFlag = true;
           if (moves[i].san.includes('#')) {
+            // En passant mate achievement
             enPassantMateFlag = true;
           }
         }
-        if (moves[i].piece === 'k') {
+        if (moves[i].flags === 'p') {
+          // Checks for underpromotions
+          if (moves[i].san.includes('N')) {
+            // Underpromote to knight achievement
+            knightPromotionFlag = true;
+          } else if (moves[i].san.includes('B')) {
+            // Underpromote to bishop achievement
+            bishopPromotionFlag = true;
+          }
+        }
+        if (
+          // Checks for king moves or any castling
+          moves[i].piece === 'k' ||
+          moves[i].flags === 'k' ||
+          moves[i].flags === 'q'
+        ) {
           kingMoves++;
         }
       }
@@ -376,6 +428,21 @@ function gameMoves(pgn, color) {
   if (enPassantMateFlag) {
     // Checkmate with en passant achievement
     achieved.push(achievements[26]);
+  }
+
+  if (queensideCastleFlag) {
+    // Queenside castle achievement
+    achieved.push(achievements[22]);
+  }
+
+  if (knightPromotionFlag) {
+    // Knight underpromotion achievement
+    achieved.push(achievements[23]);
+  }
+
+  if (bishopPromotionFlag) {
+    // Bishop underpromotion achievement
+    achieved.push(achievements[24]);
   }
 
   if (kingMoves > 20) {
@@ -472,36 +539,36 @@ function gameMoves(pgn, color) {
   }
 }
 
-function specialMoves(pgn, color) {
-  if (color.toLowerCase() === 'white') {
-    const exp = /[0-9]+\.\sO-O-O/i;
-    if (exp.test(pgn) === true) {
-      // Queenside castle achievement
-      achieved.push(achievements[22]);
-    }
-    if (pgn.includes('8=$146') || pgn.includes('8=N')) {
-      // Underpromote to knight achievement
-      achieved.push(achievements[23]);
-    }
-    if (pgn.includes('8=B')) {
-      // Underpromote to bishop achievement
-      achieved.push(achievements[24]);
-    }
-  } else {
-    if (pgn.includes('... O-O-O')) {
-      // Queenside casle achievement
-      achieved.push(achievements[22]);
-    }
-    if (pgn.includes('1=$146') || pgn.includes('1=N')) {
-      // Underpromote to knight achievement
-      achieved.push(achievements[23]);
-    }
-    if (pgn.includes('1=B')) {
-      // Underpromote to bishop achievement
-      achieved.push(achievements[24]);
-    }
-  }
-}
+// function specialMoves(pgn, color) {
+//   if (color.toLowerCase() === 'white') {
+//     const exp = /[0-9]+\.\sO-O-O/i;
+//     if (exp.test(pgn) === true) {
+//       // Queenside castle achievement
+//       achieved.push(achievements[22]);
+//     }
+//     if (pgn.includes('8=$146') || pgn.includes('8=N')) {
+//       // Underpromote to knight achievement
+//       achieved.push(achievements[23]);
+//     }
+//     if (pgn.includes('8=B')) {
+//       // Underpromote to bishop achievement
+//       achieved.push(achievements[24]);
+//     }
+//   } else {
+//     if (pgn.includes('... O-O-O')) {
+//       // Queenside casle achievement
+//       achieved.push(achievements[22]);
+//     }
+//     if (pgn.includes('1=$146') || pgn.includes('1=N')) {
+//       // Underpromote to knight achievement
+//       achieved.push(achievements[23]);
+//     }
+//     if (pgn.includes('1=B')) {
+//       // Underpromote to bishop achievement
+//       achieved.push(achievements[24]);
+//     }
+//   }
+// }
 
 function achievementsCalculator(pgn, rawColor) {
   if (!pgn) throw new Error('No pgn provided');
@@ -515,7 +582,7 @@ function achievementsCalculator(pgn, rawColor) {
 
   setResult(pgn, color);
   gameMoves(pgn, color);
-  specialMoves(pgn, color);
+  // specialMoves(pgn, color);
 
   achieved = achieved.sort((a, b) => b.points - a.points);
   const finalAchievements = achieved.slice(0, 3);

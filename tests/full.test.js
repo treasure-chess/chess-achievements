@@ -11,6 +11,7 @@ let errorGames = [];
 let successfulGames = [];
 let achievementsToCheck = {};
 
+// Tests all games in examplePgns.js
 examplePgns.forEach(game => {
   let gameNo = game.gameNo;
   let pgn = game.pgn;
