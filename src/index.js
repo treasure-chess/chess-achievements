@@ -85,50 +85,58 @@ function setResult(pgn, color) {
     }
   }
 
-  // determine ratings
   let whiteElo = 0;
   let blackElo = 0;
 
-  let strBlackElo = '';
-  let eloIdx = pgn.indexOf('BlackElo ') + 10;
+  // determine ratings
+  if (pgn.includes('WhiteElo') && pgn.includes('BlackElo')) {
+    let strBlackElo = '';
+    let eloIdx = pgn.indexOf('BlackElo ') + 10;
 
-  while (pgn.charAt(eloIdx) !== '"') {
-    strBlackElo += pgn.charAt(eloIdx);
-    eloIdx++;
+    while (pgn.charAt(eloIdx) !== '"') {
+      strBlackElo += pgn.charAt(eloIdx);
+      eloIdx++;
+    }
+
+    blackElo = parseInt(strBlackElo);
+
+    let strWhiteElo = '';
+    eloIdx = pgn.indexOf('WhiteElo ') + 10;
+
+    while (pgn.charAt(eloIdx) !== '"') {
+      strWhiteElo += pgn.charAt(eloIdx);
+      eloIdx++;
+    }
+
+    whiteElo = parseInt(strWhiteElo);
+  } else {
+    whiteElo = null;
+    blackElo = null;
   }
-
-  blackElo = parseInt(strBlackElo);
-
-  let strWhiteElo = '';
-  eloIdx = pgn.indexOf('WhiteElo ') + 10;
-
-  while (pgn.charAt(eloIdx) !== '"') {
-    strWhiteElo += pgn.charAt(eloIdx);
-    eloIdx++;
-  }
-
-  whiteElo = parseInt(strWhiteElo);
 
   if (result === '1-0' && color.toLowerCase() === 'white') {
-    if (blackElo > whiteElo) {
-      // Defeat a higher rated player achievement
-      achieved.push(achievements[29]);
-    }
-    if (blackElo <= 749) {
-      // Win a game achievement
+    if (blackElo <= 749 || !blackElo) {
+      // Win a game achievement, accounts for no rating provided
       achieved.push(achievements[36]);
-    } else if (blackElo >= 750 && blackElo <= 1499) {
-      // Win a game rated 750+ achievement
-      achieved.push(achievements[1]);
-    } else if (blackElo >= 1500 && blackElo <= 1999) {
-      // Win a game rated 1500+ achievement
-      achieved.push(achievements[3]);
-    } else if (blackElo >= 2000 && blackElo <= 2249) {
-      // Win a game rated 2000+ achievement
-      achieved.push(achievements[6]);
-    } else {
-      // Win a game rated 2250+ achievement
-      achieved.push(achievements[8]);
+    }
+    if (whiteElo && blackElo) {
+      if (blackElo > whiteElo) {
+        // Defeat a higher rated player achievement
+        achieved.push(achievements[29]);
+      }
+      if (blackElo >= 750 && blackElo <= 1499) {
+        // Win a game rated 750+ achievement
+        achieved.push(achievements[1]);
+      } else if (blackElo >= 1500 && blackElo <= 1999) {
+        // Win a game rated 1500+ achievement
+        achieved.push(achievements[3]);
+      } else if (blackElo >= 2000 && blackElo <= 2249) {
+        // Win a game rated 2000+ achievement
+        achieved.push(achievements[6]);
+      } else if (blackElo >= 2250) {
+        // Win a game rated 2250+ achievement
+        achieved.push(achievements[8]);
+      }
     }
 
     if (pgn.includes('won by checkmate')) {
@@ -164,69 +172,78 @@ function setResult(pgn, color) {
       // Draw by repetition achievement
       achieved.push(achievements[28]);
     }
-    if (color.toLowerCase() === 'white' ){
-      if (blackElo > whiteElo) {
-        // Draw against higher rated player achievement
-        achieved.push(achievements[21]);
-      }
-      if (blackElo <= 749) {
-        // Play a game achievement
+    if (color.toLowerCase() === 'white') {
+      if (blackElo <= 749 || !blackElo) {
+        // Play a game achievement, accounts for no rating provided
         achieved.push(achievements[0]);
-      } else if (blackElo >= 750 && blackElo <= 1499) {
-        // Play a game rated 750+ achievement
-        achieved.push(achievements[2]);
-      } else if (blackElo >= 1500 && blackElo <= 1999) {
-        // Play a game rated 1500+ achievement
-        achieved.push(achievements[4]);
-      } else if (blackElo >= 2000 && blackElo <= 2249) {
-        // Play a game rated 2000+ achievement
-        achieved.push(achievements[5]);
-      } else {
-        // Play a game rated 2250+ achievement
-        achieved.push(achievements[7]);
+      }
+      if (whiteElo && blackElo) {
+        if (blackElo > whiteElo) {
+          // Draw against higher rated player achievement
+          achieved.push(achievements[21]);
+        }
+        if (blackElo >= 750 && blackElo <= 1499) {
+          // Play a game rated 750+ achievement
+          achieved.push(achievements[2]);
+        } else if (blackElo >= 1500 && blackElo <= 1999) {
+          // Play a game rated 1500+ achievement
+          achieved.push(achievements[4]);
+        } else if (blackElo >= 2000 && blackElo <= 2249) {
+          // Play a game rated 2000+ achievement
+          achieved.push(achievements[5]);
+        } else if (blackElo >= 2250) {
+          // Play a game rated 2250+ achievement
+          achieved.push(achievements[7]);
+        }
       }
     } else {
-      if (whiteElo > blackElo) {
-        // Draw against higher rated player achievement
-        achieved.push(achievements[21]);
-      }
-      if (whiteElo <= 750) {
-        // Play a game achievement
+      if (whiteElo <= 749 || !whiteElo) {
+        // Play a game achievement, accounts for no rating provided
         achieved.push(achievements[0]);
-      } else if (whiteElo >= 751 && whiteElo <= 1499) {
-        // Play a game rated 750+ achievement
-        achieved.push(achievements[2]);
-      } else if (whiteElo >= 1501 && whiteElo <= 1999) {
-        // Play a game rated 1500+ achievement
-        achieved.push(achievements[4]);
-      } else if (whiteElo >= 2001 && whiteElo <= 2249) {
-        // Play a game rated 2000+ achievement
-        achieved.push(achievements[5]);
-      } else {
-        // Play a game rated 2250+ achievement
-        achieved.push(achievements[7]);
+      }
+      if (whiteElo && blackElo) {
+        if (whiteElo > blackElo) {
+          // Draw against higher rated player achievement
+          achieved.push(achievements[21]);
+        }
+        if (whiteElo >= 750 && whiteElo <= 1499) {
+          // Play a game rated 750+ achievement
+          achieved.push(achievements[2]);
+        } else if (whiteElo >= 1500 && whiteElo <= 1999) {
+          // Play a game rated 1500+ achievement
+          achieved.push(achievements[4]);
+        } else if (whiteElo >= 2000 && whiteElo <= 2249) {
+          // Play a game rated 2000+ achievement
+          achieved.push(achievements[5]);
+        } else if (whiteElo >= 2250) {
+          // Play a game rated 2250+ achievement
+          achieved.push(achievements[7]);
+        }
       }
     }
   } else if (result === '0-1' && color.toLowerCase() === 'black') {
-    if (whiteElo > blackElo) {
-      // Defeat a higher rated player achievement
-      achieved.push(achievements[29]);
-    }
-    if (whiteElo <= 749) {
-      // Win a game achievement
+    if (whiteElo <= 749 || !whiteElo) {
+      // Win a game achievement, accounts for no rating provided
       achieved.push(achievements[36]);
-    } else if (whiteElo >= 751 && whiteElo <= 1499) {
-      // Win a game rated 750+ achievement
-      achieved.push(achievements[1]);
-    } else if (whiteElo >= 1501 && whiteElo <= 1999) {
-      // Win a game rated 1500+ achievement
-      achieved.push(achievements[3]);
-    } else if (whiteElo >= 2001 && whiteElo <= 2249) {
-      // Win a game rated 2000+ achievement
-      achieved.push(achievements[6]);
-    } else {
-      // Win a game rated 2250+ achievement
-      achieved.push(achievements[8]);
+    }
+    if (whiteElo && blackElo) {
+      if (whiteElo > blackElo) {
+        // Defeat a higher rated player achievement
+        achieved.push(achievements[29]);
+      }
+      if (whiteElo >= 750 && whiteElo <= 1499) {
+        // Win a game rated 750+ achievement
+        achieved.push(achievements[1]);
+      } else if (whiteElo >= 1500 && whiteElo <= 1999) {
+        // Win a game rated 1500+ achievement
+        achieved.push(achievements[3]);
+      } else if (whiteElo >= 2000 && whiteElo <= 2249) {
+        // Win a game rated 2000+ achievement
+        achieved.push(achievements[6]);
+      } else if (whiteElo >= 2250) {
+        // Win a game rated 2250+ achievement
+        achieved.push(achievements[8]);
+      }
     }
 
     if (pgn.includes('won by checkmate')) {
@@ -258,39 +275,45 @@ function setResult(pgn, color) {
       }
     }
   } else {
-    if (color.toLowerCase() === 'white' ){
-      if (blackElo <= 749) {
-        // Play a game achievement
+    if (color.toLowerCase() === 'white') {
+      if (blackElo <= 749 || !blackElo) {
+        // Play a game achievement, accounts for no rating provided
         achieved.push(achievements[0]);
-      } else if (blackElo >= 750 && blackElo <= 1499) {
-        // Play a game rated 750+ achievement
-        achieved.push(achievements[2]);
-      } else if (blackElo >= 1500 && blackElo <= 1999) {
-        // Play a game rated 1500+ achievement
-        achieved.push(achievements[4]);
-      } else if (blackElo >= 2000 && blackElo <= 2249) {
-        // Play a game rated 2000+ achievement
-        achieved.push(achievements[5]);
-      } else {
-        // Play a game rated 2250+ achievement
-        achieved.push(achievements[7]);
+      }
+      if (whiteElo && blackElo) {
+        if (blackElo >= 750 && blackElo <= 1499) {
+          // Play a game rated 750+ achievement
+          achieved.push(achievements[2]);
+        } else if (blackElo >= 1500 && blackElo <= 1999) {
+          // Play a game rated 1500+ achievement
+          achieved.push(achievements[4]);
+        } else if (blackElo >= 2000 && blackElo <= 2249) {
+          // Play a game rated 2000+ achievement
+          achieved.push(achievements[5]);
+        } else if (blackElo >= 2250) {
+          // Play a game rated 2250+ achievement
+          achieved.push(achievements[7]);
+        }
       }
     } else {
-      if (whiteElo <= 749) {
-        // Play a game achievement
+      if (whiteElo <= 749 || !whiteElo) {
+        // Play a game achievement, accounts for no ratig provided
         achieved.push(achievements[0]);
-      } else if (whiteElo >= 750 && whiteElo <= 1499) {
-        // Play a game rated 750+ achievement
-        achieved.push(achievements[2]);
-      } else if (whiteElo >= 1500 && whiteElo <= 1999) {
-        // Play a game rated 1500+ achievement
-        achieved.push(achievements[4]);
-      } else if (whiteElo >= 2001 && whiteElo <= 2249) {
-        // Play a game rated 2000+ achievement
-        achieved.push(achievements[5]);
-      } else {
-        // Play a game rated 2250+ achievement
-        achieved.push(achievements[7]);
+      }
+      if (whiteElo && blackElo) {
+        if (whiteElo >= 750 && whiteElo <= 1499) {
+          // Play a game rated 750+ achievement
+          achieved.push(achievements[2]);
+        } else if (whiteElo >= 1500 && whiteElo <= 1999) {
+          // Play a game rated 1500+ achievement
+          achieved.push(achievements[4]);
+        } else if (whiteElo >= 2001 && whiteElo <= 2249) {
+          // Play a game rated 2000+ achievement
+          achieved.push(achievements[5]);
+        } else if (whiteElo >= 2250) {
+          // Play a game rated 2250+ achievement
+          achieved.push(achievements[7]);
+        }
       }
     }
   }
