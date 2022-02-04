@@ -930,7 +930,7 @@ const examplePgns = [
     47. Bb5 Nxb5 48. axb5 Kd4 49. Kh4 Rd5 50. b6 g5+ 51. Kg4 Kc5 52. Rb8 Kc6 53. b7
     Kc7 54. Rg8 Kxb7 55. Rg6 a4 56. Rh6 a3 57. Rh1 Kb6 58. Ra1 Rd3 59. Kxg5 Kc5 60.
     Kf4 Kc4 61. Ke4 Rc3 62. Ke5 Kb3 63. Kd4 Rc2 64. Kd3 Rb2 65. Rc1 a2 66. Rc3+ Kb4
-    67. Rc4+ Ka3 68. Rc8 Rb3+ 69. Kc2 Rb2+ 70. Kc3 Rb3+ 71. Kc2 a1=$146+ 72. Kd2 Kb2
+    67. Rc4+ Ka3 68. Rc8 Rb3+ 69. Kc2 Rb2+ 70. Kc3 Rb3+ 71. Kc2 a1=N+ 72. Kd2 Kb2
     73. Rd8 Rb7 74. Rd3 Nb3+ 75. Ke3 Re7+ 76. Kf4 Nc5 77. Rf3 Ne6+ 78. Kg3 Nd4 79.
     Rf2+ Kc3 80. Rg2 Ne2+ 81. Kh4 Kd3 82. Rg4 Rh7+ 83. Kg5 Ke3 84. Kf6 Rh5 85. Rg6
     Ra5 86. Rg7 Nf4 87. Kf7 Ke4 88. Kg8 Ra8+ 0-1`,

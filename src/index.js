@@ -313,7 +313,7 @@ function gameMoves(pgn, color) {
             enPassantMateFlag = true;
           }
         }
-        if (move.flags === 'p' || move.flags === 'pc') {
+        if (move.san.includes('=')) {
           // Checks for underpromotions
           if (move.san.includes('N')) {
             // Underpromote to knight achievement
@@ -351,7 +351,7 @@ function gameMoves(pgn, color) {
             enPassantMateFlag = true;
           }
         }
-        if (move.flags === 'p' || move.flags === 'pc') {
+        if (move.san.includes('=')) {
           // Checks for underpromotions
           if (move.san.includes('N')) {
             // Underpromote to knight achievement
