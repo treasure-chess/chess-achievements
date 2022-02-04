@@ -325,9 +325,9 @@ function gameMoves(pgn, color) {
         }
         if (
           // Checks for king moves or any castling
-          move.piece === 'k' ||
-          move.flags === 'k' ||
-          move.flags === 'q'
+          move.san.includes('K') ||
+          move.san.includes('O-O') ||
+          move.san.includes('O-O-O')
         ) {
           kingMoves++;
         }
@@ -363,9 +363,9 @@ function gameMoves(pgn, color) {
         }
         if (
           // Checks for king moves or any castling
-          move.piece === 'k' ||
-          move.flags === 'k' ||
-          move.flags === 'q'
+          move.san.includes('K') ||
+          move.san.includes('O-O') ||
+          move.san.includes('O-O-O')
         ) {
           kingMoves++;
         }

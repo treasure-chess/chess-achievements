@@ -259,7 +259,7 @@ const examplePgns = [
     cxd4 cxd4 16. Qxa7 Qd5 17. Be3 Bh4 18. Kf4 Nf2 19. Qxb7 Qxb7 20. Bxd4 h6 21.
     Rhf1 Rfe8 22. Rxf2 Bxf2 23. Rf1 Bh4 24. f6 g5+ 25. Kf5 Rcd8 26. Nc4 b5 27. Nd6
     Rxd6 28. exd6 Qe4# 0-1`,
-    expectedAchievements: ['750+ Winner', 'Pawn Shy']
+    expectedAchievements: ['750+ Winner', 'Pawn Shy', "Checkin' You Out"]
   },
   {
     gameNo: 9,
@@ -331,7 +331,7 @@ const examplePgns = [
     [Termination "Normal"]
 
     1. Nf3 e5 2. Nxe5 Nc6 3. Nxc6 dxc6 4. e3 Nf6 5. b3 Bd6 6. Bb2 h5 7. d4 Qe7 8. Nd2 Bf5 9. Nc4 Bf4 10. Be2 Bh6 11. Qd2 O-O-O 12. O-O Kb8 13. a4 Ne4 14. Qa5 Bc8 15. Ba3 Qh4 16. Ne5 f6 17. Bc5 Nxc5 18. Nxc6+ bxc6 19. Qxc5 Bb7 20. a5 a6 21. Ra4 Rd5 22. Qc3 Qg5 23. Rb4 Rb5 24. Bxb5 cxb5 25. f3 Qxe3+ 26. Qxe3 Bxe3+ 27. Kh1 h4 28. Re1 Bd2 29. Re7 Bxb4 30. Rxg7 Re8 31. Kg1 Bc3 32. f4 Bxd4+ 33. Kf1 Bc6 34. Rh7 b4 35. Rxh4 Bb5+ 36. c4 bxc3# 0-1`,
-    expectedAchievements: ['Strongest Opponent', 'Pawn Shy']
+    expectedAchievements: ['Strongest Opponent', "Checkin' You Out"]
   },
   {
     gameNo: 12,
@@ -356,7 +356,15 @@ const examplePgns = [
     [Termination "Normal"]
 
     1. Nf3 e5 2. Nxe5 Nc6 3. Nxc6 dxc6 4. e3 Nf6 5. b3 Bd6 6. Bb2 h5 7. d4 Qe7 8. Nd2 Bf5 9. Nc4 Bf4 10. Be2 Bh6 11. Qd2 O-O-O 12. O-O Kb8 13. a4 Ne4 14. Qa5 Bc8 15. Ba3 Qh4 16. Ne5 f6 17. Bc5 Nxc5 18. Nxc6+ bxc6 19. Qxc5 Bb7 20. a5 a6 21. Ra4 Rd5 22. Qc3 Qg5 23. Rb4 Rb5 24. Bxb5 cxb5 25. f3 Qxe3+ 26. Qxe3 Bxe3+ 27. Kh1 h4 28. Re1 Bd2 29. Re7 Bxb4 30. Rxg7 Re8 31. Kg1 Bc3 32. f4 Bxd4+ 33. Kf1 Bc6 34. Rh7 b4 35. Rxh4 Bb5+ 36. c4 bxc3# 0-1`,
-    expectedAchievements: ['1500+ Winner', 'Pawn Shy', 'God-Mode Glitch']
+    expectedAchievements: [
+      '1500+ Winner',
+      'Pawn Shy',
+      'God-Mode Glitch',
+      'The Sneaky Pawn',
+      "Hello, m'lady",
+      "Checkin' You Out",
+      'Utter Disrespect'
+    ]
   },
   {
     gameNo: 13,
@@ -682,7 +690,8 @@ const examplePgns = [
       'Mr. Marathon Man',
       'Ultramarathoners',
       'Pawn Shopper',
-      "Checkin' You Out"
+      "Checkin' You Out",
+      'Player'
     ]
   },
   {
@@ -747,7 +756,8 @@ const examplePgns = [
       'Mr. Marathon Man',
       'Ultramarathoners',
       'Pawn Shopper',
-      "Checkin' You Out"
+      "Checkin' You Out",
+      'Player'
     ]
   },
   {
@@ -807,7 +817,8 @@ const examplePgns = [
       'Excessive',
       'Pawn Shopper',
       "Checkin' You Out",
-      'Mr. Marathon Man'
+      'Mr. Marathon Man',
+      'Winner'
     ]
   },
   {
@@ -867,7 +878,9 @@ const examplePgns = [
       'Excessive',
       'Pawn Shopper',
       "Checkin' You Out",
-      'Mr. Marathon Man'
+      'Mr. Marathon Man',
+      'Player',
+      "Hello, m'lady"
     ]
   },
   {
@@ -938,7 +951,8 @@ const examplePgns = [
       'Mythic Winner',
       'Horse Farmer',
       'Pawn Shopper',
-      "Checkin' You Out"
+      "Checkin' You Out",
+      'Mr. Marathon Man'
     ]
   },
   {
@@ -1042,7 +1056,7 @@ const examplePgns = [
     g5 {[%clk 0:00:04.5]} 42. b7 {[%clk 0:01:38.9]} 42... h6 {[%clk 0:00:05]} 43.
     b8=B {[%clk 0:01:37.4]} 43... gxf4 {[%clk 0:00:04]} 44. Qe4+ {[%clk 0:01:36.7]}
     44... Kg4 {[%clk 0:00:02.4]} 45. Qxf4+ {[%clk 0:01:36.8]} 1-0`,
-    expectedAchievements: ['Strongest Opponent', 'Pawn Shy']
+    expectedAchievements: ['Strongest Opponent', "Checkin' You Out"]
   },
   {
     gameNo: 31,
@@ -1069,7 +1083,12 @@ const examplePgns = [
     Rf7 35. Rd2 Qxh3 36. Rh2 Qxg4 37. Reh1 Qf4+ 38. Qxf4 Kg8 39. Rxh7 Kf8 40. Qe5
     Re7 41. Rh8+ Bg8 42. Rf1+ Ke8 43. Rxg8+ Kd7 44. Qf5+ Kc7 45. Rxg7 Rxg7 46. Bxg7
     Kb6 47. Bd4+ Ka6 48. Qc5 b5 49. Qb6# 1-0`,
-    expectedAchievements: ['Mythic Winner', 'The Underdog', "Checkin' You Out"]
+    expectedAchievements: [
+      'Mythic Winner',
+      'The Underdog',
+      "Checkin' You Out",
+      "Hello, m'lady"
+    ]
   },
   {
     gameNo: 32,
@@ -1130,7 +1149,8 @@ const examplePgns = [
       'A Minor Problem',
       'Utter Disrespect',
       'The Underdog',
-      'Pawn Shopper'
+      'Pawn Shopper',
+      "Checkin' You Out"
     ]
   },
   {
@@ -1226,7 +1246,8 @@ const examplePgns = [
       'Mythic Winner',
       'The Underdog',
       'Jousting',
-      'Pawn Shopper'
+      'Pawn Hoarder',
+      "Checkin' You Out"
     ]
   },
   {
@@ -1277,7 +1298,7 @@ const examplePgns = [
     Qxg5 22. f4 Qe7 23. Re1 Re8 24. Qc2 Bc8 25. a3 Re6 26. Nd1 Bc7 27. b4 Bb6 28.
     Rf1 a5 29. b5 Rxe3 30. Nxe3 Qxe3+ 31. Kh1 cxb5 32. Bxd5+ Kh8 33. Rce1 Qxd4 34.
     Rxe8# 1-0`,
-    expectedAchievements: ['Played 2000+', 'Pawn Shy']
+    expectedAchievements: ['Played 2000+', "Checkin' You Out"]
   },
   {
     gameNo: 39,
@@ -1319,8 +1340,7 @@ const examplePgns = [
       'Mythic Winner',
       'The Underdog',
       'Pawn Shopper',
-      "Checkin' You Out",
-      'Mr. Marathon Man'
+      "Checkin' You Out"
     ]
   },
   {
@@ -1362,7 +1382,8 @@ const examplePgns = [
       'Triple Digit Club',
       "Checkin' You Out",
       'Pawn Shopper',
-      'Mr. Marathon Man'
+      'Mr. Marathon Man',
+      'Played 1500+'
     ]
   },
   {

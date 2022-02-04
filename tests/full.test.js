@@ -73,10 +73,17 @@ gamesToCheck.forEach(game => {
 });
 
 console.log(`Finished testing ${examplePgns.length} pgns`);
-console.log('Successful Games:');
-console.log(successfulGames);
-console.log('GAMES TO CHECK:');
-console.log(errorGames);
-console.log('Achievement Error Log:');
-console.log(achievementsToCheck);
+
+if (successfulGames.length === examplePgns.length) {
+  console.log('');
+  console.log('WOOT! All games passed the checks!!! :D');
+  console.log('');
+} else {
+  console.log('Successful Games:');
+  console.log(successfulGames);
+  console.log('GAMES TO CHECK:');
+  console.log(errorGames);
+  console.log('Achievement Error Log:');
+  console.log(achievementsToCheck);
+}
 console.log('====================================');
