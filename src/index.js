@@ -28,8 +28,6 @@ function setResult(pgn, color) {
   //console.log("here's a thing: " + moves[moves.length - 1].color);
   //NOTE: using just w or b for player color here. weird. change later?
 
-  // CHECK THIS
-
   if (moves.length % 2 === 1) {
     numMoves = moves / 2 + 0.5;
   } else {
@@ -321,11 +319,33 @@ function setResult(pgn, color) {
 
 function gameMoves(pgn, color) {
   const game = new Chess();
-  const options = { sloppy: true };
-  game.load_pgn(pgn, options);
+  // const options = { sloppy: true };
+  game.load_pgn(pgn);
   const moves = game.history({ verbose: true });
 
-  // console.log(moves);
+  let numMoves = 0;
+
+  // Determines game length based on color
+  if (moves.length % 2 === 0) {
+    numMoves = moves.length / 2;
+  } else if (moves.length % 2 === 1) {
+    if (color.toLowerCase() === 'white') {
+      numMoves = moves.length / 2 + 0.5;
+    } else if (color.toLowerCase() === 'black') {
+      numMoves = moves.length / 2 - 0.5;
+    }
+  }
+
+  if (numMoves > 250) {
+    // Complete a game with more than 250 moves
+    achieved.push(achievements[17]);
+  } else if (numMoves > 150) {
+    // Complete a game with more than 150 moves
+    achieved.push(achievements[16]);
+  } else if (numMoves > 100) {
+    // Complete a game with more than 100 moves
+    achieved.push(achievements[15]);
+  }
 
   let checkFlag = false;
   let enPassantFlag = false;
@@ -355,7 +375,7 @@ function gameMoves(pgn, color) {
             enPassantMateFlag = true;
           }
         }
-        if (moves[i].flags === 'p') {
+        if (moves[i].flags === 'p' || moves[i].flags === 'pc') {
           // Checks for underpromotions
           if (moves[i].san.includes('N')) {
             // Underpromote to knight achievement
@@ -374,7 +394,7 @@ function gameMoves(pgn, color) {
           kingMoves++;
         }
       }
-    } else {
+    } else if (color.toLowerCase() === 'black') {
       // Calculates for black moves
       if (moves[i].color === 'b') {
         if (moves[i].flags === 'q') {
@@ -393,7 +413,7 @@ function gameMoves(pgn, color) {
             enPassantMateFlag = true;
           }
         }
-        if (moves[i].flags === 'p') {
+        if (moves[i].flags === 'p' || moves[i].flags === 'pc') {
           // Checks for underpromotions
           if (moves[i].san.includes('N')) {
             // Underpromote to knight achievement
@@ -508,7 +528,7 @@ function gameMoves(pgn, color) {
       // Draw when opponent has a queen without one
       achieved.push(achievements[27]);
     }
-  } else {
+  } else if (color.toLowerCase() === 'black') {
     if (whitePawnCount === 0 && blackPawnCount === 8) {
       // Capture all pawns without losing any achievement
       achieved.push(achievements[35]);
@@ -599,6 +619,9 @@ function achievementsCalculator(pgn, rawColor) {
       openingName = codeObject.Name;
     }
   });
+
+  // console.log(finalAchievements);
+  // console.log(achieved);
 
   return {
     opening,

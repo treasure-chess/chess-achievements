@@ -253,7 +253,7 @@ const examplePgns = [
     [TimeControl "900+10"]
     [EndTime "16:45:04 PDT"]
     [Termination "ChadBiryani won by checkmate"]
-  
+
     1. g4 d5 2. f4 e6 3. Bh3 c5 4. c3 Nc6 5. Na3 Be7 6. f5 Nf6 7. Nf3 exf5 8. gxf5
     b6 9. Kf2 Bb7 10. d4 O-O 11. Ne5 Rc8 12. Qa4 Ne4+ 13. Kf3 Nxe5+ 14. dxe5 d4 15.
     cxd4 cxd4 16. Qxa7 Qd5 17. Be3 Bh4 18. Kf4 Nf2 19. Qxb7 Qxb7 20. Bxd4 h6 21.
@@ -329,7 +329,7 @@ const examplePgns = [
     [ECO "A04"]
     [Opening "Zukertort Opening: The Walrus"]
     [Termination "Normal"]
-    
+
     1. Nf3 e5 2. Nxe5 Nc6 3. Nxc6 dxc6 4. e3 Nf6 5. b3 Bd6 6. Bb2 h5 7. d4 Qe7 8. Nd2 Bf5 9. Nc4 Bf4 10. Be2 Bh6 11. Qd2 O-O-O 12. O-O Kb8 13. a4 Ne4 14. Qa5 Bc8 15. Ba3 Qh4 16. Ne5 f6 17. Bc5 Nxc5 18. Nxc6+ bxc6 19. Qxc5 Bb7 20. a5 a6 21. Ra4 Rd5 22. Qc3 Qg5 23. Rb4 Rb5 24. Bxb5 cxb5 25. f3 Qxe3+ 26. Qxe3 Bxe3+ 27. Kh1 h4 28. Re1 Bd2 29. Re7 Bxb4 30. Rxg7 Re8 31. Kg1 Bc3 32. f4 Bxd4+ 33. Kf1 Bc6 34. Rh7 b4 35. Rxh4 Bb5+ 36. c4 bxc3# 0-1`,
     expectedAchievements: ['Strongest Opponent', 'Pawn Shy']
   },
@@ -354,7 +354,7 @@ const examplePgns = [
     [ECO "A04"]
     [Opening "Zukertort Opening: The Walrus"]
     [Termination "Normal"]
-    
+
     1. Nf3 e5 2. Nxe5 Nc6 3. Nxc6 dxc6 4. e3 Nf6 5. b3 Bd6 6. Bb2 h5 7. d4 Qe7 8. Nd2 Bf5 9. Nc4 Bf4 10. Be2 Bh6 11. Qd2 O-O-O 12. O-O Kb8 13. a4 Ne4 14. Qa5 Bc8 15. Ba3 Qh4 16. Ne5 f6 17. Bc5 Nxc5 18. Nxc6+ bxc6 19. Qxc5 Bb7 20. a5 a6 21. Ra4 Rd5 22. Qc3 Qg5 23. Rb4 Rb5 24. Bxb5 cxb5 25. f3 Qxe3+ 26. Qxe3 Bxe3+ 27. Kh1 h4 28. Re1 Bd2 29. Re7 Bxb4 30. Rxg7 Re8 31. Kg1 Bc3 32. f4 Bxd4+ 33. Kf1 Bc6 34. Rh7 b4 35. Rxh4 Bb5+ 36. c4 bxc3# 0-1`,
     expectedAchievements: ['1500+ Winner', 'Pawn Shy', 'God-Mode Glitch']
   },
@@ -1009,7 +1009,7 @@ const examplePgns = [
     [WhiteElo "2415"]
     [BlackElo "200"]
     [Termination "ChadBiryani won on time"]
-  
+
     1. e4 {[%clk 0:02:01]} 1... e5 {[%clk 0:01:53.7]} 2. Nf3 {[%clk 0:02:00.7]} 2...
     Nc6 {[%clk 0:01:53.5]} 3. a4 {[%clk 0:02:01.3]} 3... Nf6 {[%clk 0:01:53.5]} 4.
     Bc4 {[%clk 0:02:01.4]} 4... Qe7 {[%clk 0:01:52]} 5. d3 {[%clk 0:02:01.8]} 5...
@@ -1207,7 +1207,7 @@ const examplePgns = [
     [WhiteElo "2415"]
     [BlackElo "1715"]
     [Termination "DarkSh33p won by checkmate"]
-  
+
     1. h4 {[%clk 0:03:02]} 1... g5 {[%clk 0:03:02]} 2. a3 {[%clk 0:03:02]} 2... gxh4
     {[%clk 0:03:03.1]} 3. b3 {[%clk 0:02:37.3]} 3... Bh6 {[%clk 0:02:59.7]} 4. d3
     {[%clk 0:02:37.9]} 4... Bxc1 {[%clk 0:03:00.2]} 5. Nd2 {[%clk 0:02:38.6]} 5...
@@ -1270,7 +1270,7 @@ const examplePgns = [
     [TimeControl "120+1"]
     [EndTime "21:49:29 PDT"]
     [Termination "eldesdichado75 won by checkmate"]
-  
+
     1. d4 d5 2. Nf3 e6 3. c4 f5 4. cxd5 exd5 5. Bg5 Nf6 6. Bxf6 Qxf6 7. Nc3 c6 8. e3
     Bd6 9. Bd3 O-O 10. Qc2 Be6 11. O-O Nd7 12. Rac1 Qg6 13. Kh1 Qh5 14. Be2 Rf6 15.
     g3 Rh6 16. Kg1 Qh3 17. Rfd1 Nf6 18. Bf1 Qg4 19. Bg2 Ne4 20. Qe2 Ng5 21. Nxg5
@@ -1295,7 +1295,7 @@ const examplePgns = [
     [TimeControl "120+1"]
     [EndTime "16:33:20 PDT"]
     [Termination "Cicmis won by checkmate"]
-    
+
     1. e4 c6 2. d4 d5 3. Nc3 dxe4 4. Nxe4 Bf5 5. Ng3 Bg6 6. Nf3 Nf6 7. Be2 e6 8. O-O
     Nbd7 9. Bg5 Be7 10. c3 h6 11. Bxf6 Nxf6 12. Ne5 Bh7 13. f3 O-O 14. Qd2 c5 15.
     Rad1 cxd4 16. Qxd4 Qc7 17. Kh1 Bc5 18. Qf4 Bd6 19. Rxd6 Qxd6 20. Ne4 Nxe4 21.
@@ -1339,7 +1339,7 @@ const examplePgns = [
     [TimeControl "120+1"]
     [EndTime "16:33:20 PDT"]
     [Termination "Cicmis won by checkmate"]
-    
+
     1. e4 c6 2. d4 d5 3. Nc3 dxe4 4. Nxe4 Bf5 5. Ng3 Bg6 6. Nf3 Nf6 7. Be2 e6 8. O-O
     Nbd7 9. Bg5 Be7 10. c3 h6 11. Bxf6 Nxf6 12. Ne5 Bh7 13. f3 O-O 14. Qd2 c5 15.
     Rad1 cxd4 16. Qxd4 Qc7 17. Kh1 Bc5 18. Qf4 Bd6 19. Rxd6 Qxd6 20. Ne4 Nxe4 21.
