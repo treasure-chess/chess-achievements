@@ -28,17 +28,16 @@ function setResult(pgn, color) {
   //console.log("here's a thing: " + moves[moves.length - 1].color);
   //NOTE: using just w or b for player color here. weird. change later?
 
-  if (moves.length % 2 === 1) {
-    numMoves = moves / 2 + 0.5;
-  } else {
+  // Determines game length based on color
+  if (moves.length % 2 === 0) {
     numMoves = moves.length / 2;
+  } else if (moves.length % 2 === 1) {
+    if (color.toLowerCase() === 'white') {
+      numMoves = moves.length / 2 + 0.5;
+    } else if (color.toLowerCase() === 'black') {
+      numMoves = moves.length / 2 - 0.5;
+    }
   }
-
-  // if (moves[moves.length - 1].color === 'w') {
-  //   numMoves = moves.length / 2 + 0.5;
-  // } else {
-  //   numMoves = moves.length / 2;
-  // }
 
   if (numMoves > 250) {
     // Complete a game with more than 250 moves
@@ -322,30 +321,6 @@ function gameMoves(pgn, color) {
   // const options = { sloppy: true };
   game.load_pgn(pgn);
   const moves = game.history({ verbose: true });
-
-  let numMoves = 0;
-
-  // Determines game length based on color
-  if (moves.length % 2 === 0) {
-    numMoves = moves.length / 2;
-  } else if (moves.length % 2 === 1) {
-    if (color.toLowerCase() === 'white') {
-      numMoves = moves.length / 2 + 0.5;
-    } else if (color.toLowerCase() === 'black') {
-      numMoves = moves.length / 2 - 0.5;
-    }
-  }
-
-  if (numMoves > 250) {
-    // Complete a game with more than 250 moves
-    achieved.push(achievements[17]);
-  } else if (numMoves > 150) {
-    // Complete a game with more than 150 moves
-    achieved.push(achievements[16]);
-  } else if (numMoves > 100) {
-    // Complete a game with more than 100 moves
-    achieved.push(achievements[15]);
-  }
 
   let checkFlag = false;
   let enPassantFlag = false;
