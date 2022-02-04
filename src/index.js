@@ -50,35 +50,31 @@ function setResult(pgn, color) {
     achieved.push(achievements[15]);
   }
 
-  if (
-    color.toLowerCase() === 'white' &&
-    pgn.includes('won by checkmate') &&
-    result === '1-0'
-  ) {
-    if (numMoves === 2) {
-      // Checkmate in 2 moves achievement
-      achieved.push(achievements[20]);
-    } else if (numMoves < 5) {
-      // Checkmate in less than 5 moves achievement
-      achieved.push(achievements[19]);
-    } else if (numMoves < 10) {
-      // Checkmate in less than 10 moves achievement
-      achieved.push(achievements[18]);
-    }
-  } else if (
-    color.toLowerCase() === 'black' &&
-    pgn.includes('won by checkmate') &&
-    result === '0-1'
-  ) {
-    if (numMoves === 2) {
-      // Checkmate in 2 moves achievement
-      achieved.push(achievements[21]);
-    } else if (numMoves < 5) {
-      // Checkmate in less than 5 moves achievement
-      achieved.push(achievements[20]);
-    } else if (numMoves < 10) {
-      // Checkmate in less than 10 moves achievement
-      achieved.push(achievements[19]);
+  const lastMove = moves[moves.length - 1];
+
+  if (lastMove.san.includes('#')) {
+    if (color.toLowerCase() === 'white' && lastMove.color === 'w') {
+      if (numMoves === 2) {
+        // Checkmate in 2 moves achievement
+        achieved.push(achievements[20]);
+      } else if (numMoves < 5) {
+        // Checkmate in less than 5 moves achievement
+        achieved.push(achievements[19]);
+      } else if (numMoves < 10) {
+        // Checkmate in less than 10
+        achieved.push(achievements[18]);
+      }
+    } else if (color.toLowerCase() === 'black' && lastMove.color === 'b') {
+      if (numMoves === 2) {
+        // Checkmate in 2 moves achievement
+        achieved.push(achievements[20]);
+      } else if (numMoves < 5) {
+        // Checkmate in less than 5 moves achievement
+        achieved.push(achievements[19]);
+      } else if (numMoves < 10) {
+        // Checkmate in less than 10
+        achieved.push(achievements[18]);
+      }
     }
   }
 
