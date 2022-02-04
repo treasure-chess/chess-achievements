@@ -25,8 +25,6 @@ function setResult(pgn, color) {
 
   const moves = game.history({ verbose: true });
   let numMoves = 0;
-  //console.log("here's a thing: " + moves[moves.length - 1].color);
-  //NOTE: using just w or b for player color here. weird. change later?
 
   // Determines game length based on color
   if (moves.length % 2 === 0) {
@@ -53,7 +51,10 @@ function setResult(pgn, color) {
   const lastMove = moves[moves.length - 1];
 
   if (lastMove.san.includes('#')) {
+    const pawnFiles = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
+
     if (color.toLowerCase() === 'white' && lastMove.color === 'w') {
+      // Checkmate in n moves achievements
       if (numMoves === 2) {
         // Checkmate in 2 moves achievement
         achieved.push(achievements[20]);
@@ -64,7 +65,19 @@ function setResult(pgn, color) {
         // Checkmate in less than 10
         achieved.push(achievements[18]);
       }
+      // Mate with certain piece achievements
+      if (lastMove.san.includes('N')) {
+        // Mate with knight achievement
+        achieved.push(achievements[13]);
+      } else if (lastMove.san.includes('B')) {
+        // Mate with bishop achievement
+        achieved.push(achievements[12]);
+      } else if (pawnFiles.includes(lastMove.san.charAt(0))) {
+        // Mate with pawn achievement
+        achieved.push(achievements[14]);
+      }
     } else if (color.toLowerCase() === 'black' && lastMove.color === 'b') {
+      // Checkmate in n moves achievements
       if (numMoves === 2) {
         // Checkmate in 2 moves achievement
         achieved.push(achievements[20]);
@@ -74,6 +87,17 @@ function setResult(pgn, color) {
       } else if (numMoves < 10) {
         // Checkmate in less than 10
         achieved.push(achievements[18]);
+      }
+      // Mate with certain piece achievements
+      if (lastMove.san.includes('N')) {
+        // Mate with knight achievement
+        achieved.push(achievements[13]);
+      } else if (lastMove.san.includes('B')) {
+        // Mate with bishop achievement
+        achieved.push(achievements[12]);
+      } else if (pawnFiles.includes(lastMove.san.charAt(0))) {
+        // Mate with pawn achievement
+        achieved.push(achievements[14]);
       }
     }
   }
@@ -81,7 +105,7 @@ function setResult(pgn, color) {
   let whiteElo = 0;
   let blackElo = 0;
 
-  // determine ratings
+  // Determines ratings
   if (pgn.includes('WhiteElo') && pgn.includes('BlackElo')) {
     let strBlackElo = '';
     let eloIdx = pgn.indexOf('BlackElo ') + 10;
@@ -129,35 +153,6 @@ function setResult(pgn, color) {
       } else if (blackElo >= 2250) {
         // Win a game rated 2250+ achievement
         achieved.push(achievements[8]);
-      }
-    }
-
-    if (pgn.includes('won by checkmate')) {
-      let mateIdx = pgn.indexOf('#');
-      while (pgn.charAt(mateIdx) !== ' ') {
-        if (pgn.charAt(mateIdx) === 'B') {
-          // Mate with Bishop achievement
-          achieved.push(achievements[12]);
-        } else if (pgn.charAt(mateIdx) === 'N') {
-          // Mate with Knight achievement
-          achieved.push(achievements[13]);
-        }
-        mateIdx--;
-      }
-      const endIdx = pgn.indexOf('#');
-      let pawnMateIdx = pgn.indexOf('#');
-      let spaceCount = 0;
-      while (spaceCount < 2) {
-        if (pgn.charAt(pawnMateIdx) === ' ') {
-          spaceCount++;
-        }
-        pawnMateIdx--;
-      }
-      const exp = /[0-9]+\.\s[a-h]/;
-      const pawnMateSubStr = pgn.substring(pawnMateIdx + 1, endIdx);
-      if (exp.test(pawnMateSubStr)) {
-        // Mate with pawn
-        achieved.push(achievements[14]);
       }
     }
   } else if (result === '1/2-1/2') {
@@ -238,35 +233,6 @@ function setResult(pgn, color) {
         achieved.push(achievements[8]);
       }
     }
-
-    if (pgn.includes('won by checkmate')) {
-      let mateIdx = pgn.indexOf('#');
-      while (pgn.charAt(mateIdx) !== ' ') {
-        if (pgn.charAt(mateIdx) === 'B') {
-          // Mate with Bishop achievement
-          achieved.push(achievements[12]);
-        } else if (pgn.charAt(mateIdx) === 'N') {
-          // Mate with Knight achievement
-          achieved.push(achievements[13]);
-        }
-        mateIdx--;
-      }
-      const endIdx = pgn.indexOf('#');
-      let pawnMateIdx = pgn.indexOf('#');
-      let spaceCount = 0;
-      while (spaceCount < 2) {
-        if (pgn.charAt(pawnMateIdx) === ' ') {
-          spaceCount++;
-        }
-        pawnMateIdx--;
-      }
-      const exp = /\.\.\.\s[a-h]/;
-      const pawnMateSubStr = pgn.substring(pawnMateIdx + 1, endIdx);
-      if (exp.test(pawnMateSubStr)) {
-        // Mate with pawn
-        achieved.push(achievements[14]);
-      }
-    }
   } else {
     if (color.toLowerCase() === 'white') {
       if (blackElo <= 749 || !blackElo) {
@@ -327,78 +293,79 @@ function gameMoves(pgn, color) {
   let kingMoves = 0;
 
   for (let i = 0; i < moves.length; i++) {
+    let move = moves[i];
     if (color.toLowerCase() === 'white') {
       // Calculates for white moves
-      if (moves[i].color === 'w') {
-        if (moves[i].flags === 'q') {
+      if (move.color === 'w') {
+        if (move.flags === 'q') {
           // Queenside castle achievement
           queensideCastleFlag = true;
         }
-        if (moves[i].san.includes('+')) {
+        if (move.san.includes('+')) {
           // Check achievement
           checkFlag = true;
         }
-        if (moves[i].flags === 'e') {
+        if (move.flags === 'e') {
           // En passant achievement
           enPassantFlag = true;
-          if (moves[i].san.includes('#')) {
+          if (move.san.includes('#')) {
             // En passant mate achievement
             enPassantMateFlag = true;
           }
         }
-        if (moves[i].flags === 'p' || moves[i].flags === 'pc') {
+        if (move.flags === 'p' || move.flags === 'pc') {
           // Checks for underpromotions
-          if (moves[i].san.includes('N')) {
+          if (move.san.includes('N')) {
             // Underpromote to knight achievement
             knightPromotionFlag = true;
-          } else if (moves[i].san.includes('B')) {
+          } else if (move.san.includes('B')) {
             // Underpromote to bishop achievement
             bishopPromotionFlag = true;
           }
         }
         if (
           // Checks for king moves or any castling
-          moves[i].piece === 'k' ||
-          moves[i].flags === 'k' ||
-          moves[i].flags === 'q'
+          move.piece === 'k' ||
+          move.flags === 'k' ||
+          move.flags === 'q'
         ) {
           kingMoves++;
         }
       }
     } else if (color.toLowerCase() === 'black') {
       // Calculates for black moves
-      if (moves[i].color === 'b') {
-        if (moves[i].flags === 'q') {
+      if (move.color === 'b') {
+        if (move.flags === 'q') {
           // Queenside castle achievement
           queensideCastleFlag = true;
         }
-        if (moves[i].san.includes('+')) {
+        if (move.san.includes('+')) {
           // Check achievement
           checkFlag = true;
         }
-        if (moves[i].flags === 'e') {
+        if (move.flags === 'e') {
           // En passant achievement
           enPassantFlag = true;
-          if (moves[i].san.includes('#')) {
+          if (move.san.includes('#')) {
             // En passant mate achievement
             enPassantMateFlag = true;
           }
         }
-        if (moves[i].flags === 'p' || moves[i].flags === 'pc') {
+        if (move.flags === 'p' || move.flags === 'pc') {
           // Checks for underpromotions
-          if (moves[i].san.includes('N')) {
+          if (move.san.includes('N')) {
             // Underpromote to knight achievement
             knightPromotionFlag = true;
-          } else if (moves[i].san.includes('B')) {
+          } else if (move.san.includes('B')) {
             // Underpromote to bishop achievement
             bishopPromotionFlag = true;
           }
         }
         if (
           // Checks for king moves or any castling
-          moves[i].piece === 'k' ||
-          moves[i].flags === 'k' ||
-          moves[i].flags === 'q'
+          move.piece === 'k' ||
+          move.flags === 'k' ||
+          move.flags === 'q'
         ) {
           kingMoves++;
         }
