@@ -20,16 +20,21 @@ function setResult(pgn, color) {
   }
 
   const game = new Chess();
-  game.load_pgn(pgn);
-  const moves = game.history({ verbose: true });
+  const options = { sloppy: true };
+  game.load_pgn(pgn, options);
 
+  const moves = game.history({ verbose: true });
   let numMoves = 0;
-  //console.log("here's a thing: " + moves[moves.length - 1].color);
-  //NOTE: using just w or b for player color here. weird. change later?
-  if (moves[moves.length - 1].color === 'w') {
-    numMoves = moves.length / 2 + 0.5;
-  } else {
+
+  // Determines game length based on color
+  if (moves.length % 2 === 0) {
     numMoves = moves.length / 2;
+  } else if (moves.length % 2 === 1) {
+    if (color.toLowerCase() === 'white') {
+      numMoves = moves.length / 2 + 0.5;
+    } else if (color.toLowerCase() === 'black') {
+      numMoves = moves.length / 2 - 0.5;
+    }
   }
 
   if (numMoves > 250) {
@@ -43,110 +48,111 @@ function setResult(pgn, color) {
     achieved.push(achievements[15]);
   }
 
-  if (
-    color.toLowerCase() === 'white' &&
-    pgn.includes('won by checkmate') &&
-    result === '1-0'
-  ) {
-    if (numMoves === 2) {
-      // Checkmate in 2 moves achievement
-      achieved.push(achievements[20]);
-    } else if (numMoves < 5) {
-      // Checkmate in less than 5 moves achievement
-      achieved.push(achievements[19]);
-    } else if (numMoves < 10) {
-      // Checkmate in less than 10 moves achievement
-      achieved.push(achievements[18]);
-    }
-  } else if (
-    color.toLowerCase() === 'black' &&
-    pgn.includes('won by checkmate') &&
-    result === '0-1'
-  ) {
-    if (numMoves === 2) {
-      // Checkmate in 2 moves achievement
-      achieved.push(achievements[21]);
-    } else if (numMoves < 5) {
-      // Checkmate in less than 5 moves achievement
-      achieved.push(achievements[20]);
-    } else if (numMoves < 10) {
-      // Checkmate in less than 10 moves achievement
-      achieved.push(achievements[19]);
+  const lastMove = moves[moves.length - 1];
+
+  if (lastMove.san.includes('#')) {
+    const pawnFiles = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
+
+    if (color.toLowerCase() === 'white' && lastMove.color === 'w') {
+      // Checkmate in n moves achievements
+      if (numMoves === 2) {
+        // Checkmate in 2 moves achievement
+        achieved.push(achievements[20]);
+      } else if (numMoves < 5) {
+        // Checkmate in less than 5 moves achievement
+        achieved.push(achievements[19]);
+      } else if (numMoves < 10) {
+        // Checkmate in less than 10
+        achieved.push(achievements[18]);
+      }
+      // Mate with certain piece achievements
+      if (lastMove.san.includes('N')) {
+        // Mate with knight achievement
+        achieved.push(achievements[13]);
+      } else if (lastMove.san.includes('B')) {
+        // Mate with bishop achievement
+        achieved.push(achievements[12]);
+      } else if (pawnFiles.includes(lastMove.san.charAt(0))) {
+        // Mate with pawn achievement
+        achieved.push(achievements[14]);
+      }
+    } else if (color.toLowerCase() === 'black' && lastMove.color === 'b') {
+      // Checkmate in n moves achievements
+      if (numMoves === 2) {
+        // Checkmate in 2 moves achievement
+        achieved.push(achievements[20]);
+      } else if (numMoves < 5) {
+        // Checkmate in less than 5 moves achievement
+        achieved.push(achievements[19]);
+      } else if (numMoves < 10) {
+        // Checkmate in less than 10
+        achieved.push(achievements[18]);
+      }
+      // Mate with certain piece achievements
+      if (lastMove.san.includes('N')) {
+        // Mate with knight achievement
+        achieved.push(achievements[13]);
+      } else if (lastMove.san.includes('B')) {
+        // Mate with bishop achievement
+        achieved.push(achievements[12]);
+      } else if (pawnFiles.includes(lastMove.san.charAt(0))) {
+        // Mate with pawn achievement
+        achieved.push(achievements[14]);
+      }
     }
   }
 
-  // determine ratings
   let whiteElo = 0;
   let blackElo = 0;
 
-  let strBlackElo = '';
-  let eloIdx = pgn.indexOf('BlackElo ') + 10;
+  // Determines ratings
+  if (pgn.includes('WhiteElo') && pgn.includes('BlackElo')) {
+    let strBlackElo = '';
+    let eloIdx = pgn.indexOf('BlackElo ') + 10;
 
-  while (pgn.charAt(eloIdx) !== '"') {
-    strBlackElo += pgn.charAt(eloIdx);
-    eloIdx++;
+    while (pgn.charAt(eloIdx) !== '"') {
+      strBlackElo += pgn.charAt(eloIdx);
+      eloIdx++;
+    }
+
+    blackElo = parseInt(strBlackElo);
+
+    let strWhiteElo = '';
+    eloIdx = pgn.indexOf('WhiteElo ') + 10;
+
+    while (pgn.charAt(eloIdx) !== '"') {
+      strWhiteElo += pgn.charAt(eloIdx);
+      eloIdx++;
+    }
+
+    whiteElo = parseInt(strWhiteElo);
+  } else {
+    whiteElo = null;
+    blackElo = null;
   }
-
-  blackElo = parseInt(strBlackElo);
-
-  let strWhiteElo = '';
-  eloIdx = pgn.indexOf('WhiteElo ') + 10;
-
-  while (pgn.charAt(eloIdx) !== '"') {
-    strWhiteElo += pgn.charAt(eloIdx);
-    eloIdx++;
-  }
-
-  whiteElo = parseInt(strWhiteElo);
 
   if (result === '1-0' && color.toLowerCase() === 'white') {
-    if (blackElo > whiteElo) {
-      // Defeat a higher rated player achievement
-      achieved.push(achievements[29]);
-    }
-    if (blackElo <= 749) {
-      // Win a game achievement
+    if (blackElo <= 749 || !blackElo) {
+      // Win a game achievement, accounts for no rating provided
       achieved.push(achievements[36]);
-    } else if (blackElo >= 750 && blackElo <= 1499) {
-      // Win a game rated 750+ achievement
-      achieved.push(achievements[1]);
-    } else if (blackElo >= 1500 && blackElo <= 1999) {
-      // Win a game rated 1500+ achievement
-      achieved.push(achievements[3]);
-    } else if (blackElo >= 2000 && blackElo <= 2249) {
-      // Win a game rated 2000+ achievement
-      achieved.push(achievements[6]);
-    } else {
-      // Win a game rated 2250+ achievement
-      achieved.push(achievements[8]);
     }
-
-    if (pgn.includes('won by checkmate')) {
-      let mateIdx = pgn.indexOf('#');
-      while (pgn.charAt(mateIdx) !== ' ') {
-        if (pgn.charAt(mateIdx) === 'B') {
-          // Mate with Bishop achievement
-          achieved.push(achievements[12]);
-        } else if (pgn.charAt(mateIdx) === 'N') {
-          // Mate with Knight achievement
-          achieved.push(achievements[13]);
-        }
-        mateIdx--;
+    if (whiteElo && blackElo) {
+      if (blackElo > whiteElo) {
+        // Defeat a higher rated player achievement
+        achieved.push(achievements[29]);
       }
-      const endIdx = pgn.indexOf('#');
-      let pawnMateIdx = pgn.indexOf('#');
-      let spaceCount = 0;
-      while (spaceCount < 2) {
-        if (pgn.charAt(pawnMateIdx) === ' ') {
-          spaceCount++;
-        }
-        pawnMateIdx--;
-      }
-      const exp = /[0-9]+\.\s[a-h]/;
-      const pawnMateSubStr = pgn.substring(pawnMateIdx + 1, endIdx);
-      if (exp.test(pawnMateSubStr)) {
-        // Mate with pawn
-        achieved.push(achievements[14]);
+      if (blackElo >= 750 && blackElo <= 1499) {
+        // Win a game rated 750+ achievement
+        achieved.push(achievements[1]);
+      } else if (blackElo >= 1500 && blackElo <= 1999) {
+        // Win a game rated 1500+ achievement
+        achieved.push(achievements[3]);
+      } else if (blackElo >= 2000 && blackElo <= 2249) {
+        // Win a game rated 2000+ achievement
+        achieved.push(achievements[6]);
+      } else if (blackElo >= 2250) {
+        // Win a game rated 2250+ achievement
+        achieved.push(achievements[8]);
       }
     }
   } else if (result === '1/2-1/2') {
@@ -154,136 +160,119 @@ function setResult(pgn, color) {
       // Draw by repetition achievement
       achieved.push(achievements[28]);
     }
-    if (color.toLowerCase() === 'white' ){
-      if (blackElo > whiteElo) {
-        // Draw against higher rated player achievement
-        achieved.push(achievements[21]);
-      }
-      if (blackElo <= 749) {
-        // Play a game achievement
+    if (color.toLowerCase() === 'white') {
+      if (blackElo <= 749 || !blackElo) {
+        // Play a game achievement, accounts for no rating provided
         achieved.push(achievements[0]);
-      } else if (blackElo >= 750 && blackElo <= 1499) {
-        // Play a game rated 750+ achievement
-        achieved.push(achievements[2]);
-      } else if (blackElo >= 1500 && blackElo <= 1999) {
-        // Play a game rated 1500+ achievement
-        achieved.push(achievements[4]);
-      } else if (blackElo >= 2000 && blackElo <= 2249) {
-        // Play a game rated 2000+ achievement
-        achieved.push(achievements[5]);
-      } else {
-        // Play a game rated 2250+ achievement
-        achieved.push(achievements[7]);
+      }
+      if (whiteElo && blackElo) {
+        if (blackElo > whiteElo) {
+          // Draw against higher rated player achievement
+          achieved.push(achievements[21]);
+        }
+        if (blackElo >= 750 && blackElo <= 1499) {
+          // Play a game rated 750+ achievement
+          achieved.push(achievements[2]);
+        } else if (blackElo >= 1500 && blackElo <= 1999) {
+          // Play a game rated 1500+ achievement
+          achieved.push(achievements[4]);
+        } else if (blackElo >= 2000 && blackElo <= 2249) {
+          // Play a game rated 2000+ achievement
+          achieved.push(achievements[5]);
+        } else if (blackElo >= 2250) {
+          // Play a game rated 2250+ achievement
+          achieved.push(achievements[7]);
+        }
       }
     } else {
-      if (whiteElo > blackElo) {
-        // Draw against higher rated player achievement
-        achieved.push(achievements[21]);
-      }
-      if (whiteElo <= 750) {
-        // Play a game achievement
+      if (whiteElo <= 749 || !whiteElo) {
+        // Play a game achievement, accounts for no rating provided
         achieved.push(achievements[0]);
-      } else if (whiteElo >= 751 && whiteElo <= 1499) {
-        // Play a game rated 750+ achievement
-        achieved.push(achievements[2]);
-      } else if (whiteElo >= 1501 && whiteElo <= 1999) {
-        // Play a game rated 1500+ achievement
-        achieved.push(achievements[4]);
-      } else if (whiteElo >= 2001 && whiteElo <= 2249) {
-        // Play a game rated 2000+ achievement
-        achieved.push(achievements[5]);
-      } else {
-        // Play a game rated 2250+ achievement
-        achieved.push(achievements[7]);
+      }
+      if (whiteElo && blackElo) {
+        if (whiteElo > blackElo) {
+          // Draw against higher rated player achievement
+          achieved.push(achievements[21]);
+        }
+        if (whiteElo >= 750 && whiteElo <= 1499) {
+          // Play a game rated 750+ achievement
+          achieved.push(achievements[2]);
+        } else if (whiteElo >= 1500 && whiteElo <= 1999) {
+          // Play a game rated 1500+ achievement
+          achieved.push(achievements[4]);
+        } else if (whiteElo >= 2000 && whiteElo <= 2249) {
+          // Play a game rated 2000+ achievement
+          achieved.push(achievements[5]);
+        } else if (whiteElo >= 2250) {
+          // Play a game rated 2250+ achievement
+          achieved.push(achievements[7]);
+        }
       }
     }
-  } else if (
-    result === '0-1' &&
-    color.toLowerCase() === 'black'
-  ) {
-    if (whiteElo > blackElo) {
-      // Defeat a higher rated player achievement
-      achieved.push(achievements[29]);
-    }
-    if (whiteElo <= 749) {
-      // Win a game achievement
+  } else if (result === '0-1' && color.toLowerCase() === 'black') {
+    if (whiteElo <= 749 || !whiteElo) {
+      // Win a game achievement, accounts for no rating provided
       achieved.push(achievements[36]);
-    } else if (whiteElo >= 751 && whiteElo <= 1499) {
-      // Win a game rated 750+ achievement
-      achieved.push(achievements[1]);
-    } else if (whiteElo >= 1501 && whiteElo <= 1999) {
-      // Win a game rated 1500+ achievement
-      achieved.push(achievements[3]);
-    } else if (whiteElo >= 2001 && whiteElo <= 2249) {
-      // Win a game rated 2000+ achievement
-      achieved.push(achievements[6]);
-    } else {
-      // Win a game rated 2250+ achievement
-      achieved.push(achievements[8]);
     }
-
-    if (pgn.includes('won by checkmate')) {
-      let mateIdx = pgn.indexOf('#');
-      while (pgn.charAt(mateIdx) !== ' ') {
-        if (pgn.charAt(mateIdx) === 'B') {
-          // Mate with Bishop achievement
-          achieved.push(achievements[12]);
-        } else if (pgn.charAt(mateIdx) === 'N') {
-          // Mate with Knight achievement
-          achieved.push(achievements[13]);
-        }
-        mateIdx--;
+    if (whiteElo && blackElo) {
+      if (whiteElo > blackElo) {
+        // Defeat a higher rated player achievement
+        achieved.push(achievements[29]);
       }
-      const endIdx = pgn.indexOf('#');
-      let pawnMateIdx = pgn.indexOf('#');
-      let spaceCount = 0;
-      while (spaceCount < 2) {
-        if (pgn.charAt(pawnMateIdx) === ' ') {
-          spaceCount++;
-        }
-        pawnMateIdx--;
-      }
-      const exp = /\.\.\.\s[a-h]/;
-      const pawnMateSubStr = pgn.substring(pawnMateIdx + 1, endIdx);
-      if (exp.test(pawnMateSubStr)) {
-        // Mate with pawn
-        achieved.push(achievements[14]);
+      if (whiteElo >= 750 && whiteElo <= 1499) {
+        // Win a game rated 750+ achievement
+        achieved.push(achievements[1]);
+      } else if (whiteElo >= 1500 && whiteElo <= 1999) {
+        // Win a game rated 1500+ achievement
+        achieved.push(achievements[3]);
+      } else if (whiteElo >= 2000 && whiteElo <= 2249) {
+        // Win a game rated 2000+ achievement
+        achieved.push(achievements[6]);
+      } else if (whiteElo >= 2250) {
+        // Win a game rated 2250+ achievement
+        achieved.push(achievements[8]);
       }
     }
   } else {
-    if (color.toLowerCase() === 'white' ){
-      if (blackElo <= 749) {
-        // Play a game achievement
+    if (color.toLowerCase() === 'white') {
+      if (blackElo <= 749 || !blackElo) {
+        // Play a game achievement, accounts for no rating provided
         achieved.push(achievements[0]);
-      } else if (blackElo >= 750 && blackElo <= 1499) {
-        // Play a game rated 750+ achievement
-        achieved.push(achievements[2]);
-      } else if (blackElo >= 1500 && blackElo <= 1999) {
-        // Play a game rated 1500+ achievement
-        achieved.push(achievements[4]);
-      } else if (blackElo >= 2000 && blackElo <= 2249) {
-        // Play a game rated 2000+ achievement
-        achieved.push(achievements[5]);
-      } else {
-        // Play a game rated 2250+ achievement
-        achieved.push(achievements[7]);
+      }
+      if (whiteElo && blackElo) {
+        if (blackElo >= 750 && blackElo <= 1499) {
+          // Play a game rated 750+ achievement
+          achieved.push(achievements[2]);
+        } else if (blackElo >= 1500 && blackElo <= 1999) {
+          // Play a game rated 1500+ achievement
+          achieved.push(achievements[4]);
+        } else if (blackElo >= 2000 && blackElo <= 2249) {
+          // Play a game rated 2000+ achievement
+          achieved.push(achievements[5]);
+        } else if (blackElo >= 2250) {
+          // Play a game rated 2250+ achievement
+          achieved.push(achievements[7]);
+        }
       }
     } else {
-      if (whiteElo <= 749) {
-        // Play a game achievement
+      if (whiteElo <= 749 || !whiteElo) {
+        // Play a game achievement, accounts for no ratig provided
         achieved.push(achievements[0]);
-      } else if (whiteElo >= 750 && whiteElo <= 1499) {
-        // Play a game rated 750+ achievement
-        achieved.push(achievements[2]);
-      } else if (whiteElo >= 1500 && whiteElo <= 1999) {
-        // Play a game rated 1500+ achievement
-        achieved.push(achievements[4]);
-      } else if (whiteElo >= 2001 && whiteElo <= 2249) {
-        // Play a game rated 2000+ achievement
-        achieved.push(achievements[5]);
-      } else {
-        // Play a game rated 2250+ achievement
-        achieved.push(achievements[7]);
+      }
+      if (whiteElo && blackElo) {
+        if (whiteElo >= 750 && whiteElo <= 1499) {
+          // Play a game rated 750+ achievement
+          achieved.push(achievements[2]);
+        } else if (whiteElo >= 1500 && whiteElo <= 1999) {
+          // Play a game rated 1500+ achievement
+          achieved.push(achievements[4]);
+        } else if (whiteElo >= 2001 && whiteElo <= 2249) {
+          // Play a game rated 2000+ achievement
+          achieved.push(achievements[5]);
+        } else if (whiteElo >= 2250) {
+          // Play a game rated 2250+ achievement
+          achieved.push(achievements[7]);
+        }
       }
     }
   }
@@ -291,42 +280,93 @@ function setResult(pgn, color) {
 
 function gameMoves(pgn, color) {
   const game = new Chess();
+  // const options = { sloppy: true };
   game.load_pgn(pgn);
   const moves = game.history({ verbose: true });
 
   let checkFlag = false;
   let enPassantFlag = false;
   let enPassantMateFlag = false;
+  let queensideCastleFlag = false;
+  let knightPromotionFlag = false;
+  let bishopPromotionFlag = false;
   let kingMoves = 0;
 
   for (let i = 0; i < moves.length; i++) {
+    let move = moves[i];
     if (color.toLowerCase() === 'white') {
-      if (moves[i].color === 'w') {
-        if (moves[i].san.includes('+')) {
+      // Calculates for white moves
+      if (move.color === 'w') {
+        if (move.flags === 'q') {
+          // Queenside castle achievement
+          queensideCastleFlag = true;
+        }
+        if (move.san.includes('+')) {
+          // Check achievement
           checkFlag = true;
         }
-        if (moves[i].flags === 'e') {
+        if (move.flags === 'e') {
+          // En passant achievement
           enPassantFlag = true;
-          if (moves[i].san.includes('#')) {
+          if (move.san.includes('#')) {
+            // En passant mate achievement
             enPassantMateFlag = true;
           }
         }
-        if (moves[i].piece === 'k') {
+        if (move.san.includes('=')) {
+          // Checks for underpromotions
+          if (move.san.includes('N')) {
+            // Underpromote to knight achievement
+            knightPromotionFlag = true;
+          } else if (move.san.includes('B')) {
+            // Underpromote to bishop achievement
+            bishopPromotionFlag = true;
+          }
+        }
+        if (
+          // Checks for king moves or any castling
+          move.san.includes('K') ||
+          move.san.includes('O-O') ||
+          move.san.includes('O-O-O')
+        ) {
           kingMoves++;
         }
       }
-    } else {
-      if (moves[i].color === 'b') {
-        if (moves[i].san.includes('+')) {
+    } else if (color.toLowerCase() === 'black') {
+      // Calculates for black moves
+      if (move.color === 'b') {
+        if (move.flags === 'q') {
+          // Queenside castle achievement
+          queensideCastleFlag = true;
+        }
+        if (move.san.includes('+')) {
+          // Check achievement
           checkFlag = true;
         }
-        if (moves[i].flags === 'e') {
+        if (move.flags === 'e') {
+          // En passant achievement
           enPassantFlag = true;
-          if (moves[i].san.includes('#')) {
+          if (move.san.includes('#')) {
+            // En passant mate achievement
             enPassantMateFlag = true;
           }
         }
-        if (moves[i].piece === 'k') {
+        if (move.san.includes('=')) {
+          // Checks for underpromotions
+          if (move.san.includes('N')) {
+            // Underpromote to knight achievement
+            knightPromotionFlag = true;
+          } else if (move.san.includes('B')) {
+            // Underpromote to bishop achievement
+            bishopPromotionFlag = true;
+          }
+        }
+        if (
+          // Checks for king moves or any castling
+          move.san.includes('K') ||
+          move.san.includes('O-O') ||
+          move.san.includes('O-O-O')
+        ) {
           kingMoves++;
         }
       }
@@ -346,6 +386,21 @@ function gameMoves(pgn, color) {
   if (enPassantMateFlag) {
     // Checkmate with en passant achievement
     achieved.push(achievements[26]);
+  }
+
+  if (queensideCastleFlag) {
+    // Queenside castle achievement
+    achieved.push(achievements[22]);
+  }
+
+  if (knightPromotionFlag) {
+    // Knight underpromotion achievement
+    achieved.push(achievements[23]);
+  }
+
+  if (bishopPromotionFlag) {
+    // Bishop underpromotion achievement
+    achieved.push(achievements[24]);
   }
 
   if (kingMoves > 20) {
@@ -411,7 +466,7 @@ function gameMoves(pgn, color) {
       // Draw when opponent has a queen without one
       achieved.push(achievements[27]);
     }
-  } else {
+  } else if (color.toLowerCase() === 'black') {
     if (whitePawnCount === 0 && blackPawnCount === 8) {
       // Capture all pawns without losing any achievement
       achieved.push(achievements[35]);
@@ -442,36 +497,36 @@ function gameMoves(pgn, color) {
   }
 }
 
-function specialMoves(pgn, color) {
-  if (color.toLowerCase() === 'white') {
-    const exp = /[0-9]+\.\sO-O-O/i;
-    if (exp.test(pgn) === true) {
-      // Queenside castle achievement
-      achieved.push(achievements[22]);
-    }
-    if (pgn.includes('8=$146') || pgn.includes('8=N')) {
-      // Underpromote to knight achievement
-      achieved.push(achievements[23]);
-    }
-    if (pgn.includes('8=B')) {
-      // Underpromote to bishop achievement
-      achieved.push(achievements[24]);
-    }
-  } else {
-    if (pgn.includes('... O-O-O')) {
-      // Queenside casle achievement
-      achieved.push(achievements[22]);
-    }
-    if (pgn.includes('1=$146') || pgn.includes('1=N')) {
-      // Underpromote to knight achievement
-      achieved.push(achievements[23]);
-    }
-    if (pgn.includes('1=B')) {
-      // Underpromote to bishop achievement
-      achieved.push(achievements[24]);
-    }
-  }
-}
+// function specialMoves(pgn, color) {
+//   if (color.toLowerCase() === 'white') {
+//     const exp = /[0-9]+\.\sO-O-O/i;
+//     if (exp.test(pgn) === true) {
+//       // Queenside castle achievement
+//       achieved.push(achievements[22]);
+//     }
+//     if (pgn.includes('8=$146') || pgn.includes('8=N')) {
+//       // Underpromote to knight achievement
+//       achieved.push(achievements[23]);
+//     }
+//     if (pgn.includes('8=B')) {
+//       // Underpromote to bishop achievement
+//       achieved.push(achievements[24]);
+//     }
+//   } else {
+//     if (pgn.includes('... O-O-O')) {
+//       // Queenside casle achievement
+//       achieved.push(achievements[22]);
+//     }
+//     if (pgn.includes('1=$146') || pgn.includes('1=N')) {
+//       // Underpromote to knight achievement
+//       achieved.push(achievements[23]);
+//     }
+//     if (pgn.includes('1=B')) {
+//       // Underpromote to bishop achievement
+//       achieved.push(achievements[24]);
+//     }
+//   }
+// }
 
 function achievementsCalculator(pgn, rawColor) {
   if (!pgn) throw new Error('No pgn provided');
@@ -485,7 +540,7 @@ function achievementsCalculator(pgn, rawColor) {
 
   setResult(pgn, color);
   gameMoves(pgn, color);
-  specialMoves(pgn, color);
+  // specialMoves(pgn, color);
 
   achieved = achieved.sort((a, b) => b.points - a.points);
   const finalAchievements = achieved.slice(0, 3);
@@ -504,6 +559,9 @@ function achievementsCalculator(pgn, rawColor) {
       openingValue = codeObject.value;
     }
   });
+
+  // console.log(finalAchievements);
+  // console.log(achieved);
 
   return {
     opening,
