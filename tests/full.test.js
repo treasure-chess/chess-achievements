@@ -148,5 +148,6 @@ if (successfulGames.length === examplePgns.length) {
   console.log(errorGames);
   console.log('Achievement Error Log:');
   console.log(achievementsToCheck);
+  throw 'Test failed';
 }
 console.log('====================================');
