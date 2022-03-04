@@ -42,7 +42,7 @@ const examplePgns = [
     hxg6 {[%timestamp 1]} 30... Qa1# {[%timestamp 26]} 0-1`,
     expectedAchievements: [
       'Strongest Opponent',
-      "Hello, m'lady",
+      "Hello m'lady",
       "Checkin' You Out",
       'Pawn Shy'
     ]
@@ -123,7 +123,7 @@ const examplePgns = [
       'Strongest Opponent',
       "Checkin' You Out",
       'Mr. Marathon Man',
-      "Hello, m'lady",
+      "Hello m'lady",
       'Déjà Vu'
     ]
   },
@@ -361,7 +361,7 @@ const examplePgns = [
       'Pawn Shy',
       'God-Mode Glitch',
       'The Sneaky Pawn',
-      "Hello, m'lady",
+      "Hello m'lady",
       "Checkin' You Out",
       'Utter Disrespect'
     ]
@@ -880,7 +880,7 @@ const examplePgns = [
       "Checkin' You Out",
       'Mr. Marathon Man',
       'Player',
-      "Hello, m'lady"
+      "Hello m'lady"
     ]
   },
   {
@@ -1087,7 +1087,7 @@ const examplePgns = [
       'Mythic Winner',
       'The Underdog',
       "Checkin' You Out",
-      "Hello, m'lady"
+      "Hello m'lady"
     ]
   },
   {
@@ -1433,7 +1433,7 @@ const examplePgns = [
       'The Underdog',
       'Pawn Shy'
     ]
-  },
+  }
 ];
 
 module.exports = examplePgns;
