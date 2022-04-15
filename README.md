@@ -171,7 +171,7 @@ Give a ⭐️ if this project helped you!
 
 ## 📝 License
 
-Copyright © 2021 Nifty Chess, Inc.<br />
+Copyright © 2022 Nifty Chess, Inc.<br />
 This project is [MIT](https://github.com/Treasure-Chess/chess-achievements/blob/master/LICENSE) licensed.
 
 ---
