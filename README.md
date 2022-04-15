@@ -153,11 +153,21 @@ Give a ⭐️ if this project helped you!
 
 ## Contributors ✨
 
+👤 **Patrick Gallagher**
+
+- Website: https://patrickgallagher.dev
+- Twitter: [@pi0neerpat](https://twitter.com/pi0neerpat)
+- GitHub: [@pi0neerpat](https://github.com/pi0neerpat)
+
+👤 **Joseph Schiarizzi**
+
+👤 **Andrew Young**
+
 👤 **Treasure Chess Community <maintainers@niftychess.com>**
 
-- Website: https://niftychess.com
-  - Twitter: [@https:\/\/twitter.com\/niftychess](https://twitter.com/https://twitter.com/niftychess)
-  - GitHub: [@Treasure-Chess](https://github.com/Treasure-Chess)
+- Website: https://treasurechess.com
+- Twitter: [@treasurechess\_](https://twitter.com/treasurechess_)
+- GitHub: [@Treasure-Chess](https://github.com/Treasure-Chess)
 
 ## 📝 License
 
