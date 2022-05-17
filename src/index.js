@@ -154,6 +154,10 @@ function setResult(pgn, color) {
         // Win a game rated 2250+ achievement
         achieved.push(achievements[8]);
       }
+      if (pgn.includes('won on time')) {
+        // Win on time achievement
+        achieved.push(achievements[38]);
+      }
     }
   } else if (result === '1/2-1/2') {
     if (pgn.includes('Game drawn by repetition')) {
@@ -231,6 +235,10 @@ function setResult(pgn, color) {
       } else if (whiteElo >= 2250) {
         // Win a game rated 2250+ achievement
         achieved.push(achievements[8]);
+      }
+      if (pgn.includes('won on time')) {
+        // Win on time achievement
+        achieved.push(achievements[38]);
       }
     }
   } else {
