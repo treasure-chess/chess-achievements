@@ -275,8 +275,8 @@ const list = [
   {
     number: 40,
     value: 'TimeWarper',
-    name: 'Mad Hatter',
-    description: 'Play a new opening',
+    name: 'Time Warper',
+    description: 'Win a game with more time than was given at start',
     points: 5
   }
 ];
