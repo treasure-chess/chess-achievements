@@ -437,7 +437,7 @@ const examplePgns = [
     21. Qxc4 Bg4 22. Ne5 a6 23. Nd7 Bxd7 24. Qxc7 Bc6 25. Rf1 Qe7 26. Qxe7 Rf8 27.
     Rxf7 Rxf7 28. Qe8+ Rf8 29. Qg6 Be4 30. Qxg7+ Kxg7 31. g3 Bxc2 32. g4 Rf1+ 33.
     Kxf1 Kg6 0-1`,
-    expectedAchievements: ['Played 2000+', "Checkin' You Out"]
+    expectedAchievements: ['Played 2000+', "Checkin' You Out", 'No Chance']
   },
   {
     gameNo: 16,
@@ -462,7 +462,7 @@ const examplePgns = [
     21. Qxc4 Bg4 22. Ne5 a6 23. Nd7 Bxd7 24. Qxc7 Bc6 25. Rf1 Qe7 26. Qxe7 Rf8 27.
     Rxf7 Rxf7 28. Qe8+ Rf8 29. Qg6 Be4 30. Qxg7+ Kxg7 31. g3 Bxc2 32. g4 Rf1+ 33.
     Kxf1 Kg6 0-1`,
-    expectedAchievements: ['Winner', "Checkin' You Out", 'Pawn Shy']
+    expectedAchievements: ['Winner', "Checkin' You Out", 'Pawn Shy', 'No Chance']
   },
   {
     gameNo: 17,
@@ -914,7 +914,7 @@ const examplePgns = [
     73. Rd8 Rb7 74. Rd3 Nb3+ 75. Ke3 Re7+ 76. Kf4 Nc5 77. Rf3 Ne6+ 78. Kg3 Nd4 79.
     Rf2+ Kc3 80. Rg2 Ne2+ 81. Kh4 Kd3 82. Rg4 Rh7+ 83. Kg5 Ke3 84. Kf6 Rh5 85. Rg6
     Ra5 86. Rg7 Nf4 87. Kf7 Ke4 88. Kg8 Ra8+ 0-1`,
-    expectedAchievements: ['Strongest Opponent', "Checkin' You Out"]
+    expectedAchievements: ['Strongest Opponent', "Checkin' You Out", 'No Chance']
   },
   {
     gameNo: 28,
@@ -952,7 +952,8 @@ const examplePgns = [
       'Horse Farmer',
       'Pawn Shopper',
       "Checkin' You Out",
-      'Mr. Marathon Man'
+      'Mr. Marathon Man',
+      'No Chance'
     ]
   },
   {
@@ -1006,7 +1007,8 @@ const examplePgns = [
       'Holy Promotion',
       'Horse Farmer',
       'Winner',
-      "Checkin' You Out"
+      "Checkin' You Out",
+      'No Chance'
     ]
   },
   {
@@ -1056,7 +1058,7 @@ const examplePgns = [
     g5 {[%clk 0:00:04.5]} 42. b7 {[%clk 0:01:38.9]} 42... h6 {[%clk 0:00:05]} 43.
     b8=B {[%clk 0:01:37.4]} 43... gxf4 {[%clk 0:00:04]} 44. Qe4+ {[%clk 0:01:36.7]}
     44... Kg4 {[%clk 0:00:02.4]} 45. Qxf4+ {[%clk 0:01:36.8]} 1-0`,
-    expectedAchievements: ['Strongest Opponent', "Checkin' You Out"]
+    expectedAchievements: ['Strongest Opponent', "Checkin' You Out", 'No Chance']
   },
   {
     gameNo: 31,
