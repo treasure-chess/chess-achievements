@@ -257,6 +257,27 @@ const list = [
     name: 'Winner',
     description: 'Win a game',
     points: 2
+  },
+  {
+    number: 38,
+    value: 'MadHatter',
+    name: 'Mad Hatter',
+    description: 'Play a new opening',
+    points: 3
+  },
+  {
+    number: 39,
+    value: 'NoChance',
+    name: 'No Chance',
+    description: 'Win a game on time',
+    points: 1
+  },
+  {
+    number: 40,
+    value: 'TimeWarper',
+    name: 'Mad Hatter',
+    description: 'Play a new opening',
+    points: 5
   }
 ];
 
