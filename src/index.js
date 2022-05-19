@@ -505,6 +505,19 @@ function gameMoves(pgn, color) {
   }
 }
 
+  // Determine opening
+  if (pgn.includes('[ECO ')) {
+    let ecoIdx = pgn.indexOf('[ECO ') + 6;
+    while (pgn.charAt(ecoIdx) !== '"') {
+      eco += pgn.charAt(ecoIdx);
+      ecoIdx++;
+    }
+    if (eco == 'A00') {
+      // Play a new opening achievement (from either player works)
+      achieved.push(achievements[37]);
+    }
+  }
+
 // function specialMoves(pgn, color) {
 //   if (color.toLowerCase() === 'white') {
 //     const exp = /[0-9]+\.\sO-O-O/i;
@@ -535,6 +548,8 @@ function gameMoves(pgn, color) {
 //     }
 //   }
 // }
+
+
 
 function achievementsCalculator(pgn, rawColor) {
   if (!pgn) throw new Error('No pgn provided');
