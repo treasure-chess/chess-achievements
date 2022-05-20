@@ -584,7 +584,7 @@ function achievementsCalculator(pgn, rawColor) {
   });
 
   // console.log(finalAchievements);
-  // console.log(achieved);
+  console.log(achieved);
 
   return {
     opening,
