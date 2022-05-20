@@ -388,7 +388,7 @@ const examplePgns = [
     Qb6 16. Nd4 Bxd4 17. exd4 Nf5 18. Qc1 Re8 19. c4 dxc4 20. Qc3 e5 21. dxe5 Qc5
     22. e6 Rxe6+ 23. Kd1 Nd4 24. Re1 Rxe1+ 25. Kxe1 Qe5+ 26. Kd1 Qe2+ 27. Kc1 Qe1#
     0-1`,
-    expectedAchievements: ['Played 750+', 'Pawn Shy']
+    expectedAchievements: ['Played 750+', 'Pawn Shy', 'Mad Hatter']
   },
   {
     gameNo: 14,
@@ -412,7 +412,7 @@ const examplePgns = [
     Qb6 16. Nd4 Bxd4 17. exd4 Nf5 18. Qc1 Re8 19. c4 dxc4 20. Qc3 e5 21. dxe5 Qc5
     22. e6 Rxe6+ 23. Kd1 Nd4 24. Re1 Rxe1+ 25. Kxe1 Qe5+ 26. Kd1 Qe2+ 27. Kc1 Qe1#
     0-1`,
-    expectedAchievements: ['750+ Winner', "Checkin' You Out", 'Pawn Shy']
+    expectedAchievements: ['750+ Winner', "Checkin' You Out", 'Pawn Shy', 'Mad Hatter']
   },
   {
     gameNo: 15,
@@ -437,7 +437,7 @@ const examplePgns = [
     21. Qxc4 Bg4 22. Ne5 a6 23. Nd7 Bxd7 24. Qxc7 Bc6 25. Rf1 Qe7 26. Qxe7 Rf8 27.
     Rxf7 Rxf7 28. Qe8+ Rf8 29. Qg6 Be4 30. Qxg7+ Kxg7 31. g3 Bxc2 32. g4 Rf1+ 33.
     Kxf1 Kg6 0-1`,
-    expectedAchievements: ['Played 2000+', "Checkin' You Out"]
+    expectedAchievements: ['Played 2000+', "Checkin' You Out", 'No Chance']
   },
   {
     gameNo: 16,
@@ -462,7 +462,7 @@ const examplePgns = [
     21. Qxc4 Bg4 22. Ne5 a6 23. Nd7 Bxd7 24. Qxc7 Bc6 25. Rf1 Qe7 26. Qxe7 Rf8 27.
     Rxf7 Rxf7 28. Qe8+ Rf8 29. Qg6 Be4 30. Qxg7+ Kxg7 31. g3 Bxc2 32. g4 Rf1+ 33.
     Kxf1 Kg6 0-1`,
-    expectedAchievements: ['Winner', "Checkin' You Out", 'Pawn Shy']
+    expectedAchievements: ['Winner', "Checkin' You Out", 'Pawn Shy', 'No Chance']
   },
   {
     gameNo: 17,
@@ -482,7 +482,7 @@ const examplePgns = [
     [Termination "ChadBiryani won by checkmate"]
 
     1. f3 e6 2. g4 Qh4# 0-1`,
-    expectedAchievements: ['Strongest Opponent', 'Pawn Shy']
+    expectedAchievements: ['Strongest Opponent', 'Pawn Shy', 'Mad Hatter']
   },
   {
     gameNo: 18,
@@ -502,7 +502,7 @@ const examplePgns = [
     [Termination "ChadBiryani won by checkmate"]
 
     1. f3 e6 2. g4 Qh4# 0-1`,
-    expectedAchievements: ["Fool's Mate", 'Big Winner', 'Pawn Shy']
+    expectedAchievements: ["Fool's Mate", 'Big Winner', 'Pawn Shy', 'Mad Hatter']
   },
   {
     gameNo: 19,
@@ -544,7 +544,7 @@ const examplePgns = [
     (♚ Mate in 1)} ({(-5.09) The best move was} 6. e3 Nc5 7. Qe2 Nc6 8. Bb2 Bf5 9.
     d3 Qh4+ 10. Qf2 Qxf2+ 11. Kxf2 O-O-O 12. a3 Be7 13. e4 Be6 14. Nd2 Nd4 15. Rc1
     Bh4+ 16. Kg2 dxe4 17. Bxd4 exd4 18. fxe4) 6... Qh4# 0-1`,
-    expectedAchievements: ['Strongest Opponent', 'Pawn Shy']
+    expectedAchievements: ['Strongest Opponent', 'Pawn Shy', 'Mad Hatter']
   },
   {
     gameNo: 20,
@@ -586,7 +586,7 @@ const examplePgns = [
     (♚ Mate in 1)} ({(-5.09) The best move was} 6. e3 Nc5 7. Qe2 Nc6 8. Bb2 Bf5 9.
     d3 Qh4+ 10. Qf2 Qxf2+ 11. Kxf2 O-O-O 12. a3 Be7 13. e4 Be6 14. Nd2 Nd4 15. Rc1
     Bh4+ 16. Kg2 dxe4 17. Bxd4 exd4 18. fxe4) 6... Qh4# 0-1`,
-    expectedAchievements: ['Big Winner', 'Pawn Shy', 'Opening Expert']
+    expectedAchievements: ['Big Winner', 'Pawn Shy', 'Opening Expert', 'Mad Hatter']
   },
   {
     gameNo: 21,
@@ -914,7 +914,7 @@ const examplePgns = [
     73. Rd8 Rb7 74. Rd3 Nb3+ 75. Ke3 Re7+ 76. Kf4 Nc5 77. Rf3 Ne6+ 78. Kg3 Nd4 79.
     Rf2+ Kc3 80. Rg2 Ne2+ 81. Kh4 Kd3 82. Rg4 Rh7+ 83. Kg5 Ke3 84. Kf6 Rh5 85. Rg6
     Ra5 86. Rg7 Nf4 87. Kf7 Ke4 88. Kg8 Ra8+ 0-1`,
-    expectedAchievements: ['Strongest Opponent', "Checkin' You Out"]
+    expectedAchievements: ['Strongest Opponent', "Checkin' You Out", 'No Chance']
   },
   {
     gameNo: 28,
@@ -952,7 +952,8 @@ const examplePgns = [
       'Horse Farmer',
       'Pawn Shopper',
       "Checkin' You Out",
-      'Mr. Marathon Man'
+      'Mr. Marathon Man',
+      'No Chance'
     ]
   },
   {
@@ -1006,7 +1007,8 @@ const examplePgns = [
       'Holy Promotion',
       'Horse Farmer',
       'Winner',
-      "Checkin' You Out"
+      "Checkin' You Out",
+      'No Chance'
     ]
   },
   {
@@ -1056,7 +1058,7 @@ const examplePgns = [
     g5 {[%clk 0:00:04.5]} 42. b7 {[%clk 0:01:38.9]} 42... h6 {[%clk 0:00:05]} 43.
     b8=B {[%clk 0:01:37.4]} 43... gxf4 {[%clk 0:00:04]} 44. Qe4+ {[%clk 0:01:36.7]}
     44... Kg4 {[%clk 0:00:02.4]} 45. Qxf4+ {[%clk 0:01:36.8]} 1-0`,
-    expectedAchievements: ['Strongest Opponent', "Checkin' You Out"]
+    expectedAchievements: ['Strongest Opponent', "Checkin' You Out", 'No Chance']
   },
   {
     gameNo: 31,
@@ -1087,7 +1089,8 @@ const examplePgns = [
       'Mythic Winner',
       'The Underdog',
       "Checkin' You Out",
-      "Hello m'lady"
+      "Hello m'lady",
+      'Mad Hatter'
     ]
   },
   {
@@ -1115,7 +1118,7 @@ const examplePgns = [
     Rf7 35. Rd2 Qxh3 36. Rh2 Qxg4 37. Reh1 Qf4+ 38. Qxf4 Kg8 39. Rxh7 Kf8 40. Qe5
     Re7 41. Rh8+ Bg8 42. Rf1+ Ke8 43. Rxg8+ Kd7 44. Qf5+ Kc7 45. Rxg7 Rxg7 46. Bxg7
     Kb6 47. Bd4+ Ka6 48. Qc5 b5 49. Qb6# 1-0`,
-    expectedAchievements: ['Strongest Opponent', "Checkin' You Out"]
+    expectedAchievements: ['Strongest Opponent', "Checkin' You Out", 'Mad Hatter']
   },
   {
     gameNo: 33,
@@ -1405,7 +1408,7 @@ const examplePgns = [
 
     1. g4 b6 2. Bg2 Bb7 3. Nf3 Bxf3 4. a3 Bxg2 5. Nc3 Bxh1 6. Ne4 Bxe4 7. d4 e6 8.
     Bg5 Qxg5 9. Kf1 Bg6 10. Kg2 h5 11. Kf3 h4 12. Rb1 d5 13. b3 Be4# 0-1`,
-    expectedAchievements: ['Played 750+', 'Pawn Shy']
+    expectedAchievements: ['Played 750+', 'Pawn Shy', 'Mad Hatter']
   },
   {
     gameNo: 42,
@@ -1431,7 +1434,8 @@ const examplePgns = [
       'A Minor Problem',
       'Criss Cross',
       'The Underdog',
-      'Pawn Shy'
+      'Pawn Shy',
+      'Mad Hatter'
     ]
   }
 ];

@@ -52,6 +52,9 @@ examplePgns.forEach(game => {
     result['allAchievements'].forEach(achievement => {
       calculatedAchievements.push(achievement['name']);
     });
+    
+    // printing out calculatedAchievements
+    console.log(calculatedAchievements)
 
     // if (expectedAchievements.length !== calculatedAchievements.length) {
     //   gamesToCheck.push(gameNo);

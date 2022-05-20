@@ -154,6 +154,10 @@ function setResult(pgn, color) {
         // Win a game rated 2250+ achievement
         achieved.push(achievements[8]);
       }
+      if (pgn.includes('won on time')) {
+        // Win on time achievement
+        achieved.push(achievements[38]);
+      }
     }
   } else if (result === '1/2-1/2') {
     if (pgn.includes('Game drawn by repetition')) {
@@ -231,6 +235,10 @@ function setResult(pgn, color) {
       } else if (whiteElo >= 2250) {
         // Win a game rated 2250+ achievement
         achieved.push(achievements[8]);
+      }
+      if (pgn.includes('won on time')) {
+        // Win on time achievement
+        achieved.push(achievements[38]);
       }
     }
   } else {
@@ -497,6 +505,19 @@ function gameMoves(pgn, color) {
   }
 }
 
+  // Determine opening
+  if (pgn.includes('[ECO ')) {
+    let ecoIdx = pgn.indexOf('[ECO ') + 6;
+    while (pgn.charAt(ecoIdx) !== '"') {
+      eco += pgn.charAt(ecoIdx);
+      ecoIdx++;
+    }
+    if (eco == 'A00') {
+      // Play a new opening achievement (from either player works)
+      achieved.push(achievements[37]);
+    }
+  }
+
 // function specialMoves(pgn, color) {
 //   if (color.toLowerCase() === 'white') {
 //     const exp = /[0-9]+\.\sO-O-O/i;
@@ -527,6 +548,8 @@ function gameMoves(pgn, color) {
 //     }
 //   }
 // }
+
+
 
 function achievementsCalculator(pgn, rawColor) {
   if (!pgn) throw new Error('No pgn provided');
@@ -561,7 +584,7 @@ function achievementsCalculator(pgn, rawColor) {
   });
 
   // console.log(finalAchievements);
-  // console.log(achieved);
+  console.log(achieved);
 
   return {
     opening,
