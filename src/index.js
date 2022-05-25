@@ -5,32 +5,32 @@ const achievements = require('./achievementsList');
 let achieved = [];
 let eco = '';
 
-const parsePgn = (pgn) => {
-  let black
-  let white
-  let winner = 'white'
-  let eventName
-  let moves
-  let timeControl
-  let eco
-  let termination
-  pgn.split(/\n/).map((line) => {
-    if (line.includes('[Black ')) black = line.split(`"`)[1]
-    if (line.includes('[White ')) white = line.split(`"`)[1]
-    if (line.includes('[Event ')) eventName = line.split(`"`)[1]
-    let winnerRaw
-    if (line.includes('[Result ')) winnerRaw = line.split(`"`)[1]
-    if (winnerRaw === '0-1') winner = 'black'
-    else if (winnerRaw === '1/2-1/2') winner = 'draw'
+const parsePgn = pgn => {
+  let black;
+  let white;
+  let winner = 'white';
+  let eventName;
+  let moves;
+  let timeControl;
+  let eco;
+  let termination;
+  pgn.split(/\n/).map(line => {
+    if (line.includes('[Black ')) black = line.split(`"`)[1];
+    if (line.includes('[White ')) white = line.split(`"`)[1];
+    if (line.includes('[Event ')) eventName = line.split(`"`)[1];
+    let winnerRaw;
+    if (line.includes('[Result ')) winnerRaw = line.split(`"`)[1];
+    if (winnerRaw === '0-1') winner = 'black';
+    else if (winnerRaw === '1/2-1/2') winner = 'draw';
     if (line.match(/1./))
       moves = line
         .split(/[0-21/2]+-/)[0]
         .replace(/\{.+?\} /g, '') // remove clock time
-        .trim()
-    if (line.includes('[TimeControl ')) timeControl = line.split(`"`)[1]
-    if (line.includes('[ECO ')) eco = line.split(`"`)[1]
-    if (line.includes('[Termination ')) termination = line.split(`"`)[1]
-  })
+        .trim();
+    if (line.includes('[TimeControl ')) timeControl = line.split(`"`)[1];
+    if (line.includes('[ECO ')) eco = line.split(`"`)[1];
+    if (line.includes('[Termination ')) termination = line.split(`"`)[1];
+  });
 
   return {
     black,
@@ -41,9 +41,9 @@ const parsePgn = (pgn) => {
     // moveCount: countMoves(moves),
     timeControl,
     eco,
-    termination,
-  }
-}
+    termination
+  };
+};
 
 function setResult(pgn, color) {
   let result = '';
@@ -535,7 +535,7 @@ function gameMoves(pgn, color) {
       achieved.push(achievements[27]);
     }
   }
-  let parsedpgn = parsePgn(pgn)
+  let parsedpgn = parsePgn(pgn);
 
   // Determine opening
   if (parsedpgn.eco == 'A00') {
@@ -548,8 +548,6 @@ function gameMoves(pgn, color) {
     achieved.push(achievements[38]);
   }
 }
-
-  
 
 // function specialMoves(pgn, color) {
 //   if (color.toLowerCase() === 'white') {
@@ -581,8 +579,6 @@ function gameMoves(pgn, color) {
 //     }
 //   }
 // }
-
-
 
 function achievementsCalculator(pgn, rawColor) {
   if (!pgn) throw new Error('No pgn provided');
