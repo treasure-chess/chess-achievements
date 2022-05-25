@@ -97,6 +97,9 @@ const {
 | 35     | Mr. Marathon Man   | Move king >20 times                                 | 1      |
 | 36     | Pawn Hoarder       | Capture all pawns without losing any                | 5      |
 | 37     | Winner             | Win a game                                          | 2      |
+| 38     | Mad Hatter         | Play a new opening                                  | 3      |
+| 39     | No Chanc           | Win a game on time                                  | 1      |
+| 40     | Winner             | Win a game with more time than was given at start   | 5      |
 
 ### This one is for testing, and verifying the achievements
 
