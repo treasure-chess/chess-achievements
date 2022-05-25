@@ -5,6 +5,46 @@ const achievements = require('./achievementsList');
 let achieved = [];
 let eco = '';
 
+const parsePgn = (pgn) => {
+  let black
+  let white
+  let winner = 'white'
+  let eventName
+  let moves
+  let timeControl
+  let eco
+  let termination
+  pgn.split(/\n/).map((line) => {
+    if (line.includes('[Black ')) black = line.split(`"`)[1]
+    if (line.includes('[White ')) white = line.split(`"`)[1]
+    if (line.includes('[Event ')) eventName = line.split(`"`)[1]
+    let winnerRaw
+    if (line.includes('[Result ')) winnerRaw = line.split(`"`)[1]
+    if (winnerRaw === '0-1') winner = 'black'
+    else if (winnerRaw === '1/2-1/2') winner = 'draw'
+    if (line.match(/1./))
+      moves = line
+        .split(/[0-21/2]+-/)[0]
+        .replace(/\{.+?\} /g, '') // remove clock time
+        .trim()
+    if (line.includes('[TimeControl ')) timeControl = line.split(`"`)[1]
+    if (line.includes('[ECO ')) eco = line.split(`"`)[1]
+    if (line.includes('[Termination ')) termination = line.split(`"`)[1]
+  })
+
+  return {
+    black,
+    white,
+    winner,
+    event: eventName,
+    moves,
+    // moveCount: countMoves(moves),
+    timeControl,
+    eco,
+    termination,
+  }
+}
+
 function setResult(pgn, color) {
   let result = '';
   let resultIdx = pgn.indexOf('Result ') + 8;
@@ -154,10 +194,6 @@ function setResult(pgn, color) {
         // Win a game rated 2250+ achievement
         achieved.push(achievements[8]);
       }
-      if (pgn.includes('won on time')) {
-        // Win on time achievement
-        achieved.push(achievements[38]);
-      }
     }
   } else if (result === '1/2-1/2') {
     if (pgn.includes('Game drawn by repetition')) {
@@ -235,10 +271,6 @@ function setResult(pgn, color) {
       } else if (whiteElo >= 2250) {
         // Win a game rated 2250+ achievement
         achieved.push(achievements[8]);
-      }
-      if (pgn.includes('won on time')) {
-        // Win on time achievement
-        achieved.push(achievements[38]);
       }
     }
   } else {
@@ -503,20 +535,21 @@ function gameMoves(pgn, color) {
       achieved.push(achievements[27]);
     }
   }
-}
+  let parsedpgn = parsePgn(pgn)
 
   // Determine opening
-  if (pgn.includes('[ECO ')) {
-    let ecoIdx = pgn.indexOf('[ECO ') + 6;
-    while (pgn.charAt(ecoIdx) !== '"') {
-      eco += pgn.charAt(ecoIdx);
-      ecoIdx++;
-    }
-    if (eco == 'A00') {
-      // Play a new opening achievement (from either player works)
-      achieved.push(achievements[37]);
-    }
+  if (parsedpgn.eco == 'A00') {
+    // Play a new opening achievement (from either player works)
+    achieved.push(achievements[37]);
   }
+
+  if (parsedpgn.termination?.includes('won on time')) {
+    // Win on time achievement
+    achieved.push(achievements[38]);
+  }
+}
+
+  
 
 // function specialMoves(pgn, color) {
 //   if (color.toLowerCase() === 'white') {
